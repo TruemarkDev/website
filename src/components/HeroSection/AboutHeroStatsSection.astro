@@ -1,0 +1,40 @@
+---
+import CompanyStatsOnlySection from 'components/Stats/Section/CompanyStatsOnlySection.astro';
+import bannerImage from 'images/company/beginnings.jpg?url';
+---
+
+<section>
+  <div class="container about-us">
+    <div class="row row-eq-height align-items-center flex-column flex-md-row">
+      <div class="col-lg-12">
+        <div class="row mt-5">
+          <div class="col-lg-6 col-md-4 col-sm-12 rm-sm-4 p-md-3 p-0 about-img-holder">
+            <img
+              src={bannerImage}
+              alt="about Truemark"
+              class="img-fluid company-life about-img clip3"
+            />
+          </div>
+          <div class="col-lg-6 col-md-8 col-sm-12 rm-sm-3 ps-4">
+            <div class="header">
+              <div class="header-tag">Our story</div>
+              <h2 class="left mb-5">About Truemark</h2>
+            </div>
+            <p class="text-secondary">
+              Our skills and knowledge are very flexible - we are able to
+              accomplish literally any IT challenge today's market can throw
+              on us.
+            </p>
+            <p class="text-secondary">
+              Being on the market since 2017, we have managed to gain the
+              trust and respect from our clients. Long-term relationships and
+              happy customers have always been one of our main goals.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <CompanyStatsOnlySection employeeCount={25} />
+</section>

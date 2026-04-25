@@ -1,0 +1,38 @@
+---
+import { faUsers, faTrophy, faProjectDiagram, faSmileBeam } from '@fortawesome/free-solid-svg-icons';
+
+const { employeeCount } = Astro.props;
+
+const fa = (icon: typeof faUsers) => {
+  const [w, h, , , d] = icon.icon;
+  return { w, h, d: Array.isArray(d) ? d.join('') : d };
+};
+const stats = [
+  { icon: fa(faUsers), value: `${employeeCount}+`, label: 'Experts' },
+  { icon: fa(faProjectDiagram), value: '2017', label: 'Serving Since' },
+  { icon: fa(faTrophy), value: '25+', label: 'Projects' },
+  { icon: fa(faSmileBeam), value: '25+', label: 'Happy Clients' },
+];
+---
+
+<aside class="company-stats">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 stat-box d-flex flex-row flex-wrap ">
+        {stats.map(({ icon, value, label }) => (
+          <div class="stat d-flex align-items-center m-2">
+            <div class="icon-holder">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox={`0 0 ${icon.w} ${icon.h}`} width="1em" height="1em" fill="currentColor" class="stroke-icon" aria-hidden="true">
+                <path d={icon.d} />
+              </svg>
+            </div>
+            <div class="text-holder">
+              <h2 class="m-0">{value}</h2>
+              <small>{label}</small>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</aside>

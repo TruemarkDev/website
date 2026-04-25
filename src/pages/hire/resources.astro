@@ -2,7 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import TechStackSection from '../../components/Company/Section/TechStackSection';
 import SingleCaseStudySection from '../../components/CaseStudy/Section/SingleCaseStudySection';
-import CompanyStatsSection from '../../components/Stats/Section/CompanyStatsSection';
+import CompanyStatsSection from '../../components/Stats/Section/CompanyStatsSection.astro';
 import SoftwareTeamSection from '../../components/Team/Section/SoftwareTeamSection';
 import TeamBuildingBlogs from '../../components/Blog/Section/TeamBuildingBlogs';
 import ResourceHeroSection from '../../components/HeroSection/ResourceHeroSection';
@@ -23,7 +23,7 @@ const teamBuildingBlogs = await getBlogsByTag('build-team', 3);
   path="hire/resources"
 >
   <ResourceHeroSection client:visible />
-  <CompanyStatsSection employeeCount={25} client:visible />
+  <CompanyStatsSection employeeCount={25} />
   <EstimateForm forId="estimate" client:visible />
   <TechStackSection client:visible />
   <SingleCaseStudySection client:visible />

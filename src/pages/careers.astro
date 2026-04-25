@@ -5,7 +5,7 @@ import CurrentOpenings from '../components/Career/CurrentOpenings.jsx';
 import HandBook from '../components/Career/HandBook.astro';
 import OurTraineeProgramSection from '../components/Career/OurTraineeProgramSection.jsx';
 import ValueSection from '../components/Company/Section/ValueSection.astro';
-import CareerHeroSection from '../components/HeroSection/CareerHeroSection.jsx';
+import CareerHeroSection from '../components/HeroSection/CareerHeroSection.astro';
 import HowToApply from '../components/Trainee/HowToApply.astro';
 import { getCollection } from 'astro:content';
 import { getTraineeProgramEdges } from '../lib/career-data';
@@ -38,7 +38,7 @@ const traineePrograms = await getTraineeProgramEdges();
   keywords="Jobs in Kathmandu, Ruby, Rails, React Native, truemark"
   path="careers"
 >
-  <CareerHeroSection client:visible />
+  <CareerHeroSection />
   <ValueSection />
   <HandBook />
   <CurrentOpenings openings={openings} client:visible />

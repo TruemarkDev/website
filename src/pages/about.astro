@@ -5,7 +5,7 @@ import OurMissionSection from '../components/Company/Section/OurMissionSection.a
 import OurVisionSection from '../components/Company/Section/OurVisionSection.astro';
 import ProcessSection from '../components/Company/Section/ProcessSection.jsx';
 import AboutHeroSection from '../components/HeroSection/AboutHeroSection.jsx';
-import AboutHeroStatsSection from '../components/HeroSection/AboutHeroStatsSection.jsx';
+import AboutHeroStatsSection from '../components/HeroSection/AboutHeroStatsSection.astro';
 ---
 
 <BaseLayout
@@ -15,7 +15,7 @@ import AboutHeroStatsSection from '../components/HeroSection/AboutHeroStatsSecti
   path="about"
 >
   <AboutHeroSection client:visible />
-  <AboutHeroStatsSection client:visible />
+  <AboutHeroStatsSection />
   <OurVisionSection />
   <OurMissionSection />
   <ProcessSection client:visible />

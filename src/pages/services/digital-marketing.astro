@@ -2,10 +2,10 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import DMTeamSection from '../../components/Team/Section/DMTeamSection';
 import TestimonialSection from '../../components/Testimonial/Section/TestimonialSection';
-import CompanyStatsSection from '../../components/Stats/Section/CompanyStatsSection';
+import CompanyStatsSection from '../../components/Stats/Section/CompanyStatsSection.astro';
 import DMHeroSection from '../../components/HeroSection/DMHeroSection';
 import DmServiceSection from '../../components/Service/Section/DmServiceSection';
-import DMBannerSection from '../../components/Banner/DMBannerSection';
+import DMBannerSection from '../../components/Banner/DMBannerSection.astro';
 import BlogSection from '../../components/Blog/BlogSection.astro';
 import digitalMarketingTestimonials from '../../constants/testimonials/digitalMarketing';
 import { getBlogsByTag } from '../../lib/blog-data';
@@ -20,9 +20,9 @@ const dmBlogs = await getBlogsByTag('digital marketing', 3);
   path="services/digital-marketing"
 >
   <DMHeroSection client:visible />
-  <CompanyStatsSection employeeCount={5} client:visible />
+  <CompanyStatsSection employeeCount={5} />
   <DmServiceSection client:visible />
-  <DMBannerSection client:visible />
+  <DMBannerSection />
   <TestimonialSection
     items={digitalMarketingTestimonials}
     sectionTitle="TESTIMONIALS"
