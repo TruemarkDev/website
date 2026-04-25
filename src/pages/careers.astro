@@ -2,7 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import CareerFAQ from '../components/Career/CareerFAQ.jsx';
 import CurrentOpenings from '../components/Career/CurrentOpenings.jsx';
-import HandBook from '../components/Career/HandBook.jsx';
+import HandBook from '../components/Career/HandBook.astro';
 import OurTraineeProgramSection from '../components/Career/OurTraineeProgramSection.jsx';
 import ValueSection from '../components/Company/Section/ValueSection.jsx';
 import CareerHeroSection from '../components/HeroSection/CareerHeroSection.jsx';
@@ -40,7 +40,7 @@ const traineePrograms = await getTraineeProgramEdges();
 >
   <CareerHeroSection client:visible />
   <ValueSection client:visible />
-  <HandBook client:visible />
+  <HandBook />
   <CurrentOpenings openings={openings} client:visible />
   <OurTraineeProgramSection programs={traineePrograms} client:visible />
   <HowToApply client:visible />

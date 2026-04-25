@@ -4,7 +4,7 @@ import CurrentOpenings from '../components/Career/CurrentOpenings.jsx';
 import TraineeHeroSection from '../components/HeroSection/TraineeHeroSection.jsx';
 import HowToApply from '../components/Trainee/HowToApply.jsx';
 import OurProgram from '../components/Trainee/OurProgram.jsx';
-import StepUp from '../components/Trainee/StepUp.jsx';
+import StepUp from '../components/Trainee/StepUp.astro';
 import TraineeFAQ from '../components/Trainee/TraineeFAQ.jsx';
 import TraineeTestimonialSection from '../components/Trainee/TraineeTestimonialSection.jsx';
 import TruemarkOpportunities from '../components/Trainee/TruemarkOpportunities.jsx';
@@ -39,7 +39,7 @@ const openings = await Promise.all(
   path="trainee"
 >
   <TraineeHeroSection client:visible />
-  <StepUp client:visible />
+  <StepUp />
   <TruemarkOpportunities client:visible />
   <OurProgram client:visible />
   <TraineeTestimonialSection
