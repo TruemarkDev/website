@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import { Container, Col, Row } from "reactstrap";
-// gatsby-plugin-image removed in Astro migration; raw <img> below uses src.
-const getImage = (img) => img;
 
 import ButtonWithModal from "components/Button/ButtonWithModal";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -118,7 +116,6 @@ const PortfolioItem = ({
 }) => {
   const classNames = ["portfolio", "py-0"];
   classNames.push(className);
-  const featuredImageSrc = getImage(featuredImage);
 
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
@@ -165,13 +162,8 @@ const PortfolioItem = ({
                 md={5}
                 className="d-flex justify-content-end align-items-end showcase"
               >
-                {/* <GatsbyImage
-                  image={featuredImageSrc}
-                  alt="bannerImage"
-                  className="mb-0 img-fluid showcase-img"
-                /> */}
                 {featuredImage && (
-                  <img className="img-fluid" src={featuredImage} />
+                  <img className="img-fluid" src={featuredImage} alt={title} />
                 )}
               </Col>
             </Row>

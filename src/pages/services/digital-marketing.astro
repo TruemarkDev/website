@@ -23,7 +23,12 @@ const dmBlogs = await getBlogsByTag('digital marketing', 3);
   <CompanyStatsSection employeeCount={5} client:visible />
   <DmServiceSection client:visible />
   <DMBannerSection client:visible />
-  <TestimonialSection items={digitalMarketingTestimonials} client:only="react" />
+  <TestimonialSection
+    items={digitalMarketingTestimonials}
+    sectionTitle="TESTIMONIALS"
+    sectionSubheading="Our Customer Feedback"
+    client:visible
+  />
   <BlogSection
     blogs={dmBlogs}
     heading="Latest from the blog"

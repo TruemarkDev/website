@@ -1,5 +1,4 @@
-import React, { useCallback, useState } from 'react';
-import { Helmet } from 'react-helmet';
+import React, { useCallback, useEffect, useState } from 'react';
 
 import ThemeSwitchers from 'components/Menu/ThemeSwitcher/ThemeSwitcher';
 import { siteMetadata } from 'src/lib/site-metadata';
@@ -16,6 +15,11 @@ const ThemeSwitcher = () => {
 
   const [theme, changeTheme] = useState(getDefaultTheme());
 
+  useEffect(() => {
+    document.documentElement.dataset.theme = theme;
+    document.body.dataset.theme = theme;
+  }, [theme]);
+
   const onChangeTheme = () => {
     const alternateTheme = theme === 'light' ? 'dark' : 'light';
     if (typeof window !== 'undefined')
@@ -24,14 +28,7 @@ const ThemeSwitcher = () => {
     changeTheme(alternateTheme);
   };
 
-  return (
-    <>
-      <Helmet>
-        <body data-theme={theme} />
-      </Helmet>
-      <ThemeSwitchers theme={theme} onChange={onChangeTheme} />
-    </>
-  );
+  return <ThemeSwitchers theme={theme} onChange={onChangeTheme} />;
 };
 
 export default ThemeSwitcher;

@@ -31,7 +31,7 @@ const copyrightYear = `2017 - ${new Date().getFullYear()}`;
 
       <div class="col-lg-12 pb-4 d-flex align-items-center flex-column text-center justify-content-center justify-content-md-baseline text-md-start flex-lg-row justify-content-between footer-separator">
         <h4 class="text-white mb-4 mb-lg-0">{ctaTitle}</h4>
-        <ButtonWithModal client:only="react" text="Let's start a project →" />
+        <ButtonWithModal client:load text="Let's start a project →" />
       </div>
 
       <div class="col-lg-12 py-4 mt-lg-0 mt-3 d-flex flex-column justify-content-center justify-content-md-baseline flex-lg-row justify-content-lg-between contact-bar footer-separator align-items-center">
@@ -131,7 +131,7 @@ const copyrightYear = `2017 - ${new Date().getFullYear()}`;
             <a href="/terms/">Terms</a>
           </li>
           <li class="nav-item d-block ms-0 ms-md-auto mt-2 mt-md-0">
-            <ThemeSwitcher client:only="react" />
+            <ThemeSwitcher client:load />
           </li>
         </ul>
       </div>

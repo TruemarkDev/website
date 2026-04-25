@@ -20,7 +20,7 @@ import {
   faLinkedinIn,
 } from "@fortawesome/free-brands-svg-icons";
 
-import BlogMegaMenu from "../../../theme/components/BlogMegaMenu/BlogMegaMenu";
+import BlogMegaMenu from "../../BlogMegaMenu/BlogMegaMenu";
 import Developer from 'images/icons/developer.svg?url';
 import Ruby from 'images/icons/ruby.svg?url';
 import react from 'images/icons/react.svg?url';

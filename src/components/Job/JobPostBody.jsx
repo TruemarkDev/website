@@ -9,7 +9,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 
 import SocialShare from 'components/SocialShare';
-import ButtonWithModal from '../../theme/components/Button/ButtonWithModal';
+import ButtonWithModal from 'components/Button/ButtonWithModal';
 import cvIcon from 'images/career/cv.svg?url';
 
 const JobPostBody = ({ frontmatter }) => {

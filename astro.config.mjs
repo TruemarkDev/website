@@ -40,12 +40,6 @@ export default defineConfig({
     },
     resolve: {
       alias: {
-        // theme-internal aliases (referenced by remaining components inside src/theme/)
-        '@components': path.join(__dirname, 'src/theme/components'),
-        '@assets': path.join(__dirname, 'src/theme/assets'),
-        '@constants': path.join(__dirname, 'src/theme/constants'),
-        '@services': path.join(__dirname, 'src/theme/services'),
-        '@utils': path.join(__dirname, 'src/theme/utils'),
         // main-app aliases
         assets: path.join(__dirname, 'src/assets'),
         images: path.join(__dirname, 'src/assets/images'),

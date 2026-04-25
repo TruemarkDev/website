@@ -99,24 +99,39 @@ const CustomForm = ({ onSubmit }) => (
             validate={composeValidators(required, isEmail)}
           />
           <Field name="contact_number">
-            {({ input }) => (
-              <PhoneInput
-                inputProps={{
-                  name: 'contact_number',
-                }}
-                type="phone"
-                labelClassName="form-label"
-                country="np"
-                specialLabel="Phone Number"
-                inputClassName="form-control"
-                placeholder="Contact Number"
-                containerClassName="form-group col-md-6"
-                errorClassName="mt-2 pe-5 me-5 small"
-                specialLabelClassName="form-label"
-                className="col-md-6 h-50"
-                {...input}
-              />
-            )}
+            {({ input }) =>
+              typeof window === 'undefined' ? (
+                <div className="form-group col-md-6">
+                  <label className="form-label" htmlFor="contact-number">
+                    Phone Number
+                  </label>
+                  <input
+                    id="contact-number"
+                    name="contact_number"
+                    className="form-control"
+                    placeholder="Contact Number"
+                    {...input}
+                  />
+                </div>
+              ) : (
+                <PhoneInput
+                  inputProps={{
+                    name: 'contact_number',
+                  }}
+                  type="phone"
+                  labelClassName="form-label"
+                  country="np"
+                  specialLabel="Phone Number"
+                  inputClassName="form-control"
+                  placeholder="Contact Number"
+                  containerClassName="form-group col-md-6"
+                  errorClassName="mt-2 pe-5 me-5 small"
+                  specialLabelClassName="form-label"
+                  className="col-md-6 h-50"
+                  {...input}
+                />
+              )
+            }
           </Field>
         </FormRow>
 

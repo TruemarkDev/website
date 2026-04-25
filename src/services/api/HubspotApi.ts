@@ -1,4 +1,4 @@
-import HubspotAuthenticatedRequestService from '@services/requests/Hubspot';
+import HubspotAuthenticatedRequestService from 'services/requests/Hubspot';
 
 const URLS = {
   INDEX: '/api/hubspotContact',

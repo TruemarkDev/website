@@ -103,14 +103,15 @@ class ButtonWithModal extends React.Component {
         >
           {text || children}
         </button>
-        {this.renderModal(
-          modalType,
-          modal,
-          attributes,
-          title,
-          subTitle,
-          estimateModalType,
-        )}
+        {modal &&
+          this.renderModal(
+            modalType,
+            modal,
+            attributes,
+            title,
+            subTitle,
+            estimateModalType,
+          )}
       </>
     );
   }

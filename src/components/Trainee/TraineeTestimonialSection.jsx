@@ -56,6 +56,10 @@ const CardSlider = React.forwardRef(({ children, slideCount }, ref) => {
     return children;
   }
 
+  if (typeof window === 'undefined') {
+    return <div className="overflow-hidden">{children}</div>;
+  }
+
   return (
     <div className="overflow-hidden">
       <Slick ref={ref} {...settings}>

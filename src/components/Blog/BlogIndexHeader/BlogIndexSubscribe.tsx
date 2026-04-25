@@ -1,7 +1,7 @@
-import HubspotApi from '@services/api/HubspotApi';
-import notyService from '@services/notyService';
-import Tracker from '@services/tracker';
-import { composeValidators, isEmail, required } from '@utils/formValidators';
+import HubspotApi from 'services/api/HubspotApi';
+import notyService from 'services/notyService';
+import Tracker from 'services/tracker';
+import { isEmail } from 'utils/formValidators';
 import React, { useState } from 'react';
 
 interface BlogIndexSubscribe {

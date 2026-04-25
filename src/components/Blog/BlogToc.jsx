@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCaretRight } from "@fortawesome/free-solid-svg-icons";
 import ScrollSpy from "react-scrollspy";
 
-import ButtonWithModal from "../../theme/components/Button/ButtonWithModal";
+import ButtonWithModal from "components/Button/ButtonWithModal";
 
 const BlogToc = ({ headings = [], title: defaultTitle = "" }) => {
   const [title, setTitle] = useState(defaultTitle);

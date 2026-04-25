@@ -1,7 +1,7 @@
 ---
 import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
-import BlogIndexSubscribe from '../../theme/components/BlogIndexHeader/BlogIndexSubscribe';
-import BlogIndexSliderSection from '../../theme/components/BlogIndexHeader/BlogIndexSliderSection';
+import BlogIndexSubscribe from './BlogIndexHeader/BlogIndexSubscribe';
+import BlogIndexSliderSection from './BlogIndexHeader/BlogIndexSliderSection';
 
 interface Edge {
   node: {
@@ -39,7 +39,7 @@ const right = fa(faArrowRight);
         />
       </div>
       <div class="col-xl-7 col-sm-12 blog-index-slider mt-xl-0 mt-2 p-2">
-        <BlogIndexSliderSection sliderBlogPosts={sliderPosts.edges} client:only="react" />
+        <BlogIndexSliderSection sliderBlogPosts={sliderPosts.edges} client:load />
       </div>
       <div class="my-xl-4 d-flex position-relative justify-content-end slider-arrow">
         <div class="swiper-prev d-flex align-items-center justify-content-center">

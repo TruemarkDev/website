@@ -15,5 +15,5 @@ const blogs = await getAllBlogsForSection();
   image={metaImage}
   path="resume/prabin"
 >
-  <FetchedDataTemplete profile={profile} blogs={blogs} client:only="react" />
+  <FetchedDataTemplete profile={profile} blogs={blogs} client:visible />
 </BaseLayout>

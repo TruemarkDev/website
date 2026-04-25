@@ -13,5 +13,5 @@ const blogs = await getAllBlogsForSection();
   keywords="About Truemark, Truemark Technology, Remote Software Development Team"
   path="resume/mausam"
 >
-  <CVTemplate profile={profile} blogs={blogs} client:only="react" />
+  <CVTemplate profile={profile} blogs={blogs} client:visible />
 </BaseLayout>

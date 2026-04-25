@@ -118,22 +118,37 @@ const ContactForm = ({ onSubmit }) => (
           />
 
           <Field name="phone">
-            {({ input }) => (
-              <PhoneInput
-                inputProps={{
-                  name: 'phone',
-                }}
-                country="np"
-                placeholder=""
-                specialLabel="Your Phone *"
-                containerClassName="form-group col-md-6"
-                inputClassName="form-control"
-                required={composeValidators(required, isPhoneNumber)}
-                specialLabelClassName="form-label"
-                className="col-md-6 h-50"
-                {...input}
-              />
-            )}
+            {({ input }) =>
+              typeof window === 'undefined' ? (
+                <div className="form-group col-md-6">
+                  <label className="form-label" htmlFor="footer-phone">
+                    Your Phone *
+                  </label>
+                  <input
+                    id="footer-phone"
+                    name="phone"
+                    className="form-control"
+                    placeholder=""
+                    {...input}
+                  />
+                </div>
+              ) : (
+                <PhoneInput
+                  inputProps={{
+                    name: 'phone',
+                  }}
+                  country="np"
+                  placeholder=""
+                  specialLabel="Your Phone *"
+                  containerClassName="form-group col-md-6"
+                  inputClassName="form-control"
+                  required={composeValidators(required, isPhoneNumber)}
+                  specialLabelClassName="form-label"
+                  className="col-md-6 h-50"
+                  {...input}
+                />
+              )
+            }
           </Field>
         </FormRow>
         <FormRow className="mb-3">

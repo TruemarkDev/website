@@ -96,34 +96,45 @@ const ResultSection = ({ title, description, appUrls }) => {
           </p>
         </Col>
       </Container>
-      <Slider {...settings}>
-        <div>
+      {typeof window === 'undefined' ? (
+        <div className="d-flex overflow-hidden justify-content-center">
           <img src={bannerImage} alt="bannerImage" className="result-image" />
-        </div>
-        <div>
-          <img src={bannerImage} alt="bannerImage" className="result-image" />
-        </div>
-        <div>
-          <img src={bannerImage} alt="bannerImage" className="result-image" />
-        </div>
-        <div>
           <img
             src={bannerBackgroundImage}
             alt="bannerImage"
             className="result-image"
           />
         </div>
-        <div>
-          <img src={bannerImage} alt="bannerImage" className="result-image" />
-        </div>
-        <div>
-          <img
-            src={bannerBackgroundImage}
-            alt="bannerImage"
-            className="result-image"
-          />
-        </div>
-      </Slider>
+      ) : (
+        <Slider {...settings}>
+          <div>
+            <img src={bannerImage} alt="bannerImage" className="result-image" />
+          </div>
+          <div>
+            <img src={bannerImage} alt="bannerImage" className="result-image" />
+          </div>
+          <div>
+            <img src={bannerImage} alt="bannerImage" className="result-image" />
+          </div>
+          <div>
+            <img
+              src={bannerBackgroundImage}
+              alt="bannerImage"
+              className="result-image"
+            />
+          </div>
+          <div>
+            <img src={bannerImage} alt="bannerImage" className="result-image" />
+          </div>
+          <div>
+            <img
+              src={bannerBackgroundImage}
+              alt="bannerImage"
+              className="result-image"
+            />
+          </div>
+        </Slider>
+      )}
 
       <AppLinks appUrls={appUrls} />
     </section>

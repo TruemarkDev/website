@@ -114,7 +114,7 @@ const [megaBlogs, megaCategories] = await Promise.all([
       <slot />
     </main>
     {!hideFormCTA && (
-      <FormCTASection client:only="react" transition:persist transition:name="form-cta" />
+      <FormCTASection client:load transition:persist transition:name="form-cta" />
     )}
     <Footer
       forCaseStudy={forCaseStudy}

@@ -1,5 +1,5 @@
 ---
-import BlogMegaMenu from "../../../theme/components/BlogMegaMenu/BlogMegaMenu";
+import BlogMegaMenu from "../../BlogMegaMenu/BlogMegaMenu";
 import logoRed from "images/company-logo/logo_red.svg?url";
 import logoWhite from "images/company-logo/logo_white.svg?url";
 import iconDeveloper from "images/icons/developer.svg?url";
@@ -16,8 +16,8 @@ import iconUpgradeApplication from "images/icons/upgrade-application.svg?url";
 
 interface Props {
   siteTitle?: string;
-  blogPosts?: unknown[];
-  blogCategories?: unknown[];
+  blogPosts?: any[];
+  blogCategories?: Array<{ category: string; totalCount?: number }>;
 }
 
 const { blogPosts = [], blogCategories = [] } = Astro.props;
@@ -382,7 +382,7 @@ const { blogPosts = [], blogCategories = [] } = Astro.props;
             <BlogMegaMenu
               blogPosts={blogPosts}
               categories={blogCategories}
-              client:only="react"
+              client:load
             />
           </div>
         </li>

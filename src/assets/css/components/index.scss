@@ -47,6 +47,5 @@
 @import './trainee-program-section';
 @import './work_with_us';
 
-// theme partials (gatsby-theme-effortless-blog)
-@import '../../../theme/assets/css/components/blog-index-header';
-@import '../../../theme/assets/css/components/blog-megamenu';
+@import './blog-index-header';
+@import './blog-megamenu';

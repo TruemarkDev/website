@@ -145,13 +145,13 @@ const CTA_DATA = {
   <ProjectPlanning {...PROJECT_PLANNING_DATA} client:visible />
   <ProjectChallenge {...PROJECT_CHALLENGE_DATA} client:visible />
   <ProjectFeatures features={PROJECT_FEATURE_DATA} client:visible />
-  <ResultSection {...RESULT_DATA} client:only="react" />
+  <ResultSection {...RESULT_DATA} client:visible />
   <TechnologyUsedSection technologyStacks={TECHNOLOGY_STACK_DATA} client:visible />
   <CaseStudyCTA {...CTA_DATA} client:visible />
   <TestimonialSection
     items={flexonetTestimonials}
     sectionTitle="Feedback"
     sectionSubheading="From The Client"
-    client:only="react"
+    client:visible
   />
 </BaseLayout>

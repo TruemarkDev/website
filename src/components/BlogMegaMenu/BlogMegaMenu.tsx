@@ -1,8 +1,8 @@
 import React from "react";
 
-import { ESTIMATION } from "@constants/constants";
+import EstimationBlog from "./EstimationBlogMenu";
 
-import EstimationBlog from "@components/BlogMegaMenu/EstimationBlogMenu";
+const ESTIMATION = "Estimation";
 
 interface Frontmatter {
   title: string;

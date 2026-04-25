@@ -6,7 +6,7 @@ import "swiper/css/navigation";
 import { Autoplay, Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-import BlogCard from "@components/BlogCard";
+import BlogCard from "../Card";
 import startup from 'images/startup.jpg?url';
 
 interface BlogIndexSliderSectionProps {
@@ -72,6 +72,7 @@ const BlogIndexSliderSection: React.FC<BlogIndexSliderSectionProps> = ({
                 date={date}
                 category={category}
                 description={description}
+                featuredImage={imgSrc}
                 imgSrc={imgSrc}
                 author={author}
                 className="col-lg-12 col-md-12 rm-sm-3 p-2 swiper-content"
