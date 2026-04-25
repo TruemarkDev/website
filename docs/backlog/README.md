@@ -10,7 +10,7 @@ The overall direction: incremental migration, not a wholesale rewrite. Chrome mo
 |---|---|
 | 5 — Image pipeline | **Done.** `public/images/` deleted entirely (~330MB across 1083 files). MDX body images flow through Vite via `src/lib/remark-image-paths.mjs` (rewrites `/images/...` markdown URLs to relative imports per-file). All consumers route through `resolveImage`/`resolveUrl` or ESM `?url` imports. |
 | 1 — `PagesReact/*` audit | Done — see `01-audit-results.md` |
-| 2 — Static page conversion | Done — 16 of 17 PagesReact converted; only `resume/prakash` remains (interactive) |
+| 2 — Static page conversion | **Done.** All 17 PagesReact converted; the last (`resume/prakash`) lifted its gitconnected fetch + merge to build time with static-profile fallback. `src/components/PagesReact/` deleted. |
 | 3 — Move chrome out of `src/theme/` | **Done.** 3.4 (blog components) + 3.1/3.2 (TopMenu.astro + Footer.astro) complete. FormCTASection stays React (interactive form). |
 | 4 — Delete `gatsby-shim` | **Done.** `gatsby` imports, Vite alias, shim file, and `imageToShape` are removed. |
 | 6 — Port `getSchemaOrgJSONLD` | Done |
