@@ -58,6 +58,16 @@ Backlog files:
 1. **Phase 3.1–3.3 (chrome rewrite) first** — `TopMenu.jsx`, `Footer.jsx`, `FormCTASection.jsx` are currently `client:only="react"` islands. During a transition the browser swaps the `<main>` content while the persisted chrome holds steady — but the chrome itself is still rendered entirely client-side, so there's a blank flash on first paint. Rewriting them as `.astro` (with small interactive sub-islands for the mobile menu toggle, theme switcher, form submit) eliminates that flash and lets the `transition:name` animations work properly.
 2. **SSR-promote section islands** — each marketing-page section (HeroSection, Faq, TestimonialSection, etc.) is `client:only="react"`. Promoting to `client:visible` or no directive gives Astro HTML to paint during the swap instead of an empty slot. See bisect instructions below.
 
-## Known follow-up: SSR-promote per-island components
+## SSR-promote: DONE
 
-After Phase 2, each section (HeroSection, Faq, TestimonialSection, etc.) is mounted as `client:only="react"`. They could SSR (drop the directive entirely or use `client:visible`) but at least one component throws "Element type is invalid: ... but got: object" during SSR — likely a deep dependency that touches `window`/`document` at module scope or has a default-vs-named export mismatch. Bisecting which component is failing would unlock zero-JS rendering for genuinely static sections (most marketing copy components). Worth a focused half-day. Not blocking anything.
+All section islands have been promoted from `client:only="react"` to `client:visible` (SSR + lazy hydrate on scroll). Three libraries caused SSR failures and their consuming components stay `client:only`:
+
+| Component | Library | Pages |
+|---|---|---|
+| `TestimonialSection` | `react-slick` | index, technologies/*, services/digital-marketing |
+| `ResultSection` | `react-slick` | case-studies/flexonet, trivia-day |
+| `TraineeTestimonialSection` | `react-slick` | trainee |
+| `ContactPageBody` | `react-phone-input-2` | contact |
+| `FetchedDataTemplete` / `CVTemplate` | `react-slick` (via CV sections) | resume/* |
+
+All other sections (hero, FAQ, stats, process, project planning, etc.) now SSR their HTML on first paint and hydrate lazily when scrolled into view.

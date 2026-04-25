@@ -24,7 +24,7 @@ const featuredImageUrl = (data.featuredImage as string | undefined) ?? null;
   image={featuredImageUrl ?? undefined}
   path={`jobs/${data.customSlug}`}
 >
-  <JobPostBody frontmatter={data} client:only="react" />
+  <JobPostBody frontmatter={data} client:visible />
   <div class="container">
     <Content />
   </div>

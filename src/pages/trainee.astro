@@ -31,17 +31,17 @@ const openings = jobs.map((j) => ({
   keywords="gatsbyjs development, gatsby, truemark"
   path="trainee"
 >
-  <TraineeHeroSection client:only="react" />
-  <StepUp client:only="react" />
-  <TruemarkOpportunities client:only="react" />
-  <OurProgram client:only="react" />
+  <TraineeHeroSection client:visible />
+  <StepUp client:visible />
+  <TruemarkOpportunities client:visible />
+  <OurProgram client:visible />
   <TraineeTestimonialSection
     items={traineeTestimonial}
     sectionTitle="Don't take our word for it. trust our trainee"
     sectionSubheading="Our Trainee Feedback"
     client:only="react"
   />
-  <HowToApply client:only="react" />
-  <CurrentOpenings openings={openings} client:only="react" />
-  <TraineeFAQ client:only="react" />
+  <HowToApply client:visible />
+  <CurrentOpenings openings={openings} client:visible />
+  <TraineeFAQ client:visible />
 </BaseLayout>

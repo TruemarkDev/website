@@ -1,0 +1,207 @@
+---
+import { Image } from "astro:assets";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import AgenticDevelopmentSubscribeForm from "../../components/AgenticDevelopment/AgenticDevelopmentSubscribeForm.jsx";
+import heroWorkflow from "../../assets/images/services/agentic-development/agentic-development-workflow.png";
+
+const offerItems = [
+  {
+    eyebrow: "Planning agents",
+    title: "Turn product context into implementation paths",
+    text: "Agents help break initiatives into scoped plans, technical notes, and reviewable tickets before engineers commit code.",
+  },
+  {
+    eyebrow: "Implementation agents",
+    title: "Move through known backlog faster",
+    text: "Repo-aware workflows draft code, apply routine changes, and prepare focused pull requests for human review.",
+  },
+  {
+    eyebrow: "Review and testing agents",
+    title: "Add verification pressure before merge",
+    text: "Automated review, test generation, and build checks help expose regressions while the work is still cheap to change.",
+  },
+  {
+    eyebrow: "Human oversight",
+    title: "Senior engineers stay accountable",
+    text: "Truemark engineers guide scope, approve implementation choices, review shipped work, and keep delivery aligned with your product goals.",
+  },
+];
+
+const processSteps = [
+  "Subscribe or request access",
+  "Share product and repository context",
+  "Receive implementation plans",
+  "Review shipped work and next priorities",
+];
+
+const useCases = [
+  "MVP builds",
+  "Feature backlogs",
+  "Framework and platform migrations",
+  "Maintenance work",
+  "QA automation",
+  "Internal tools",
+];
+
+const safetyItems = [
+  "Human approval before production changes",
+  "Pull requests reviewed by Truemark engineers",
+  "Repo-aware agents that work from real project context",
+  "Build, test, and acceptance checks before handoff",
+];
+---
+
+<BaseLayout
+  title="Agentic Development Services | AI Software Development Agents | Truemark"
+  description="Subscribe to Truemark's agentic development capability: AI software development agents guided by a senior engineering team for faster planning, implementation, review, and testing."
+  keywords="Agentic Development, AI software development agents, agentic engineering team, AI development subscription, Truemark"
+  path="services/agentic-development"
+  hideFormCTA={true}
+>
+  <section class="agentic-hero">
+    <div class="container">
+      <div class="agentic-hero__grid">
+        <div class="agentic-hero__copy">
+          <p class="agentic-kicker">Agentic Development</p>
+          <h1>Agentic development for faster product delivery</h1>
+          <p class="agentic-hero__lead">
+            Truemark pairs AI software development agents with a senior
+            engineering team so product work moves from context to plan,
+            implementation, review, and verified delivery with less waiting.
+          </p>
+          <div class="agentic-hero__actions">
+            <a class="btn btn-primary" href="#agentic-subscribe"
+              >Request subscription access</a
+            >
+            <a class="btn btn-outline-secondary" href="/contact/">Talk to us</a>
+          </div>
+          <dl class="agentic-hero__metrics">
+            <div>
+              <dt>Plan</dt>
+              <dd>Backlog, scope, and risk notes</dd>
+            </div>
+            <div>
+              <dt>Ship</dt>
+              <dd>Focused pull requests and reviews</dd>
+            </div>
+            <div>
+              <dt>Verify</dt>
+              <dd>Tests, builds, and human approval</dd>
+            </div>
+          </dl>
+        </div>
+
+        <div
+          class="agentic-hero__visual"
+          aria-label="Agentic workflow dashboard preview"
+        >
+          <Image
+            src={heroWorkflow}
+            alt="Agentic development workflow dashboard showing planning, implementation, review, testing, and human approval"
+            widths={[480, 720, 960, 1200]}
+            sizes="(min-width: 992px) 50vw, 100vw"
+            loading="eager"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="agentic-section agentic-offer">
+    <div class="container">
+      <div class="agentic-section__header">
+        <p class="agentic-kicker">What Truemark offers</p>
+        <h2>An agentic engineering team, not an unattended bot</h2>
+        <p>
+          The subscription is designed for teams that need practical delivery
+          capacity with stronger planning, review, and verification loops.
+        </p>
+      </div>
+      <div class="agentic-card-grid">
+        {
+          offerItems.map((item) => (
+            <article class="agentic-card">
+              <p>{item.eyebrow}</p>
+              <h3>{item.title}</h3>
+              <span>{item.text}</span>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="agentic-section agentic-process">
+    <div class="container">
+      <div class="agentic-section__header">
+        <p class="agentic-kicker">How it works</p>
+        <h2>Clear workflow from access request to reviewed output</h2>
+      </div>
+      <ol class="agentic-timeline">
+        {
+          processSteps.map((step, index) => (
+            <li>
+              <span>{String(index + 1).padStart(2, "0")}</span>
+              <strong>{step}</strong>
+            </li>
+          ))
+        }
+      </ol>
+    </div>
+  </section>
+
+  <section class="agentic-section agentic-use-cases">
+    <div class="container">
+      <div class="agentic-split">
+        <div>
+          <p class="agentic-kicker">Use cases</p>
+          <h2>Use agents where product work is concrete and reviewable</h2>
+          <p>
+            Agentic development works best when there is real product context, a
+            codebase or target architecture, and a team ready to review shipped
+            increments.
+          </p>
+        </div>
+        <ul>
+          {useCases.map((item) => <li>{item}</li>)}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="agentic-section agentic-safety">
+    <div class="container">
+      <div class="agentic-split agentic-split--reverse">
+        <div>
+          <p class="agentic-kicker">Trust and safety</p>
+          <h2>Guardrails are part of the delivery model</h2>
+          <p>
+            AI agents accelerate the workflow, while Truemark engineers keep
+            control over architecture, code quality, production risk, and
+            acceptance criteria.
+          </p>
+        </div>
+        <ul>
+          {safetyItems.map((item) => <li>{item}</li>)}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="agentic-section agentic-subscribe" id="agentic-subscribe">
+    <div class="container">
+      <div class="agentic-subscribe__grid">
+        <div>
+          <p class="agentic-kicker">Subscribe</p>
+          <h2>Request access to the agentic development subscription</h2>
+          <p>
+            Tell us what you are building, maintaining, or migrating. We will
+            use this request to route the lead in CRM and follow up with the
+            right next step.
+          </p>
+        </div>
+        <AgenticDevelopmentSubscribeForm client:load />
+      </div>
+    </div>
+  </section>
+</BaseLayout>

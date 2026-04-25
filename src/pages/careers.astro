@@ -31,11 +31,11 @@ const traineePrograms = await getTraineeProgramEdges();
   keywords="Jobs in Kathmandu, Ruby, Rails, React Native, truemark"
   path="careers"
 >
-  <CareerHeroSection client:only="react" />
-  <ValueSection client:only="react" />
-  <HandBook client:only="react" />
-  <CurrentOpenings openings={openings} client:only="react" />
-  <OurTraineeProgramSection programs={traineePrograms} client:only="react" />
-  <HowToApply client:only="react" />
-  <CareerFAQ client:only="react" />
+  <CareerHeroSection client:visible />
+  <ValueSection client:visible />
+  <HandBook client:visible />
+  <CurrentOpenings openings={openings} client:visible />
+  <OurTraineeProgramSection programs={traineePrograms} client:visible />
+  <HowToApply client:visible />
+  <CareerFAQ client:visible />
 </BaseLayout>

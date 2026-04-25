@@ -16,16 +16,16 @@ import GatsbyJSProjects from '../../components/TopProjects/GatsbyJSProjects';
   keywords="gatsbyjs development, gatsby, truemark"
   path="technologies/gatsby-js"
 >
-  <HeroSectionTemplate client:only="react" />
-  <WhyUseGatsby client:only="react" />
-  <GatsbyServices client:only="react" />
-  <GatsbyJSProjects client:only="react" />
+  <HeroSectionTemplate client:visible />
+  <WhyUseGatsby client:visible />
+  <GatsbyServices client:visible />
+  <GatsbyJSProjects client:visible />
   <TestimonialSection
     items={softwareTestimonials}
     sectionTitle="ABOUT OUR SERVICES"
     sectionSubheading="From Our Customers"
     client:only="react"
   />
-  <WhyChooseUs client:only="react" />
-  <Faq client:only="react" />
+  <WhyChooseUs client:visible />
+  <Faq client:visible />
 </BaseLayout>

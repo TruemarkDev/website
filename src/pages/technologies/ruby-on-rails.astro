@@ -18,16 +18,16 @@ const projects = await getFeaturedProjectEdges();
   keywords="ruby development, ror, truemark"
   path="technologies/ruby-on-rails"
 >
-  <RubyonRailsHeroSection client:only="react" />
-  <WhyChooseRuby client:only="react" />
-  <OurServices client:only="react" />
-  <RubyandRailsProjects client:only="react" />
+  <RubyonRailsHeroSection client:visible />
+  <WhyChooseRuby client:visible />
+  <OurServices client:visible />
+  <RubyandRailsProjects client:visible />
   <ProjectSection
     technology="rails"
     sectionTitle="Ruby on Rails Projects we have worked on"
     projects={projects}
-    client:only="react"
+    client:visible
   />
-  <WhyChooseUs client:only="react" />
-  <Faq client:only="react" />
+  <WhyChooseUs client:visible />
+  <Faq client:visible />
 </BaseLayout>

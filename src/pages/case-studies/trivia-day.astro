@@ -145,15 +145,15 @@ const CTA_DATA = {
   path="case-studies/trivia-day"
   forCaseStudy={true}
 >
-  <HeroSection heroSectionData={HERO_SECTION_DATA} client:only="react" />
-  <SingleTestimonialSection {...TESTIMONIAL_DATA} client:only="react" />
-  <BackStory {...BACK_STORY} client:only="react" />
-  <ProjectPlanning {...PROJECT_PLANNING_DATA} client:only="react" />
-  <ProjectChallenge {...PROJECT_CHALLENGE_DATA} client:only="react" />
-  <ProjectFeatures features={PROJECT_FEATURE_DATA} client:only="react" />
+  <HeroSection heroSectionData={HERO_SECTION_DATA} client:visible />
+  <SingleTestimonialSection {...TESTIMONIAL_DATA} client:visible />
+  <BackStory {...BACK_STORY} client:visible />
+  <ProjectPlanning {...PROJECT_PLANNING_DATA} client:visible />
+  <ProjectChallenge {...PROJECT_CHALLENGE_DATA} client:visible />
+  <ProjectFeatures features={PROJECT_FEATURE_DATA} client:visible />
   <ResultSection {...RESULT_DATA} client:only="react" />
-  <TechnologyUsedSection technologyStacks={TECHNOLOGY_STACK_DATA} client:only="react" />
-  <CaseStudyCTA {...CTA_DATA} client:only="react" />
+  <TechnologyUsedSection technologyStacks={TECHNOLOGY_STACK_DATA} client:visible />
+  <CaseStudyCTA {...CTA_DATA} client:visible />
   <TestimonialSection
     items={triviaDayTestimonials}
     sectionTitle="Feedback"

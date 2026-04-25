@@ -16,15 +16,15 @@ const featuredBlogs = await getFeaturedBlogs(3);
   title="Truemark | Outsource your project without compromising on code quality"
   path=""
 >
-  <HomeHeroSection client:only="react" />
-  <TechStackSection client:only="react" />
+  <HomeHeroSection client:visible />
+  <TechStackSection client:visible />
   <TestimonialSection
     items={softwareTestimonials}
     sectionTitle="ABOUT OUR SERVICES"
     sectionSubheading="From Our Customers"
     client:only="react"
   />
-  <EngagementModelBannerSection client:only="react" />
+  <EngagementModelBannerSection client:visible />
   <BlogSection
     blogs={featuredBlogs}
     headerTag="Expert Opinions"
@@ -32,5 +32,5 @@ const featuredBlogs = await getFeaturedBlogs(3);
     buttonText="View All Blogs"
     blogRedirectRoute="/blog"
   />
-  <SingleCaseStudySection client:only="react" />
+  <SingleCaseStudySection client:visible />
 </BaseLayout>

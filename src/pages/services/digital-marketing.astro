@@ -19,10 +19,10 @@ const dmBlogs = await getBlogsByTag('digital marketing', 3);
   keywords="digital marketing, seo, truemark"
   path="services/digital-marketing"
 >
-  <DMHeroSection client:only="react" />
-  <CompanyStatsSection employeeCount={5} client:only="react" />
-  <DmServiceSection client:only="react" />
-  <DMBannerSection client:only="react" />
+  <DMHeroSection client:visible />
+  <CompanyStatsSection employeeCount={5} client:visible />
+  <DmServiceSection client:visible />
+  <DMBannerSection client:visible />
   <TestimonialSection items={digitalMarketingTestimonials} client:only="react" />
   <BlogSection
     blogs={dmBlogs}
@@ -31,5 +31,5 @@ const dmBlogs = await getBlogsByTag('digital marketing', 3);
     buttonText="View All Blogs"
     blogRedirectRoute="/blog"
   />
-  <DMTeamSection client:only="react" />
+  <DMTeamSection client:visible />
 </BaseLayout>

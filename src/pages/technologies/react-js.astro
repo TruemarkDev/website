@@ -17,17 +17,17 @@ import softwareTestimonials from '../../constants/testimonials/software';
   keywords="reactjs development, react, truemark"
   path="technologies/react-js"
 >
-  <HeroSectionTemplate client:only="react" />
-  <WhyUseReact client:only="react" />
-  <ReactServices client:only="react" />
-  <ReactJSProjects client:only="react" />
-  <ChooseRightFramework client:only="react" />
+  <HeroSectionTemplate client:visible />
+  <WhyUseReact client:visible />
+  <ReactServices client:visible />
+  <ReactJSProjects client:visible />
+  <ChooseRightFramework client:visible />
   <TestimonialSection
     items={softwareTestimonials}
     sectionTitle="ABOUT OUR SERVICES"
     sectionSubheading="From Our Customers"
     client:only="react"
   />
-  <WhyChooseUs client:only="react" />
-  <Faq client:only="react" />
+  <WhyChooseUs client:visible />
+  <Faq client:visible />
 </BaseLayout>

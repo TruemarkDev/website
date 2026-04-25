@@ -1,5 +1,5 @@
 ---
-import BlogMegaMenu from '../../../theme/components/BlogMegaMenu/BlogMegaMenu';
+import BlogMegaMenu from "../../../theme/components/BlogMegaMenu/BlogMegaMenu";
 
 interface Props {
   siteTitle?: string;
@@ -11,10 +11,12 @@ const { blogPosts = [], blogCategories = [] } = Astro.props;
 ---
 
 <div class="sticky-top nav-bg">
-
   <!-- Desktop nav (hidden on mobile via CSS) -->
   <nav class="navbar navbar-expand-lg container desktop-nav h-100">
-    <a href="/" class="navbar-brand flex align-items-center justify-content-center p-0">
+    <a
+      href="/"
+      class="navbar-brand flex align-items-center justify-content-center p-0"
+    >
       <img
         src="/images/company-logo/logo_red.svg"
         class="img-fluid m-0 company-logo pb-2"
@@ -31,7 +33,12 @@ const { blogPosts = [], blogCategories = [] } = Astro.props;
         </li>
 
         <li class="nav-item dropdown mb-0">
-          <a href="#" class="nav-link dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+          <a
+            href="#"
+            class="nav-link dropdown-toggle"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
             Services
           </a>
           <div class="dropdown-menu p-0">
@@ -39,54 +46,126 @@ const { blogPosts = [], blogCategories = [] } = Astro.props;
               <li class="d-flex row">
                 <ul class="col-6">
                   <li class="m-0">
-                    <span class="text-uppercase d-block h5">Hire team / Individual</span>
-                    <a href="/hire/resources/" class="nav-dropdown-item d-block mb-1 py-2 px-2">
+                    <span class="text-uppercase d-block h5"
+                      >Hire team / Individual</span
+                    >
+                    <a
+                      href="/hire/resources/"
+                      class="nav-dropdown-item d-block mb-1 py-2 px-2"
+                    >
                       <span class="d-flex align-items-center mb-0">
-                        <span class="d-flex justify-content-center align-items-center nav-holder service-1">
-                          <img src="/images/icons/developer.svg" alt="Developers" />
+                        <span
+                          class="d-flex justify-content-center align-items-center nav-holder service-1"
+                        >
+                          <img
+                            src="/images/icons/developer.svg"
+                            alt="Developers"
+                          />
                         </span>
                         <span class="nav-item ps-0">
                           <span class="fw-bold nav-heading">Developers</span>
-                          <span class="d-block nav-text">For custom software development and maintenance</span>
+                          <span class="d-block nav-text"
+                            >For custom software development and maintenance</span
+                          >
                         </span>
                       </span>
                     </a>
                   </li>
                   <li class="m-0">
-                    <a href="/services/design/" class="nav-dropdown-item d-block mb-1 py-2 px-2">
+                    <a
+                      href="/services/agentic-development/"
+                      class="nav-dropdown-item d-block mb-1 py-2 px-2"
+                    >
                       <span class="d-flex align-items-center mb-0">
-                        <span class="d-flex justify-content-center align-items-center nav-holder service-5">
-                          <img src="/images/icons/designer.svg" alt="Designer" />
+                        <span
+                          class="d-flex justify-content-center align-items-center nav-holder service-3"
+                        >
+                          <img
+                            src="/images/icons/developer.svg"
+                            alt="Agentic Development"
+                          />
+                        </span>
+                        <span class="nav-item ps-0">
+                          <span class="fw-bold nav-heading"
+                            >Agentic Development</span
+                          >
+                          <span class="d-block nav-text"
+                            >AI agents guided by senior engineers</span
+                          >
+                        </span>
+                      </span>
+                    </a>
+                  </li>
+                  <li class="m-0">
+                    <a
+                      href="/services/design/"
+                      class="nav-dropdown-item d-block mb-1 py-2 px-2"
+                    >
+                      <span class="d-flex align-items-center mb-0">
+                        <span
+                          class="d-flex justify-content-center align-items-center nav-holder service-5"
+                        >
+                          <img
+                            src="/images/icons/designer.svg"
+                            alt="Designer"
+                          />
                         </span>
                         <span class="nav-item ps-0">
                           <span class="fw-bold nav-heading">Designers</span>
-                          <span class="nav-text d-block">Design team focused on UI/UX</span>
+                          <span class="nav-text d-block"
+                            >Design team focused on UI/UX</span
+                          >
                         </span>
                       </span>
                     </a>
                   </li>
                   <li class="m-0">
-                    <a href="/services/maintenance/tests/" class="nav-dropdown-item d-block mb-1 py-2 px-2">
+                    <a
+                      href="/services/maintenance/tests/"
+                      class="nav-dropdown-item d-block mb-1 py-2 px-2"
+                    >
                       <span class="d-flex align-items-center mb-0">
-                        <span class="d-flex justify-content-center align-items-center nav-holder service-4">
-                          <img src="/images/icons/quality-assurance.svg" alt="QualityAssurance" />
+                        <span
+                          class="d-flex justify-content-center align-items-center nav-holder service-4"
+                        >
+                          <img
+                            src="/images/icons/quality-assurance.svg"
+                            alt="QualityAssurance"
+                          />
                         </span>
                         <span class="nav-item ps-0">
-                          <span class="fw-bold nav-heading">Quality Assurance Tester</span>
-                          <span class="d-block nav-text">Will test your software and ensure quality (Manual, Automation)</span>
+                          <span class="fw-bold nav-heading"
+                            >Quality Assurance Tester</span
+                          >
+                          <span class="d-block nav-text"
+                            >Will test your software and ensure quality (Manual,
+                            Automation)</span
+                          >
                         </span>
                       </span>
                     </a>
                   </li>
                   <li class="m-0">
-                    <a href="/services/digital-marketing/" class="nav-dropdown-item d-block mb-1 py-2 px-2">
+                    <a
+                      href="/services/digital-marketing/"
+                      class="nav-dropdown-item d-block mb-1 py-2 px-2"
+                    >
                       <span class="d-flex align-items-center mb-0">
-                        <span class="d-flex justify-content-center align-items-center nav-holder service-3">
-                          <img src="/images/icons/digital-marketer.svg" alt="DigitalMarketer" />
+                        <span
+                          class="d-flex justify-content-center align-items-center nav-holder service-3"
+                        >
+                          <img
+                            src="/images/icons/digital-marketer.svg"
+                            alt="DigitalMarketer"
+                          />
                         </span>
                         <span class="nav-item ps-0">
-                          <span class="fw-bold nav-heading">Digital Marketers</span>
-                          <span class="d-block nav-text">Boost your digital presence</span>
+                          <span class="fw-bold nav-heading"
+                            >Digital Marketers</span
+                          >
+                          <span class="d-block nav-text"
+                            >Boost your digital presence</span
+                          >
                         </span>
                       </span>
                     </a>
@@ -95,40 +174,65 @@ const { blogPosts = [], blogCategories = [] } = Astro.props;
                 <ul class="col-6">
                   <li class="m-0">
                     <span class="text-uppercase d-block h5">Framework</span>
-                    <a href="/technologies/react-js/" class="nav-dropdown-item d-block mb-1 py-2 px-2">
+                    <a
+                      href="/technologies/react-js/"
+                      class="nav-dropdown-item d-block mb-1 py-2 px-2"
+                    >
                       <span class="d-flex align-items-center mb-0">
-                        <span class="d-flex justify-content-center align-items-center nav-holder service-3">
+                        <span
+                          class="d-flex justify-content-center align-items-center nav-holder service-3"
+                        >
                           <img src="/images/icons/react.svg" alt="React" />
                         </span>
                         <span class="nav-item ps-0">
                           <span class="fw-bold nav-heading">ReactJS</span>
-                          <span class="d-block nav-text">Create stunning and interactive user interface</span>
+                          <span class="d-block nav-text"
+                            >Create stunning and interactive user interface</span
+                          >
                         </span>
                       </span>
                     </a>
                   </li>
                   <li class="m-0">
-                    <a href="/technologies/ruby-on-rails/" class="nav-dropdown-item d-block mb-1 py-2 px-2">
+                    <a
+                      href="/technologies/ruby-on-rails/"
+                      class="nav-dropdown-item d-block mb-1 py-2 px-2"
+                    >
                       <span class="d-flex align-items-center mb-0">
-                        <span class="d-flex justify-content-center align-items-center nav-holder service-2">
-                          <img src="/images/icons/ruby.svg" alt="Ruby on Rails" />
+                        <span
+                          class="d-flex justify-content-center align-items-center nav-holder service-2"
+                        >
+                          <img
+                            src="/images/icons/ruby.svg"
+                            alt="Ruby on Rails"
+                          />
                         </span>
                         <span class="nav-item ps-0">
                           <span class="fw-bold nav-heading">Ruby on Rails</span>
-                          <span class="d-block nav-text">Powerful and popular choice for building web applications rapidly</span>
+                          <span class="d-block nav-text"
+                            >Powerful and popular choice for building web
+                            applications rapidly</span
+                          >
                         </span>
                       </span>
                     </a>
                   </li>
                   <li class="m-0">
-                    <a href="/technologies/gatsby-js/" class="nav-dropdown-item d-block mb-1 py-2 px-2">
+                    <a
+                      href="/technologies/gatsby-js/"
+                      class="nav-dropdown-item d-block mb-1 py-2 px-2"
+                    >
                       <span class="d-flex align-items-center mb-0">
-                        <span class="d-flex justify-content-center align-items-center nav-holder service-1">
+                        <span
+                          class="d-flex justify-content-center align-items-center nav-holder service-1"
+                        >
                           <img src="/images/icons/gatsby.svg" alt="Gatsby Js" />
                         </span>
                         <span class="nav-item ps-0">
                           <span class="fw-bold nav-heading">Gatsby Js</span>
-                          <span class="d-block nav-text">Fast and Efficient SEO friendly website</span>
+                          <span class="d-block nav-text"
+                            >Fast and Efficient SEO friendly website</span
+                          >
                         </span>
                       </span>
                     </a>
@@ -140,27 +244,50 @@ const { blogPosts = [], blogCategories = [] } = Astro.props;
                 <ul class="col-6">
                   <li class="m-0">
                     <span class="text-uppercase d-block h5">Build</span>
-                    <a href="/technologies/spree/" class="nav-dropdown-item d-block mb-1 py-2 px-2">
+                    <a
+                      href="/technologies/spree/"
+                      class="nav-dropdown-item d-block mb-1 py-2 px-2"
+                    >
                       <span class="d-flex align-items-center mb-0">
-                        <span class="d-flex justify-content-center align-items-center nav-holder service-4">
-                          <img src="/images/icons/ecommerce.svg" alt="E-commerce Apps" />
+                        <span
+                          class="d-flex justify-content-center align-items-center nav-holder service-4"
+                        >
+                          <img
+                            src="/images/icons/ecommerce.svg"
+                            alt="E-commerce Apps"
+                          />
                         </span>
                         <span class="nav-item ps-0">
-                          <span class="fw-bold nav-heading">E-commerce Apps</span>
-                          <span class="d-block nav-text">Custom, responsive website built on Shopify and Spree</span>
+                          <span class="fw-bold nav-heading"
+                            >E-commerce Apps</span
+                          >
+                          <span class="d-block nav-text"
+                            >Custom, responsive website built on Shopify and
+                            Spree</span
+                          >
                         </span>
                       </span>
                     </a>
                   </li>
                   <li class="m-0">
-                    <a href="/technologies/gatsby-js/" class="nav-dropdown-item d-block mb-1 py-2 px-2">
+                    <a
+                      href="/technologies/gatsby-js/"
+                      class="nav-dropdown-item d-block mb-1 py-2 px-2"
+                    >
                       <span class="d-flex align-items-center mb-0">
-                        <span class="d-flex justify-content-center align-items-center nav-holder service-5">
-                          <img src="/images/icons/static-site.svg" alt="Static Site" />
+                        <span
+                          class="d-flex justify-content-center align-items-center nav-holder service-5"
+                        >
+                          <img
+                            src="/images/icons/static-site.svg"
+                            alt="Static Site"
+                          />
                         </span>
                         <span class="nav-item ps-0">
                           <span class="fw-bold nav-heading">Static Site</span>
-                          <span class="d-block nav-text">Fast and efficient website with Gatsbyjs</span>
+                          <span class="d-block nav-text"
+                            >Fast and efficient website with Gatsbyjs</span
+                          >
                         </span>
                       </span>
                     </a>
@@ -169,27 +296,49 @@ const { blogPosts = [], blogCategories = [] } = Astro.props;
                 <ul class="col-6">
                   <li class="m-0">
                     <span class="text-uppercase d-block h5">Maintain</span>
-                    <a href="/services/maintenance/tests/" class="nav-dropdown-item d-block mb-1 py-2 px-2">
+                    <a
+                      href="/services/maintenance/tests/"
+                      class="nav-dropdown-item d-block mb-1 py-2 px-2"
+                    >
                       <span class="d-flex align-items-center mb-0">
-                        <span class="d-flex justify-content-center align-items-center nav-holder service-4">
-                          <img src="/images/icons/write-test.svg" alt="Write Tests" />
+                        <span
+                          class="d-flex justify-content-center align-items-center nav-holder service-4"
+                        >
+                          <img
+                            src="/images/icons/write-test.svg"
+                            alt="Write Tests"
+                          />
                         </span>
                         <span class="nav-item ps-0">
                           <span class="fw-bold nav-heading">Write Tests</span>
-                          <span class="d-block nav-text">Software test cases for Rails and ReactJS</span>
+                          <span class="d-block nav-text"
+                            >Software test cases for Rails and ReactJS</span
+                          >
                         </span>
                       </span>
                     </a>
                   </li>
                   <li class="m-0">
-                    <a href="/technologies/upgrade-your-application/" class="nav-dropdown-item d-block mb-1 py-2 px-2">
+                    <a
+                      href="/technologies/upgrade-your-application/"
+                      class="nav-dropdown-item d-block mb-1 py-2 px-2"
+                    >
                       <span class="d-flex align-items-center mb-0">
-                        <span class="d-flex justify-content-center align-items-center nav-holder service-3">
-                          <img src="/images/icons/upgrade-application.svg" alt="Upgrade Application" />
+                        <span
+                          class="d-flex justify-content-center align-items-center nav-holder service-3"
+                        >
+                          <img
+                            src="/images/icons/upgrade-application.svg"
+                            alt="Upgrade Application"
+                          />
                         </span>
                         <span class="nav-item ps-0">
-                          <span class="fw-bold nav-heading">Upgrade Application</span>
-                          <span class="d-block nav-text">Shipping new features without interruption</span>
+                          <span class="fw-bold nav-heading"
+                            >Upgrade Application</span
+                          >
+                          <span class="d-block nav-text"
+                            >Shipping new features without interruption</span
+                          >
                         </span>
                       </span>
                     </a>
@@ -208,7 +357,12 @@ const { blogPosts = [], blogCategories = [] } = Astro.props;
         </li>
 
         <li class="nav-item dropdown mb-0">
-          <a href="#" class="nav-link dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+          <a
+            href="#"
+            class="nav-link dropdown-toggle"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
             Blog
           </a>
           <div class="dropdown-menu p-0 blog-drop">
@@ -232,7 +386,9 @@ const { blogPosts = [], blogCategories = [] } = Astro.props;
 
   <!-- Mobile nav (hidden on desktop via CSS) -->
   <nav id="mobile-nav" class="navbar navbar-expand-lg navbar-light mobile-nav">
-    <div class="container mobile-navbar d-flex justify-content-between align-items-center">
+    <div
+      class="container mobile-navbar d-flex justify-content-between align-items-center"
+    >
       <button
         id="mobile-toggler"
         class="navbar-toggler mb-1"
@@ -243,9 +399,9 @@ const { blogPosts = [], blogCategories = [] } = Astro.props;
       >
         <span class="toggler-icon">
           <svg viewBox="0 0 100 65" width="30" height="30">
-            <rect y="0" width="100" height="5" />
-            <rect y="30" width="100" height="5" />
-            <rect y="60" width="100" height="5" />
+            <rect y="0" width="100" height="5"></rect>
+            <rect y="30" width="100" height="5"></rect>
+            <rect y="60" width="100" height="5"></rect>
           </svg>
         </span>
       </button>
@@ -261,14 +417,24 @@ const { blogPosts = [], blogCategories = [] } = Astro.props;
     </div>
 
     <div id="mobileNavContent" class="collapse navbar-collapse">
-      <div class="nav-content d-flex justify-content-between align-items-center mt-4">
+      <div
+        class="nav-content d-flex justify-content-between align-items-center mt-4"
+      >
         <ul class="navbar-nav nav-links ms-3">
           <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
-          <li class="nav-item"><a href="/about/" class="nav-link">About Us</a></li>
+          <li class="nav-item">
+            <a href="/about/" class="nav-link">About Us</a>
+          </li>
           <li class="nav-item"><a href="/blog/" class="nav-link">Blog</a></li>
-          <li class="nav-item"><a href="/portfolio/" class="nav-link">Portfolio</a></li>
-          <li class="nav-item"><a href="/careers/" class="nav-link">Careers</a></li>
-          <li class="nav-item"><a href="/contact/" class="nav-link">Contact Us</a></li>
+          <li class="nav-item">
+            <a href="/portfolio/" class="nav-link">Portfolio</a>
+          </li>
+          <li class="nav-item">
+            <a href="/careers/" class="nav-link">Careers</a>
+          </li>
+          <li class="nav-item">
+            <a href="/contact/" class="nav-link">Contact Us</a>
+          </li>
 
           <li class="nav-item dropdown sub-menu-parent">
             <a
@@ -281,40 +447,113 @@ const { blogPosts = [], blogCategories = [] } = Astro.props;
             </a>
             <div id="mobile-services-menu" class="collapse ps-4">
               <ul class="navbar-nav ms-auto mt-0">
-                <li class="nav-item"><a href="/hire/resources/" class="nav-link text-start">Hire Software Developers</a></li>
-                <li class="nav-item"><a href="/technologies/spree/" class="nav-link">Build E-commerce Apps</a></li>
-                <li class="nav-item"><a href="/technologies/gatsby-js/" class="nav-link">Build Static Site</a></li>
-                <li class="nav-item"><a href="/technologies/react-js/" class="nav-link">React Js</a></li>
-                <li class="nav-item"><a href="/technologies/ruby-on-rails/" class="nav-link">Ruby on Rails</a></li>
-                <li class="nav-item"><a href="/services/design/" class="nav-link">UI/UX Design services</a></li>
-                <li class="nav-item"><a href="/services/digital-marketing/" class="nav-link">Digital Marketers</a></li>
-                <li class="nav-item"><a href="/services/maintenance/tests/" class="nav-link">Maintain Write Tests</a></li>
-                <li class="nav-item"><a href="/technologies/upgrade-your-application/" class="nav-link">Maintain Upgrade Application</a></li>
+                <li class="nav-item">
+                  <a href="/hire/resources/" class="nav-link text-start"
+                    >Hire Software Developers</a>
+                </li>
+                <li class="nav-item">
+                  <a
+                    href="/services/agentic-development/"
+                    class="nav-link text-start">Agentic Development</a>
+                </li>
+                <li class="nav-item">
+                  <a href="/technologies/spree/" class="nav-link"
+                    >Build E-commerce Apps</a>
+                </li>
+                <li class="nav-item">
+                  <a href="/technologies/gatsby-js/" class="nav-link"
+                    >Build Static Site</a>
+                </li>
+                <li class="nav-item">
+                  <a href="/technologies/react-js/" class="nav-link"
+                    >React Js</a>
+                </li>
+                <li class="nav-item">
+                  <a href="/technologies/ruby-on-rails/" class="nav-link"
+                    >Ruby on Rails</a>
+                </li>
+                <li class="nav-item">
+                  <a href="/services/design/" class="nav-link"
+                    >UI/UX Design services</a>
+                </li>
+                <li class="nav-item">
+                  <a href="/services/digital-marketing/" class="nav-link"
+                    >Digital Marketers</a>
+                </li>
+                <li class="nav-item">
+                  <a href="/services/maintenance/tests/" class="nav-link"
+                    >Maintain Write Tests</a>
+                </li>
+                <li class="nav-item">
+                  <a
+                    href="/technologies/upgrade-your-application/"
+                    class="nav-link">Maintain Upgrade Application</a>
+                </li>
               </ul>
             </div>
           </li>
         </ul>
 
-        <ul class="share-link d-flex justify-content-center align-items-center flex-column p-0">
-          <li class="rotate-90 mb-5 text-secondary mt-5"><span>FIND US:</span></li>
+        <ul
+          class="share-link d-flex justify-content-center align-items-center flex-column p-0"
+        >
+          <li class="rotate-90 mb-5 text-secondary mt-5">
+            <span>FIND US:</span>
+          </li>
           <li class="mb-3">
             <a href="https://www.facebook.com/truemarktech/">
-              <div class="icon-holder d-flex justify-content-center align-items-center">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 512 512" fill="currentColor" aria-label="Facebook"><path d="M512 256C512 114.6 397.4 0 256 0S0 114.6 0 256C0 376 82.7 476.8 194.2 504.5V334.2H141.4V256h52.8V222.3c0-87.1 39.4-127.5 125-127.5c16.2 0 44.2 3.2 55.7 6.4V172c-6-.6-16.5-1-29.6-1c-42 0-58.2 15.9-58.2 57.2V256h83.6l-14.4 78.2H287V510.1C413.8 494.8 512 386.9 512 256h0z"/></svg>
+              <div
+                class="icon-holder d-flex justify-content-center align-items-center"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 512 512"
+                  fill="currentColor"
+                  aria-label="Facebook"
+                  ><path
+                    d="M512 256C512 114.6 397.4 0 256 0S0 114.6 0 256C0 376 82.7 476.8 194.2 504.5V334.2H141.4V256h52.8V222.3c0-87.1 39.4-127.5 125-127.5c16.2 0 44.2 3.2 55.7 6.4V172c-6-.6-16.5-1-29.6-1c-42 0-58.2 15.9-58.2 57.2V256h83.6l-14.4 78.2H287V510.1C413.8 494.8 512 386.9 512 256h0z"
+                  ></path></svg
+                >
               </div>
             </a>
           </li>
           <li class="mb-3">
             <a href="https://twitter.com/truemark_nepal/">
-              <div class="icon-holder d-flex justify-content-center align-items-center">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 512 512" fill="currentColor" aria-label="Twitter"><path d="M459.4 151.7c.3 4.5 .3 9.1 .3 13.6 0 138.7-105.6 298.6-298.6 298.6-59.5 0-114.7-17.2-161.1-47.1 8.4 1 16.6 1.3 25.3 1.3 49.1 0 94.2-16.6 130.3-44.8-46.1-1-84.8-31.2-98.1-72.8 6.5 1 13 1.6 19.8 1.6 9.4 0 18.8-1.3 27.6-3.6-48.1-9.7-84.1-52-84.1-103v-1.3c14 7.8 30.2 12.7 47.4 13.3-28.3-18.8-46.8-51-46.8-87.4 0-19.5 5.2-37.4 14.3-53 51.7 63.7 129.3 105.3 216.4 109.8-1.6-7.8-2.6-15.9-2.6-24 0-57.8 46.8-104.9 104.9-104.9 30.2 0 57.5 12.7 76.7 33.1 23.7-4.5 46.5-13.3 66.6-25.3-7.8 24.4-24.4 44.8-46.1 57.8 21.1-2.3 41.6-8.1 60.4-16.2-14.3 20.8-32.2 39.3-52.6 54.3z"/></svg>
+              <div
+                class="icon-holder d-flex justify-content-center align-items-center"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 512 512"
+                  fill="currentColor"
+                  aria-label="Twitter"
+                  ><path
+                    d="M459.4 151.7c.3 4.5 .3 9.1 .3 13.6 0 138.7-105.6 298.6-298.6 298.6-59.5 0-114.7-17.2-161.1-47.1 8.4 1 16.6 1.3 25.3 1.3 49.1 0 94.2-16.6 130.3-44.8-46.1-1-84.8-31.2-98.1-72.8 6.5 1 13 1.6 19.8 1.6 9.4 0 18.8-1.3 27.6-3.6-48.1-9.7-84.1-52-84.1-103v-1.3c14 7.8 30.2 12.7 47.4 13.3-28.3-18.8-46.8-51-46.8-87.4 0-19.5 5.2-37.4 14.3-53 51.7 63.7 129.3 105.3 216.4 109.8-1.6-7.8-2.6-15.9-2.6-24 0-57.8 46.8-104.9 104.9-104.9 30.2 0 57.5 12.7 76.7 33.1 23.7-4.5 46.5-13.3 66.6-25.3-7.8 24.4-24.4 44.8-46.1 57.8 21.1-2.3 41.6-8.1 60.4-16.2-14.3 20.8-32.2 39.3-52.6 54.3z"
+                  ></path></svg
+                >
               </div>
             </a>
           </li>
           <li class="mb-3">
             <a href="https://www.linkedin.com/company/truemark-technology/">
-              <div class="icon-holder d-flex justify-content-center align-items-center">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 448 512" fill="currentColor" aria-label="LinkedIn"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+              <div
+                class="icon-holder d-flex justify-content-center align-items-center"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 448 512"
+                  fill="currentColor"
+                  aria-label="LinkedIn"
+                  ><path
+                    d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"
+                  ></path></svg
+                >
               </div>
             </a>
           </li>
@@ -326,51 +565,53 @@ const { blogPosts = [], blogCategories = [] } = Astro.props;
 
 <script>
   function initMobileNav() {
-    const toggler = document.getElementById('mobile-toggler');
-    const mobileNav = document.getElementById('mobile-nav');
-    const navContent = document.getElementById('mobileNavContent');
-    const logo = document.getElementById('mobile-logo');
-    const servicesToggle = document.getElementById('mobile-services-toggle');
-    const servicesMenu = document.getElementById('mobile-services-menu');
+    const toggler = document.getElementById("mobile-toggler");
+    const mobileNav = document.getElementById("mobile-nav");
+    const navContent = document.getElementById("mobileNavContent");
+    const logo = document.getElementById("mobile-logo");
+    const servicesToggle = document.getElementById("mobile-services-toggle");
+    const servicesMenu = document.getElementById("mobile-services-menu");
 
     if (!toggler || !mobileNav || !navContent) return;
 
     let isOpen = false;
 
-    toggler.addEventListener('click', () => {
+    toggler.addEventListener("click", () => {
       isOpen = !isOpen;
-      toggler.setAttribute('aria-expanded', String(isOpen));
-      mobileNav.classList.toggle('mobile-nav-bg', isOpen);
-      navContent.classList.toggle('show', isOpen);
+      toggler.setAttribute("aria-expanded", String(isOpen));
+      mobileNav.classList.toggle("mobile-nav-bg", isOpen);
+      navContent.classList.toggle("show", isOpen);
       if (logo) {
         logo.src = isOpen
-          ? '/images/company-logo/logo_white.svg'
-          : '/images/company-logo/logo_red.svg';
+          ? "/images/company-logo/logo_white.svg"
+          : "/images/company-logo/logo_red.svg";
       }
     });
 
     if (servicesToggle && servicesMenu) {
       let servicesOpen = false;
-      servicesToggle.addEventListener('click', (e) => {
+      servicesToggle.addEventListener("click", (e) => {
         e.preventDefault();
         servicesOpen = !servicesOpen;
-        servicesToggle.setAttribute('aria-expanded', String(servicesOpen));
-        servicesMenu.classList.toggle('show', servicesOpen);
+        servicesToggle.setAttribute("aria-expanded", String(servicesOpen));
+        servicesMenu.classList.toggle("show", servicesOpen);
       });
     }
 
     // Close mobile nav when a link is clicked
-    navContent.querySelectorAll('a[href]:not(#mobile-services-toggle)').forEach((link) => {
-      link.addEventListener('click', () => {
-        isOpen = false;
-        toggler.setAttribute('aria-expanded', 'false');
-        mobileNav.classList.remove('mobile-nav-bg');
-        navContent.classList.remove('show');
-        if (logo) logo.src = '/images/company-logo/logo_red.svg';
+    navContent
+      .querySelectorAll("a[href]:not(#mobile-services-toggle)")
+      .forEach((link) => {
+        link.addEventListener("click", () => {
+          isOpen = false;
+          toggler.setAttribute("aria-expanded", "false");
+          mobileNav.classList.remove("mobile-nav-bg");
+          navContent.classList.remove("show");
+          if (logo) logo.src = "/images/company-logo/logo_red.svg";
+        });
       });
-    });
   }
 
   initMobileNav();
-  document.addEventListener('astro:after-swap', initMobileNav);
+  document.addEventListener("astro:after-swap", initMobileNav);
 </script>

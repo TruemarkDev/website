@@ -22,13 +22,13 @@ const teamBuildingBlogs = await getBlogsByTag('build-team', 3);
   keywords="Web development team, hire, Nepal"
   path="hire/resources"
 >
-  <ResourceHeroSection client:only="react" />
-  <CompanyStatsSection employeeCount={25} client:only="react" />
-  <EstimateForm forId="estimate" client:only="react" />
-  <TechStackSection client:only="react" />
-  <SingleCaseStudySection client:only="react" />
-  <EngagementModelBannerSection client:only="react" />
-  <ProcessSection client:only="react" />
+  <ResourceHeroSection client:visible />
+  <CompanyStatsSection employeeCount={25} client:visible />
+  <EstimateForm forId="estimate" client:visible />
+  <TechStackSection client:visible />
+  <SingleCaseStudySection client:visible />
+  <EngagementModelBannerSection client:visible />
+  <ProcessSection client:visible />
   <BlogSection
     blogs={featuredBlogs}
     headerTag="Insights on"
@@ -36,6 +36,6 @@ const teamBuildingBlogs = await getBlogsByTag('build-team', 3);
     buttonText="View All "
     blogRedirectRoute="/blog"
   />
-  <TeamBuildingBlogs blogs={teamBuildingBlogs} client:only="react" />
-  <SoftwareTeamSection client:only="react" />
+  <TeamBuildingBlogs blogs={teamBuildingBlogs} client:visible />
+  <SoftwareTeamSection client:visible />
 </BaseLayout>
