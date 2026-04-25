@@ -21,7 +21,8 @@ const redirects = Object.fromEntries(
 );
 
 export default defineConfig({
-  site: 'https://www.truemark.com.np',
+  site: process.env.SITE ?? 'https://www.truemark.com.np',
+  base: process.env.BASE_PATH ?? '/',
   prefetch: { defaultStrategy: 'hover' },
   integrations: [react(), mdx(), sitemap()],
   redirects,
