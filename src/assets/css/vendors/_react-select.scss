@@ -1,3 +1,4 @@
+@use '../abstracts' as *;
 // over rides react-select
 .tm__control {
   border-color: $border-color !important;

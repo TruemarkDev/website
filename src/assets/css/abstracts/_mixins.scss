@@ -1,4 +1,45 @@
+@use 'sass:map';
+
 //media-query
+$breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+);
+
+@mixin media-breakpoint-up($name) {
+  $min: map.get($breakpoints, $name);
+
+  @if $min == null {
+    @error "Unknown breakpoint `#{$name}`.";
+  } @else if $min == 0 {
+    @content;
+  } @else {
+    @media (min-width: $min) {
+      @content;
+    }
+  }
+}
+
+@mixin media-breakpoint-down($name) {
+  $max: map.get($breakpoints, $name);
+
+  @if $max == null {
+    @error "Unknown breakpoint `#{$name}`.";
+  } @else if $max == 0 {
+    @media (max-width: 0) {
+      @content;
+    }
+  } @else {
+    @media (max-width: ($max - 0.02)) {
+      @content;
+    }
+  }
+}
+
 @mixin max-break-point($point) {
   $mobile-phone: '(max-width: 576px)';
 

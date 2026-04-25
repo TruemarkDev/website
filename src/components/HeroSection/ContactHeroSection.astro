@@ -1,0 +1,37 @@
+---
+import Man from 'images/contact-us/man.png?url';
+import Arrow from 'images/contact-us/arrow.png?url';
+import SmallElement from 'images/contact-us/small-element.svg?url';
+---
+
+<section class="section hero-section-contact position-relative overflow-hidden">
+    <div class="container position-relative h-100">
+      <div class="d-flex align-items-center justify-content-center h-100">
+        <div>
+          <p class="text-center">Contact us</p>
+          <h1 class="text-center position-relative contact-us-heading">
+            We'd love to hear from you
+          </h1>
+        </div>
+      </div>
+      <div class="position-absolute img-man">
+        <img src={Man} alt="" class="img-fluid" />
+      </div>
+
+      <div class="position-absolute img-arrow">
+        <img src={Arrow} alt="" class="img-fluid" />
+      </div>
+
+      <div class="position-absolute small-element">
+        <img src={SmallElement} alt="" class="img-fluid" />
+      </div>
+
+      <div class="position-absolute blur-pinkback"></div>
+      <div class="position-absolute blur-blueback"></div>
+
+      <div class="position-absolute left-icons"></div>
+      <div class="position-absolute right-icons"></div>
+    </div>
+
+    <div class="position-absolute circle-left"></div>
+  </section>

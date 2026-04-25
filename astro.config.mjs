@@ -55,7 +55,6 @@ export default defineConfig({
         scss: {
           quietDeps: true,
           loadPaths: [path.join(__dirname, 'node_modules')],
-          silenceDeprecations: ['import', 'global-builtin', 'color-functions', 'legacy-js-api', 'if-function', 'slash-div', 'function-units'],
         },
       },
     },

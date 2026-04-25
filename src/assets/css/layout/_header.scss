@@ -1,4 +1,4 @@
-@import '../abstracts/mixins';
+@use '../abstracts' as *;
 
 .nav-bg {
   // @amnish hardcoded color, why do we need to manually import mixin above

@@ -1,3 +1,4 @@
+@use '../abstracts' as *;
 .newsletter-subscribe-form {
   .form-control {
     @include border-radius-right(0);

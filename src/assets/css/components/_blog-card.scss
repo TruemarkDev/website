@@ -1,3 +1,4 @@
+@use '../abstracts' as *;
 .blog-card {
   @include box-shadow(0, 0.03em, $primary-box-shadow, 0.15em);
   border: none;

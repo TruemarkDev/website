@@ -1,3 +1,4 @@
+@use '../abstracts' as *;
 .container-footer {
   &:after {
     content: '';

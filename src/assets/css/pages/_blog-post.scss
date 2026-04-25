@@ -1,3 +1,4 @@
+@use '../abstracts' as *;
 .blog-content {
   // Inline body images must never overflow the article column
   // (otherwise they paint over the right-hand related-posts sidebar).

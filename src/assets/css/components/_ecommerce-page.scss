@@ -1,3 +1,4 @@
+@use '../abstracts' as *;
 .spreeandshopify-model {
   @include border-radius(0.6em);
   @include box-shadow(0, 0.03em, $dark-overlay, 0.15em);

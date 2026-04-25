@@ -1,3 +1,4 @@
+@use '../abstracts' as *;
 body.modal-open {
   overflow: hidden !important;
 }

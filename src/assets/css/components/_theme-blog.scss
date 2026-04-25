@@ -1,14 +1,15 @@
+@use '../abstracts' as *;
 // Legacy blog styles kept locally for the migrated blog post sidebar,
 // related-posts list, blog cards, and minimised TOC.
 
-@import './theme-blog-layouts/blog-details';
-@import './theme-blog-layouts/blog-section';
-@import './theme-blog-layouts/card';
-@import './theme-blog-layouts/blog-minimized-toc';
-@import './theme-blog-layouts/social-share';
-@import './theme-blog-components/blog-section';
-@import './theme-blog-components/blog-toc';
-@import './theme-blog-components/card';
+@use './theme-blog-layouts/blog-details' as *;
+@use './theme-blog-layouts/blog-section' as *;
+@use './theme-blog-layouts/card' as *;
+@use './theme-blog-layouts/blog-minimized-toc' as *;
+@use './theme-blog-layouts/social-share' as *;
+@use './theme-blog-components/blog-section' as *;
+@use './theme-blog-components/blog-toc' as *;
+@use './theme-blog-components/card' as *;
 
 // Defensive: keep article-body images inside their column so they cannot
 // paint over the right-hand related-posts rail at any breakpoint.

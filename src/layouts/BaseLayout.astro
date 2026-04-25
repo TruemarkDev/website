@@ -1,7 +1,9 @@
 ---
 import 'assets/css/main.scss';
 import '@fortawesome/fontawesome-svg-core/styles.css';
+import 'nouislider/dist/nouislider.css';
 import 'nprogress/nprogress.css';
+import 'react-phone-input-2/lib/plain.css';
 import { ClientRouter } from 'astro:transitions';
 import { siteMetadata } from '../lib/site-metadata';
 import { organizationJsonLd, websiteJsonLd, breadcrumbJsonLd } from '../lib/jsonld';
@@ -60,6 +62,12 @@ const [megaBlogs, megaCategories] = await Promise.all([
     <meta name="theme-color" content={themeColor} />
     <link rel="canonical" href={pageUrl} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700&family=Ubuntu:wght@400;500;700&family=Ballet:opsz@16..72&family=Grenze:wght@400;500;700&display=swap"
+    />
 
     {/* Open Graph */}
     <meta property="og:type" content="website" />
