@@ -3,6 +3,7 @@ import 'assets/css/main.scss';
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import 'nprogress/nprogress.css';
 import { siteMetadata } from '../lib/site-metadata';
+import { organizationJsonLd, websiteJsonLd, breadcrumbJsonLd } from '../lib/jsonld';
 
 import TopMenu from '../components/Menu/Header/TopMenu.jsx';
 import FormCTASection from '../components/Footer/CTA/FormCTASection.jsx';
@@ -33,6 +34,10 @@ const {
 
 const pageUrl = new URL(path ?? '', Astro.site ?? siteMetadata.siteUrl).toString();
 const themeColor = '#ff5757';
+
+const orgSchema = organizationJsonLd();
+const siteSchema = websiteJsonLd();
+const breadcrumbSchema = breadcrumbJsonLd(path ?? '');
 
 // Mega-menu data: every page builds the same blog-category dropdown, so fetch
 // once at SSR time and feed it into the TopMenu island as props.
@@ -68,6 +73,12 @@ const [megaBlogs, megaCategories] = await Promise.all([
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     {image && <meta name="twitter:image" content={image} />}
+
+    <script type="application/ld+json" set:html={JSON.stringify(orgSchema)}></script>
+    <script type="application/ld+json" set:html={JSON.stringify(siteSchema)}></script>
+    {breadcrumbSchema && (
+      <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)}></script>
+    )}
 
     <script is:inline>
       (function () {

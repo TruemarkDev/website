@@ -1,7 +1,7 @@
 // Static replacement for Gatsby's siteMetadata exposed via SiteTitleQuery.
 // Mirrors the values defined in the original gatsby-config.mjs.
 export const siteMetadata = {
-  siteUrl: 'https://www.truemark.dev',
+  siteUrl: 'https://www.truemark.com.np',
   title:
     'Truemark | Outsource your project without compromising on code quality',
   description:

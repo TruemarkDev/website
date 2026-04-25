@@ -1,8 +1,157 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import PageBody from '../../components/PagesReact/case-studies/flexonet.jsx';
+import {
+  faClock,
+  faUsers,
+  faList,
+  faIndustry,
+  faLayerGroup,
+  faDatabase,
+  faGlobe,
+} from '@fortawesome/free-solid-svg-icons';
+import { faReact } from '@fortawesome/free-brands-svg-icons';
+import flexonetTestimonials from '../../constants/testimonials/flexonet';
+import HeroSection from '../../components/CaseStudy/Section/HeroSection';
+import SingleTestimonialSection from '../../components/CaseStudy/SingleTestimonial';
+import BackStory from '../../components/CaseStudy/BackStory';
+import ProjectPlanning from '../../components/CaseStudy/ProjectPlanning';
+import ProjectChallenge from '../../components/CaseStudy/ProjectChallenge/Index';
+import ProjectFeatures from '../../components/CaseStudy/ProjectFeatures';
+import ResultSection from '../../components/CaseStudy/ResultSection/Index';
+import TechnologyUsedSection from '../../components/CaseStudy/TechnologyUsedSection/Index';
+import CaseStudyCTA from '../../components/CaseStudy/CaseStudyCTA';
+import TestimonialSection from '../../components/Testimonial/Section/TestimonialSection';
+
+const ronni = '/images/clients/ronni/ronni.webp';
+const BannerImg = '/images/case-study/trivia-day/feature-image.png';
+const ctaProjectImage = '/images/portfolio/trivia-day.png';
+
+const HERO_SECTION_DATA = {
+  title: 'Custom Telecom Solutions',
+  tags: ['Ruby on Rails', 'ReactJS', 'React Native'],
+  description: 'Custom solutions for customer management and telecom billing',
+  appUrls: { web: 'https://flexonet.dk/' },
+  projectStats: {
+    completion_time: { icon: faClock, title: 'Project Status', stats: 'Ongoing' },
+    members: { icon: faUsers, title: 'Team members', stats: '3 people' },
+    platform: { icon: faLayerGroup, title: 'Platform', stats: 'Web, Android and iOS' },
+    scope: { icon: faList, title: 'Type', stats: 'ERP, Custom Solutions' },
+    industry: { icon: faIndustry, title: 'Industry', stats: 'Telecommunication' },
+  },
+};
+
+const TESTIMONIAL_DATA = {
+  feedback:
+    'Truemark has been a valued partner in building solutions we use in Flexonet for more than 2 years now. If you are building custom solutions for your company, then Truemark is the right choice!',
+  author: { name: 'Ronni Poulsen', avatar: ronni, organization: 'Flexonet A/S', position: 'Owner' },
+};
+
+const BACK_STORY = {
+  title: 'Backstory',
+  description:
+    '<p>Ronni Poulsen, owner of Flexonet Aps, felt that the current customer management app used in the company was outdated and very slow. Everything was custom made and cumbersome to maintain. It was cumbersome to maintain. </p><p>He then came up with the idea to integrate <a href="https://www.odoo.com/" rel="noopener nofollow">ODOO</a> with the new ERP that was in planning. ODOO provides customer management, invoice management, bank integrations for receiving and making payments and much more. Final thing now was to build a custom web app and integrate ODOO inside it.</p><p>In search for remote companies and great freelancers in ReactJS and Rails, he found our company "Truemark" through Upwork.</p><p> The work first started with Customer Management Web App and now we are concurrently building Pbx management, Telecom billing, Flexonet Landing Page and soon to come Telecom Customer portal for letting users manage their cell phone and pbx services both in web and mobile.</p>',
+};
+
+const PROJECT_PLANNING_DATA = {
+  input: ['Existing customer management web app', 'List of required features', 'Documentation for integration with ODOO', 'Project release deadline'],
+  analysis: ['Held over 5 meetings for clarity of requirements', 'Analysed existing web applications'],
+  outcome: ['Database design for the application', 'Putting a project team together', 'Project Roadmap'],
+};
+
+const PROJECT_CHALLENGE_DATA = {
+  title: 'Project Challenges',
+  challenges: [
+    {
+      line1: 'Integration with ',
+      line2: 'ODOO',
+      description:
+        '<p>Normally, with Rails applications, there are gems for the majority of the services but there wasn’t one for ODOO. Luckily, there were API endpoints we could use with XML RPC. Next thing we had to do was build our own service to connect with the ODOO API and perform CRUD operations with it.</p>',
+    },
+    {
+      line1: 'Login Feature for',
+      line2: 'Customers',
+      description:
+        '<p>Flexonet normally provides services to small and big companies so customers for them are debtors (or company). And these customers were created in ODOO as it provides customer management out of the box, and also a lot easier to manage invoices with. The challenge for us now was to allow users from the customers company to access the data in our web app.</p><p>We did that by maintaining records of odoo record id, and using that to fetch related records from the ODOO while other user information like names and passwords were inside the database of our web app.</p>',
+    },
+    {
+      line1: 'Integration with ',
+      line2: 'Multiple database and services',
+      description:
+        '<p>Currently we have built two web apps; one for customer management and another for telecom rating and billing. And together with ODOO API and database for yet another service to manage all PBX, the customer management app is connected to 4 different APIs for various purposes.</p><p>We have made this possible by extracting and separating services to their own small applications (also called engine in Rails), this way we are able to use all APIs and databases without making the main app messy and harder to maintain for future developers.</p>',
+    },
+  ],
+};
+
+const PROJECT_FEATURE_DATA = [
+  {
+    heading: 'Fast Interface',
+    detail:
+      '<p>One of the reasons for redeveloping features and creating the current customer management application was because the existing application was very slow. Either it be while invoicing customers or normal speed.</p><p>With ReactJS as a frontend and Rails as an API we resolved the issue of the speed very easily. All APIs are optimized and every UI loads in a matter of a second.</p>',
+    image: BannerImg,
+  },
+  {
+    heading: 'Features of multiple platforms in one place',
+    detail:
+      '<p>With the current application, the client can now manage customers of the company, all PBX in the company and invoices right from the web app.</p><p>It has made the invoicing a breeze to handle and has saved a lot of time of the client which would have otherwise gone in manually maintaining these invoices in ODOO. With the web app everything is connected and in one place.<p>',
+    image: BannerImg,
+  },
+  {
+    heading: 'Automation',
+    detail:
+      '<p>With the custom solutions developed for Flexonet, it has helped Flexonet to automate some parts of their business<ul className="feature-detail-list"><li>Pbx creation and syncing from Customer Management App with Pbx server</li><li>Telecom usage billing integrated with customer subscriptions invoices</li></ul></p>',
+    image: BannerImg,
+  },
+];
+
+const RESULT_DATA = {
+  title: 'Result',
+  description:
+    'We developed 3+ counting web and mobile applications that were fast and helped the client to manage all services and features from one place.',
+  appUrls: HERO_SECTION_DATA.appUrls,
+};
+
+const TECHNOLOGY_STACK_DATA = [
+  { stack: 'Frontend', technologyList: [{ technology: 'ReactJS', icon: faReact, techColorClass: 'react-native' }] },
+  { stack: 'Mobile', technologyList: [{ technology: 'React Native', icon: faReact, techColorClass: 'react-native' }] },
+  {
+    stack: 'Backend',
+    technologyList: [
+      { technology: 'Ruby on Rails', icon: faReact, techColorClass: 'react-native' },
+      { technology: 'Postgres', icon: faDatabase, techColorClass: 'postgres' },
+    ],
+  },
+  { stack: 'Release', technologyList: [{ technology: 'Website', icon: faGlobe, techColorClass: 'react-native' }] },
+];
+
+const CTA_DATA = {
+  project: 'Flexonet',
+  cta: 'Are you developing custom solutions for your business?',
+  description: 'Our experience in developing custom telecom solutions like for Flexonet could greatly excel your development.',
+  projectImage: ctaProjectImage,
+};
 ---
 
-<BaseLayout title="Truemark | Case Study: Flexonet" path="case-studies/flexonet" forCaseStudy={true}>
-  <PageBody client:only="react" />
+<BaseLayout
+  title="Truemark | Flexonet Case Study"
+  description="Custom solutions for customer management and telecom billing | Truemark | Software Development Team | Nepal | Remote | Case Study"
+  keywords="Flexonet, Truemark Technology, Case Study, odoo"
+  image="/images/case-study/trivia-day/featured.png"
+  path="case-studies/flexonet"
+  forCaseStudy={true}
+>
+  <HeroSection heroSectionData={HERO_SECTION_DATA} client:only="react" />
+  <SingleTestimonialSection {...TESTIMONIAL_DATA} client:only="react" />
+  <BackStory {...BACK_STORY} client:only="react" />
+  <ProjectPlanning {...PROJECT_PLANNING_DATA} client:only="react" />
+  <ProjectChallenge {...PROJECT_CHALLENGE_DATA} client:only="react" />
+  <ProjectFeatures features={PROJECT_FEATURE_DATA} client:only="react" />
+  <ResultSection {...RESULT_DATA} client:only="react" />
+  <TechnologyUsedSection technologyStacks={TECHNOLOGY_STACK_DATA} client:only="react" />
+  <CaseStudyCTA {...CTA_DATA} client:only="react" />
+  <TestimonialSection
+    items={flexonetTestimonials}
+    sectionTitle="Feedback"
+    sectionSubheading="From The Client"
+    client:only="react"
+  />
 </BaseLayout>

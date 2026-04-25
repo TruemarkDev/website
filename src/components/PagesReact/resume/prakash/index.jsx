@@ -125,8 +125,8 @@ const profile = {
       start: { year: 2017, month: 10 },
       startDate: '2017-10-01',
       summary: '',
-      url: 'https://www.truemark.dev/',
-      website: 'https://www.truemark.dev/',
+      url: 'https://www.truemark.com.np/',
+      website: 'https://www.truemark.com.np/',
     },
     {
       name: 'Leapfrog Technology ',

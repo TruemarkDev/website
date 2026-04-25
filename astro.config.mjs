@@ -1,9 +1,7 @@
 import { defineConfig } from 'astro/config';
 import react from '@astrojs/react';
 import mdx from '@astrojs/mdx';
-// Sitemap is omitted while routes are being stabilised; re-enable once
-// `astro/sitemap` works with the project's redirect map.
-// import sitemap from '@astrojs/sitemap';
+import sitemap from '@astrojs/sitemap';
 import remarkGfm from 'remark-gfm';
 import rehypeSlug from 'rehype-slug';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
@@ -22,8 +20,8 @@ const redirects = Object.fromEntries(
 );
 
 export default defineConfig({
-  site: 'https://www.truemark.dev',
-  integrations: [react(), mdx()],
+  site: 'https://www.truemark.com.np',
+  integrations: [react(), mdx(), sitemap()],
   redirects,
   markdown: {
     remarkPlugins: [remarkGfm],
@@ -59,7 +57,6 @@ export default defineConfig({
         components: path.join(__dirname, 'src/components'),
         constants: path.join(__dirname, 'src/constants'),
         services: path.join(__dirname, 'src/services'),
-        templates: path.join(__dirname, 'src/templates'),
         utils: path.join(__dirname, 'src/utils'),
         providers: path.join(__dirname, 'src/providers'),
         src: path.join(__dirname, 'src'),

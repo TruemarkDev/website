@@ -124,7 +124,7 @@ However, building on both platforms also depends on many factors such as
 
 It can be challenging for a startup to target both platforms since there might be a problem with funds at an initial stage. But for successful businesses, it might not be an issue. 
 
-Moreover, it depends on the users, whether they will be using your app or not. If the app fulfills their needs and the demand is high, you can release it on both platforms. For this, first, you need to [validate your ideas](https://www.truemark.dev/blog/ways-to-validate-business-idea/#) and build [an MVP](https://www.truemark.dev/blog/3-questions-about-mvp/#). This way, it will be easier for you to know the feasibility of making the app on both operating systems. 
+Moreover, it depends on the users, whether they will be using your app or not. If the app fulfills their needs and the demand is high, you can release it on both platforms. For this, first, you need to [validate your ideas](https://www.truemark.com.np/blog/ways-to-validate-business-idea/#) and build [an MVP](https://www.truemark.com.np/blog/3-questions-about-mvp/#). This way, it will be easier for you to know the feasibility of making the app on both operating systems. 
 
 **In Conclusion**
 

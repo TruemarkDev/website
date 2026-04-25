@@ -212,7 +212,7 @@ If you are looking forward to building an app like Netflix, then feel free to co
 
 Recently, we worked on a similar project, Reduct.Video. 
 
-More about the project in our [portfolio](https://www.truemark.dev/portfolio/). 
+More about the project in our [portfolio](https://www.truemark.com.np/portfolio/). 
 
 What is Reduct.Video about?
 

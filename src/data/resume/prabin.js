@@ -1,4 +1,4 @@
-import React from 'react';
+import { TECH_CONSTANTS, EXP_CONSTANTS } from '../../constants/formConstants';
 
 const userImg = '/images/author/prabin.jpg';
 const reneldyAvatar = '/images/clients/reneldy/reneldy.jpeg';
@@ -8,26 +8,12 @@ const ronniAvatar = '/images/clients/ronni/ronni.webp';
 const projectSoono = '/images/clients/mack/projects/mysoono-com.png';
 const projectFlexonet = '/images/clients/ronni/projects/flexonet.png';
 const projectTriviaDay = '/images/clients/reneldy/projects/triviaday-net.png';
-const prabinMetaImage = '/images/meta-images/resume/prabin.webp';
-import { TECH_CONSTANTS, EXP_CONSTANTS } from 'src/constants/formConstants';
 
-import Layout from 'components/Layout/Layout';
-import FetchedDataTemplete from 'components/CV/FetchedDataTemplete';
-
-const pageMetaData = {
-  title: 'Prabin Poudel | Senior Ruby Developer From Kathmandu',
-  description: 'Truemark | Software Development Team | Nepal | Remote',
-  keywords:
-    'About Truemark, Truemark Technology, Remote Software Development Team',
-  slug: 'resume/prabin',
-  featuredImage: { src: prabinMetaImage },
-};
-
-const profile = {
+export const profile = {
   basics: {
     name: 'Prabin Poudel',
-    firstName: 'Prabin', // this is added : doesnot contain in api
-    authorId: 'Prabin', // this is added : doesnot contain in api
+    firstName: 'Prabin',
+    authorId: 'Prabin',
     label: 'Senior Rails Dev and CEO @ Truemark Technology',
     image: userImg,
     summary:
@@ -38,11 +24,11 @@ const profile = {
       region: '',
       city: 'Kathmandu',
       countryCode: 'NP',
-      country: 'Nepal', // this is added : doesnot contain in api
-      timeZone: 'ASIA/KATHMANDU', // this is added : doesnot contain in api
+      country: 'Nepal',
+      timeZone: 'ASIA/KATHMANDU',
     },
-    platform: ['web', 'mobile'], // this is added : doesnot contain in api
-    teamExperience: EXP_CONSTANTS.SENIOR, // this is added : doesnot contain in api
+    platform: ['web', 'mobile'],
+    teamExperience: EXP_CONSTANTS.SENIOR,
     technologyUsed: [
       TECH_CONSTANTS.RAILS,
       TECH_CONSTANTS.SOFTWARE_ARCHITECTURE,
@@ -51,11 +37,7 @@ const profile = {
       TECH_CONSTANTS.PROJECT_MANAGEMENT,
       TECH_CONSTANTS.GATSBYJS,
     ],
-    defaultRate: {
-      // this is added : doesnot contain in api
-      lowerValue: 25,
-      upperValue: 50,
-    },
+    defaultRate: { lowerValue: 25, upperValue: 50 },
     profiles: [],
   },
   clientFeedbacks: [
@@ -95,38 +77,14 @@ const profile = {
       createdDate: '2020-08-01',
       updatedDate: '2020-08-01',
     },
-  ], // this is added : doesnot contain in api
-  otherExperiences: [], // should be in format of skills
+  ],
+  otherExperiences: [],
   volunteer: [],
   skills: [
-    {
-      name: 'Ruby on Rails',
-      level: 'Expert',
-      keywords: [],
-      rating: 5,
-      yearsOfExperience: '4+',
-    },
-    {
-      name: 'React JS',
-      level: 'Expert',
-      keywords: [],
-      rating: 5,
-      yearsOfExperience: '3+',
-    },
-    {
-      name: 'React Native',
-      level: 'Expert',
-      keywords: [],
-      rating: 5,
-      yearsOfExperience: '3+',
-    },
-    {
-      name: 'Project Management',
-      level: 'Intermediate',
-      keywords: [],
-      rating: 5,
-      yearsOfExperience: '2+',
-    },
+    { name: 'Ruby on Rails', level: 'Expert', keywords: [], rating: 5, yearsOfExperience: '4+' },
+    { name: 'React JS', level: 'Expert', keywords: [], rating: 5, yearsOfExperience: '3+' },
+    { name: 'React Native', level: 'Expert', keywords: [], rating: 5, yearsOfExperience: '3+' },
+    { name: 'Project Management', level: 'Intermediate', keywords: [], rating: 5, yearsOfExperience: '2+' },
   ],
   work: [
     {
@@ -146,8 +104,8 @@ const profile = {
       start: { year: 2018, month: 2 },
       startDate: '2018-02-01',
       summary: '',
-      url: 'https://www.truemark.dev/',
-      website: 'https://www.truemark.dev/',
+      url: 'https://www.truemark.com.np/',
+      website: 'https://www.truemark.com.np/',
     },
   ],
   projects: [
@@ -159,16 +117,10 @@ const profile = {
       endDate: '',
       highlights: [],
       images: [projectTriviaDay],
-      caseStudyLink: undefined, // this is added : doesnot contain in api
-      showcase: [
-        {
-          images: [projectTriviaDay],
-          title: '',
-          description: '',
-        },
-      ],
+      caseStudyLink: undefined,
+      showcase: [{ images: [projectTriviaDay], title: '', description: '' }],
       keywords: ['Node JS', 'Postgres', 'React Native'],
-      isFeatured: true, // this is added : doesnot contain in api
+      isFeatured: true,
       roles: [],
       entity: '',
       type: '',
@@ -180,17 +132,11 @@ const profile = {
       startDate: '',
       endDate: '',
       highlights: [],
-      caseStudyLink: undefined, // this is added : doesnot contain in api
+      caseStudyLink: undefined,
       images: [projectSoono],
-      showcase: [
-        {
-          images: [projectSoono],
-          title: '',
-          description: '',
-        },
-      ],
+      showcase: [{ images: [projectSoono], title: '', description: '' }],
       keywords: ['Ruby on Rails', 'Postgres', 'React JS'],
-      isFeatured: true, // this is added : doesnot contain in api
+      isFeatured: true,
       roles: [],
       entity: '',
       type: '',
@@ -202,66 +148,23 @@ const profile = {
       startDate: '',
       endDate: '',
       highlights: [],
-      caseStudyLink: undefined, // this is added : doesnot contain in api
+      caseStudyLink: undefined,
       images: [projectFlexonet],
-      showcase: [
-        {
-          images: [projectFlexonet],
-          title: '',
-          description: '',
-        },
-      ],
+      showcase: [{ images: [projectFlexonet], title: '', description: '' }],
       keywords: ['Ruby on Rails', 'Postgres', 'React JS', 'React Native'],
-      isFeatured: true, // this is added : doesnot contain in api
+      isFeatured: true,
       roles: [],
       entity: '',
       type: '',
     },
   ],
   tools: [
-    // this is added : doesnot contain in api
-    {
-      name: 'Amazon Web Services',
-      yearsOfExperience: 1,
-      level: 'Well Versed',
-      keywords: [],
-      rating: 3,
-    },
-    {
-      name: 'Digital Ocean',
-      yearsOfExperience: 3,
-      level: 'Expert',
-      keywords: [],
-      rating: 5,
-    },
-    {
-      name: 'Heroku',
-      yearsOfExperience: 3,
-      level: 'Expert',
-      keywords: [],
-      rating: 5,
-    },
-    {
-      name: 'Nginx',
-      yearsOfExperience: 3,
-      level: 'Well Versed',
-      keywords: [],
-      rating: 4,
-    },
-    {
-      name: 'Trello',
-      yearsOfExperience: 4,
-      level: 'Expert',
-      keywords: [],
-      rating: 5,
-    },
-    {
-      name: 'Scrum',
-      yearsOfExperience: 3,
-      level: 'Expert',
-      keywords: [],
-      rating: 4,
-    },
+    { name: 'Amazon Web Services', yearsOfExperience: 1, level: 'Well Versed', keywords: [], rating: 3 },
+    { name: 'Digital Ocean', yearsOfExperience: 3, level: 'Expert', keywords: [], rating: 5 },
+    { name: 'Heroku', yearsOfExperience: 3, level: 'Expert', keywords: [], rating: 5 },
+    { name: 'Nginx', yearsOfExperience: 3, level: 'Well Versed', keywords: [], rating: 4 },
+    { name: 'Trello', yearsOfExperience: 4, level: 'Expert', keywords: [], rating: 5 },
+    { name: 'Scrum', yearsOfExperience: 3, level: 'Expert', keywords: [], rating: 4 },
   ],
   education: [
     {
@@ -289,11 +192,3 @@ const profile = {
   references: [],
   meta: {},
 };
-
-const AboutPage = ({ blogs }) => (
-  <Layout pageMetaData={pageMetaData} path={pageMetaData.slug}>
-    <FetchedDataTemplete profile={profile} blogs={blogs} />
-  </Layout>
-);
-
-export default AboutPage;

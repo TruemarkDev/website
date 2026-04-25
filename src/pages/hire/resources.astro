@@ -1,6 +1,15 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import PageBody from '../../components/PagesReact/hire/resources.jsx';
+import TechStackSection from '../../components/Company/Section/TechStackSection';
+import SingleCaseStudySection from '../../components/CaseStudy/Section/SingleCaseStudySection';
+import CompanyStatsSection from '../../components/Stats/Section/CompanyStatsSection';
+import SoftwareTeamSection from '../../components/Team/Section/SoftwareTeamSection';
+import TeamBuildingBlogs from '../../components/Blog/Section/TeamBuildingBlogs';
+import ResourceHeroSection from '../../components/HeroSection/ResourceHeroSection';
+import EngagementModelBannerSection from '../../components/Banner/EngagementModelBannerSection';
+import ProcessSection from '../../components/Company/Section/ProcessSection';
+import EstimateForm from '../../components/Estimate/EstimateForm';
+import { BlogSection } from '../../theme/index.js';
 import { getFeaturedBlogs, getBlogsByTag } from '../../lib/blog-data';
 
 const featuredBlogs = await getFeaturedBlogs(3);
@@ -8,9 +17,26 @@ const teamBuildingBlogs = await getBlogsByTag('build-team', 3);
 ---
 
 <BaseLayout
-  title="Truemark | Hire Resources"
-  description="Hire dedicated resources from Truemark."
+  title="Truemark | Work with best software developers from Nepal"
+  description="Truemark | We provide 'Talented Nepalese Engineers' to ambitious companies around the world"
+  keywords="Web development team, hire, Nepal"
   path="hire/resources"
 >
-  <PageBody data={{ featuredBlogs, teamBuildingBlogs }} client:only="react" />
+  <ResourceHeroSection client:only="react" />
+  <CompanyStatsSection employeeCount={25} client:only="react" />
+  <EstimateForm forId="estimate" client:only="react" />
+  <TechStackSection client:only="react" />
+  <SingleCaseStudySection client:only="react" />
+  <EngagementModelBannerSection client:only="react" />
+  <ProcessSection client:only="react" />
+  <BlogSection
+    blogs={featuredBlogs}
+    headerTag="Insights on"
+    heading="Building Right Development Team"
+    buttonText="View All "
+    blogRedirectRoute="/blog"
+    client:only="react"
+  />
+  <TeamBuildingBlogs blogs={teamBuildingBlogs} client:only="react" />
+  <SoftwareTeamSection client:only="react" />
 </BaseLayout>

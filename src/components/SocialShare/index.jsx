@@ -13,7 +13,7 @@ import {
 } from 'react-share';
 
 const SocialShare = ({ description, path, tags, className }) => {
-  const url = `https://www.truemark.dev${path || '/'}`;
+  const url = `https://www.truemark.com.np${path || '/'}`;
   const classNames = ['social-box-container', 'mt-4', 'mt-md-0'];
   classNames.push(className);
   return (

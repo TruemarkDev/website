@@ -205,13 +205,13 @@ Here is a rough estimation of the total development cost based on the average ho
 
 As you can see above, the development cost of building an app like Uber Eats cost approximately $111,000.
 
-We provide a free consultation service to our customers. So, get a thorough estimation by [contacting us](https://www.truemark.dev/).
+We provide a free consultation service to our customers. So, get a thorough estimation by [contacting us](https://www.truemark.com.np/).
 
 **Planning to make an app like Uber Eats?**
 
 The popularity and the craze for food delivery apps are increasing with the rise in the Internet and mobile usage. If you plan to make an app like Uber Eats, please feel free to get in touch with us. 
 
-Truemark Technology is a software company providing its services for the past five years. Recently, we worked on a similar project, LoveWithFood. See full detail in our [portfolio](https://www.truemark.dev/portfolio/).
+Truemark Technology is a software company providing its services for the past five years. Recently, we worked on a similar project, LoveWithFood. See full detail in our [portfolio](https://www.truemark.com.np/portfolio/).
 
 Don't hesitate to reach us for a free consultation. Call us or send us a message or an email to get a more accurate estimation of making a food delivery app like Uber Eats and discuss the project's details.  
 

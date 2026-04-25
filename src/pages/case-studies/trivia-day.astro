@@ -1,8 +1,163 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import PageBody from '../../components/PagesReact/case-studies/trivia-day.jsx';
+import {
+  faClock,
+  faUsers,
+  faList,
+  faIndustry,
+  faLayerGroup,
+  faDatabase,
+} from '@fortawesome/free-solid-svg-icons';
+import { faAppStoreIos, faGooglePlay, faNodeJs, faReact } from '@fortawesome/free-brands-svg-icons';
+import triviaDayTestimonials from '../../constants/testimonials/triviaDay';
+import HeroSection from '../../components/CaseStudy/Section/HeroSection';
+import SingleTestimonialSection from '../../components/CaseStudy/SingleTestimonial';
+import BackStory from '../../components/CaseStudy/BackStory';
+import ProjectPlanning from '../../components/CaseStudy/ProjectPlanning';
+import ProjectChallenge from '../../components/CaseStudy/ProjectChallenge/Index';
+import ProjectFeatures from '../../components/CaseStudy/ProjectFeatures';
+import ResultSection from '../../components/CaseStudy/ResultSection/Index';
+import TechnologyUsedSection from '../../components/CaseStudy/TechnologyUsedSection/Index';
+import CaseStudyCTA from '../../components/CaseStudy/CaseStudyCTA';
+import TestimonialSection from '../../components/Testimonial/Section/TestimonialSection';
+
+const reneldy = '/images/clients/reneldy/reneldy.jpeg';
+const BannerImg = '/images/case-study/trivia-day/feature-image.png';
+const ctaProjectImage = '/images/portfolio/trivia-day.png';
+
+const APP_URLS = {
+  web: 'https://www.triviaday.net/',
+  ios: 'https://apps.apple.com/us/app/trivia-day/id1419081111',
+  android: 'https://play.google.com/store/apps/details?id=com.trivia_day',
+};
+
+const HERO_SECTION_DATA = {
+  title: 'A fun party game for trivia lovers',
+  tags: ['Mobile Game', 'React Native'],
+  description:
+    'Trivia Day is a competitive trivia game where teams, families, and friends can get together for a few brief rounds of challenging trivia that leads to a ton of fun.',
+  appUrls: APP_URLS,
+  projectStats: {
+    completion_time: { icon: faClock, title: 'Completion Time', stats: '6 mos' },
+    members: { icon: faUsers, title: 'Team members', stats: '4 people' },
+    platform: { icon: faLayerGroup, title: 'Platform', stats: 'Android and iOS' },
+    scope: { icon: faList, title: 'Type', stats: 'Mvp' },
+    industry: { icon: faIndustry, title: 'Industry', stats: 'Mobile Gaming' },
+  },
+};
+
+const TESTIMONIAL_DATA = {
+  feedback:
+    'The Truemark team has a wide-range of expertise in modern languages, frameworks and technologies.',
+  author: { name: 'Reneldy Senat', avatar: reneldy, organization: 'Trivia Day', position: 'Owner' },
+};
+
+const BACK_STORY = {
+  title: 'Backstory',
+  description:
+    '<p>There is a culture in car gurus that every tuesday, whole team comes together to play Trivia. Most of the time in these session were being spend in finding good trivias. So an Idea emerged, to develop a multi player trivia, that you can schedule. And on the scheduled time everyone will get into the app and play. This would also work great for parties and get togethers.</p>',
+};
+
+const PROJECT_PLANNING_DATA = {
+  input: ['Business Model', 'Initial Design Concept', 'List of required features', 'Project release deadline'],
+  analysis: ['Held over 5 meetings so we were on same page on the requirements provided'],
+  outcome: ['Database design for the game', 'UI/UX requirements'],
+};
+
+const PROJECT_CHALLENGE_DATA = {
+  title: 'Project Challenges',
+  challenges: [
+    {
+      line1: 'Huge Trivia',
+      line2: 'Question Collection',
+      description:
+        '<p>A trivia game is nothing without a huge set of questions. Since we had limited time, it would not have been possible to build a great game had we allowed ourselves to get distracted into this mammoth task of adding thousands of trivia questions. We chose to go with opentdb, which really accelerated our development time.</p>',
+    },
+    {
+      line1: 'Chat Functionality',
+      line2: 'with React Native',
+      description:
+        '<p>A trivia game is nothing without a huge set of questions. Since we had limited time, it would not have been possible to build a great game had we allowed ourselves to get distracted into this mammoth task of adding thousands of trivia questions. We chose to go with opentdb, which really accelerated our development time.</p>',
+    },
+  ],
+};
+
+const PROJECT_FEATURE_DATA = [
+  {
+    heading: 'Cross Platform',
+    detail:
+      '<p>We decided to use React Native for making the game available in both iOS and Android. It also provides a lot of packages which we could use to reduce the development time and deliver the game on a short duration set by the client.</p>',
+    image: BannerImg,
+  },
+  {
+    heading: 'Chat Functionality',
+    detail:
+      '<p>We decided to use React Native for making the game available in both iOS and Android. It also provides a lot of packages which we could use to reduce the development time and deliver the game on a short duration set by the client.<p>',
+    image: BannerImg,
+  },
+  {
+    heading: 'Real Time',
+    detail:
+      "<p>We needed to create a real time multiplayer game. For this, nodejs and socket.io became our go to choice. We added a redis server to cache live game's data. We were able to host hundreds of players at a time with no performance issue.</p>",
+    image: BannerImg,
+  },
+];
+
+const RESULT_DATA = {
+  title: 'Result',
+  description:
+    'We developed a Cross Platform mobile game in very short duration of 6 months, huge question collection with various categories by using the APIs of opentdb, chat features with audio and video integration.',
+  appUrls: APP_URLS,
+};
+
+const TECHNOLOGY_STACK_DATA = [
+  { stack: 'Mobile', technologyList: [{ technology: 'React Native', icon: faReact, techColorClass: 'react-native' }] },
+  {
+    stack: 'Backend',
+    technologyList: [
+      { technology: 'Node JS', icon: faNodeJs, techColorClass: 'node-js' },
+      { technology: 'Postgres', icon: faDatabase, techColorClass: 'postgres' },
+    ],
+  },
+  { stack: 'Others', technologyList: [{ technology: 'Redis', icon: faDatabase, techColorClass: 'redis' }] },
+  {
+    stack: 'Release',
+    technologyList: [
+      { technology: 'App Store', icon: faAppStoreIos, techColorClass: 'appstore' },
+      { technology: 'Google Play Store', icon: faGooglePlay, techColorClass: 'google-play' },
+    ],
+  },
+];
+
+const CTA_DATA = {
+  project: 'Trivia Day',
+  cta: 'Do you have an amazing app idea that needs multiple people communicating in real time?',
+  description: 'Our experience in developing real time app like Trivia could greatly excel your development.',
+  projectImage: ctaProjectImage,
+};
 ---
 
-<BaseLayout title="Truemark | Case Study: Trivia Day" path="case-studies/trivia-day" forCaseStudy={true}>
-  <PageBody client:only="react" />
+<BaseLayout
+  title="Truemark | Trivia Day Case Study"
+  description="Trivia day is a fun Online Multiplayer Trivia Game | Truemark | Software Development Team | Nepal | Remote | Case Study"
+  keywords="Trivia Day, Truemark Technology, Case Study, Trivia Game using socket.io"
+  image="/images/case-study/trivia-day/featured.png"
+  path="case-studies/trivia-day"
+  forCaseStudy={true}
+>
+  <HeroSection heroSectionData={HERO_SECTION_DATA} client:only="react" />
+  <SingleTestimonialSection {...TESTIMONIAL_DATA} client:only="react" />
+  <BackStory {...BACK_STORY} client:only="react" />
+  <ProjectPlanning {...PROJECT_PLANNING_DATA} client:only="react" />
+  <ProjectChallenge {...PROJECT_CHALLENGE_DATA} client:only="react" />
+  <ProjectFeatures features={PROJECT_FEATURE_DATA} client:only="react" />
+  <ResultSection {...RESULT_DATA} client:only="react" />
+  <TechnologyUsedSection technologyStacks={TECHNOLOGY_STACK_DATA} client:only="react" />
+  <CaseStudyCTA {...CTA_DATA} client:only="react" />
+  <TestimonialSection
+    items={triviaDayTestimonials}
+    sectionTitle="Feedback"
+    sectionSubheading="From The Client"
+    client:only="react"
+  />
 </BaseLayout>

@@ -1,11 +1,17 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import PageBody from '../../components/PagesReact/resume/anil/index.jsx';
+import FetchedDataTemplete from '../../components/CV/FetchedDataTemplete';
+import { profile } from '../../data/resume/anil';
 import { getAllBlogsForSection } from '../../lib/blog-data';
 
 const blogs = await getAllBlogsForSection();
 ---
 
-<BaseLayout title="Truemark | anil" path="resume/anil">
-  <PageBody blogs={blogs} client:only="react" />
+<BaseLayout
+  title="Anil Poudel | Senior Javascript Developer From Kathmandu"
+  description="Truemark | Software Development Team | Nepal | Remote"
+  keywords="About Truemark, Truemark Technology, Remote Software Development Team"
+  path="resume/anil"
+>
+  <FetchedDataTemplete profile={profile} blogs={blogs} client:only="react" />
 </BaseLayout>

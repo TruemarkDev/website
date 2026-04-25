@@ -9,7 +9,6 @@
       "components/*": ["./src/components/*"],
       "constants/*": ["./src/constants/*"],
       "services/*": ["./src/services/*"],
-      "templates/*": ["./src/templates/*"],
       "utils/*": ["./src/utils/*"],
       "providers/*": ["./src/providers/*"],
       "@utils/*": ["./src/utils/*"],

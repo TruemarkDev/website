@@ -1,12 +1,23 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
-import PageBody from '../../../components/PagesReact/services/maintenance/upgrade.jsx';
+import UpgradeYourApplicationHeroSection from '../../../components/HeroSection/UpgradeYourApplicationHeroSection';
+import WhyUpgradeRailsVersion from '../../../components/UpgradeYourApplication/WhyUpgradeRailsVersion';
+import WorkTogether from '../../../components/UpgradeYourApplication/WorkTogether';
+import WhyChooseUs from '../../../components/UpgradeYourApplication/WhyChooseUs';
+import RubyOnRailsProjects from '../../../components/UpgradeYourApplication/RubyOnRailsProjects';
+import Faq from '../../../components/UpgradeYourApplication/Faq';
 ---
 
 <BaseLayout
-  title="Truemark | Upgrade your Application"
-  description="Upgrade your existing application to the latest stable versions."
+  title="Truemark | Upgrade Your Application"
+  description="Best Upgrade Your Application Service in Nepal | Truemark"
+  keywords="upgrade your application, upgrade-your-application, truemark"
   path="services/maintenance/upgrade"
 >
-  <PageBody client:only="react" />
+  <UpgradeYourApplicationHeroSection client:only="react" />
+  <WhyUpgradeRailsVersion client:only="react" />
+  <WorkTogether client:only="react" />
+  <WhyChooseUs client:only="react" />
+  <RubyOnRailsProjects client:only="react" />
+  <Faq client:only="react" />
 </BaseLayout>

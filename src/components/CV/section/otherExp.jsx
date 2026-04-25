@@ -10,9 +10,6 @@ import {
 import {
   Row, Col, Badge, Card, CardImg, CardBody, Media,
 } from 'reactstrap';
-import {
-  StaticQuery, graphql, navigate, Link,
-} from 'gatsby';
 
 export default ({ experiences }) => {
   if (experiences.length <= 0) return null;
@@ -25,7 +22,7 @@ export default ({ experiences }) => {
       </h3>
       <Row>
         <Col lg={12} md={6} className="mb-3">
-          <Link to="">
+          <a href="#">
             <Row className="align-items-center">
               <Col lg={4} md={12} className="image-holder mb-3 mb-lg-0">
                 <img
@@ -41,10 +38,10 @@ export default ({ experiences }) => {
                 </h4>
               </Col>
             </Row>
-          </Link>
+          </a>
         </Col>
         <Col lg={12} md={6}>
-          <Link to="">
+          <a href="#">
             <Row className="align-items-center">
               <Col lg={4} md={12} className="image-holder mb-3 mb-lg-0">
                 <img
@@ -60,7 +57,7 @@ export default ({ experiences }) => {
                 </h4>
               </Col>
             </Row>
-          </Link>
+          </a>
         </Col>
       </Row>
     </div>

@@ -1,12 +1,21 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
-import PageBody from '../../../components/PagesReact/services/maintenance/tests.jsx';
+import WriteTestsHeroSection from '../../../components/HeroSection/WriteTestsHeroSection';
+import QualityAssuranceSection from '../../../components/WriteTests/Sections/QualityAssuranceSection';
+import AboutSection from '../../../components/WriteTests/Sections/AboutSection';
+import ToolsSection from '../../../components/WriteTests/Sections/ToolsSection';
+import WhyChooseUsSection from '../../../components/WriteTests/Sections/WhyChooseUsSection';
 ---
 
 <BaseLayout
-  title="Truemark | Write Tests for your Application"
-  description="Improve software quality by adding tests to your existing application."
+  title="Truemark | Write Test For React And Ruby"
+  description="Improve your Test Coverage, Outsource writing tests | Truemark"
+  keywords="Write Tests, write-tests, truemark"
   path="services/maintenance/tests"
 >
-  <PageBody client:only="react" />
+  <WriteTestsHeroSection client:only="react" />
+  <QualityAssuranceSection client:only="react" />
+  <AboutSection client:only="react" />
+  <ToolsSection client:only="react" />
+  <WhyChooseUsSection client:only="react" />
 </BaseLayout>

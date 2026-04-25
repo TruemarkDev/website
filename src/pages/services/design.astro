@@ -1,6 +1,12 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import PageBody from '../../components/PagesReact/services/design.jsx';
+import HeroSectionTemplate from '../../components/HeroSection/UIUXHeroSection';
+import UXBannerSection from '../../components/Banner/UXBannerSection';
+import UIUXDesignApproach from '../../components/UiUx/UIUXDesignApproach';
+import UIUXDesignProcess from '../../components/UiUx/UIUXDesignProcess';
+import OurTools from '../../components/UiUx/OurTools';
+import SoftwareTeamSection from '../../components/Team/Section/SoftwareTeamSection';
+import Faq from '../../components/UiUx/Faq';
 ---
 
 <BaseLayout
@@ -9,5 +15,11 @@ import PageBody from '../../components/PagesReact/services/design.jsx';
   keywords="UI/UX Design Services, truemark"
   path="services/design"
 >
-  <PageBody client:only="react" />
+  <HeroSectionTemplate client:only="react" />
+  <UXBannerSection client:only="react" />
+  <UIUXDesignApproach client:only="react" />
+  <UIUXDesignProcess client:only="react" />
+  <OurTools client:only="react" />
+  <SoftwareTeamSection client:only="react" />
+  <Faq client:only="react" />
 </BaseLayout>

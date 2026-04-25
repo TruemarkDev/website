@@ -1,11 +1,33 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import PageBody from '../../components/PagesReact/technologies/ruby-on-rails.jsx';
+import RubyonRailsHeroSection from '../../components/HeroSection/RubyonRailsHeroSection';
+import OurServices from '../../components/RubyOnRails/OurServices';
+import ProjectSection from '../../components/Technology/ProjectSection/ProjectSection';
+import WhyChooseRuby from '../../components/RubyOnRails/WhyUseRuby';
+import WhyChooseUs from '../../components/RubyOnRails/WhyChooseUs';
+import Faq from '../../components/RubyOnRails/Faq';
+import RubyandRailsProjects from '../../components/UpgradeYourApplication/RubyOnRailsProjects';
 import { getFeaturedProjectEdges } from '../../lib/career-data';
 
 const projects = await getFeaturedProjectEdges();
 ---
 
-<BaseLayout title="Truemark | Ruby on Rails Development" path="technologies/ruby-on-rails">
-  <PageBody projects={projects} client:only="react" />
+<BaseLayout
+  title="Truemark | Ruby on Rails"
+  description="Hire Best Ruby on Rails developers from Nepal | Truemark"
+  keywords="ruby development, ror, truemark"
+  path="technologies/ruby-on-rails"
+>
+  <RubyonRailsHeroSection client:only="react" />
+  <WhyChooseRuby client:only="react" />
+  <OurServices client:only="react" />
+  <RubyandRailsProjects client:only="react" />
+  <ProjectSection
+    technology="rails"
+    sectionTitle="Ruby on Rails Projects we have worked on"
+    projects={projects}
+    client:only="react"
+  />
+  <WhyChooseUs client:only="react" />
+  <Faq client:only="react" />
 </BaseLayout>

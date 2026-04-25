@@ -1,27 +1,9 @@
-import React from 'react';
+import { TECH_CONSTANTS, EXP_CONSTANTS, DM_STACK_CONSTANTS } from '../../constants/formConstants';
 
-import Layout from 'components/Layout/Layout';
-import CVTemplate from 'components/CV/Template';
 const userImg = '/images/author/mausam.jpg';
-const reneldyAvatar = '/images/clients/reneldy/reneldy.jpeg';
 const projectSoono = '/images/clients/mack/projects/mysoono-com.png';
-const projectTravelBook = '/images/clients/dean/projects/travelbook-com.png';
-import {
-  TECH_CONSTANTS,
-  EXP_CONSTANTS,
-  DM_STACK_CONSTANTS,
-} from 'src/constants/formConstants';
 
-const pageMetaData = {
-  title: 'Mausam Khanal | Senior Frontend Developer From Kathmandu',
-  description: 'Truemark | Software Development Team | Nepal | Remote',
-  keywords:
-    'About Truemark, Truemark Technology, Remote Software Development Team',
-  slug: 'resume/mausam',
-  // featuredImage: { src: onlineMarketing },
-};
-
-const profile = {
+export const profile = {
   attributes: {
     platform: ['mobile', 'web'],
     teamExperience: EXP_CONSTANTS.SENIOR,
@@ -30,10 +12,7 @@ const profile = {
       TECH_CONSTANTS.UI_UX,
       DM_STACK_CONSTANTS.GRAPHICS_DESIGN,
     ],
-    defaultRate: {
-      lowerValue: 20,
-      upperValue: 40,
-    },
+    defaultRate: { lowerValue: 20, upperValue: 40 },
   },
   firstName: 'Mausam',
   name: 'Mausam Khanal',
@@ -41,11 +20,7 @@ const profile = {
   company: 'Truemark Technology',
   avatar: userImg,
   authorId: 'Mausam',
-  location: {
-    city: 'Kathmandu',
-    country: 'Nepal',
-    timeZone: 'ASIA/KATHMANDU',
-  },
+  location: { city: 'Kathmandu', country: 'Nepal', timeZone: 'ASIA/KATHMANDU' },
   bio:
     'I am a Web Designer & Front-end Developer with 7 years commercial experience, and graduate of Computer Engineering. I create successful websites that are thoughtfully designed and built with performance and best practices in mind.',
   projects: [
@@ -58,39 +33,14 @@ const profile = {
       isFeatured: true,
     },
   ],
-  clientFeedbacks: [
-    // {
-    //   name: 'Reneldy Senat',
-    //   avatar: reneldyAvatar,
-    //   message:
-    //     'Prakash and his team have proven to be invaluable in the planning and development of over half a dozen of our projects.',
-    //   location: 'Boston, USA',
-    //   createdDate: '2018-12-24',
-    //   updatedDate: '2018-12-24',
-    // },
-  ],
+  clientFeedbacks: [],
   otherExperiences: [],
   stackExperiences: [
-    {
-      title: 'HTML/CSS',
-      duration: '7 Yrs',
-    },
-    {
-      title: 'Digital Marketing',
-      duration: '4 Yrs',
-    },
-    {
-      title: 'UI/UX',
-      duration: '4 Yrs',
-    },
-    {
-      title: 'Node JS',
-      duration: '3 Yrs',
-    },
-    {
-      title: 'React JS',
-      duration: '2 Yrs',
-    },
+    { title: 'HTML/CSS', duration: '7 Yrs' },
+    { title: 'Digital Marketing', duration: '4 Yrs' },
+    { title: 'UI/UX', duration: '4 Yrs' },
+    { title: 'Node JS', duration: '3 Yrs' },
+    { title: 'React JS', duration: '2 Yrs' },
   ],
   tools: ['Adobe XD', 'Adobe Illustrator', 'Figma', 'Trello'],
   academics: [
@@ -162,11 +112,3 @@ const profile = {
     },
   ],
 };
-
-const AboutPage = ({ blogs }) => (
-  <Layout pageMetaData={pageMetaData} path={pageMetaData.slug}>
-    <CVTemplate profile={profile} blogs={blogs} />
-  </Layout>
-);
-
-export default AboutPage;

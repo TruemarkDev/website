@@ -255,6 +255,6 @@ Developing a complex app such as the NFT marketplace requires a team of experts 
 
 Truemark has worked on numerous software projects with 100% success and satisfaction rate. We will provide you with the best NFT solutions and build your app based on your needs and requirements. 
 
-So if you are planning to develop an NFT marketplace, then we will deliver the best development services to meet your goals and grow your business. <a href="https://www.truemark.dev/" target="_blank">Let’s talk</a> and make your dream project idea a reality. We also offer a free consultation service to clear all your confusion. 
+So if you are planning to develop an NFT marketplace, then we will deliver the best development services to meet your goals and grow your business. <a href="https://www.truemark.com.np/" target="_blank">Let’s talk</a> and make your dream project idea a reality. We also offer a free consultation service to clear all your confusion. 
 
 **Cover Image Credits:** <a href="https://www.freepik.com/free-vector/gradient-nft-concept-illustrated_13686168.htm#query=nft&position=0&from_view=search" target="_blank">Pikisuperstar</a> from <a href="https://www.freepik.com/home" target="_blank">Freepik</a>

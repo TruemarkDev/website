@@ -1,11 +1,18 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import PageBody from '../../components/PagesReact/resume/prabin/index.jsx';
+import FetchedDataTemplete from '../../components/CV/FetchedDataTemplete';
+import { profile } from '../../data/resume/prabin';
 import { getAllBlogsForSection } from '../../lib/blog-data';
 
 const blogs = await getAllBlogsForSection();
 ---
 
-<BaseLayout title="Truemark | prabin" path="resume/prabin">
-  <PageBody blogs={blogs} client:only="react" />
+<BaseLayout
+  title="Prabin Poudel | Senior Ruby Developer From Kathmandu"
+  description="Truemark | Software Development Team | Nepal | Remote"
+  keywords="About Truemark, Truemark Technology, Remote Software Development Team"
+  image="/images/meta-images/resume/prabin.webp"
+  path="resume/prabin"
+>
+  <FetchedDataTemplete profile={profile} blogs={blogs} client:only="react" />
 </BaseLayout>
