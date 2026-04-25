@@ -1,23 +1,11 @@
 # Open follow-ups
 
-## Browser regression audit
+## Browser regression audit (hydration-only)
 
-Many React islands still mount as `client:only="react"` and the build won't catch empty-state bugs there. Before calling the migration fully shipped, walk the live site:
+A programmatic scan of `dist/` came back clean — no broken serializations, no empty `<main>` blocks, no missing JS/CSS refs, no template leaks. The remaining risk lives at hydration time: a React island that imports cleanly and serializes valid props but crashes when it mounts.
+
+To check that residual:
 
 - `pnpm dev`, then click through each top-level route.
-- Watch for empty sections — usually a component that hasn't been wired to receive props from Astro frontmatter.
-- The props-driven examples to mirror are `BlogSection`, `BlogList`, `BlogIndexHeader` / `BlogIndexSliderSection`, and `BlogMegaMenu` (via `TopMenu`).
-
-## Reading-time frontmatter override
-
-`src/pages/blog/[...slug].astro` always computes reading time from the raw MDX body. The original Gatsby site let posts override it via frontmatter. Only worth doing if editorial asks.
-
-```ts
-// src/content.config.ts (blog schema)
-readingTime: z.string().optional(),
-
-// src/pages/blog/[...slug].astro
-const minutes = data.readingTime
-  ? { text: data.readingTime }
-  : readingTime(entry.body || '');
-```
+- Open the console and watch for hydration errors, especially on pages with `client:only="react"` islands (mega-menu, blog list, case-study sections, resume pages, contact).
+- Empty sections that show in the browser but not in the build output usually mean a component is silently throwing during render.

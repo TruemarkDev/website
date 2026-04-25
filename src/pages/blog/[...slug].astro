@@ -72,7 +72,9 @@ const relatedPostsResolved = await Promise.all(
   })),
 );
 
-const minutes = readingTime(entry.body || '');
+const minutes = data.readingTime
+  ? { text: data.readingTime }
+  : readingTime(entry.body || '');
 const hero = await resolveUrl(data.featuredImage as string | undefined);
 const authorAvatar = await resolveUrl(author?.avatar);
 if (author) author.avatar = authorAvatar;

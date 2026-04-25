@@ -19,6 +19,7 @@ const blog = defineCollection({
       featured: z.boolean().optional().default(false),
       comments: z.boolean().optional().default(true),
       share: z.boolean().optional().default(true),
+      readingTime: z.string().optional(),
       date: z.coerce.date(),
       last_modified_at: z.coerce.date().optional(),
     })
