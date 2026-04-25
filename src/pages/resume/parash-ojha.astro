@@ -1,8 +1,11 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageBody from '../../components/PagesReact/resume/parash-ojha/index.jsx';
+import { getAllBlogsForSection } from '../../lib/blog-data';
+
+const blogs = await getAllBlogsForSection();
 ---
 
 <BaseLayout title="Truemark | parash-ojha" path="resume/parash-ojha">
-  <PageBody client:only="react" />
+  <PageBody blogs={blogs} client:only="react" />
 </BaseLayout>

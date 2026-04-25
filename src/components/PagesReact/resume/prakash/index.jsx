@@ -274,7 +274,7 @@ const profile = {
   meta: {},
 };
 
-const AboutPage = () => {
+const AboutPage = ({ blogs }) => {
   const [resumeData, setResumeData] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -304,7 +304,7 @@ const AboutPage = () => {
 
   return (
     <Layout pageMetaData={pageMetaData} path={pageMetaData.slug}>
-      <FetchedDataTemplete profile={mergedObject} />
+      <FetchedDataTemplete profile={mergedObject} blogs={blogs} />
     </Layout>
   );
 };

@@ -24,7 +24,7 @@ import Feedback from './section/feedback';
 import OtherExp from './section/otherExp';
 import BlogSection from './section/blog';
 
-const CVTemplate = ({ profile }) => {
+const CVTemplate = ({ profile, blogs }) => {
   const {
     firstName,
     name,
@@ -95,7 +95,7 @@ const CVTemplate = ({ profile }) => {
 
               <Feedback feedbacks={clientFeedbacks} />
 
-              <BlogSection authorId={authorId} />
+              <BlogSection authorId={authorId} blogs={blogs} />
 
               <OtherExp experiences={otherExperiences} />
             </Col>

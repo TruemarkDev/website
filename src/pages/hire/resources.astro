@@ -1,9 +1,10 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageBody from '../../components/PagesReact/hire/resources.jsx';
-import { getFeaturedBlogs } from '../../lib/blog-data';
+import { getFeaturedBlogs, getBlogsByTag } from '../../lib/blog-data';
 
 const featuredBlogs = await getFeaturedBlogs(3);
+const teamBuildingBlogs = await getBlogsByTag('build-team', 3);
 ---
 
 <BaseLayout
@@ -11,5 +12,5 @@ const featuredBlogs = await getFeaturedBlogs(3);
   description="Hire dedicated resources from Truemark."
   path="hire/resources"
 >
-  <PageBody data={{ featuredBlogs }} client:only="react" />
+  <PageBody data={{ featuredBlogs, teamBuildingBlogs }} client:only="react" />
 </BaseLayout>

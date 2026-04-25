@@ -1,7 +1,5 @@
 import React from 'react';
 
-import { graphql, useStaticQuery } from 'gatsby';
-
 const startup = '/images/startup.jpg';
 import BlogCard from '@components/BlogCard';
 

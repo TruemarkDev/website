@@ -3,7 +3,6 @@ import React from 'react';
 import { graphql } from 'gatsby';
 
 import Layout from 'components/Layout/Layout';
-import FeaturedDMBlog from 'components/Blog/Section/FeaturedDMBlogs';
 import DMTeamSection from 'components/Team/Section/DMTeamSection';
 import TestimonialSection from 'components/Testimonial/Section/TestimonialSection';
 import CompanyStatsSection from 'components/Stats/Section/CompanyStatsSection';
@@ -28,7 +27,7 @@ const DigitalMarketingPage = ({ data }) => (
     <DMBannerSection />
     <TestimonialSection items={digitalMarketingTestimonials} />
     <BlogSection
-      blogs={data.featuredBlogs}
+      blogs={data.dmBlogs}
       heading="Latest from the blog"
       headerTag="Seo Blog"
       buttonText="View All Blogs"

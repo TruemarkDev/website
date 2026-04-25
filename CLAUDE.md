@@ -16,7 +16,18 @@ There is no test runner and no lint script configured.
 
 ## Architecture
 
-This is an **Astro 6 / React 19 migration of a former Gatsby site** (`truemark_blog`). Most of the original Gatsby/React component tree has been preserved verbatim and made to run under Astro via shims and Vite path aliases. Read `MIGRATION_NOTES.md` for the authoritative migration log — it documents what was rewritten and what remains to do.
+This is an **Astro 6 / React 19 migration of a former Gatsby site** (`truemark_blog`). Most of the original Gatsby/React component tree has been preserved verbatim and made to run under Astro via shims and Vite path aliases.
+
+**Migration is incremental, not wholesale.** Direction:
+1. Chrome (header, footer, SEO) belongs in `BaseLayout.astro` and partials, not in `src/theme/`.
+2. Convert leaf components to `.astro` opportunistically when touching them. No big-bang rewrite of `src/theme/`.
+3. Keep React for genuinely stateful islands: forms, Disqus, search, mega-menu interactions.
+4. Stop adding new code to `src/theme/`. New components: `.astro` (or React island if interactive).
+5. The `gatsby-shim` layer is the prize to delete eventually — pure migration tax.
+6. Marketing pages mounted as `client:only="react"` should become static `.astro` opportunistically.
+7. New images: use `astro:assets` `<Image />` with `src/lib/image-resolver.ts` (maps `/images/...` strings to `src/assets/images/` ESM imports). Legacy `/images/...` content-frontmatter strings stay until consumers are migrated.
+
+Outstanding migration work is broken down in [`docs/backlog/`](docs/backlog/README.md) — each phase is independently shippable.
 
 ### Shim layer (the load-bearing pieces)
 
@@ -47,9 +58,18 @@ Content-driven routes:
 - `/blog/[...slug].astro` — Disqus snippet gated on `PUBLIC_DISQUS_SHORTNAME`.
 - `/jobs/[...slug].astro`, `/case-studies/[...slug].astro` (MDX with CaseStudy section components used as MDX shortcodes).
 
-### Gatsby → Astro replacement table
+### Gatsby → Astro replacement map
 
-See `MIGRATION_NOTES.md` for the full mapping. Highlights: `gatsby-plugin-image` → legacy components fed Gatsby-shaped objects from frontmatter; `gatsby-plugin-google-analytics` → thin `gtag` forwarder in `src/services/tracker.js` and `src/theme/services/tracker.ts`; sitemap integration is wired but **disabled** in `astro.config.mjs` until routing stabilises; no `robots.txt` is generated.
+| Gatsby | Replacement |
+|--------|-------------|
+| `gatsby-plugin-image`, `<GatsbyImage>`, `getImage`, `childImageSharp` | Legacy React components are fed Gatsby-shaped objects (`{ childImageSharp: { resize: { src, width, height } } }`) via `imageToShape()` in `src/lib/blog-data.ts`. New `.astro` consumers use `astro:assets` `<Image />` + `resolveImage()` from `src/lib/image-resolver.ts`. The single `<GatsbyImage>` site (`PortfolioItem.jsx`) was downgraded to `<img src>`. |
+| `gatsby-plugin-google-analytics` (`trackCustomEvent`) | Thin `gtag` forwarder in `src/services/tracker.js` and `src/theme/services/tracker.ts`. Real GA still needs wiring. |
+| `gatsby-source-filesystem`, `gatsby-transformer-remark`, `gatsby-transformer-yaml` | Astro content collections. |
+| `gatsby-plugin-mdx`, `MDXProvider` | `@astrojs/mdx`. |
+| `gatsby-plugin-manifest`, `gatsby-plugin-robots-txt`, `gatsby-plugin-sitemap` | Manifest/favicon copied to `public/`. **Sitemap integration wired but disabled** in `astro.config.mjs` until routing stabilises. **No `robots.txt`** is generated yet — see `docs/backlog/07-sitemap-robots.md`. |
+| `node:events` (used by `eventEmitter.js`) | Tiny browser-friendly emitter, no node polyfill needed. |
+| Auth0 routes (`account.js`, `callback.js`) | **Not ported** — Auth0 was unused. See `docs/backlog/08-auth-routes.md`. |
+| `getSchemaOrgJSONLD` rich-snippet payload | **Not ported** — only blog posts emit JSON-LD inline. See `docs/backlog/06-seo-jsonld.md`. |
 
 ## Environment variables
 

@@ -1,9 +1,9 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageBody from '../../components/PagesReact/services/digital-marketing.jsx';
-import { getFeaturedBlogs } from '../../lib/blog-data';
+import { getBlogsByTag } from '../../lib/blog-data';
 
-const featuredBlogs = await getFeaturedBlogs(3);
+const dmBlogs = await getBlogsByTag('digital marketing', 3);
 ---
 
 <BaseLayout
@@ -12,5 +12,5 @@ const featuredBlogs = await getFeaturedBlogs(3);
   keywords="digital marketing, seo, truemark"
   path="services/digital-marketing"
 >
-  <PageBody data={{ featuredBlogs }} client:only="react" />
+  <PageBody data={{ dmBlogs }} client:only="react" />
 </BaseLayout>

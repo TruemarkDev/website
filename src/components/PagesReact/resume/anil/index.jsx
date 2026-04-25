@@ -259,9 +259,9 @@ const profile = {
   meta: {},
 };
 
-const AboutPage = () => (
+const AboutPage = ({ blogs }) => (
   <Layout pageMetaData={pageMetaData} path={pageMetaData.slug}>
-    <FetchedDataTemplete profile={profile} />
+    <FetchedDataTemplete profile={profile} blogs={blogs} />
   </Layout>
 );
 

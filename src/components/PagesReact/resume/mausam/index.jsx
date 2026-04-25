@@ -163,9 +163,9 @@ const profile = {
   ],
 };
 
-const AboutPage = () => (
+const AboutPage = ({ blogs }) => (
   <Layout pageMetaData={pageMetaData} path={pageMetaData.slug}>
-    <CVTemplate profile={profile} />
+    <CVTemplate profile={profile} blogs={blogs} />
   </Layout>
 );
 

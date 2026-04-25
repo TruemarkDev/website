@@ -1,8 +1,11 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageBody from '../../components/PagesReact/technologies/ruby-on-rails.jsx';
+import { getFeaturedProjectEdges } from '../../lib/career-data';
+
+const projects = await getFeaturedProjectEdges();
 ---
 
 <BaseLayout title="Truemark | Ruby on Rails Development" path="technologies/ruby-on-rails">
-  <PageBody client:only="react" />
+  <PageBody projects={projects} client:only="react" />
 </BaseLayout>

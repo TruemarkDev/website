@@ -1,54 +1,7 @@
 import React from 'react';
-import { graphql, useStaticQuery } from 'gatsby';
 
 import BlogList from '@components/BlogList';
 const emptyResultImage = '/images/layout/empty.svg';
-const blogListQuery = graphql`
-  query BlogSearchQuery {
-    allMdx(filter: { frontmatter: { type: { eq: "blog-post" } } }) {
-      edges {
-        node {
-          excerpt
-          fields {
-            timeToRead {
-              text
-            }
-          }
-          frontmatter {
-            description
-            category
-            tags
-            featuredImage {
-              childImageSharp {
-                resize(width: 630) {
-                  src
-                  width
-                  height
-                }
-              }
-            }
-            slug
-            title
-            date
-            author {
-              id
-              name
-              avatar {
-                childImageSharp {
-                  resize(width: 65) {
-                    src
-                    height
-                    width
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-`;
 
 interface EmptySearchResultProps {
   searchText: string;
@@ -76,19 +29,18 @@ const EmptySearchResult: React.FC<EmptySearchResultProps> = ({
 
 interface BlogSearchListProps {
   searchText: string;
+  blogs?: { edges: any[] };
 }
 
 const BlogSearchList: React.FC<BlogSearchListProps> = ({
   searchText,
-  ...props
+  blogs = { edges: [] },
 }) => {
   if (!searchText?.trim?.()) {
     return null;
   }
 
-  const data = useStaticQuery(blogListQuery);
-
-  const displayBlogs = data.allMdx.edges.filter(({ node }) =>
+  const displayBlogs = blogs.edges.filter(({ node }) =>
     node.frontmatter.title.toLowerCase().includes(searchText?.toLowerCase().trim?.())
   );
 

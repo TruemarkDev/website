@@ -1,4 +1,8 @@
 ---
+import { Picture } from 'astro:assets';
+import { resolveImage } from '../../lib/image-resolver';
+import fallbackImage from '../../assets/images/startup.jpg';
+
 interface RelatedPost {
   slug: string;
   title: string;
@@ -12,6 +16,13 @@ interface Props {
 }
 
 const { posts, title = 'Related Posts' } = Astro.props;
+
+const resolved = await Promise.all(
+  posts.map(async (post) => ({
+    ...post,
+    heroImage: (await resolveImage(post.hero)) ?? fallbackImage,
+  }))
+);
 ---
 
 {posts.length > 0 && (
@@ -20,16 +31,21 @@ const { posts, title = 'Related Posts' } = Astro.props;
       <h3>{title}</h3>
     </div>
     <ul class="list-unstyled ps-0">
-      {posts.map((post) => (
+      {resolved.map((post) => (
         <li class="mb-4">
           <div class="blog-post d-flex flex-column">
             <figure class="card_image position-relative mb-3">
               <a href={`/blog/${post.slug}/`} title={post.title} rel="bookmark">
-                <img
-                  src={post.hero ?? '/images/startup.jpg'}
+                <Picture
+                  src={post.heroImage}
+                  formats={['avif', 'webp']}
                   alt={post.title}
                   class="card-img-top mb-0 w-100"
                   loading="lazy"
+                  decoding="async"
+                  widths={[200, 400, 600]}
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  quality={65}
                 />
               </a>
               {post.category && (

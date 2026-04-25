@@ -40,6 +40,7 @@ const ResourcesPage = ({ data }) => (
       buttonText="View All "
       blogRedirectRoute="/blog"
     />
+    <TeamBuildingBlogs blogs={data.teamBuildingBlogs} />
     <SoftwareTeamSection />
   </Layout>
 );

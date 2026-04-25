@@ -1,13 +1,9 @@
 import React from 'react';
-import { Link, useStaticQuery, graphql } from 'gatsby';
+import { Link } from 'gatsby';
 
 import { ESTIMATION } from '@constants/constants';
 
 import EstimationBlog from '@components/BlogMegaMenu/EstimationBlogMenu';
-
-interface categoryTypeQuery {
-  data: any;
-}
 
 interface Frontmatter {
   title: string;
@@ -32,66 +28,39 @@ interface Edge {
   };
 }
 
-interface CategoriesBlogQuery {
-  categoriesBlogQuery: {
-    edges: Edge[];
-  };
-  allMarkdownRemark: {
-    categories: any;
-  };
-}
-
-interface Category {
-  category: string;
-}
-
 interface BlogMegaMenuProps {
-  // Astro migration: data is now fed in as props by BaseLayout. The
-  // useStaticQuery fallback is retained so the original Gatsby code path still
-  // works when the component is mounted without explicit data.
+  // Data is fed in as props by BaseLayout (SSR-built from Astro content
+  // collections — see src/lib/blog-data.ts).
   blogPosts?: Edge[];
   categories?: Array<{ category: string; totalCount?: number }>;
 }
 
 const BlogMegaMenu: React.FC<BlogMegaMenuProps> = ({
-  blogPosts,
-  categories,
+  blogPosts = [],
+  categories = [],
 }) => {
   const [categoryValue, setCategoryValue] = React.useState<String | null>(
     ESTIMATION
   );
   const [megaMenuBlogs, setMegaMenuBlogs] = React.useState<any>([]);
 
-  const fallback = useStaticQuery<CategoriesBlogQuery>(graphql`
-    query { _stub: 1 }
-  `);
-
-  const blogs = {
-    categoriesBlogQuery: {
-      edges: blogPosts ?? fallback?.categoriesBlogQuery?.edges ?? [],
-    },
-    allMarkdownRemark: {
-      categories: categories ?? fallback?.allMarkdownRemark?.categories ?? [],
-    },
-  };
-
   React.useEffect(() => {
     const tempBlogPosts: any = [];
 
-    blogs.categoriesBlogQuery.edges.forEach((blogCat: any) => {
+    blogPosts.forEach((blogCat: any) => {
       if (blogCat.node.frontmatter.category === categoryValue) {
         tempBlogPosts.push(blogCat);
       }
     });
 
     setMegaMenuBlogs(tempBlogPosts);
-  }, [categoryValue]);
+  }, [categoryValue, blogPosts]);
 
   const blogCategory = [
     {
       category: ESTIMATION,
     },
-    ...blogs.allMarkdownRemark.categories,
+    ...categories,
   ];
 
   return (

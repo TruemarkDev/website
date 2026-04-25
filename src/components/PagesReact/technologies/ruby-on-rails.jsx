@@ -19,7 +19,7 @@ const pageMetaData = {
   slug: 'technologies/ruby-on-rails',
 };
 
-const RubyOnRailsTechnologies = () => (
+const RubyOnRailsTechnologies = ({ projects }) => (
   <Layout pageMetaData={pageMetaData} path={pageMetaData.slug}>
     <RubyonRailsHeroSection/>
     <WhyChooseRuby/>
@@ -30,6 +30,11 @@ const RubyOnRailsTechnologies = () => (
       sectionSubheading="From Our Customers"
     /> */}
     <RubyandRailsProjects />
+    <ProjectSection
+      technology="rails"
+      sectionTitle="Ruby on Rails Projects we have worked on"
+      projects={projects}
+    />
     <WhyChooseUs/>
     <Faq/>
   </Layout>

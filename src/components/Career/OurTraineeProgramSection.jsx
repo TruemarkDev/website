@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { useStaticQuery, graphql, Link } from 'gatsby';
+import { Link } from 'gatsby';
 
 import ButtonWithModal from 'components/Button/ButtonWithModal';
 
@@ -10,27 +10,8 @@ import {
   TRAINEE_PROGRAM_ICONS,
 } from 'constants/traineeProgramConstants';
 
-const OurTraineeProgramSection = () => {
-  const { allMdx: traineeProgramData } = useStaticQuery(graphql`
-    query {
-      allMdx(filter: { frontmatter: { type: { eq: "trainee-programs" } } }) {
-        edges {
-          node {
-            frontmatter {
-              uid
-              title
-              dateForNextIntake
-              datePosted
-              validityInDays
-              vacancyCount
-              category
-              positionOpen
-            }
-          }
-        }
-      }
-    }
-  `);
+const OurTraineeProgramSection = ({ programs = { edges: [] } }) => {
+  const traineeProgramData = programs;
 
   const formatLastApplyDate = (date) => {
     const options = { day: 'numeric', month: 'long', year: 'numeric' };

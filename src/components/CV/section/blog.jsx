@@ -1,5 +1,4 @@
 import React, { useRef } from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
 import { Row, Col } from 'reactstrap';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -9,57 +8,11 @@ const startup = '/images/blogs/categories/startup.jpg';
 import BlogCard from 'components/Blog/Card';
 import Slider, { SlideControls } from 'components/Slider/Slider';
 
-export default ({ authorId }) => {
+export default ({ authorId, blogs = { edges: [] } }) => {
   const sliderRef = useRef();
-  const data = useStaticQuery(graphql`
-    query {
-      allMarkdownRemark(
-        sort: { frontmatter: { date: DESC } }
-        filter: { frontmatter: { type: { eq: "blog-post" } } }
-      ) {
-        edges {
-          node {
-            excerpt
-            timeToRead
-            frontmatter {
-              description
-              category
-              tags
-              slug
-              title
-              date
-              featuredImage {
-                childImageSharp {
-                  resize(width: 630) {
-                    src
-                    width
-                    height
-                  }
-                }
-              }
-              author {
-                id
-                author_id
-                name
-                avatar {
-                  childImageSharp {
-                    resize(width: 65) {
-                      src
-                      height
-                      width
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  `);
 
-  const authorBlogs = data.allMarkdownRemark.edges.filter(
-    ({ node }) => node.frontmatter.author.author_id === authorId
+  const authorBlogs = blogs.edges.filter(
+    ({ node }) => node.frontmatter.author?.author_id === authorId
   );
 
   const blogsList = authorBlogs.map((edge, index) => {

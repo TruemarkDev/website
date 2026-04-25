@@ -153,7 +153,7 @@ class BlogListPage extends Component<BlogListPageProps, BlogListPageState> {
         />
 
         {isSearching ? (
-          <BlogSearchList searchText={searchText} />
+          <BlogSearchList searchText={searchText} blogs={data.all || data.category} />
         ) : (
           <>
             <BlogList

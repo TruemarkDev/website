@@ -8,14 +8,21 @@ import ValueSection from '../components/Company/Section/ValueSection.jsx';
 import CareerHeroSection from '../components/HeroSection/CareerHeroSection.jsx';
 import HowToApply from '../components/Trainee/HowToApply.jsx';
 import { getCollection } from 'astro:content';
+import { getTraineeProgramEdges } from '../lib/career-data';
 
 const jobs = await getCollection('jobs', ({ data }) => data.positionOpen);
+jobs.sort((a, b) => {
+  const dateDiff = new Date(b.data.date).getTime() - new Date(a.data.date).getTime();
+  if (dateDiff !== 0) return dateDiff;
+  return (a.data.vacancyCount ?? 0) - (b.data.vacancyCount ?? 0);
+});
 const openings = jobs.map((j) => ({
   node: {
     fields: { slug: `/jobs/${j.data.customSlug}` },
-    frontmatter: { ...j.data },
+    frontmatter: { ...j.data, slug: j.data.customSlug },
   },
 }));
+const traineePrograms = await getTraineeProgramEdges();
 ---
 
 <BaseLayout
@@ -28,7 +35,7 @@ const openings = jobs.map((j) => ({
   <ValueSection client:only="react" />
   <HandBook client:only="react" />
   <CurrentOpenings openings={openings} client:only="react" />
-  <OurTraineeProgramSection client:only="react" />
+  <OurTraineeProgramSection programs={traineePrograms} client:only="react" />
   <HowToApply client:only="react" />
   <CareerFAQ client:only="react" />
 </BaseLayout>

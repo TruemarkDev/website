@@ -28,6 +28,7 @@ async function resolveAuthor(name?: string) {
     const data = entry.data as Record<string, any>;
     return {
       id: data.author_id,
+      author_id: data.author_id,
       name: data.name,
       position: data.position,
       organization: data.organization,
@@ -126,6 +127,15 @@ export async function getBlogCategories() {
   }
   return Array.from(counts, ([category, totalCount]) => ({ category, totalCount }))
     .sort((a, b) => b.totalCount - a.totalCount);
+}
+
+export async function getBlogsByTag(tag: string, limit = 3) {
+  const all = await getBlogPosts();
+  const matched = all
+    .filter((p) => Array.isArray(p.data.tags) && p.data.tags.includes(tag))
+    .slice(0, limit);
+  const nodes = await Promise.all(matched.map(toBlogNode));
+  return { edges: nodes };
 }
 
 export async function getAllBlogsForSection(limit?: number) {

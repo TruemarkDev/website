@@ -1,27 +1,17 @@
 import React, { useCallback, useState } from 'react';
-import { graphql, useStaticQuery } from 'gatsby';
 import { Helmet } from 'react-helmet';
 
 import ThemeSwitchers from 'components/Menu/ThemeSwitcher/ThemeSwitcher';
+import { siteMetadata } from 'src/lib/site-metadata';
 
 const ThemeSwitcher = () => {
-  const data = useStaticQuery(graphql`
-    query MetaDataQuery {
-      site {
-        siteMetadata {
-          defaultTheme
-        }
-      }
-    }
-  `);
-
   const getDefaultTheme = useCallback(() => {
     let defaultTheme = null;
 
     if (typeof window !== 'undefined')
       defaultTheme = window.localStorage.getItem('theme');
 
-    return defaultTheme || data.site.siteMetadata.defaultTheme;
+    return defaultTheme || siteMetadata.defaultTheme;
   }, []);
 
   const [theme, changeTheme] = useState(getDefaultTheme());

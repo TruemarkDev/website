@@ -1,6 +1,7 @@
 ---
+import { Image } from 'astro:assets';
 import BaseLayout from '../layouts/BaseLayout.astro';
-const bannerImage = { src: '/images/layout/404_page.svg' };
+import bannerImage from '../assets/images/layout/404_page.svg';
 ---
 
 <BaseLayout title="Truemark | Page not found" path="404">
@@ -8,7 +9,14 @@ const bannerImage = { src: '/images/layout/404_page.svg' };
     <div class="container">
       <div class="row flip-content-sm">
         <div class="col-lg-8 col-md-6 col-sm-12 mx-auto d-flex flex-column align-items-center justify-content-between">
-          <img src={bannerImage.src} alt="page not found" class="img-fluid w-50" />
+          <Image
+            src={bannerImage}
+            alt="page not found"
+            class="img-fluid w-50"
+            loading="eager"
+            fetchpriority="high"
+            decoding="async"
+          />
           <div class="text-center mt-4">
             <h1>ERROR: 404</h1>
             <p class="text-secondary">
