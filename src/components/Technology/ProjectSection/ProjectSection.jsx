@@ -15,7 +15,7 @@ const ProjectSection = ({ technology, sectionTitle, projects = { edges: [] } }) 
   });
 
   return (
-    <section className="project-section">
+    <section className="technology project-section">
       <div className="container">
         <Row>
           <Col md={12}>
