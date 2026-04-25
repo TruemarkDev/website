@@ -1,5 +1,8 @@
 ---
-import { faClock, faUserCircle } from '@fortawesome/free-solid-svg-icons';
+import { Picture } from "astro:assets";
+import { faClock, faUserCircle } from "@fortawesome/free-solid-svg-icons";
+import { resolveImage } from "../../lib/image-resolver";
+import fallbackImage from "../../assets/images/startup.jpg";
 
 interface Props {
   url: string;
@@ -12,15 +15,25 @@ interface Props {
   className?: string;
 }
 
-const { url, title, date, category, description, authorName, imgSrc, className = 'col-lg-4 col-md-12 mb-3' } = Astro.props;
+const {
+  url,
+  title,
+  date,
+  category,
+  description,
+  authorName,
+  imgSrc,
+  className = "col-lg-4 col-md-12 mb-3",
+} = Astro.props;
+const cardImage = (await resolveImage(imgSrc)) ?? fallbackImage;
 
 // Future-dated frontmatter dates (drafts) display as "RECENT" — same behavior as the legacy BlogCard.
-const recentOrOriginalDate = new Date(date) > new Date() ? 'RECENT' : date;
+const recentOrOriginalDate = new Date(date) > new Date() ? "RECENT" : date;
 
 // Inline FA icons rather than mounting a React FontAwesomeIcon island per card.
 const fa = (icon: typeof faClock) => {
   const [w, h, , , pathData] = icon.icon;
-  return { w, h, d: Array.isArray(pathData) ? pathData.join('') : pathData };
+  return { w, h, d: Array.isArray(pathData) ? pathData.join("") : pathData };
 };
 const clockIcon = fa(faClock);
 const userIcon = fa(faUserCircle);
@@ -28,24 +41,54 @@ const userIcon = fa(faUserCircle);
 
 <li class={`col-sm-12 ${className}`}>
   <a href={url} class="card blog-card h-100">
-    <img class="card-img-top mb-0" src={imgSrc} alt={title} loading="lazy" />
+    <Picture
+      src={cardImage}
+      formats={["avif", "webp"]}
+      alt={title}
+      class="card-img-top mb-0"
+      loading="lazy"
+      decoding="async"
+      widths={[200, 400, 600]}
+      sizes="(max-width: 991px) 100vw, 33vw"
+      quality={65}
+    />
     <div class="card-body">
       {category && <div class="header-tag-blog">{category}</div>}
-      <div class="blog-info d-flex justify-content-between align-items-center mb-3">
+      <div
+        class="blog-info d-flex justify-content-between align-items-center mb-3"
+      >
         <div class="author d-flex align-items-center me-4">
-          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox={`0 0 ${clockIcon.w} ${clockIcon.h}`} fill="currentColor" class="secondary me-1" aria-hidden="true">
-            <path d={clockIcon.d} />
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="14"
+            height="14"
+            viewBox={`0 0 ${clockIcon.w} ${clockIcon.h}`}
+            fill="currentColor"
+            class="secondary me-1"
+            aria-hidden="true"
+          >
+            <path d={clockIcon.d}></path>
           </svg>
           {recentOrOriginalDate}
         </div>
-        {authorName && (
-          <div class="date">
-            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox={`0 0 ${userIcon.w} ${userIcon.h}`} fill="currentColor" class="secondary me-1" aria-hidden="true">
-              <path d={userIcon.d} />
-            </svg>
-            {authorName}
-          </div>
-        )}
+        {
+          authorName && (
+            <div class="date">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                viewBox={`0 0 ${userIcon.w} ${userIcon.h}`}
+                fill="currentColor"
+                class="secondary me-1"
+                aria-hidden="true"
+              >
+                <path d={userIcon.d} />
+              </svg>
+              {authorName}
+            </div>
+          )
+        }
       </div>
       <h5 class="card-title mb-4">{title}</h5>
       {description && <p class="card-text text-secondary">{description}</p>}

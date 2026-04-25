@@ -3,7 +3,9 @@
 ## What's already done
 
 - `src/lib/image-resolver.ts` — `resolveImage(legacyPath)` maps `/images/...` strings to ESM-imported `ImageMetadata` from `src/assets/images/`. Returns `null` for unknown paths so callers can fall back.
-- `src/components/BlogPost/RelatedPosts.astro` — uses `<Image />` + `resolveImage()` for blog thumbnails.
+- `src/components/BlogPost/RelatedPosts.astro` — uses `<Picture />` + `resolveImage()` for blog thumbnails.
+- `src/components/Blog/BlogCard.astro` — uses `<Picture />` + `resolveImage()` for blog listing thumbnails.
+- `src/components/BlogPost/BlogPostHeader.astro` and `src/components/BlogPost/AuthorCTA.astro` — use `<Image />` + `resolveImage()` for author avatars, with raw `<img>` fallback if a legacy path is missing from `src/assets/images/`.
 - `src/pages/404.astro` — uses a static `import` + `<Image />`.
 - `src/assets/images/` already mirrors `public/images/` (~329MB, 1083 files), populated proactively during the initial migration. Two top-level files (`startup.jpg`, `page-header-bg.jpg`) were missing and have been copied across.
 
@@ -38,15 +40,18 @@ Both currently work because `public/images/` files are served as-is. Once `publi
 
 ```ts
 // in an Astro page frontmatter
-import { getImage } from 'astro:assets';
-import { resolveImage } from '../lib/image-resolver';
+import { getImage } from "astro:assets";
+import { resolveImage } from "../lib/image-resolver";
 
 const meta = await resolveImage(post.featuredImage);
-const optimized = meta ? await getImage({ src: meta, width: 800, format: 'webp' }) : null;
+const optimized = meta
+  ? await getImage({ src: meta, width: 800, format: "webp" })
+  : null;
 // pass optimized.src into the React island as a prop
 ```
 
 **Subtasks**:
+
 1. Identify every React island that renders images. Start with: blog tiles, `BlogList`, `BlogIndexHeader`, mega-menu blog tiles, `PagesReact/case-studies/*`, `PagesReact/services/*`.
 2. For each, lift the image rendering up: have the Astro page resolve and optimize, pass the resulting URL string in as a prop, and have the React component render `<img src={prop} />`.
 3. Update `imageToShape` callers to either skip the wrapping (pass strings directly) or wrap the optimized URL.

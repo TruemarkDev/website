@@ -1,10 +1,8 @@
 ---
-import SocialShare from './SocialShare.astro';
-import {
-  faClock,
-  faTag,
-  faBookOpen,
-} from '@fortawesome/free-solid-svg-icons';
+import { Image } from "astro:assets";
+import SocialShare from "./SocialShare.astro";
+import { faClock, faTag, faBookOpen } from "@fortawesome/free-solid-svg-icons";
+import { resolveImage } from "../../lib/image-resolver";
 
 interface Props {
   title: string;
@@ -21,22 +19,24 @@ interface Props {
   tags?: string[];
 }
 
-const { title, date, author, category, readingTimeText, slug, tags } = Astro.props;
+const { title, date, author, category, readingTimeText, slug, tags } =
+  Astro.props;
+const authorAvatar = await resolveImage(author?.avatar);
 
 const dateObj = date instanceof Date ? date : new Date(date as string);
 const formatted = Number.isNaN(dateObj.getTime())
   ? String(date)
-  : dateObj.toLocaleDateString('en-US', {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric',
+  : dateObj.toLocaleDateString("en-US", {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
     });
 
 // Inline FontAwesome icons so the badge row matches the original Gatsby site
 // (faClock on the date) and to give category + reading-time their own glyphs.
 const fa = (icon: typeof faClock) => {
   const [w, h, , , pathData] = icon.icon;
-  return { w, h, d: Array.isArray(pathData) ? pathData.join('') : pathData };
+  return { w, h, d: Array.isArray(pathData) ? pathData.join("") : pathData };
 };
 const clockIcon = fa(faClock);
 const tagIcon = fa(faTag);
@@ -47,40 +47,44 @@ const bookIcon = fa(faBookOpen);
   <div class="overlay">
     <div class="container py-5 position-relative">
       <div class="blog-title mt-4">
-        {category && (
-          <span class="badge badge-primary me-3">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="12"
-              height="12"
-              viewBox={`0 0 ${tagIcon.w} ${tagIcon.h}`}
-              fill="currentColor"
-              class="me-1"
-              style="vertical-align: -1px;"
-              aria-hidden="true"
-            >
-              <path d={tagIcon.d} />
-            </svg>
-            {category}
-          </span>
-        )}
-        {readingTimeText && (
-          <span class="badge text-white me-3">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="12"
-              height="12"
-              viewBox={`0 0 ${bookIcon.w} ${bookIcon.h}`}
-              fill="currentColor"
-              class="me-1"
-              style="vertical-align: -1px;"
-              aria-hidden="true"
-            >
-              <path d={bookIcon.d} />
-            </svg>
-            {readingTimeText.toUpperCase()}
-          </span>
-        )}
+        {
+          category && (
+            <span class="badge badge-primary me-3">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="12"
+                height="12"
+                viewBox={`0 0 ${tagIcon.w} ${tagIcon.h}`}
+                fill="currentColor"
+                class="me-1"
+                style="vertical-align: -1px;"
+                aria-hidden="true"
+              >
+                <path d={tagIcon.d} />
+              </svg>
+              {category}
+            </span>
+          )
+        }
+        {
+          readingTimeText && (
+            <span class="badge text-white me-3">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="12"
+                height="12"
+                viewBox={`0 0 ${bookIcon.w} ${bookIcon.h}`}
+                fill="currentColor"
+                class="me-1"
+                style="vertical-align: -1px;"
+                aria-hidden="true"
+              >
+                <path d={bookIcon.d} />
+              </svg>
+              {readingTimeText.toUpperCase()}
+            </span>
+          )
+        }
         <span class="badge text-white">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -92,31 +96,52 @@ const bookIcon = fa(faBookOpen);
             style="vertical-align: -1px;"
             aria-hidden="true"
           >
-            <path d={clockIcon.d} />
+            <path d={clockIcon.d}></path>
           </svg>
           {formatted}
         </span>
         <h1 class="blog-title-text text-white mt-3">{title}</h1>
-        <div class="d-flex justify-content-start align-items-start flex-column justify-content-md-between align-items-md-center flex-md-row mt-5">
-          {author && (
-            <div class="d-flex flex-column flex-md-row">
-              <a class="author d-flex align-items-center" href={author.resume ?? '#'}>
-                {author.avatar && (
-                  <img
-                    src={author.avatar}
-                    alt={author.name}
-                    class="author-avatar m-0"
-                  />
-                )}
-                <div class="ms-3">
-                  <h4 class="mb-1 text-white">{author.name}</h4>
-                  {author.position && (
-                    <span class="designation text-white">{author.position}</span>
-                  )}
-                </div>
-              </a>
-            </div>
-          )}
+        <div
+          class="d-flex justify-content-start align-items-start flex-column justify-content-md-between align-items-md-center flex-md-row mt-5"
+        >
+          {
+            author && (
+              <div class="d-flex flex-column flex-md-row">
+                <a
+                  class="author d-flex align-items-center"
+                  href={author.resume ?? "#"}
+                >
+                  {author.avatar &&
+                    (authorAvatar ? (
+                      <Image
+                        src={authorAvatar}
+                        alt={author.name ?? ""}
+                        class="author-avatar m-0"
+                        width="64"
+                        height="64"
+                        loading="eager"
+                        fetchpriority="high"
+                        decoding="async"
+                      />
+                    ) : (
+                      <img
+                        src={author.avatar}
+                        alt={author.name}
+                        class="author-avatar m-0"
+                      />
+                    ))}
+                  <div class="ms-3">
+                    <h4 class="mb-1 text-white">{author.name}</h4>
+                    {author.position && (
+                      <span class="designation text-white">
+                        {author.position}
+                      </span>
+                    )}
+                  </div>
+                </a>
+              </div>
+            )
+          }
           <SocialShare path={`/blog/${slug}`} description={title} tags={tags} />
         </div>
       </div>

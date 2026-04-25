@@ -1,4 +1,7 @@
 ---
+import { Image } from "astro:assets";
+import { resolveImage } from "../../lib/image-resolver";
+
 interface Props {
   name: string;
   position?: string;
@@ -7,22 +10,36 @@ interface Props {
 }
 
 const { name, position, bio, avatar } = Astro.props;
-const firstName = (name ?? '').split(' ')[0];
+const firstName = (name ?? "").split(" ")[0];
+const authorAvatar = await resolveImage(avatar);
 ---
 
 <aside class="post-cta-card author-cta-card my-4">
   <div class="post-cta-card__inner">
     <div class="post-cta-card__media">
-      {avatar && (
-        <img
-          src={avatar}
-          alt={name}
-          class="post-cta-card__avatar"
-          width="96"
-          height="96"
-          loading="lazy"
-        />
-      )}
+      {
+        avatar &&
+          (authorAvatar ? (
+            <Image
+              src={authorAvatar}
+              alt={name}
+              class="post-cta-card__avatar"
+              width="96"
+              height="96"
+              loading="lazy"
+              decoding="async"
+            />
+          ) : (
+            <img
+              src={avatar}
+              alt={name}
+              class="post-cta-card__avatar"
+              width="96"
+              height="96"
+              loading="lazy"
+            />
+          ))
+      }
     </div>
     <div class="post-cta-card__body">
       <div class="post-cta-card__heading-row">
@@ -30,7 +47,10 @@ const firstName = (name ?? '').split(' ')[0];
           <h4 class="post-cta-card__title">{name}</h4>
           {position && <p class="post-cta-card__subtitle">{position}</p>}
         </div>
-        <a href="/contact/" class="btn btn-primary outlined post-cta-card__action">
+        <a
+          href="/contact/"
+          class="btn btn-primary outlined post-cta-card__action"
+        >
           Hire {firstName}
         </a>
       </div>
