@@ -1,0 +1,51 @@
+---
+interface RelatedPost {
+  slug: string;
+  title: string;
+  hero?: string | null;
+  category?: string;
+}
+
+interface Props {
+  posts: RelatedPost[];
+  title?: string;
+}
+
+const { posts, title = 'Related Posts' } = Astro.props;
+---
+
+{posts.length > 0 && (
+  <aside id="blog" class="related-posts-section pb-0 pt-0">
+    <div class="px-0 text-start">
+      <h3>{title}</h3>
+    </div>
+    <ul class="list-unstyled ps-0">
+      {posts.map((post) => (
+        <li class="mb-4">
+          <div class="blog-post d-flex flex-column">
+            <figure class="card_image position-relative mb-3">
+              <a href={`/blog/${post.slug}/`} title={post.title} rel="bookmark">
+                <img
+                  src={post.hero ?? '/images/startup.jpg'}
+                  alt={post.title}
+                  class="card-img-top mb-0 w-100"
+                  loading="lazy"
+                />
+              </a>
+              {post.category && (
+                <span class="wpb-category">
+                  <a href={`/blog/${post.slug}/`}>{post.category}</a>
+                </span>
+              )}
+            </figure>
+            <h4 class="card-title">
+              <a href={`/blog/${post.slug}/`} title={post.title} rel="bookmark">
+                {post.title}
+              </a>
+            </h4>
+          </div>
+        </li>
+      ))}
+    </ul>
+  </aside>
+)}

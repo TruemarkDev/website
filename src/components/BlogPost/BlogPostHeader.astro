@@ -1,0 +1,81 @@
+---
+import SocialShare from './SocialShare.astro';
+
+interface Props {
+  title: string;
+  date: Date | string;
+  author?: {
+    name?: string;
+    position?: string;
+    avatar?: string;
+    resume?: string;
+  } | null;
+  category?: string;
+  readingTimeText?: string;
+  slug: string;
+  tags?: string[];
+}
+
+const { title, date, author, category, readingTimeText, slug, tags } = Astro.props;
+
+const dateObj = date instanceof Date ? date : new Date(date as string);
+const formatted = Number.isNaN(dateObj.getTime())
+  ? String(date)
+  : dateObj.toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+    });
+---
+
+<div class="blog-post-header d-flex justify-content-center align-items-center">
+  <div class="overlay">
+    <div class="container py-5 position-relative">
+      <div class="blog-title mt-4">
+        {category && <span class="badge badge-primary me-3">{category}</span>}
+        {readingTimeText && (
+          <span class="badge text-white me-3">{readingTimeText.toUpperCase()}</span>
+        )}
+        <span class="badge text-white">
+          <svg
+            width="14"
+            height="14"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            class="me-1"
+            style="vertical-align: -2px; color: var(--primary-color);"
+          >
+            <circle cx="12" cy="12" r="10" />
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 7v5l3 2" />
+          </svg>
+          {formatted}
+        </span>
+        <h1 class="blog-title-text text-white mt-3">{title}</h1>
+        <div class="d-flex justify-content-start align-items-start flex-column justify-content-md-between align-items-md-center flex-md-row mt-5">
+          {author && (
+            <div class="d-flex flex-column flex-md-row">
+              <a class="author d-flex align-items-center" href={author.resume ?? '#'}>
+                {author.avatar && (
+                  <img
+                    src={author.avatar}
+                    alt={author.name}
+                    class="author-avatar m-0"
+                  />
+                )}
+                <div class="ms-3">
+                  <h4 class="mb-1 text-white">{author.name}</h4>
+                  {author.position && (
+                    <span class="designation text-white">{author.position}</span>
+                  )}
+                </div>
+              </a>
+            </div>
+          )}
+          <SocialShare path={`/blog/${slug}`} description={title} tags={tags} />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

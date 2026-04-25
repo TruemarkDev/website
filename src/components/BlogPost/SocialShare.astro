@@ -1,0 +1,103 @@
+---
+import { faFacebookF, faTwitter, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
+
+interface Props {
+  path?: string;
+  description?: string;
+  tags?: string[];
+  className?: string;
+}
+
+const {
+  path = '/',
+  description = '',
+  tags = [],
+  className = '',
+} = Astro.props;
+
+const url = `https://www.truemark.dev${path.startsWith('/') ? path : '/' + path}`;
+const enc = encodeURIComponent;
+const fb = `https://www.facebook.com/sharer/sharer.php?u=${enc(url)}&quote=${enc(description)}`;
+const tw = `https://twitter.com/intent/tweet?url=${enc(url)}&text=${enc(description)}${
+  tags.length ? `&hashtags=${enc(tags.join(','))}` : ''
+}`;
+const li = `https://www.linkedin.com/sharing/share-offsite/?url=${enc(url)}`;
+
+// FontAwesome icons expose `[width, height, ligatures, unicode, pathData]`.
+// Render them as inline SVG so the design matches the original FA icons exactly.
+const fa = (icon: typeof faFacebookF) => {
+  const [w, h, , , pathData] = icon.icon;
+  return { w, h, d: Array.isArray(pathData) ? pathData.join('') : pathData };
+};
+const fbIcon = fa(faFacebookF);
+const twIcon = fa(faTwitter);
+const liIcon = fa(faLinkedinIn);
+---
+
+<div class:list={['social-box-container mt-4 mt-md-0', className]}>
+  <div class="d-flex social-icon-box justify-content-between align-items-center">
+    <div class="share py-2 px-3 w-100 text-center">SHARE</div>
+    <div class="d-flex">
+      <div class="social-icon">
+        <a
+          href={fb}
+          target="_blank"
+          rel="noopener"
+          class="py-2 px-3 d-block"
+          aria-label="Share on Facebook"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="14"
+            height="14"
+            viewBox={`0 0 ${fbIcon.w} ${fbIcon.h}`}
+            class="fill-white"
+            fill="currentColor"
+          >
+            <path d={fbIcon.d} />
+          </svg>
+        </a>
+      </div>
+      <div class="social-icon">
+        <a
+          href={tw}
+          target="_blank"
+          rel="noopener"
+          class="py-2 px-3 d-block"
+          aria-label="Share on Twitter"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="14"
+            height="14"
+            viewBox={`0 0 ${twIcon.w} ${twIcon.h}`}
+            class="fill-white"
+            fill="currentColor"
+          >
+            <path d={twIcon.d} />
+          </svg>
+        </a>
+      </div>
+      <div class="social-icon">
+        <a
+          href={li}
+          target="_blank"
+          rel="noopener"
+          class="py-2 px-3 d-block"
+          aria-label="Share on LinkedIn"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="14"
+            height="14"
+            viewBox={`0 0 ${liIcon.w} ${liIcon.h}`}
+            class="fill-white"
+            fill="currentColor"
+          >
+            <path d={liIcon.d} />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

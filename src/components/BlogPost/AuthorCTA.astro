@@ -1,0 +1,35 @@
+---
+interface Props {
+  name: string;
+  position?: string;
+  bio?: string;
+  avatar?: string;
+}
+
+const { name, position, bio, avatar } = Astro.props;
+const firstName = (name ?? '').split(' ')[0];
+---
+
+<div class="col-12 mt-4">
+  <div class="author-cta bg-light d-flex flex-column flex-md-row text-center text-md-start align-items-center align-items-md-start p-4 my-3">
+    {avatar && (
+      <div class="author-avatar">
+        <img src={avatar} alt={name} class="author-avatar" width="112" height="112" />
+      </div>
+    )}
+    <div class="author-detail pt-1 ms-md-4">
+      <div class="d-flex flex-column flex-md-row justify-content-md-between mb-2">
+        <div>
+          <h4 class="mb-1 mt-md-0">{name}</h4>
+          {position && (
+            <p class="mb-0 designation text-secondary mb-3 mb-md-0">{position}</p>
+          )}
+        </div>
+        <a href="/contact/" class="btn btn-outline-primary mt-md-0 mb-0 py-1 px-3 align-self-center align-self-md-start">
+          Hire {firstName}
+        </a>
+      </div>
+      {bio && <p class="mb-3 detail">{bio}</p>}
+    </div>
+  </div>
+</div>

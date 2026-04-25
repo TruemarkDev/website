@@ -1,0 +1,163 @@
+---
+interface Heading {
+  slug: string;
+  text: string;
+  depth: number;
+}
+
+interface Props {
+  headings: Heading[];
+  defaultTitle?: string;
+}
+
+const { headings, defaultTitle = 'Table of Contents' } = Astro.props;
+
+// Same shape as the legacy theme BlogToc: ALL h1-h6 (depth 1-6) with indent.
+const items = headings.filter((h) => h.depth >= 1 && h.depth <= 6);
+---
+
+{items.length > 0 && (
+  <div class="minimized-toc-container sticky-top py-3" id="toc-bar">
+    <div class="container minimized-toc d-flex align-items-center justify-content-between">
+      <p class="m-0 active">
+        <button
+          type="button"
+          class="collapse-btn btn btn-link p-0 text-decoration-none"
+          id="toc-toggler"
+          aria-expanded="false"
+          aria-controls="toc-collapse"
+        >
+          <svg
+            id="toc-caret"
+            width="10"
+            height="10"
+            viewBox="0 0 10 10"
+            fill="currentColor"
+            class="me-2"
+          >
+            <path d="M3 1l4 4-4 4" />
+          </svg>
+          <span id="toc-active-title" class="text-secondary pointer">{defaultTitle}</span>
+        </button>
+      </p>
+      <span id="toc-progress" class="text-secondary small">0%</span>
+    </div>
+    <div class="container minimized-toc">
+      <div class="toc-collapse" id="toc-collapse">
+        <ul class="toc-list mt-3">
+          {items.map((h) => (
+            <li
+              data-heading-id={h.slug}
+              style={{ paddingLeft: `${Math.max(h.depth - 1, 0)}em` }}
+            >
+              <a href={`#${h.slug}`}>{h.text}</a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </div>
+)}
+
+<script>
+  const bar = document.getElementById('toc-bar');
+  const toggler = document.getElementById('toc-toggler');
+  const collapse = document.getElementById('toc-collapse');
+  const caret = document.getElementById('toc-caret');
+  const activeTitle = document.getElementById('toc-active-title');
+  const progressEl = document.getElementById('toc-progress');
+
+  if (bar && toggler && collapse) {
+    let isOpen = false;
+    toggler.addEventListener('click', () => {
+      isOpen = !isOpen;
+      collapse.classList.toggle('open', isOpen);
+      caret?.classList.toggle('open', isOpen);
+      toggler.setAttribute('aria-expanded', String(isOpen));
+    });
+    collapse.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => {
+        isOpen = false;
+        collapse.classList.remove('open');
+        caret?.classList.remove('open');
+        toggler.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    // Highlight the heading currently in view, mirror its title in the bar.
+    const headingEls = document.querySelectorAll(
+      '.blog-content h1[id], .blog-content h2[id], .blog-content h3[id], .blog-content h4[id]'
+    );
+    const tocItems = collapse.querySelectorAll('li');
+    if (headingEls.length > 0) {
+      const obs = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const id = (entry.target as HTMLElement).id;
+              if (activeTitle) activeTitle.textContent = entry.target.textContent || '';
+              tocItems.forEach((li) => {
+                li.classList.toggle('selected-on-view', li.getAttribute('data-heading-id') === id);
+              });
+            }
+          });
+        },
+        { rootMargin: '-80px 0px -70% 0px' }
+      );
+      headingEls.forEach((el) => obs.observe(el));
+    }
+
+    // Reading progress.
+    const updateProgress = () => {
+      const content = document.querySelector('.blog-content');
+      if (!content || !progressEl) return;
+      const rect = content.getBoundingClientRect();
+      const total = content.scrollHeight;
+      const scrolled = Math.max(0, -rect.top);
+      const pct = Math.min(100, Math.round((scrolled / (total - window.innerHeight)) * 100));
+      progressEl.textContent = `${Math.max(0, pct)}%`;
+    };
+    window.addEventListener('scroll', updateProgress, { passive: true });
+    updateProgress();
+  }
+</script>
+
+<style>
+  /* Minimal additions on top of the theme's existing `.minimized-toc-container`
+     SCSS — collapse animation + caret rotation. */
+  .toc-collapse {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+  .toc-collapse.open {
+    max-height: 70vh;
+    overflow-y: auto;
+  }
+  #toc-caret {
+    transition: transform 0.2s ease;
+  }
+  #toc-caret.open {
+    transform: rotate(90deg);
+  }
+  .toc-list {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+  }
+  .toc-list li {
+    padding-block: 0.25rem;
+  }
+  .toc-list li a {
+    text-decoration: none;
+    color: inherit;
+  }
+  .toc-list li a:hover {
+    color: var(--primary-color);
+  }
+  .collapse-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+</style>

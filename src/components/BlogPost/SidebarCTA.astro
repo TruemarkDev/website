@@ -1,0 +1,25 @@
+---
+interface Props {
+  title?: string;
+  text?: string;
+  buttonText?: string;
+  buttonUrl?: string;
+}
+
+const {
+  title = 'Looking for a reliable vendor?',
+  text = 'Get your free tech consultation and project estimation at no charge.',
+  buttonText = 'Apply Now',
+  buttonUrl = '/contact/',
+} = Astro.props;
+---
+
+<div class="sticky-cta">
+  <div class="wrapper bg">
+    <div class="overlay d-flex flex-column justify-content-center align-items-center text-center py-5 px-3">
+      <h3 class="mb-3 text-white">{title}</h3>
+      <p class="mb-4 text-white">{text}</p>
+      <a href={buttonUrl} class="btn btn-light px-4">{buttonText}</a>
+    </div>
+  </div>
+</div>
