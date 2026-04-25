@@ -2,7 +2,7 @@
 import { getCollection, render } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import JobPostBody from '../../components/Job/JobPostBody.jsx';
-import { resolveImage } from '../../lib/image-resolver';
+import { resolveUrl } from '../../lib/image-resolver';
 
 export async function getStaticPaths() {
   const all = await getCollection('jobs');
@@ -15,8 +15,7 @@ export async function getStaticPaths() {
 const { entry } = Astro.props;
 const { Content } = await render(entry);
 const data = entry.data;
-const rawImage = (data.featuredImage as string | undefined) ?? null;
-const featuredImageUrl = (await resolveImage(rawImage))?.src ?? rawImage;
+const featuredImageUrl = await resolveUrl(data.featuredImage as string | undefined);
 const frontmatter = { ...data, featuredImage: featuredImageUrl };
 ---
 

@@ -3,12 +3,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import PortfolioNav from '../components/Menu/Portfolio/PortfolioNav.jsx';
 import PortfolioList from '../components/Portfolio/PortfolioList.jsx';
 import { getCollection } from 'astro:content';
-import { resolveImage } from '../lib/image-resolver';
+import { resolveUrl } from '../lib/image-resolver';
 
 const projectEntries = await getCollection('projects');
-
-const resolveUrl = async (p: string | undefined | null) =>
-  (await resolveImage(p))?.src ?? p ?? undefined;
 
 const projects = await Promise.all(
   projectEntries

@@ -1,13 +1,10 @@
 import { getCollection, getEntry, type CollectionEntry } from "astro:content";
 import readingTime from "reading-time";
-import { resolveImage } from "./image-resolver";
+import { resolveUrl } from "./image-resolver";
 
 type BlogEntry = CollectionEntry<"blog">;
 
 const slugFromAuthorName = (name?: string) => (name ?? "").toLowerCase().trim();
-
-const resolveUrl = async (p?: string | null) =>
-  (await resolveImage(p))?.src ?? p ?? undefined;
 
 async function resolveAuthor(name?: string) {
   if (!name) return null;

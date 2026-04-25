@@ -1,4 +1,29 @@
-# Phase 5 — Image migration (remaining work)
+# Phase 5 — Image migration
+
+## Status: 5.1 + 5.2 done, 5.3 partial
+
+542 non-blog files (~96MB) have been deleted from `public/images/`. Only
+`public/images/blogs/` remains — kept because MDX blog bodies still write
+`![alt](/images/blogs/...)` and that resolves from `public/`. Rewriting the
+~480 MDX-body image references to relative imports is the only thing left,
+and it's a content pass with no code dependencies.
+
+The migration approach was:
+
+- `src/lib/image-resolver.ts` exposes `resolveImage(path)` (returns `ImageMetadata`)
+  and `resolveUrl(path)` (returns the fingerprinted URL string with fallback).
+- React/JSX consumers use ESM imports with the `?url` query suffix, since Astro 6
+  intercepts ESM image imports project-wide and would otherwise hand back
+  `ImageMetadata` (or SVG components) that React would render as `[object Object]`.
+- `.astro` chrome (TopMenu, Footer, case-study pages, resume) uses the same
+  `?url` import pattern; SVG paths injected into inline `<script>` blocks ride
+  through `define:vars`.
+- `.scss` partials use relative `url('../../images/...')` so Vite's CSS plugin
+  emits fingerprinted asset URLs.
+- Page frontmatter that flows into React islands or layout meta (`portfolio.astro`,
+  `careers.astro`, `trainee.astro`, `pages/jobs/[...slug].astro`, plus
+  `lib/blog-data.ts` and `lib/career-data.ts`) runs strings through `resolveUrl`
+  before passing them on.
 
 ## What's already done
 

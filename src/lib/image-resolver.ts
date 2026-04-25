@@ -7,8 +7,10 @@ import type { ImageMetadata } from "astro";
 // lets `.astro` consumers opt into the optimized path without touching content
 // frontmatter (which still uses `/images/...` strings).
 //
-// Returns `null` for unknown paths — callers should fall back to a plain `<img>`
-// or a default asset.
+// `resolveImage` returns `ImageMetadata` (or `null`) — use it when you want
+// width/height/format. `resolveUrl` returns just the fingerprinted URL string
+// suitable for `<img src>` and falls back to the original path so unknown
+// inputs survive instead of vanishing.
 const imageLoaders = import.meta.glob<{ default: ImageMetadata }>(
   "/src/assets/images/**/*.{jpg,jpeg,png,webp,avif,gif}",
 );
@@ -22,4 +24,10 @@ export async function resolveImage(
   if (!loader) return null;
   const mod = await loader();
   return mod.default;
+}
+
+export async function resolveUrl(
+  legacyPath: string | undefined | null,
+): Promise<string | undefined> {
+  return (await resolveImage(legacyPath))?.src ?? legacyPath ?? undefined;
 }

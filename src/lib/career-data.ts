@@ -1,11 +1,8 @@
 import { getCollection } from 'astro:content';
-import { resolveImage } from './image-resolver';
+import { resolveUrl } from './image-resolver';
 
 const toIso = (v: unknown) =>
   v instanceof Date ? v.toISOString().slice(0, 10) : (v as string | undefined);
-
-const resolveUrl = async (p?: string | null) =>
-  (await resolveImage(p))?.src ?? p ?? undefined;
 
 export async function getTraineeProgramEdges() {
   const all = await getCollection('trainee-programs');

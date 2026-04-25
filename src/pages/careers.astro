@@ -9,7 +9,7 @@ import CareerHeroSection from '../components/HeroSection/CareerHeroSection.jsx';
 import HowToApply from '../components/Trainee/HowToApply.jsx';
 import { getCollection } from 'astro:content';
 import { getTraineeProgramEdges } from '../lib/career-data';
-import { resolveImage } from '../lib/image-resolver';
+import { resolveUrl } from '../lib/image-resolver';
 
 const jobs = await getCollection('jobs', ({ data }) => data.positionOpen);
 jobs.sort((a, b) => {
@@ -18,16 +18,16 @@ jobs.sort((a, b) => {
   return (a.data.vacancyCount ?? 0) - (b.data.vacancyCount ?? 0);
 });
 const openings = await Promise.all(
-  jobs.map(async (j) => {
-    const featuredImage = (await resolveImage(j.data.featuredImage as string | undefined))?.src
-      ?? (j.data.featuredImage as string | undefined);
-    return {
-      node: {
-        fields: { slug: `/jobs/${j.data.customSlug}` },
-        frontmatter: { ...j.data, slug: j.data.customSlug, featuredImage },
+  jobs.map(async (j) => ({
+    node: {
+      fields: { slug: `/jobs/${j.data.customSlug}` },
+      frontmatter: {
+        ...j.data,
+        slug: j.data.customSlug,
+        featuredImage: await resolveUrl(j.data.featuredImage as string | undefined),
       },
-    };
-  }),
+    },
+  })),
 );
 const traineePrograms = await getTraineeProgramEdges();
 ---
