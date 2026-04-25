@@ -37,7 +37,7 @@ Open follow-up work is tracked in [`docs/backlog/`](docs/backlog/README.md).
 
 ### Vite aliases
 
-`astro.config.mjs` defines aliases for the root-import map: `assets`, `images`, `components`, `constants`, `services`, `utils`, `providers`, `src`, plus theme-internal `@components`, `@assets`, `@constants`, `@services`, `@utils` for the remaining `src/theme/` components. SCSS `loadPaths` includes `node_modules` so `@import 'bootstrap/scss/...';` works without the legacy `~`. `tsconfig.json` mirrors a subset of these as TS path mappings.
+`astro.config.mjs` defines aliases for the root-import map: `assets`, `images`, `components`, `constants`, `services`, `utils`, `src`, plus theme-internal `@components`, `@assets`, `@constants`, `@services`, `@utils` for the remaining `src/theme/` components. SCSS `loadPaths` includes `node_modules` so `@import 'bootstrap/scss/...';` works without the legacy `~`. `tsconfig.json` mirrors a subset of these as TS path mappings.
 
 ### Content collections
 

@@ -47,7 +47,6 @@ export default defineConfig({
         constants: path.join(__dirname, 'src/constants'),
         services: path.join(__dirname, 'src/services'),
         utils: path.join(__dirname, 'src/utils'),
-        providers: path.join(__dirname, 'src/providers'),
         src: path.join(__dirname, 'src'),
       },
     },

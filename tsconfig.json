@@ -10,7 +10,6 @@
       "constants/*": ["./src/constants/*"],
       "services/*": ["./src/services/*"],
       "utils/*": ["./src/utils/*"],
-      "providers/*": ["./src/providers/*"],
       "@utils/*": ["./src/utils/*"],
       "src/*": ["./src/*"]
     },
