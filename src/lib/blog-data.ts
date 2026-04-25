@@ -49,7 +49,8 @@ export async function toBlogNode(
   const author = await resolveAuthor(entry.data.author);
   const text = entry.body || "";
   const minutes = readingTime(text);
-  const featured = await resolveUrl(entry.data.featuredImage as string | undefined);
+  const featuredRaw = entry.data.featuredImage as string | undefined;
+  const featured = await resolveUrl(featuredRaw);
   return {
     node: {
       frontmatter: {
@@ -72,6 +73,7 @@ export async function toBlogNode(
         toc: entry.data.toc,
         featured: entry.data.featured,
         featuredImage: featured,
+        featuredImageRaw: featuredRaw,
         image: featured,
         author,
       },

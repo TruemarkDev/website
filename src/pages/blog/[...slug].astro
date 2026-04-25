@@ -102,8 +102,6 @@ const articleSchema = {
   },
 };
 
-// Default to the original Gatsby site's production Disqus shortname so the
-// thread renders out of the box; override via PUBLIC_DISQUS_SHORTNAME in .env.
 const disqusShortname =
   import.meta.env.PUBLIC_DISQUS_SHORTNAME ?? 'truemark-com-np';
 ---

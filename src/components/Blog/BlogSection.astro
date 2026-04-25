@@ -10,6 +10,7 @@ interface Edge {
       category?: string;
       description?: string;
       featuredImage?: string | null;
+      featuredImageRaw?: string | null;
       author?: { name?: string };
     };
   };
@@ -46,10 +47,10 @@ const {
       <div class="col-md-12">
         <ul class="row row-eq-height blogs">
           {blogs.edges.map((edge) => {
-            const { slug, title, date, category, description, featuredImage, author } =
+            const { slug, title, date, category, description, featuredImageRaw, author } =
               edge.node.frontmatter;
             const url = `${blogRedirectRoute}/${slug}/#`;
-            const imgSrc = featuredImage ?? FALLBACK_IMG;
+            const imgSrc = featuredImageRaw ?? FALLBACK_IMG;
             return (
               <BlogCard
                 url={url}

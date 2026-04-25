@@ -10,6 +10,7 @@ interface Edge {
       category?: string;
       description?: string;
       featuredImage?: string | null;
+      featuredImageRaw?: string | null;
       author?: { name?: string };
     };
   };
@@ -32,10 +33,10 @@ const visible = categoryFilter
 <section class="container mt-4 mb-4">
   <ul class="row row-eq-height blogs mb-0 p-0">
     {visible.map((edge) => {
-      const { slug, title, date, category, description, featuredImage, author } =
+      const { slug, title, date, category, description, featuredImageRaw, author } =
         edge.node.frontmatter;
       const url = `/blog/${slug}/#`;
-      const imgSrc = featuredImage ?? FALLBACK_IMG;
+      const imgSrc = featuredImageRaw ?? FALLBACK_IMG;
       return (
         <BlogCard
           url={url}

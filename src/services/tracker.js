@@ -1,6 +1,3 @@
-// Astro migration: gatsby-plugin-google-analytics replaced with a no-op that
-// forwards to gtag if available. Wire up real GA via your preferred analytics
-// integration (e.g. partytown + gtag) when ready.
 const trackCustomEvent = (params) => {
   if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
     window.gtag('event', params.action || 'event', {
