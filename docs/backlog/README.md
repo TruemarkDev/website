@@ -8,7 +8,7 @@ The overall direction: incremental migration, not a wholesale rewrite. Chrome mo
 
 | Phase | Status |
 |---|---|
-| 5 — Image pipeline | 5.1 + 5.2 done. 5.3 partially done: 542 non-blog files (~96MB) deleted from `public/images/`; only `public/images/blogs/` remains, kept for the MDX body images that still reference `/images/blogs/...` directly. |
+| 5 — Image pipeline | **Done.** `public/images/` deleted entirely (~330MB across 1083 files). MDX body images flow through Vite via `src/lib/remark-image-paths.mjs` (rewrites `/images/...` markdown URLs to relative imports per-file). All consumers route through `resolveImage`/`resolveUrl` or ESM `?url` imports. |
 | 1 — `PagesReact/*` audit | Done — see `01-audit-results.md` |
 | 2 — Static page conversion | Done — 16 of 17 PagesReact converted; only `resume/prakash` remains (interactive) |
 | 3 — Move chrome out of `src/theme/` | **Done.** 3.4 (blog components) + 3.1/3.2 (TopMenu.astro + Footer.astro) complete. FormCTASection stays React (interactive form). |
