@@ -1,0 +1,15 @@
+.result-section-description {
+  font-size: 1.3em;
+  font-weight: 400;
+  line-height: 1.67;
+  padding-bottom: 2em;
+}
+
+.result-image {
+  margin: 0 auto;
+  width: auto;
+
+  @include max-break-point(tablet) {
+    width: 85%;
+  }
+}

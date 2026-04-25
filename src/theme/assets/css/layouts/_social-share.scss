@@ -1,0 +1,28 @@
+.share-container {
+    width: 100%;
+  
+    @include min-break-point(tablet) {
+      width: auto;
+    }
+  }
+  
+  .social-box-container {
+    @include border-radius(0.6em);
+    right: 0;
+  }
+  
+  .social-icon-box {
+    @include border-radius(0.6em);
+    background-color: transparent;
+    border: 1px solid $border-color;
+  
+    .social-icon {
+      border-left: 1px solid $border-color;
+      color: $black;
+  
+      &:hover {
+        color: $primary-color;
+      }
+    }
+  }
+  

@@ -1,0 +1,8 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageBody from '../../components/PagesReact/technologies/gatsby-js.jsx';
+---
+
+<BaseLayout title="Truemark | Gatsby Development" path="technologies/gatsby-js">
+  <PageBody client:only="react" />
+</BaseLayout>

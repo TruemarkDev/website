@@ -1,0 +1,10 @@
+.badge {
+  &.badge-primary-outline {
+    border: 1px solid $primary-color;
+    color: $white;
+  }
+}
+
+.badge-white-outline {
+  border: 0.063em solid $white;
+}

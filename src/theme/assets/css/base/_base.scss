@@ -1,0 +1,86 @@
+body {
+  background-color: $body-background;
+  transition: background-color 1s;
+  color: $body-secondary-color;
+}
+
+section {
+  @include padding-top-bottom(5em);
+  @include max-break-point(mobile-phone) {
+    @include padding-top-bottom(3em);
+  }
+  &:nth-child(even),
+  &.alternate {
+    background-color: $bs-bg-light;
+  }
+}
+.text-white {
+  color: $white !important;
+}
+
+li {
+  list-style: none;
+  margin-bottom: 0.725rem;
+}
+
+a {
+  text-decoration: none;
+
+  &:hover {
+    color: $primary-color-hover;
+    outline-width: 0;
+    text-decoration: none;
+  }
+
+  &.active,
+  &[aria-current='page'] {
+    color: $primary-color;
+    outline-width: 0;
+  }
+}
+
+::input-placeholder {
+  color: inherit;
+  opacity: 0.54;
+}
+
+::-webkit-file-upload-button {
+  appearance: button;
+  font: inherit;
+}
+
+.img-btn {
+  @include flex(1);
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.bold-text {
+  font-weight: 500;
+}
+
+.rm-sm-4 {
+  @include max-break-point(mobile-phone) {
+    margin-bottom: 1.5em;
+  }
+
+  @include min-break-point(large-desktop) {
+    margin-bottom: 0;
+  }
+}
+
+.rm-sm-5 {
+  @include max-break-point(mobile-phone) {
+    margin-bottom: 3em;
+  }
+
+  @include min-break-point(large-desktop) {
+    margin-bottom: 0;
+  }
+}
+
+.job-image {
+  height: 10em;
+}

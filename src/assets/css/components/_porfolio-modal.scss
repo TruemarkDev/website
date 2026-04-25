@@ -1,0 +1,15 @@
+.modal-content {
+    .img-holder {
+        width: 10rem;
+    }
+
+    .project-details-info {
+        overflow: hidden;
+        flex-grow: 1;
+    }
+}
+
+.portfolio-thumbnail-border{
+    border: 1.5px solid $primary-overlay;
+    border-radius: 0.2rem;
+}

@@ -1,0 +1,15 @@
+.open-positions {
+    .openings {
+
+        .card:hover, .card:focus{
+            color: $white;
+            background: $primary-color;
+        }
+        .active {
+            .card {
+                background: $primary-color;
+                color: $white;
+            }
+        }
+    }
+}

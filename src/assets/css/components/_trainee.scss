@@ -1,0 +1,246 @@
+.ui-ux-services {
+  .container-ui-ux {
+    &::after {
+      content: '';
+      background: linear-gradient(
+        180deg,
+        rgba(26, 188, 254, 0.27) 0%,
+        rgba(84, 84, 212, 0.1134) 100%
+      );
+      filter: blur(6.2221rem);
+      border-radius: 9.6858rem;
+      transform: rotate(-54.37deg);
+      position: absolute;
+      right: -14em;
+      top: 8em;
+      bottom: 0;
+      width: 25em;
+    }
+  }
+
+  img {
+    display: none;
+
+    @include media-breakpoint-up(md) {
+      display: block;
+    }
+  }
+
+  .ui-ux-service-text {
+    top: 1em;
+    left: 0;
+    border-radius: 0.5em;
+    z-index: 1;
+    background-color: $secondary-color;
+
+    @include media-breakpoint-up(md) {
+      position: absolute;
+    }
+  }
+}
+
+[data-theme='light'] {
+  .container-ui-ux {
+    &::after {
+      background: linear-gradient(
+        180deg,
+        rgba(176, 64, 64, 0.27) 0%,
+        rgba(84, 84, 212, 0.1134) 100%
+      );
+    }
+  }
+}
+
+.web-design,
+.mobile-design,
+.product-design {
+  width: 14em;
+  height: 12em;
+  text-indent: -9999em;
+}
+
+[data-theme='light'] {
+  .web-design {
+    background: url('../../assets/images/ui-ux/web-design-light.svg') no-repeat
+      0 0;
+  }
+
+  .mobile-design {
+    background: url('../../assets/images/ui-ux/mobile-design-light.svg')
+      no-repeat 0 0;
+  }
+
+  .product-design {
+    background: url('../../assets/images/ui-ux/product-design-light.svg')
+      no-repeat 0 0;
+  }
+
+  .how-to-apply {
+    &:after {
+      background: rgba(255, 206, 52, 0.2);
+    }
+  }
+}
+
+[data-theme='dark'] {
+  .web-design {
+    background: url('../../assets/images/ui-ux/web-design.svg') no-repeat 0 0;
+  }
+
+  .mobile-design {
+    background: url('../../assets/images/ui-ux/mobile-design.svg') no-repeat 0 0;
+  }
+
+  .product-design {
+    background: url('../../assets/images/ui-ux/product-design.svg') no-repeat 0
+      0;
+  }
+}
+
+.ui-ux-approach {
+  .container {
+    &:after {
+      content: '';
+      position: absolute;
+      left: -36em;
+      top: -13em;
+      bottom: 0px;
+      background: var(--secondary-color);
+      filter: blur(0.4em);
+      border-radius: 1em;
+      transform: rotate(61deg);
+      width: 55em;
+      height: 60em;
+      z-index: -1;
+    }
+  }
+  .ui-approach strong,
+  .ux-approach strong {
+    font-size: 7em;
+    font-weight: 700;
+  }
+
+  .ui-approach li,
+  .ux-approach li {
+    display: inline-block;
+  }
+}
+
+.how-to-apply {
+  .process-apply {
+    background: $apply-process;
+    &::before {
+      @include media-breakpoint-up(md) {
+        background: url('../../assets/images/ui-ux/arrow-right.png') no-repeat 0
+          0;
+      }
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 91%;
+      width: 5em;
+      height: 1em;
+      z-index: 1;
+    }
+  }
+  .process-video-interview {
+    background: $video-interview-process;
+
+    &::before {
+      @include media-breakpoint-up(md) {
+        background: url('../../assets/images/ui-ux/arrow-right-1.png') no-repeat
+          0 0;
+      }
+
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 91%;
+      width: 5em;
+      height: 1em;
+      z-index: 1;
+    }
+  }
+
+  .process-task {
+    background: $task-process;
+    &::before {
+      @include media-breakpoint-up(md) {
+        background: url('../../assets/images/ui-ux/arrow-down.png') no-repeat 0
+          0;
+      }
+
+      @include media-breakpoint-up(lg) {
+        background: url('../../assets/images/ui-ux/arrow-right-1.png') no-repeat
+          0 0;
+
+        top: 50%;
+        left: 91%;
+        height: 1em;
+      }
+
+      content: '';
+      position: absolute;
+      bottom: -8em;
+      left: 80%;
+      width: 5em;
+      height: 9em;
+      z-index: 1;
+    }
+  }
+
+  .process-welcome {
+    background: $welcome-process;
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 91%;
+      width: 5em;
+      height: 1em;
+      z-index: 1;
+    }
+  }
+  .process {
+    color: $black-200;
+
+    .icon {
+      width: 5em;
+      height: 5em;
+      background: $white;
+    }
+    h4 {
+      color: $black-500;
+    }
+  }
+}
+
+.personal-growth {
+  bottom: 15.5rem;
+  left: 4rem;
+}
+
+.professional-development {
+  top: 1.5rem;
+  left: 21rem;
+}
+
+.job-opportunity {
+  top: 16.5rem;
+  left: 1.5rem;
+}
+
+.knowledge {
+  left: 27rem;
+  top: 13rem;
+}
+
+.trainee-faq {
+  li {
+    list-style: auto;
+    padding-left: 1em;
+    &::marker {
+      font-weight: bold;
+    }
+  }
+}

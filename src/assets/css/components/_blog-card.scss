@@ -1,0 +1,30 @@
+.blog-card {
+  @include box-shadow(0, 0.03em, $primary-box-shadow, 0.15em);
+  border: none;
+
+  @include min-break-point(large-desktop) {
+    margin-bottom: 0;
+  }
+
+  &:hover {
+    box-shadow: 0 0.1em .7em var(--primary-hover-color), 0 0.1em 0.1em var(--primary-hover-color);
+    text-decoration: none;
+    transition: ease-in box-shadow 0.2s, ease filter 0.1s;
+
+  }
+
+  .card-title {
+    text-transform: capitalize;
+  }
+
+  .blog-info {
+    color: $gray-500;
+    font-size: 0.9em;
+  }
+}
+[data-theme='light'] {
+  .blog-card:hover {
+    box-shadow: 0 0.1em .7em $gray-400, 0 0.1em 0.1em $gray-400;
+  }
+}
+

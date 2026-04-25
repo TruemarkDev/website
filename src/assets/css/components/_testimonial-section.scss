@@ -1,0 +1,255 @@
+.testimonial-flex {
+  @include position(relative);
+
+  padding: 4em 1.5em 5em;
+  background-color: $secondary-color;
+
+  @include min-break-point(tablet) {
+    align-items: baseline;
+    padding: 4em 2.5em 5em;
+  }
+
+  @include min-break-point(large-desktop) {
+    padding: 5em 4.5em 6em;
+  }
+
+  .user-review {
+    margin: 1em auto 2em;
+    text-align: center;
+
+    @include min-break-point(tablet) {
+      text-align: left;
+    }
+  }
+}
+.technology-card {
+  @include box-shadow(0, 0, $gray-300, 0.8em);
+  margin-bottom: 2em;
+  margin-right: 2em;
+}
+
+.testimonial-card {
+  border-radius: 0.3em;
+
+  @include min-break-point(tablet) {
+    @include padding-left-right(6em);
+  }
+
+  .user-img {
+    @include size(5em);
+    @include border-radius(50%);
+    border-color: $primary-color;
+
+    @include max-break-point(mobile-phone) {
+      @include size(4em);
+    }
+  }
+
+  .user-detail {
+    @include max-break-point(mobile-phone) {
+      flex-direction: column;
+      margin-top: 1em;
+      padding: 0;
+      text-align: center;
+    }
+
+    @include min-break-point(tablet) {
+      flex-direction: row;
+      align-items: center;
+      text-align: left;
+    }
+
+    @include min-break-point(large-desktop) {
+      flex-direction: row;
+      align-items: center;
+      margin-top: 0;
+      text-align: left;
+    }
+  }
+
+  .user-info {
+    @include max-break-point(mobile-phone) {
+      margin-left: 0;
+      margin-top: 1.5em;
+    }
+
+    @include min-break-point(tablet) {
+      margin-left: 1.5em;
+      margin-top: 0;
+    }
+
+    @include min-break-point(large-desktop) {
+      margin-left: 1.5em;
+      margin-top: 0;
+    }
+  }
+
+  .user-review {
+    @include position(relative);
+
+    @include max-break-point(mobile-phone) {
+      border-left: none;
+      padding-left: 0;
+      text-align: center;
+    }
+
+    @include min-break-point(tablet) {
+      padding: 0;
+    }
+
+    @include min-break-point(large-desktop) {
+      text-align: left;
+    }
+
+    &::before {
+      @include position(absolute);
+
+      color: $primary-color;
+      content: '“';
+      font-family: serif;
+      font-size: 3em;
+      left: 47%;
+      line-height: 0;
+      top: -0.3em;
+
+      @include min-break-point(tablet) {
+        left: 0;
+      }
+
+      @include min-break-point(large-desktop) {
+        color: $text-secondary;
+        font-size: 5em;
+        top: -0.1em;
+      }
+    }
+  }
+
+  .web-screenshot {
+    border-radius: 0.3em 0.3em 0 0;
+    height: 7em;
+    object-fit: cover;
+    object-position: top;
+    width: 100%;
+
+    @include min-break-point(tablet) {
+      height: 10em;
+    }
+
+    @include min-break-point(large-desktop) {
+      height: 15em;
+    }
+  }
+}
+
+.user-image {
+  @include size(5em);
+
+  border-color: $primary-color;
+  border-radius: 50%;
+  clip-path: polygon(25% 0, 100% 0, 75% 100%, 0 100%);
+  border-color: $primary-color;
+}
+.img-thumbnail {
+  background-color: $bs-bg-light;
+}
+
+.trainee-page {
+  .ellipse-bottom {
+    margin-top: -3.875em;
+    margin-left: 9.0625em;
+  }
+
+  .ellipse-right {
+    top: 13.5%;
+    left: 14%;
+  }
+
+  .ellipse-left {
+    top: 7%;
+    left: 8.5%;
+  }
+
+  .testimonial-image {
+    height: 14em;
+    width: 14em;
+    border-radius: 14em;
+    position: relative;
+    z-index: 4;
+    top: 1%;
+    left: 2.5em;
+
+    @include media-breakpoint-down(xl) {
+      height: 3.75em;
+      width: 3.75em;
+      left: 0;
+      top: 0;
+    }
+  }
+
+  .testimonial-bio-text {
+    @include media-breakpoint-up(xl) {
+      font-size: 1.25rem;
+      margin-top: -1.375em;
+    }
+  }
+
+  .testimonial-flex {
+    padding: 2.5em;
+
+    @include min-break-point(tablet) {
+      padding: 2.5em;
+    }
+
+    @include min-break-point(large-desktop) {
+      padding: 2.5em;
+    }
+  }
+
+  .testimonial-card {
+    .user-info {
+      @include max-break-point(mobile-phone) {
+        margin-left: 0;
+        margin-top: 0;
+      }
+
+      @include min-break-point(tablet) {
+        margin-left: 0;
+        margin-top: 0;
+      }
+
+      @include min-break-point(large-desktop) {
+        margin-left: 2.5em;
+        margin-top: 0;
+      }
+    }
+  }
+}
+
+[data-theme='dark'] {
+  .ellipse-left,
+  .ellipse-right {
+    svg {
+      circle {
+        fill: $deep-sky-blue;
+        opacity: 0.5;
+      }
+    }
+  }
+
+  .ellipse-bottom {
+    svg {
+      circle {
+        fill: $blue-800;
+        filter: drop-shadow($about-shadow);
+      }
+    }
+  }
+
+  .quote {
+    svg {
+      path {
+        fill: $rock-blue;
+      }
+    }
+  }
+}

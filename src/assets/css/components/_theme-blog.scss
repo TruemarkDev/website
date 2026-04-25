@@ -1,0 +1,47 @@
+// Vendored slices of @truemark/gatsby-theme-effortless-blog SCSS that style the
+// blog post page sidebar, related-posts list, blog cards, and minimised TOC.
+// We import the theme partials directly — they rely on $gray-1050/$gray-1100
+// (defined in the main abstracts) and the rest of the theme variables overlap
+// with the main project's variables.
+
+@import '../../../theme/assets/css/layouts/blog-details';
+@import '../../../theme/assets/css/layouts/blog-section';
+@import '../../../theme/assets/css/layouts/card';
+@import '../../../theme/assets/css/layouts/blog-minimized-toc';
+@import '../../../theme/assets/css/layouts/social-share';
+@import '../../../theme/assets/css/components/blog-section';
+@import '../../../theme/assets/css/components/blog-toc';
+@import '../../../theme/assets/css/components/card';
+
+// Defensive: keep article-body images inside their column so they cannot
+// paint over the right-hand related-posts rail at any breakpoint.
+.blog-content {
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .gatsby-resp-image-wrapper,
+  figure {
+    max-width: 100%;
+  }
+}
+
+// The related-posts rail and Apply-Now CTA both live in the col-lg-4 sidebar.
+// Add breathing room above the first card so it doesn't kiss the article
+// body when the sticky CTA scrolls into view.
+.related-posts-section {
+  margin-top: 1rem;
+
+  ul {
+    padding-left: 0;
+  }
+
+  .blog-post {
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+  }
+}

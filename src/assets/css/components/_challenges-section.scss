@@ -1,0 +1,55 @@
+.challenge-section-container {
+  margin-bottom: 3em;
+}
+
+.challenge-title {
+  text-align: center;
+}
+
+.challenge-number {
+  font-size: 5em;
+  font-weight: $font-weight-bold;
+  line-height: 100%;
+}
+
+.project-challenge {
+  overflow-x: hidden;
+
+  .circle-1 {
+    background-color: $primary-color;
+    content: ' ';
+    display: none;
+
+    @include min-break-point(tablet) {
+      @include size(16em);
+      @include border-radius(50%);
+      @include position(absolute, 10%, null, null, -8em);
+      display: block;
+    }
+
+    @include min-break-point(large-desktop) {
+      @include size(24em);
+      @include border-radius(50%);
+      @include position(absolute, 10%, null, null, -12em);
+    }
+  }
+
+  .circle-2 {
+    background-color: $blue-600;
+    content: ' ';
+    display: none;
+
+    @include min-break-point(tablet) {
+      @include size(16em);
+      @include border-radius(50%);
+      @include position(absolute, null, -8em, 10%, null);
+      display: block;
+    }
+
+    @include min-break-point(large-desktop) {
+      @include size(24em);
+      @include border-radius(50%);
+      @include position(absolute, null, -12em, 10%, null);
+    }
+  }
+}

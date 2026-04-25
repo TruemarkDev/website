@@ -1,0 +1,25 @@
+.clip4 {
+  clip-path: polygon(0% 0%, 100% 0, 100% 100%, 0% 100%);
+
+  // @amnish how can this break point be refactored?
+  @include min-break-point(tablet) {
+    clip-path: polygon(20% 0%, 100% 0, 100% 100%, 0% 100%);
+  }
+}
+
+// TODO @amnish, can this be refactored with bootstrap class
+// yes using percentage in width is not suitable
+.backstory-section {
+  @include min-break-point(tablet) {
+    min-height: 25em;
+  }
+  .backstory-bg {
+    @include min-break-point(tablet) {
+      width: 40%;
+    }
+
+    @include min-break-point(large-desktop) {
+      width: 50%;
+    }
+  }
+}

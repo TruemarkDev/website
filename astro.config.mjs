@@ -1,0 +1,78 @@
+import { defineConfig } from 'astro/config';
+import react from '@astrojs/react';
+import mdx from '@astrojs/mdx';
+// Sitemap is omitted while routes are being stabilised; re-enable once
+// `astro/sitemap` works with the project's redirect map.
+// import sitemap from '@astrojs/sitemap';
+import remarkGfm from 'remark-gfm';
+import rehypeSlug from 'rehype-slug';
+import rehypeAutolinkHeadings from 'rehype-autolink-headings';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+import redirectsList from './src/lib/redirects.mjs';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+
+const redirects = Object.fromEntries(
+  redirectsList.map((r) => [
+    r.fromPath,
+    { status: r.isPermanent ? 301 : 302, destination: r.toPath },
+  ])
+);
+
+export default defineConfig({
+  site: 'https://www.truemark.dev',
+  integrations: [react(), mdx()],
+  redirects,
+  markdown: {
+    remarkPlugins: [remarkGfm],
+    rehypePlugins: [rehypeSlug, [rehypeAutolinkHeadings, { behavior: 'wrap' }]],
+  },
+  vite: {
+    define: {
+      // Replacing the whole `process.env` object breaks SSR for code paths that
+      // do `const env = process.env; env.NODE_ENV` (the rebind escapes the
+      // define replacement). Replace specific reads instead.
+      'process.env.NODE_ENV': JSON.stringify(
+        process.env.NODE_ENV ?? 'production'
+      ),
+    },
+    resolve: {
+      alias: {
+        gatsby: path.join(__dirname, 'src/lib/gatsby-shim.tsx'),
+        '@truemark/gatsby-theme-effortless-blog': path.join(
+          __dirname,
+          'src/theme/index.js'
+        ),
+        '@truemark/gatsby-theme-effortless-blog/src/components/layout':
+          path.join(__dirname, 'src/theme/components/layout.tsx'),
+        // theme-internal aliases
+        '@components': path.join(__dirname, 'src/theme/components'),
+        '@assets': path.join(__dirname, 'src/theme/assets'),
+        '@constants': path.join(__dirname, 'src/theme/constants'),
+        '@services': path.join(__dirname, 'src/theme/services'),
+        '@utils': path.join(__dirname, 'src/theme/utils'),
+        // main-app aliases
+        assets: path.join(__dirname, 'src/assets'),
+        images: path.join(__dirname, 'src/assets/images'),
+        components: path.join(__dirname, 'src/components'),
+        constants: path.join(__dirname, 'src/constants'),
+        services: path.join(__dirname, 'src/services'),
+        templates: path.join(__dirname, 'src/templates'),
+        utils: path.join(__dirname, 'src/utils'),
+        providers: path.join(__dirname, 'src/providers'),
+        src: path.join(__dirname, 'src'),
+      },
+    },
+    css: {
+      preprocessorOptions: {
+        scss: {
+          quietDeps: true,
+          loadPaths: [path.join(__dirname, 'node_modules')],
+          silenceDeprecations: ['import', 'global-builtin', 'color-functions', 'legacy-js-api', 'if-function', 'slash-div', 'function-units'],
+        },
+      },
+    },
+  },
+});

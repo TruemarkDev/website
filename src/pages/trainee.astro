@@ -1,0 +1,39 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CurrentOpenings from '../components/Career/CurrentOpenings.jsx';
+import TraineeHeroSection from '../components/HeroSection/TraineeHeroSection.jsx';
+import HowToApply from '../components/Trainee/HowToApply.jsx';
+import OurProgram from '../components/Trainee/OurProgram.jsx';
+import StepUp from '../components/Trainee/StepUp.jsx';
+import TraineeFAQ from '../components/Trainee/TraineeFAQ.jsx';
+import TraineeTestimonialSection from '../components/Trainee/TraineeTestimonialSection.jsx';
+import TruemarkOpportunities from '../components/Trainee/TruemarkOpportunities.jsx';
+import traineeTestimonial from '../constants/testimonials/trainee';
+import { getCollection } from 'astro:content';
+
+const jobs = await getCollection('jobs', ({ data }) => data.positionOpen);
+const openings = jobs.map((j) => ({
+  node: { fields: { slug: `/jobs/${j.data.customSlug}` }, frontmatter: { ...j.data } },
+}));
+---
+
+<BaseLayout
+  title="Truemark | Trainee"
+  description="Truemark | Top gatsbyjs developers in Nepal"
+  keywords="gatsbyjs development, gatsby, truemark"
+  path="trainee"
+>
+  <TraineeHeroSection client:only="react" />
+  <StepUp client:only="react" />
+  <TruemarkOpportunities client:only="react" />
+  <OurProgram client:only="react" />
+  <TraineeTestimonialSection
+    items={traineeTestimonial}
+    sectionTitle="Don't take our word for it. trust our trainee"
+    sectionSubheading="Our Trainee Feedback"
+    client:only="react"
+  />
+  <HowToApply client:only="react" />
+  <CurrentOpenings openings={openings} client:only="react" />
+  <TraineeFAQ client:only="react" />
+</BaseLayout>

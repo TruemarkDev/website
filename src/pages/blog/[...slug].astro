@@ -1,0 +1,154 @@
+---
+import { getCollection, getEntry, render } from 'astro:content';
+import readingTime from 'reading-time';
+
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BlogPostHeader from '../../components/Blog/BlogPostHeader.jsx';
+import { BlogToc, BlogSection } from '../../theme/index.js';
+import SidebarCTA from '../../components/Blog/CTA/SidebarCTA.jsx';
+import AuthorCTA from '../../components/Blog/CTA/AuthorCTA.jsx';
+import { getAllBlogsForSection, imageToShape } from '../../lib/blog-data';
+
+export async function getStaticPaths() {
+  const all = await getCollection('blog', ({ data }) => data.type === 'blog-post');
+  return all.map((entry) => ({
+    params: { slug: entry.data.customSlug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { data } = entry;
+
+// Pull author from authors collection (lookup by lowercase name == file id).
+const authorId = (data.author ?? '').toLowerCase().trim();
+let author = null;
+if (authorId) {
+  try {
+    const a = await getEntry('authors', authorId);
+    if (a) {
+      author = {
+        id: a.data.author_id,
+        name: a.data.name,
+        position: a.data.position,
+        organization: a.data.organization,
+        bio: a.data.bio,
+        resume: a.data.resume,
+        avatar: imageToShape(a.data.avatar),
+      };
+    }
+  } catch (_) {}
+}
+
+const minutes = readingTime(entry.body || '');
+const post = {
+  frontmatter: {
+    ...data,
+    author,
+  },
+  fields: {
+    slug: data.customSlug,
+    timeToRead: { text: minutes.text },
+  },
+  headings: [],
+  tableOfContents: null,
+};
+
+const featuredImageUrl = (data.featuredImage as string | undefined) ?? null;
+// Wrap into the legacy childImageSharp shape so the React templates keep working.
+post.frontmatter.featuredImage = imageToShape(featuredImageUrl);
+post.frontmatter.image = post.frontmatter.featuredImage;
+
+const featuredBlogs = await getAllBlogsForSection();
+
+const { Content, headings: mdHeadings } = await render(entry);
+
+post.headings = (mdHeadings ?? []).map((h) => ({
+  id: h.slug,
+  value: h.text,
+  depth: h.depth,
+}));
+
+const last_modified =
+  data.last_modified_at instanceof Date
+    ? data.last_modified_at.toISOString().slice(0, 10)
+    : data.last_modified_at ?? '';
+
+const disqusShortname = import.meta.env.PUBLIC_DISQUS_SHORTNAME;
+---
+
+<BaseLayout
+  title={data.title}
+  description={data.description}
+  keywords={data.keywords}
+  image={featuredImageUrl ?? undefined}
+  path={`blog/${data.customSlug}`}
+>
+  <BlogPostHeader
+    author={author}
+    category={data.category}
+    post={post}
+    title={data.title}
+    date={last_modified}
+    slug={data.customSlug}
+    client:only="react"
+  />
+
+  {post.headings.length > 0 && (
+    <BlogToc headings={post.headings} title={data.title} client:only="react" />
+  )}
+
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-lg-8 col-md-12">
+        <div class="blog-content">
+          <Content />
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-12 ps-lg-5 ps-sm-0 position-relative">
+        <div class="row">
+          <BlogSection
+            blogs={featuredBlogs}
+            blogCategory={data.category}
+            blogUID={data.uid}
+            sectionTitle="Related Posts"
+            blogType="related-post"
+            client:only="react"
+          />
+        </div>
+        <SidebarCTA buttonText="Apply Now" client:only="react" />
+      </div>
+      {author && (
+        <AuthorCTA
+          authorName={author.name}
+          authorDesignation={author.position}
+          authorDetail={author.bio}
+          authorAvatar={author.avatar}
+          client:only="react"
+        />
+      )}
+    </div>
+  </div>
+
+  {disqusShortname && data.comments !== false && (
+    <div class="container mt-5">
+      <div class="row">
+        <div class="col-lg-12">
+          <div id="disqus_thread"></div>
+          <script is:inline define:vars={{ disqusShortname, slug: data.customSlug, uid: data.uid, title: data.title }}>
+            (function () {
+              const d = document, s = d.createElement('script');
+              s.src = `https://${disqusShortname}.disqus.com/embed.js`;
+              s.setAttribute('data-timestamp', String(+new Date()));
+              window.disqus_config = function () {
+                this.page.identifier = uid || slug;
+                this.page.title = title;
+              };
+              (d.head || d.body).appendChild(s);
+            })();
+          </script>
+        </div>
+      </div>
+    </div>
+  )}
+</BaseLayout>

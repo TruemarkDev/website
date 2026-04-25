@@ -1,0 +1,50 @@
+.company-value {
+  h4 {
+    font-size: 1.125em;
+  }
+
+  .value-card-heading {
+    padding-top: 1.25em;
+    padding-bottom: 0.75em;
+  }
+}
+
+[data-theme='dark'] {
+  .work-together {
+    .icon1 {
+      rect {
+        fill: $services-svgicon1;
+      }
+    }
+
+    .icon2 {
+      rect {
+        fill: $services-svgicon2;
+      }
+    }
+
+    .icon3 {
+      rect {
+        fill: $services-svgicon3;
+      }
+    }
+
+    .icon4 {
+      rect {
+        fill: $services-svgicon4;
+      }
+    }
+
+    .icon5 {
+      rect {
+        fill: $services-svgicon5;
+      }
+    }
+
+    .icon6 {
+      rect {
+        fill: $services-svgicon6;
+      }
+    }
+  }
+}

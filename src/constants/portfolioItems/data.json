@@ -1,0 +1,197 @@
+[
+     {
+          "name": "Flexonet",
+          "description": "Flexonet is a flexible telecommunications company focusing on individual solutions for business.",
+          "images": [
+               {
+                    "src": "flexonet1"
+               },
+               {
+                    "src": "flexonet2"
+               },
+               {
+                    "src": "flexonet3"
+               },
+               {
+                    "src": "flexonet4"
+               },
+               {
+                    "src": "flexonet5"
+               },
+               {
+                    "src": "flexonet6"
+               }
+          ]
+     },
+     {
+          "name": "Travel Book",
+          "description": "A platform to explore, book, and share experiences. Find the best destinations and hotels at your fingertips.",
+          "images": [
+               {
+                    "src": "tb1"
+               },
+               {
+                    "src": "tb2",
+                    "desc": "Home Page"
+               },
+               {
+                    "src": "tb3",
+                    "desc": "Explore amazing places to travel."
+               },
+               {
+                    "src": "tb4",
+                    "desc": "Book a tour Now."
+               },
+               {
+                    "src": "tb5"
+               },
+               {
+                    "src": "tb6"
+               }
+          ]
+     },
+     {
+          "name": "Soono",
+          "description": "A platform to take control of your customer experience and to grow your business with real-time data. Change the negative experience to positive one with Soono.",
+          "images": [
+               {
+                    "src": "soono1"
+               },
+               {
+                    "src": "soono2"
+               },
+               {
+                    "src": "soono3"
+               },
+               {
+                    "src": "soono4"
+               },
+               {
+                    "src": "soono5",
+                    "desc": "Get a free trial."
+               },
+               {
+                    "src": "soono6"
+               },
+               {
+                    "src": "soono7"
+               },
+               {
+                    "src": "soono8"
+               }
+          ]
+     },
+     {
+          "name": "Love with food",
+          "description": "Love With Food is the snack-subscription service delivering a monthly curation of delicious, clean ingredient snacks directly to your home.",
+          "images": [
+               {
+                    "src": "lwf1",
+                    "desc": "Get latest food-related news, recipes, new food products, and more."
+               },
+               {
+                    "src": "lwf2",
+                    "desc": "Know more about us."
+               },
+               {
+                    "src": "lwf3"
+               },
+               {
+                    "src": "lwf4",
+                    "desc": "Blogs"
+               },
+               {
+                    "src": "lwf5",
+                    "desc": "Food news"
+               }
+          ]
+     },
+     {
+          "name": "Artlords",
+          "description": "A platform for artists to showcase their passion for digital art. Connect with the most creative and passionate artists on the web.",
+          "images": [
+               {
+                    "src": "at1"
+               },
+               {
+                    "src": "at2",
+                    "desc": "Find amazing Artworks."
+               },
+               {
+                    "src": "at3"
+               },
+               {
+                    "src": "at4",
+                    "desc": "Upload your Arts."
+               },
+               {
+                    "src": "at5",
+                    "desc": "User Profile."
+               }
+          ]
+     },
+     {
+          "name": "Trivia Day",
+          "description": "Trivia Day is a competitive trivia game where teams, families, and friends can get together for a few brief rounds of challenging trivia that leads to a ton of fun.",
+          "images": [
+               {
+                    "src": "td1"
+               },
+               {
+                    "src": "td2"
+               },
+               {
+                    "src": "td3"
+               },
+               {
+                    "src": "td4"
+               },
+               {
+                    "src": "td5"
+               },
+               {
+                    "src": "td6"
+               }
+          ]
+     },
+     {
+          "name": "Price Insight",
+          "description": "Price Insight is an Artificial Intelligence powered trading advisor. Free for traders, and very low cost for Brokers. No-cure, No Pay pricing.",
+          "images": [
+               {
+                    "src": "ps1"
+               },
+               {
+                    "src": "ps2"
+               }
+          ]
+     },
+     {
+          "name": "Reduct.video",
+          "description": "A platform to increase the human capacity to engage with, understand, and amplify different voices.",
+          "images": [
+               {
+                    "src": "rv1",
+                    "desc": "Home Page"
+               },
+               {
+                    "src": "rv2",
+                    "desc": "About Us"
+               },
+               {
+                    "src": "rv3"
+               },
+               {
+                    "src": "rv4"
+               },
+               {
+                    "src": "rv5",
+                    "desc": "Start a New Project."
+               },
+               {
+                    "src": "rv6",
+                    "desc": "Make your subscription Plan."
+               }
+          ]
+     }
+]

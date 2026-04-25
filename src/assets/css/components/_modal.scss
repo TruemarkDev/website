@@ -1,0 +1,134 @@
+body.modal-open {
+  overflow: hidden !important;
+}
+
+.modal-quote,
+.modal-contact {
+  max-width: 96%;
+
+  @include min-break-point(tablet) {
+    max-width: 90%;
+  }
+
+  @include min-break-point(large-desktop) {
+    max-width: 82%;
+  }
+
+  .primary-overlay {
+    background-color: $secondary-overlay;
+    border-radius: 0.6em 0.6em 0 0;
+    height: 100%;
+    width: 100%;
+
+    @include min-break-point(tablet) {
+      border-radius: 0.6em 0 0 0.6em;
+    }
+  }
+
+  .gray-bg {
+    background-color: $body-background;
+    border-radius: 0.6em 0.6em 0 0;
+
+    @include min-break-point(tablet) {
+      border-radius: 0.6em 0 0 0.6em;
+    }
+  }
+}
+.contact-modal-header {
+  // TODO @prakash consolidate common class of contact-modal-header and modal-header
+  .btn-close {
+    margin-right: -0.7em;
+    margin-top: 0;
+  }
+}
+
+.modal-newsletter {
+  max-width: 96%;
+
+  @include min-break-point(tablet) {
+    max-width: 90%;
+  }
+
+  @include min-break-point(large-desktop) {
+    max-width: 46%;
+  }
+}
+
+/*modal*/
+.modal {
+  background-color: $secondary-overlay;
+  padding: 0;
+
+  .modal-dialog {
+    margin: 0 auto;
+  }
+
+  .modal-title {
+    font-size: 1.4em;
+    font-weight: 600;
+
+    @include min-break-point(tablet) {
+      font-size: 1.8em;
+    }
+  }
+
+  .modal-sub-title {
+    font-size: 1em;
+  }
+}
+
+.modal-content {
+  @include border-radius(0.6em);
+  border: none;
+}
+
+.modal-header {
+  @include border-radius-top(0.6em);
+  border-bottom: none;
+
+  .btn-close {
+    margin-right: -0.7em;
+    margin-top: 0;
+  }
+}
+
+.modal-footer {
+  @include border-radius-bottom(0.6em);
+  border-top: none;
+}
+
+.top-modal-banner {
+  background-image: url('../images/layout/modal_bg.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 8em;
+
+  @include min-break-point(tablet) {
+    height: 10em;
+  }
+}
+
+.left-modal-banner {
+  @include border-radius-top(0.6em);
+  background-image: url('../images/layout/side-banner.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 8em;
+
+  @include min-break-point(tablet-landscape) {
+    @include border-radius-left(0.6em);
+    height: auto;
+  }
+}
+
+.left-modal-contact-banner {
+  background-image: url('../images//layout/modal_contact_icon.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 18em;
+
+  @include min-break-point(tablet) {
+    height: 18em;
+  }
+}

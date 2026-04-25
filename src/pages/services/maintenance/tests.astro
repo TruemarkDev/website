@@ -1,0 +1,12 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import PageBody from '../../../components/PagesReact/services/maintenance/tests.jsx';
+---
+
+<BaseLayout
+  title="Truemark | Write Tests for your Application"
+  description="Improve software quality by adding tests to your existing application."
+  path="services/maintenance/tests"
+>
+  <PageBody client:only="react" />
+</BaseLayout>

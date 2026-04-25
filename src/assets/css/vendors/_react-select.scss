@@ -1,0 +1,52 @@
+// over rides react-select
+.tm__control {
+  border-color: $border-color !important;
+  box-shadow: 0 0 2px 2px $input-btn-focus-box-shadow !important;
+  border-radius: $border-radius-lg !important;
+  background-color: $secondary-color !important;
+}
+.tm__value-container {
+  background-color: $secondary-color;
+  padding: .7188rem 0.6rem !important;
+  border-radius: $border-radius-lg !important;
+}
+.tm__multi-value__label {
+  background-color: $border-color;
+  color: $body-secondary-color !important;
+}
+.tm__indicators {
+  color: $body-secondary-color !important;
+}
+.tm__multi-value__remove {
+  background-color: $border-color;
+  cursor: pointer;
+}
+.tm__single-value {
+  color: $body-secondary-color !important;
+}
+.tm__control.tm__control--is--focused {
+  box-shadow: 0 0 2px 2px $input-btn-focus-box-shadow !important;
+}
+.tm__menu {
+  background-color: $body-background !important;
+  color: $body-secondary-color !important;
+
+  .tm__option:hover, .tm__option:focus, .tm__option:active, .tm__option:visited, .tm__option--is-focused {
+    background-color: $primary-color !important;
+    color: $white !important;
+  }
+
+}
+.tm__indicator-separator {
+  background-color: $border-color !important;
+}
+.tm__placeholder {
+  color: $blue-500 !important;
+}
+.tm__option--is-focused{
+  background-color: $primary-color !important;
+  color: $white;
+}
+.tm__option--is-selected {
+  background-color: $primary-color !important;
+}

@@ -1,0 +1,128 @@
+---
+import 'assets/css/main.scss';
+import '@fortawesome/fontawesome-svg-core/styles.css';
+import 'nprogress/nprogress.css';
+import { siteMetadata } from '../lib/site-metadata';
+
+import TopMenu from '../components/Menu/Header/TopMenu.jsx';
+import FormCTASection from '../components/Footer/CTA/FormCTASection.jsx';
+import BlueFooter from '../components/Footer/Footer.jsx';
+import { getMegaMenuBlogPosts, getBlogCategories } from '../lib/blog-data';
+
+interface Props {
+  title?: string;
+  description?: string;
+  keywords?: string;
+  image?: string;
+  path?: string;
+  bodyClass?: string;
+  hideFormCTA?: boolean;
+  forCaseStudy?: boolean;
+}
+
+const {
+  title = siteMetadata.title,
+  description = siteMetadata.description,
+  keywords = siteMetadata.keywords,
+  image,
+  path = '',
+  bodyClass = '',
+  hideFormCTA = false,
+  forCaseStudy = false,
+} = Astro.props;
+
+const pageUrl = new URL(path ?? '', Astro.site ?? siteMetadata.siteUrl).toString();
+const themeColor = '#ff5757';
+
+// Mega-menu data: every page builds the same blog-category dropdown, so fetch
+// once at SSR time and feed it into the TopMenu island as props.
+const [megaBlogs, megaCategories] = await Promise.all([
+  getMegaMenuBlogPosts(),
+  getBlogCategories(),
+]);
+---
+
+<!doctype html>
+<html lang="en" data-theme={siteMetadata.defaultTheme}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    {keywords && <meta name="keywords" content={keywords} />}
+    <meta name="theme-color" content={themeColor} />
+    <link rel="canonical" href={pageUrl} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    {/* Open Graph */}
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={pageUrl} />
+    {image && <meta property="og:image" content={image} />}
+    <meta property="og:site_name" content="Truemark" />
+
+    {/* Twitter */}
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    {image && <meta name="twitter:image" content={image} />}
+
+    <script is:inline>
+      (function () {
+        try {
+          const theme = window.localStorage.getItem('theme') || 'light';
+          document.documentElement.setAttribute('data-theme', theme);
+          document.body && document.body.setAttribute('data-theme', theme);
+        } catch (_) {}
+      })();
+    </script>
+    <style is:global>
+      #nprogress .bar { background: #ff5757; height: 3px; }
+      #nprogress .peg { box-shadow: 0 0 10px #ff5757, 0 0 5px #ff5757; }
+      #nprogress .spinner { display: none; }
+    </style>
+  </head>
+  <body class={bodyClass} data-theme={siteMetadata.defaultTheme}>
+    <TopMenu blogPosts={megaBlogs} blogCategories={megaCategories} client:only="react" />
+    <slot />
+    {!hideFormCTA && <FormCTASection client:only="react" />}
+    <BlueFooter forCaseStudy={forCaseStudy} client:only="react" />
+    <script>
+      // Top-of-page progress bar for full-page navigation. Listens for
+      // same-origin link clicks (start) and the next paint (done). View
+      // transitions are intentionally disabled site-wide because every page
+      // body is a `client:only="react"` island and Astro's SPA swap can leave
+      // those islands unhydrated on the destination page.
+      import NProgress from 'nprogress';
+      NProgress.configure({ showSpinner: false, trickleSpeed: 120 });
+
+      const isNavigating = (a: HTMLAnchorElement, e: MouseEvent) => {
+        if (e.defaultPrevented) return false;
+        if (e.button !== 0) return false;
+        if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return false;
+        if (a.target && a.target !== '_self') return false;
+        if (a.hasAttribute('download')) return false;
+        const href = a.getAttribute('href');
+        if (!href || href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:')) return false;
+        try {
+          const url = new URL(a.href, location.href);
+          if (url.origin !== location.origin) return false;
+          if (url.pathname === location.pathname && url.search === location.search) return false;
+          return true;
+        } catch { return false; }
+      };
+
+      document.addEventListener('click', (e) => {
+        const a = (e.target as HTMLElement)?.closest?.('a');
+        if (a && isNavigating(a as HTMLAnchorElement, e as MouseEvent)) NProgress.start();
+      }, true);
+
+      window.addEventListener('beforeunload', () => NProgress.start());
+      window.addEventListener('pageshow', () => NProgress.done());
+      // Initial paint
+      NProgress.done();
+    </script>
+  </body>
+</html>

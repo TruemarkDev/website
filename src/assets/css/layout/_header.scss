@@ -1,0 +1,440 @@
+@import '../abstracts/mixins';
+
+.nav-bg {
+  // @amnish hardcoded color, why do we need to manually import mixin above
+  @include box-shadow(0, 0.03em, $dark-overlay, 0.15em);
+  background-color: $body-background;
+}
+
+.desktop-nav {
+  display: none;
+  @include min-break-point(tablet-landscape) {
+    display: flex;
+  }
+
+  .request-a-quote {
+    width: 8.7em;
+    height: 2.6em;
+    font-size: $h5-font-size;
+    font-weight: $font-weight-bold;
+    text-transform: none;
+    padding: 0.3em;
+  }
+
+  .nav-item {
+    padding-left: 1em;
+
+    .nav-link {
+      text-transform: none;
+      font-size: 0.9em;
+    }
+  }
+}
+
+// @amnish, @prabin, why do we have mixin here!
+@mixin triangle {
+  &::before {
+    border-color: transparent transparent $primary-color transparent;
+    border-style: solid;
+    border-width: 0.5em;
+    content: '';
+    left: 49%;
+    margin: 0 auto;
+    position: absolute;
+    top: -1.05em;
+  }
+}
+
+.mega-menu {
+  background-color: $secondary-color;
+  box-shadow: 0 0 0.05rem 0.05rem $input-btn-focus-box-shadow;
+  .dropdown-item {
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  .icon-holder {
+    svg {
+      color: $primary-color;
+      font-size: 1em;
+    }
+  }
+}
+.nav-dropdown-menu {
+  border: 0.0714rem solid $border-color;
+  margin-top: 0.05em;
+  border-top: none;
+  min-width: 22rem;
+
+  .nav-item {
+    line-height: 1.5rem;
+  }
+}
+.nav-dropdown-item {
+  border: 1px solid transparent;
+
+  &:hover {
+    border-radius: 0.4rem;
+    border: 1px solid $primary-color;
+    background: rgb(255 87 87 / 6%);
+    backdrop-filter: blur(0.625rem);
+  }
+
+  &.active {
+    background: rgb(255 87 87 / 6%);
+    backdrop-filter: blur(0.625rem);
+    border-radius: 0.4rem;
+    border: 1px solid $primary-color;
+  }
+}
+
+[data-theme='dark'] {
+  .nav-dropdown-item {
+    &:hover {
+      background: rgb(12 165 233 / 6%);
+      backdrop-filter: blur(0.625rem);
+    }
+    &.active {
+      background: rgb(2 165 233 / 6%);
+      backdrop-filter: blur(0.625rem);
+    }
+  }
+}
+
+.nav-heading {
+  color: $headings-color;
+  font-weight: $headings-font-weight;
+}
+.nav-holder {
+  min-width: 2.8rem;
+  height: 2.8rem;
+  padding: 0.875em 0;
+  text-align: center;
+  border-radius: 50%;
+  margin-right: 0.875em;
+}
+.service-1 {
+  background-color: $nav-service-background1;
+}
+.service-2 {
+  background-color: $nav-service-background2;
+}
+.service-3 {
+  background-color: $nav-service-background3;
+}
+.service-4 {
+  background-color: $nav-service-background4;
+}
+.service-5 {
+  background-color: $nav-service-background5;
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+.mobile-nav {
+  background-color: $bs-bg-light;
+  display: block;
+
+  @include min-break-point(tablet-landscape) {
+    display: none;
+  }
+
+  .request-a-quote {
+    width: 8.7em;
+    height: 2.6em;
+    font-size: $h5-font-size;
+    font-weight: $font-weight-bold;
+    text-transform: none;
+    padding: 0.3em;
+  }
+
+  .mobile-navbar {
+    padding-top: 0.75em;
+  }
+
+  &.mobile-nav-bg {
+    @include position(fixed, 0, 0, 0, 0);
+    background-color: $blue-600;
+    display: block;
+
+    .toggler-icon {
+      rect {
+        fill: $white;
+      }
+    }
+
+    .navbar-brand {
+      img {
+        // filter: brightness(10) contrast(10);
+        transition: 0.3s;
+      }
+    }
+
+    .nav-content {
+      height: 83vh;
+      padding-bottom: 3em;
+
+      .nav-links {
+        flex: 4;
+        height: 100%;
+        margin-bottom: 6em;
+        margin-top: 8em;
+        overflow-x: hidden;
+        overflow-y: scroll;
+      }
+    }
+  }
+
+  [aria-expanded='false'] {
+    .toggler-icon {
+      svg {
+        transform: rotate(0deg);
+        transform-origin: center;
+        transition: 0.3s ease-in-out;
+      }
+    }
+  }
+
+  [aria-expanded='true'] {
+    .toggler-icon {
+      svg {
+        margin-left: -0.3em;
+        transform: rotate(90deg);
+        transform-origin: center;
+        transition: 0.3s ease-in-out;
+      }
+    }
+  }
+
+  .navbar-toggler {
+    border: 0;
+    padding: 0;
+  }
+
+  .toggler-icon {
+    rect {
+      fill: $body-secondary-color;
+    }
+  }
+
+  .navbar-brand {
+    img {
+      // filter: brightness(10) contrast(10);
+      margin-top: -0.5em;
+      transition: 0.3s;
+    }
+  }
+
+  .nav-item {
+    .nav-link {
+      font-size: 0.9em;
+      font-weight: 500;
+      text-transform: uppercase;
+
+      &::before {
+        @include size(0.7em);
+        @include border-radius(50%);
+        background: transparent;
+        content: ' ';
+        display: inline-block;
+        margin-right: 1em;
+      }
+
+      &:hover {
+        color: $white;
+      }
+
+      &.active {
+        color: $white;
+        font-weight: 500;
+
+        &::before {
+          background: $primary-color;
+        }
+      }
+    }
+  }
+
+  .sub-menu {
+    &[aria-expanded='false'] {
+      color: $bs-bg-light;
+
+      &::after {
+        content: ' + ';
+        display: block;
+        font-size: 1.4em;
+        margin-left: 0.3em;
+        margin-top: -0.2em;
+      }
+    }
+
+    &[aria-expanded='true'] {
+      color: $white;
+
+      &::after {
+        content: ' - ';
+        display: block;
+        font-size: 1.5em;
+        margin-left: 0.3em;
+        margin-top: -0.1em;
+      }
+    }
+  }
+
+  .share-link {
+    @include flex(1);
+    color: $bs-bg-light;
+    font-weight: 500;
+    list-style: none;
+
+    span {
+      font-size: 0.9em;
+    }
+
+    .rotate-90 {
+      transform: rotate(90deg);
+    }
+
+    .icon-holder {
+      @include size(0.8em);
+      @include border-radius(50%);
+      border: 0.03em solid $white;
+      .fab {
+        color: #f5f5f5;
+        font-size: 0.4em;
+      }
+    }
+  }
+}
+
+/************************
+ * Nav Menu on Hover
+ ***********************/
+
+/*only for screens greater than 992px  */
+@media (min-width: 992px) {
+  .navbar .navbar-nav > li.dropdown > .dropdown-menu {
+    display: block;
+    opacity: 0;
+    /* subtle fade effect */
+    transition: all 0.1s ease;
+    visibility: hidden;
+  }
+
+  .navbar .navbar-nav > li.dropdown:hover > .dropdown-menu {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+  }
+}
+.navbar-light .navbar-nav .nav-link {
+  color: $white;
+  &:hover {
+    color: $primary-color;
+  }
+}
+
+.navbar-light .navbar-nav .show > .nav-link,
+.navbar-light .navbar-nav .nav-link.active {
+  color: $primary-color;
+}
+
+.dropdown-menu .h5,
+.dropdown-menu h5 {
+  font-size: 0.8em;
+  font-weight: 500;
+  color: $gray-600;
+}
+.dropdown {
+  .icon-holder {
+    min-width: 2.85rem;
+    text-align: center;
+    svg {
+      path {
+        stroke: $primary-color;
+      }
+    }
+  }
+}
+.dropdown-menu .nav-text {
+  font-weight: 400;
+  font-size: 0.9em;
+  color: $gray-400;
+  line-height: 1.4rem;
+}
+
+[data-theme='light'] {
+  .dropdown-menu .nav-text {
+    color: $gray-700;
+  }
+}
+
+.dropdown-menu {
+  width: 45rem;
+  border: 0.6em;
+  border-top: 0.2em solid $primary-color;
+  box-shadow: 0 1em 3em 0 $dark-overlay;
+  left: -12rem !important;
+  right: auto;
+  &::before {
+    border: 0.5em solid transparent;
+    border-bottom-color: $primary-color;
+    content: '';
+    right: 65%;
+    margin: 0 auto;
+    position: absolute;
+    top: -1.05em;
+  }
+}
+
+.blog-drop {
+  width: 65rem;
+  border: 0.6em;
+  border-top: 0.2em solid $primary-color;
+  box-shadow: 0 1em 3em 0 $dark-overlay;
+  left: -46rem !important;
+  right: auto;
+  &::before {
+    border: 0.5em solid transparent;
+    border-bottom-color: $primary-color;
+    content: '';
+    right: 24%;
+    margin: 0 auto;
+    position: absolute;
+    top: -1.05em;
+  }
+  .blog-img-holder {
+    margin-right: 0.875rem;
+  }
+  .view-all {
+    border: 1px solid $gray-400;
+    &:hover {
+      background: rgba(255, 87, 87, 0.06);
+      border: 1px solid $primary-color;
+    }
+    .svg-arrow {
+      svg {
+        fill: $primary-color;
+      }
+    }
+  }
+}
+
+[data-theme='dark'] {
+  .blog-drop {
+    .view-all {
+      &:hover {
+        background: rgba(12, 165, 233, 0.06);
+      }
+    }
+  }
+}
+
+[data-theme='dark'] {
+  .dropdown-menu h5 {
+    color: $white;
+  }
+}

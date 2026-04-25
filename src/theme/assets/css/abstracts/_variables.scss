@@ -1,0 +1,196 @@
+$font-family-base: Poppins, 'sans-serif';
+
+$white: #fff;
+$ghost-white: #f1f1f2;
+$gray-100: #f8f9fa;
+$gray-200: #f6f7fb; //bg-light
+$gray-300: #dee2e6;
+$gray-400: #ced4da;
+$gray-500: #adb5bd;
+$gray-600: #808080;
+$gray-700: #6c757d;
+$gray-800: #373737;
+$gray-900: #212529;
+$gray-1000: #9ca3af;
+$gray-1050: #6b7280;
+$gray-1100: #4b5563;
+
+$black: #000000;
+$black-200: #354051;
+$black-500: #1f2632;
+$ecllipse-black: #373737;
+
+$blue-100: #f0f4f8;
+$blue-200: #f0f4f8;
+$blue-300: #293452;
+$blue-400: #bcccdc;
+$blue-500: #829ab1;
+$blue-600: #1e293b; //secondary-color
+$blue-700: #0b1121; //dark-mode
+$blue-800: #0f172a;
+$blue-900: #090a0a;
+$rock-blue: #94a3b8;
+
+$pink-100: #ffd8d8; //lightest
+$pink-200: #ff9a9a; //lighter
+$pink-300: #ff7878; //light
+$pink-400: #e54e4e; //dark
+$pink-500: #cc4545; //darker
+$pink-600: #b23c3c; //darkest
+
+$light-corol: #f38bbf;
+$light-blue: #80dafe;
+
+$indigo-100: #4788e4; //darkest
+
+//primary shades color
+$primary-light: #ff5757;
+$primary-light-hover: #e54e4e;
+
+$primary-dark: #0ca5e9;
+$primary-dark-hover: #38bdf9;
+$primary-card-hover: #2a3952;
+$primary-card-light-hover: #eee;
+
+$blur-pink: #eb3d93;
+$blur-blue: #01b5fe;
+
+$font-size-base: 1rem; // Assumes the browser default, typically `16px`
+$font-size-sm: $font-size-base * 0.875;
+$font-size-lg: $font-size-base * 1;
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-bold: 500;
+$font-weight-bolder: 700;
+
+//overlay
+$primary-overlay: rgba(239, 74, 85, 0.85);
+$secondary-overlay: rgba(28, 32, 49, 0.7);
+
+$primary-rgba-color: rgba(209, 231, 221, 0.5);
+$modal-overlay: rgba(0, 0, 0, 0.12);
+
+$white-overlay: rgba(26, 32, 49, 0.8);
+$dark-overlay: rgba(0, 0, 0, 0.075);
+
+$primary-overlay-light: rgba(239, 74, 85, 0.85);
+$primary-slide-light: rgba(239, 74, 85, 0.29);
+
+$primary-overlay-dark: rgba(78, 132, 213, 0.85);
+$primary-slide-dark: rgba(74, 154, 239, 0.29);
+
+//font-weight
+$font-weight-light: 300;
+$font-weight-normal: 400;
+
+//font-sizes
+$h1-font-size: 3.5rem;
+$h2-font-size: 3rem;
+$h3-font-size: 2.5rem;
+$h4-font-size: 1.5rem;
+$h5-font-size: 1.125rem;
+$p-font-size: 1rem;
+$span-font-size: 0.75rem;
+
+//line height
+$h1-line-height: 4.5rem;
+$h2-line-height: 3.25rem;
+$h3-line-height: 2.625rem;
+$h4-line-height: 1.93rem;
+$h5-line-height: 1.5rem;
+$p-line-height: 1rem;
+$span-line-height: 0.75rem;
+
+$primary-dark: #0ca5e9;
+$primary-dark-hover: #38bdf9;
+$primary-card-hover: #2a3952;
+$primary-card-light-hover: #eee;
+
+$nav-service1: #e8e0ff;
+$nav-service2: #ffd9d9;
+$nav-service3: #d0e3fb;
+$nav-service4: #e0ffe1;
+$nav-service5: #ffe9c9;
+$accordion-active: $primary-dark;
+
+$text-secondary: #{var(--text-secondary)};
+
+:root {
+  --primary-color: #{$primary-light};
+  --primary-hover-color: #{$primary-light-hover};
+  --color: #{$gray-700};
+  --background-color: #{$white};
+  --background-light: #{$gray-200};
+  --white: #{$white};
+  --heading: #{$gray-800};
+  --secondary-color: #{$white};
+  --border-color: #{$gray-400};
+  --text-secondary: #{$gray-700};
+  --text-gray: #{$gray-700};
+  --input-shadow: #{$pink-100};
+  --primary-overlay: #{$primary-overlay-light};
+  --primary-slide: #{$primary-slide-light};
+  --primary-box-shadow: 0 1em 3em #{$dark-overlay};
+  --nav-service-1: #{$nav-service1};
+  --nav-service-2: #{$nav-service2};
+  --nav-service-3: #{$nav-service3};
+  --nav-service-4: #{$nav-service4};
+  --nav-service-5: #{$nav-service5};
+  --nav-background: #{$gray-200};
+  --bs-link-color: #{$primary-light};
+}
+
+[data-theme='dark'] {
+  --primary-color: #{$primary-dark};
+  --primary-hover-color: #{$primary-dark-hover};
+  --color: #{$gray-100};
+  --background-color: #{$blue-700};
+  --background-light: #{$blue-800};
+  --white: #{$gray-900};
+  --secondary-color: #{$gray-100};
+  --heading: #{$gray-100};
+  --secondary-color: #{$blue-600};
+  --border-color: #{$blue-300};
+  --text-secondary: #{$white};
+  --text-gray: #{$gray-200};
+  --input-shadow: #{$indigo-100};
+  --primary-overlay: #{$primary-overlay-dark};
+  --primary-slide: #{$primary-slide-dark};
+  --primary-box-shadow: 0 -0.0625em 0.93em #{$blue-300};
+  --nav-service-1: #{$blue-700};
+  --nav-service-2: #{$blue-700};
+  --nav-service-3: #{$blue-700};
+  --nav-service-4: #{$blue-700};
+  --nav-service-5: #{$blue-700};
+  --nav-background: #{$blue-700};
+  --bs-link-color: #{$primary-dark};
+}
+
+$primary-color: #{var(--primary-color)};
+$primary-color-hover: #{var(--primary-hover-color)};
+$primary-box-shadow: #{var(--primary-box-shadow)};
+
+$text-gray: #{var(--text-gray)};
+
+$secondary-color: #{var(--secondary-color)};
+$body-background: #{var(--background-color)};
+$nav-background: #{var(--nav-background)};
+
+$bs-bg-light: #{var(--background-light)};
+
+$bs-body-color: #{var(--color)};
+
+$body-secondary-color: $bs-body-color;
+
+// Headings
+$headings-color: #{var(--heading)};
+
+$h1-font-size: 2.5rem;
+$h2-font-size: 1.62671rem;
+$h3-font-size: 1.38316rem;
+$h4-font-size: $font-size-base * 1.25;
+$h5-font-size: 1em;
+$h6-font-size: $font-size-base;
+
+$headings-font-weight: 700;
+$headings-line-height: 1.4;

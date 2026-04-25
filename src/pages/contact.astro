@@ -1,0 +1,16 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ContactPageBody from '../components/Contact/ContactPageBody.jsx';
+import { siteMetadata } from '../lib/site-metadata';
+---
+
+<BaseLayout
+  title="Truemark | Contact Us"
+  description="Truemark | Software Development Team | Nepal | Remote"
+  keywords="About Truemark, Truemark Technology, Remote Software Development Team"
+  path="contact"
+  hideFormCTA={true}
+  bodyClass="contact-page"
+>
+  <ContactPageBody siteMetadata={siteMetadata} client:only="react" />
+</BaseLayout>

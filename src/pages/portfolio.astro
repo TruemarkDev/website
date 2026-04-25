@@ -1,0 +1,41 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PortfolioNav from '../components/Menu/Portfolio/PortfolioNav.jsx';
+import PortfolioList from '../components/Portfolio/PortfolioList.jsx';
+import { getCollection } from 'astro:content';
+import { imageToShape } from '../lib/blog-data';
+
+const projectEntries = await getCollection('projects');
+
+const projects = projectEntries
+  .filter((p) => {
+    const list = (p.data as any).featuredIn;
+    return Array.isArray(list) ? list.includes('portfolio-index') : true;
+  })
+  .sort((a, b) =>
+    String(a.data.uid ?? '').localeCompare(String(b.data.uid ?? ''))
+  )
+  .map((p) => ({
+    node: {
+      id: p.id,
+      excerpt: '',
+      frontmatter: {
+        ...p.data,
+        bgImage: imageToShape(p.data.bgImage as string | undefined),
+        featuredImage: imageToShape(p.data.featuredImage as string | undefined),
+        ownerImage: imageToShape(p.data.ownerImage as string | undefined),
+        companyLogo: imageToShape(p.data.companyLogo as string | undefined),
+      },
+    },
+  }));
+---
+
+<BaseLayout
+  title="Truemark | Portfolio"
+  description="Some of the tech solutions we shipped to our clients from all over the globe."
+  keywords="About Truemark, Truemark Technology, Remote Software Development Team"
+  path="portfolio"
+>
+  <PortfolioNav client:only="react" />
+  <PortfolioList projects={projects} client:only="react" />
+</BaseLayout>

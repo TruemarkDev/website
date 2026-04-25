@@ -1,0 +1,464 @@
+$white: #fff;
+$ghost-white: #f1f1f2;
+$gray-100: #f8f9fa;
+$gray-200: #f6f7fb; //bg-light
+$gray-300: #dee2e6;
+$gray-400: #ced4da;
+$gray-500: #adb5bd;
+$gray-600: #808080; //$placeholder-color
+$gray-700: #6c757d; //$body-secondary-color
+$gray-800: #373737; //heading
+$gray-900: #212529; //$body-secondary-color
+$gray-1000: #9ca3af;
+$light-grayish-green: #f0f3ee;
+$light-gray: #9ca3af;
+
+$black: #000000;
+$black-200: #354051;
+$black-500: #1f2632;
+$ecllipse-black: #373737;
+
+$blue-100: #f0f4f8;
+$blue-200: #f0f4f8;
+$blue-300: #293452;
+$blue-400: #bcccdc;
+$blue-500: #829ab1;
+$blue-600: #1e293b; //secondary-color
+$blue-700: #0b1121; //dark-mode
+$blue-800: #0f172a;
+$blue-900: #090a0a;
+$rock-blue: #94a3b8;
+$pale-blue: #b8eaff;
+$deep-sky-blue: #1abcfe;
+$light-sky-blue: #76d7fe;
+
+$pink-100: #ffd8d8; //lightest
+$pink-200: #ff9a9a; //lighter
+$pink-300: #ff7878; //light
+$pink-400: #e54e4e; //dark
+$pink-500: #cc4545; //darker
+$pink-600: #b23c3c; //darkest
+
+$light-corol: #f38bbf;
+$light-blue: #80dafe;
+
+$light-green: #43a16d;
+
+$indigo-100: #4788e4; //darkest
+
+$primary-light: #ff5757;
+$primary-light-hover: #e54e4e;
+
+$primary-dark: #0ca5e9;
+$primary-dark-hover: #38bdf9;
+$primary-card-hover: #2a3952;
+$primary-card-light-hover: #eee;
+
+$blur-pink: #eb3d93;
+$blur-blue: #01b5fe;
+
+$social-icon-color: (
+  facebook: #4267b2,
+  twitter: #38a1f3,
+  google: #db4437,
+  linkedin: #0077b5,
+);
+
+//Tools and technologies colors
+
+$minitest: #fdf3eb;
+$rspec: #f9e3e4;
+$capybara: #d6ebfb;
+$rubyprof: #baf1e8;
+$cucumber: #e8f5d3;
+
+// Trainee Apply Proccess
+
+$apply-process: #fdf3eb;
+$video-interview-process: #f9e3e4;
+$task-process: #deebe5;
+$welcome-process: #d6ebfb;
+
+//Types of software testing light mode
+
+$software-icon1: rgba(131, 164, 251, 0.25);
+$software-icon2: rgba(134, 237, 248, 0.25);
+$software-icon3: rgba(241, 142, 183, 0.25);
+$software-icon4: rgba(160, 154, 228, 0.25);
+$software-icon5: rgba(181, 223, 114, 0.25);
+
+//Types of software testing dark mode
+
+$software-darkicon1: rgba(119, 109, 242, 0.1);
+$software-darkicon2: rgba(166, 246, 255, 0.1);
+$software-darkicon3: rgba(183, 133, 154, 0.1);
+$software-darkicon4: rgba(119, 109, 242, 0.1);
+$software-darkicon5: rgba(232, 245, 211, 0.1);
+
+$software-darkpath1: #83a5fc;
+$software-darkpath2: #17dcf2;
+$software-darkpath3: #ee77a8;
+$software-darkpath4: #aba6e7;
+$software-darkpath5: #e8f5d3;
+
+// TODO: @prakash rename this to technologies color for react, ruby &  services-color for dm
+$brand-color: (
+  react: #007bff,
+  ruby: #dc3545,
+  dm: #ffc107,
+);
+
+$react-native: #61d3f1;
+$node-js: #60cf98;
+$postgres: #21a4d0;
+$redis: #d30007;
+$appstore: #21a4d0;
+$google-play: #212121;
+
+// TODO @amnish, these variables are specific to portfolio index page, is it bad practice if we move it there?
+
+//It's better to put all the variables in one place
+$trivia-day: linear-gradient(
+  16deg,
+  rgba(125, 58, 213, 0.95) 0%,
+  rgba(9, 113, 193, 0.95) 100%
+);
+
+$that-visa: rgba(233, 30, 99, 0.95);
+$artlords: rgba(15, 32, 48, 0.95);
+$reduct-video: rgba(50, 59, 144, 0.95);
+$soono: rgba(16, 93, 182, 0.95);
+$price-insight: rgba(185, 0, 0, 0.95);
+$bazarnp: rgba(4, 114, 103, 0.95);
+$love-with-food: rgba(41, 164, 136, 0.95);
+$flexonet: rgba(85, 174, 167, 0.95);
+$travelbook: rgba(236, 86, 107, 0.95);
+$gangstabet: rgba(6, 131, 133, 0.95);
+$invoice-work: rgba(4, 116, 224, 0.95);
+$polo-themes: rgba(4, 116, 224, 0.95);
+$opaque-red-color: rgba(255, 87, 87, 0);
+$opaque-light-blue-color: rgba(26, 188, 254, 0);
+
+$developer-gradient-dark-blue: rgba(26, 188, 254, 0.5);
+$developer-gradient-dark-purple: rgba(84, 84, 212, 0.21);
+
+$developer-gradient-light-red: rgba(176, 64, 64, 0.14);
+$developer-gradient-light-blue: rgba(84, 84, 212, 0.21);
+
+//rgba colors light
+$primary-overlay: rgba(239, 74, 85, 0.85);
+$secondary-overlay: rgba(28, 32, 49, 0.7);
+
+$white-overlay: rgba(26, 32, 49, 0.8);
+$dark-overlay: rgba(0, 0, 0, 0.075);
+
+$primary-overlay-light: rgba(239, 74, 85, 0.85);
+$primary-slide-light: rgba(239, 74, 85, 0.29);
+
+$primary-overlay-dark: rgba(78, 132, 213, 0.85);
+$primary-slide-dark: rgba(74, 154, 239, 0.29);
+
+$nav-service1: #e8e0ff;
+$nav-service2: #ffd9d9;
+$nav-service3: #d0e3fb;
+$nav-service4: #e0ffe1;
+$nav-service5: #ffe9c9;
+$accordion-active: $primary-dark;
+
+//notification banner
+$light-background: rgba(224, 255, 255, 0.3);
+$light-border: #2bbe3a;
+
+//spree vs shophify color for icon light-mode
+
+$helpmechoose-icon1: rgba(131, 165, 252, 0.5);
+$helpmechoose-icon2: rgba(194, 155, 202, 0.5);
+$helpmechoose-icon3: rgba(62, 226, 244, 0.5);
+
+//spree vs shophify color for icon dark-mode
+
+$helpmechoose-darkicon1: rgba(4, 37, 124, 0.5);
+$helpmechoose-darkicon2: rgba(77, 44, 83, 0.5);
+$helpmechoose-darkicon3: rgba(7, 109, 121, 0.5);
+
+//our services color for icon light-mode
+
+$services-svgicon1: rgba(160, 154, 228, 0.25);
+$services-svgicon2: rgba(241, 142, 183, 0.25);
+$services-svgicon3: rgba(131, 164, 251, 0.25);
+$services-svgicon4: rgba(181, 223, 114, 0.25);
+$services-svgicon5: rgba(134, 237, 248, 0.25);
+$services-svgicon6: rgba(247, 159, 126, 0.25);
+$services-svgicon7: rgba(246, 213, 65, 0.25);
+
+$services-pathicon1: #221c69;
+$services-pathicon2: #760f3a;
+$services-pathicon3: #042781;
+$services-pathicon4: #52741a;
+$services-pathicon5: #065860;
+$services-pathicon6: #f05114;
+$services-pathicon7: #665505;
+
+//our services color for icon dark-mode
+
+$services-darksvgicon1: rgba(119, 109, 242, 0.1);
+$services-darksvgicon2: rgba(183, 133, 154, 0.1);
+$services-darksvgicon3: rgba(68, 94, 163, 0.1);
+$services-darksvgicon4: rgba(232, 245, 211, 0.1);
+$services-darksvgicon5: rgba(166, 246, 255, 0.1);
+$services-darksvgicon6: rgba(243, 119, 72, 0.1);
+$services-darksvgicon7: rgba(210, 173, 10, 0.1);
+
+$services-darkpathicon1: #aba6e7;
+$services-darkpathicon2: #ee77a8;
+$services-darkpathicon3: #83a5fc;
+$services-darkpathicon4: #e8f5d3;
+$services-darkpathicon5: #17dcf2;
+$services-darkpathicon6: #f7aa8c;
+$services-darkpathicon7: #f9e177;
+
+// $card-shadow: 0, -1px, $dark-overlay, 15px;
+
+:root {
+  --primary-color: #{$primary-light};
+  --primary-hover-color: #{$primary-light-hover};
+  --color: #{$gray-700};
+  --background-color: #{$white};
+  --background-light: #{$gray-200};
+  --white: #{$white};
+  --heading: #{$gray-800};
+  --secondary-color: #{$white};
+  --border-color: #{$gray-400};
+  --text-secondary: #{$gray-700};
+  --text-gray: #{$gray-700};
+  --input-shadow: #{$pink-100};
+  --primary-overlay: #{$primary-overlay-light};
+  --primary-slide: #{$primary-slide-light};
+  --primary-box-shadow: 0 1em 3em #{$dark-overlay};
+  --nav-service-1: #{$nav-service1};
+  --nav-service-2: #{$nav-service2};
+  --nav-service-3: #{$nav-service3};
+  --nav-service-4: #{$nav-service4};
+  --nav-service-5: #{$nav-service5};
+  --nav-background: #{$gray-200};
+  --bs-link-color: #{$primary-light};
+}
+
+[data-theme='dark'] {
+  --primary-color: #{$primary-dark};
+  --primary-hover-color: #{$primary-dark-hover};
+  --color: #{$gray-100};
+  --background-color: #{$blue-700};
+  --background-light: #{$blue-800};
+  --white: #{$gray-900};
+  --secondary-color: #{$gray-100};
+  --heading: #{$gray-100};
+  --secondary-color: #{$blue-600};
+  --border-color: #{$blue-300};
+  --text-secondary: #{$white};
+  --text-gray: #{$gray-200};
+  --input-shadow: #{$indigo-100};
+  --primary-overlay: #{$primary-overlay-dark};
+  --primary-slide: #{$primary-slide-dark};
+  --primary-box-shadow: 0 -0.0625em 0.93em #{$blue-300};
+  --nav-service-1: #{$blue-700};
+  --nav-service-2: #{$blue-700};
+  --nav-service-3: #{$blue-700};
+  --nav-service-4: #{$blue-700};
+  --nav-service-5: #{$blue-700};
+  --nav-background: #{$blue-700};
+  --bs-link-color: #{$primary-dark};
+}
+
+$primary-color: #{var(--primary-color)};
+$primary-color-hover: #{var(--primary-hover-color)};
+$primary-overlay: #{var(--primary-overlay)};
+$primary-slide: #{var(--primary-slide)};
+
+// Body
+//
+// Settings for the `<body>` element.
+// $bg-light: #{var(--background-light)};
+$bg-light: $gray-200;
+
+$bs-bg-light: #{var(--background-light)};
+
+// $body-color: #{var(--color)};
+$bs-body-color: #{var(--color)};
+
+$body-secondary-color: $bs-body-color;
+$secondary-color: #{var(--secondary-color)};
+$body-background: #{var(--background-color)};
+$nav-background: #{var(--nav-background)};
+
+$primary-box-shadow: #{var(--primary-box-shadow)};
+
+// $body-bg: #{var(--background-color)};
+// $border-color: #{var(--border-color)};
+
+//Text
+$text-secondary: #{var(--text-secondary)};
+$text-gray: #{var(--text-gray)};
+// $secondary: #{var(--text-secondary)};
+$font-family-base: Archivo, Ubuntu, 'sans-serif';
+
+$font-size-base: 1rem; // Assumes the browser default, typically `16px`
+$font-size-sm: $font-size-base * 0.875;
+$font-size-lg: $font-size-base * 1;
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-bold: 500;
+$font-weight-bolder: 700;
+
+// border
+$border-color: #{var(--border-color)};
+
+// scss-docs-start border-radius-variables
+$border-radius: 0.25rem;
+$border-radius-sm: 0.2rem;
+$border-radius-lg: 0.3rem;
+$border-radius-pill: 50rem;
+// scss-docs-end border-radius-variables
+
+$line-height-base: 1.7;
+
+// Heading
+
+$headings-color: #{var(--heading)};
+
+$h1-font-size: 2.5rem;
+$h2-font-size: 1.62671rem;
+$h3-font-size: 1.38316rem;
+$h4-font-size: $font-size-base * 1.25;
+$h5-font-size: 1em;
+$h6-font-size: $font-size-base;
+
+$headings-font-weight: 700;
+$headings-line-height: 1.4;
+
+// Links
+//
+// Style anchor elements.
+$link-color: $primary-color;
+$link-hover-color: $gray-900;
+
+// Cards
+
+// scss-docs-start card-variables
+$card-bg: $secondary-color;
+
+// Forms
+
+// Inputs
+$input-bg: $secondary-color;
+$input-border-color: $border-color;
+
+$input-btn-padding-y: 0.6em;
+$input-btn-padding-x: 1.2em;
+
+$input-btn-padding-y-lg: 0.9em;
+$input-btn-padding-x-lg: 2.75em;
+
+// TODO @amnish, @sushil these variables names are too similar..lets see if we can eliminate them
+$input-placeholder-color: $blue-500;
+$placeholder-color: $gray-600;
+$input-focus-color: var(--heading);
+
+// $input-focus-bg: $bs-bg-light;
+$input-focus-border-color: $bs-bg-light;
+$input-btn-focus-box-shadow: 0 0 2px 2px #{var(--input-shadow)};
+
+// Buttons
+$btn-font-weight: $font-weight-bold;
+// $btn-link-color: $white;
+
+// Modals
+$modal-content-bg: $bs-bg-light;
+
+// Navs
+$nav-service-background1: #{var(--nav-service-1)};
+$nav-service-background2: #{var(--nav-service-2)};
+$nav-service-background3: #{var(--nav-service-3)};
+$nav-service-background4: #{var(--nav-service-4)};
+$nav-service-background5: #{var(--nav-service-5)};
+
+// scss-docs-start nav-variables
+$nav-link-color: $body-secondary-color;
+$nav-link-hover-color: $primary-color-hover;
+// Dropdowns
+//
+// Dropdown menu container and contents.
+$dropdown-bg: $secondary-color;
+// $dropdown-link-color:  $body-secondary-color;
+$dropdown-link-active-bg: $bs-bg-light;
+$dropdown-link-active-color: $body-secondary-color;
+// Badges
+
+// scss-docs-start badge-variables
+$badge-font-size: 0.8em;
+
+// Pagination
+
+// scss-docs-start pagination-variables
+
+$pagination-color: $text-secondary;
+$pagination-bg: $body-background;
+$pagination-border-color: $border-color;
+
+// $theme-colors-rgb: $white;
+
+// scss-docs-start utilities-text-colors
+// $utilities-text: $white;
+// $utilities-text-colors: $white;
+
+// scss-docs-end utilities-text-colors
+
+// scss-docs-start utilities-bg-colors
+// $utilities-bg-colors: $white;
+// scss-docs-end utilities-bg-colors
+
+// $utilities-text-colors: $white;
+// $utilities-bg-colors: $white;
+// $utilities-bg: $white;
+
+$navbar-light-color: var(--color);
+$navbar-light-hover-color: var(--primary-hover-color);
+$navbar-light-active-color: var(--primary-color);
+
+// scss-docs-start accordion-variables
+$accordion-border-width: 0;
+$accordion-color: transprant;
+$accordion-bg: transprant;
+$accordion-border-color: $bs-bg-light;
+$accordion-body-padding-x: 0;
+$accordion-button-padding-y: 1rem;
+$accordion-button-padding-x: 0;
+$accordion-button-active-bg: transprant;
+$accordion-button-active-color: var(--primary-color);
+$accordion-button-focus-border-color: none;
+$accordion-button-focus-box-shadow: none;
+$accordion-icon-color: $gray-500 !default;
+$accordion-icon-active-color: var(--primary-color);
+$pagination-active-bg: var(--primary-color);
+
+//our process section of about us
+
+$youridea-background: #e4ebff;
+$youridea-text: #042781;
+$brainstorm-background: #fde7de;
+$brainstorm-text: #f05114;
+$prototype-background: #e7e5f8;
+$prototype-text: #221c69;
+$ui-design-background: #fbe2ed;
+$ui-design-text: #760f3a;
+$development-background: #e0fafd;
+$development-text: #065860;
+$staging-background: #fdf4cf;
+$staging-text: #665505;
+$launch-background: #e8f5d3;
+$launch-text: #52741a;
+$about-shadow: 0px 1rem 2rem rgba(0, 0, 0, 0.08);
+
+// Theme-only greys used by imported truemark theme partials (blog details / sidebar).
+$gray-1050: #6b7280;
+$gray-1100: #4b5563;

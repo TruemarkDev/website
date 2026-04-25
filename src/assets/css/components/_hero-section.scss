@@ -1,0 +1,255 @@
+.bg-hero {
+  position: relative;
+  padding-bottom: 0;
+  @include media-breakpoint-up(sm) {
+    padding-bottom: 5em;
+  }
+
+  .banner-img {
+    position: relative;
+    bottom: 0;
+    right: 2em;
+
+    @include media-breakpoint-up(xl) {
+      bottom: -5em;
+    }
+  }
+}
+
+.hero-section-container {
+  &::before {
+  content: '';
+  background: linear-gradient(
+    180deg,
+    rgba(26, 188, 254, 0.27) 0%,
+    rgba(84, 84, 212, 0.1134) 100%
+  );
+  filter: blur(6.2221rem);
+  border-radius: 9.6858rem;
+  transform: rotate(-54.37deg);
+  position: absolute;
+  right: -10rem;
+  top: 4em;
+  bottom: 0;
+  width: 35em;
+
+}
+
+&:after {
+  content: '';
+  background: url('../../assets/images/hero-section/bg-line.png') repeat 0 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 41%;
+}
+
+}
+
+[data-theme='light'] {
+  .hero-section-container {
+    &::before {
+      background: linear-gradient(
+        180deg,
+        rgba(176, 64, 64, 0.27) 0%,
+        rgba(84, 84, 212, 0.1134) 100%
+      );
+    }
+  }
+}
+
+
+.hero-section {
+
+  .header {
+    font-size: $h5-font-size;
+    color: $text-gray;
+  }
+
+  h1 {
+    color: $text-secondary;
+    font-weight: $font-weight-bolder;
+    line-height: 1.2em;
+
+    @include min-break-point(mobile-phone) {
+      font-size: 3em;
+    }
+
+    @include min-break-point(tablet) {
+      font-size: 3.5em;
+    }
+
+    // TODO: @prakash: this is not used, we can consider removing
+    .text-stroke {
+      @include text-stroke(0.0415em, $primary-color);
+
+      text-align: center;
+      color: transparent;
+    }
+  }
+
+  .text {
+    font-size: $h5-font-size;
+    color: $text-gray;
+  }
+
+  .banner-image {
+    @include min-break-point(tablet) {
+      margin-bottom: -8.5em;
+    }
+
+    @include min-break-point(tablet-landscape) {
+      margin-bottom: -3.5em;
+    }
+
+    @include min-break-point(large-desktop) {
+      margin-bottom: -6.5em;
+    }
+  }
+  .delivery, .practices, .expertise {
+    background: rgb(26 188 254 / 50%);
+    padding: 1em;
+    border: 0.1em solid $primary-color;
+    backdrop-filter: blur(0.625rem);
+    border-radius: 0.7em;
+    z-index: 1;
+    font-size: 1rem;
+
+    @include media-breakpoint-up(md) {
+      font-size: 1.25rem;
+    }
+
+    @include media-breakpoint-up(lg) {
+      font-size: 1.25rem,;
+    }
+  }
+  .delivery {
+    top: 0;
+    left: 0.6em;
+    right: auto;
+    text-align: center;
+
+    @include media-breakpoint-up(md) {
+      left: 0.6em;
+      right: auto;
+      top: 4rem;
+    }
+
+
+    @include media-breakpoint-up(xl) {
+      top: 7em;
+      left: 2em;
+      right: auto;
+    }
+  }
+
+  .practices {
+    top: 6.5rem;
+    left: auto;
+    right: 0.5em;
+    text-align: center;
+
+    @include media-breakpoint-up(md) {
+      left: auto;
+      right: 2rem;
+      top: 15rem;
+    }
+
+    @include media-breakpoint-up(xl) {
+      right: 0;
+      left: auto;
+      top: auto;
+      bottom: 8.5em;
+    }
+  }
+  .expertise {
+    left: 0.5em;
+    right: auto;
+    text-align: center;
+    bottom: 2.5rem;
+
+    @include media-breakpoint-up(md) {
+      left: 2rem;
+      right: auto;
+      bottom: auto;
+      top: 25rem;
+    }
+
+    @include media-breakpoint-up(xl) {
+      left: 2em;
+      bottom: 2em;
+      top: auto;
+      right: auto;
+    }
+  }
+}
+
+[data-theme='light'] {
+  .delivery {
+    border-color: #48B774;
+    background: rgb(41 117 71 / 80%);
+    color: $white;
+  }
+
+  .practices {
+    border-color: #3a72a7;
+    background: rgb(58 114 167 / 80%);
+    color: $white;
+  }
+
+  .expertise {
+    border-color: #FF8345;
+    background: rgb(164 95 61 / 80%);
+    color: $white;
+  }
+}
+
+.DM-hero-section-container {
+  &::before {
+  content: '';
+  background: linear-gradient(
+    180deg,
+    rgba(234, 244, 249, 1) 0%,
+    rgba(251, 232, 232, 1) 100%
+  );
+  filter: blur(6.2221rem);
+  border-radius: 9.6858rem;
+  transform: rotate(-54.37deg);
+  position: absolute;
+  right: -10rem;
+  top: 4em;
+  bottom: 0;
+  width: 35em;
+
+}
+
+.tabs {
+  border-radius: 0.75rem;
+  padding: 0.625rem;
+}
+
+.socialMedia {
+  top: -3.4375rem;
+  left: 18.0625rem;
+}
+
+.contentWriting {
+  top: 7.5rem;
+  left: 9.375rem;
+}
+
+.seo {
+  top: 22.5625rem;
+  right: 0;
+}
+
+}
+
+[data-theme='dark'] {
+  .DM-hero-section-container {
+    &::before {
+      background: linear-gradient(180deg, rgba(26, 188, 254, 0.27) 0%, rgba(84, 84, 212, 0.1134) 100%);
+    }
+  }
+}

@@ -1,0 +1,71 @@
+// @amnish this code is confused whether it is for toggle button or dark mode toggle, refactor for better composition
+.theme-switcher-container {
+  $dark-mode: url('../images/layout/dark-mode.svg');
+  $light-mode: url('../images/layout/light-mode.svg');
+
+  margin-top: 0;
+
+  @include min-break-point(mobile-phone) {
+    margin-top: -0.4em;
+  }
+
+  @include min-break-point(large-desktop) {
+    margin-top: -0.8em;
+  }
+
+  .form-check-input {
+    background-color: $blue-600;
+
+    &:checked {
+      border-color: unset;
+      background-image: $dark-mode;
+      background-color: $blue-600;
+    }
+
+    &:focus {
+      border-color: unset;
+      box-shadow: unset;
+    }
+
+    &.dark {
+      &:checked {
+        background-image: $dark-mode;
+      }
+    }
+
+    &.light {
+      background-image: $light-mode;
+
+      &:focus {
+        background-image: $light-mode;
+      }
+    }
+  }
+
+  .toggle-button {
+    @include size(2.3em, 5em);
+
+    .toggle-input {
+      @include size(inherit);
+    }
+
+    .light-mode-off {
+      @include size(2em, 1.3em);
+      @include user-select(none);
+
+      left: 0.4em;
+      top: 0.5em;
+      margin: 0;
+      pointer-events: none;
+    }
+
+    .dark-mode-off {
+      @include size(1.3em);
+      @include user-select(none);
+
+      right: 0.4em;
+      top: 1.4em;
+      pointer-events: none;
+    }
+  }
+}

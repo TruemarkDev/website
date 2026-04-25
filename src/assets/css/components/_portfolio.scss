@@ -1,0 +1,192 @@
+// @amnish, too deep nested css here, lets refactor
+.portfolio {
+  background-position: cover;
+  height: 44.25em;
+  position: relative;
+
+  @include min-break-point(tablet) {
+    height: 31.25em;
+    overflow: hidden;
+  }
+
+  // needs refactor to badge @amnish
+  .badge {
+    border-color: $white;
+    color: $white;
+  }
+
+  .portfolio-overlay {
+    @include position(absolute, 0, 0, 0, 0);
+  }
+
+  &.trivia-day {
+    .portfolio-overlay {
+      background: $trivia-day;
+    }
+
+    .showcase-img {
+      bottom: -4em;
+
+      @include min-break-point(tablet) {
+        bottom: 0;
+      }
+    }
+  }
+
+  &.that-visa {
+    color: $black;
+
+    .portfolio-overlay {
+      background: $that-visa;
+    }
+  }
+
+  &.artlords {
+    color: $black;
+
+    .portfolio-overlay {
+      background: $artlords;
+    }
+  }
+
+  &.reduct-video {
+    color: $black;
+
+    .portfolio-overlay {
+      background: $reduct-video;
+    }
+  }
+
+  &.soono {
+    color: $black;
+
+    .portfolio-overlay {
+      background: $soono;
+    }
+  }
+
+  &.gangstabet {
+    color: $black;
+
+    .portfolio-overlay {
+      background: $gangstabet;
+    }
+  }
+
+  &.invoice-work {
+    color: $black;
+
+    .portfolio-overlay {
+      background: $invoice-work;
+    }
+  }
+
+  &.polo-themes {
+    color: $black;
+
+    .portfolio-overlay {
+      background: $polo-themes;
+    }
+  }
+
+  &.price-insight {
+    color: $black;
+
+    .portfolio-overlay {
+      background: $price-insight;
+    }
+  }
+
+  &.bazarnp {
+    color: $black;
+
+    .portfolio-overlay {
+      background: $bazarnp;
+    }
+  }
+
+  &.love-with-food {
+    color: $black;
+
+    .portfolio-overlay {
+      background: $love-with-food;
+    }
+  }
+
+  &.flexonet {
+    color: $black;
+
+    .portfolio-overlay {
+      background: $flexonet;
+    }
+  }
+
+  &.travelbook {
+    color: $white;
+
+    .portfolio-overlay {
+      background-color: $travelbook;
+    }
+  }
+
+  .showcase {
+    height: auto;
+
+    @include min-break-point(tablet) {
+      height: 100%;
+    }
+  }
+
+  .showcase-img {
+    @include position(absolute, null, null, 0);
+
+    @include min-break-point(tablet) {
+      right: -35%;
+    }
+
+    @include min-break-point(large-desktop) {
+      position: static;
+    }
+  }
+}
+
+.store-download {
+  @include border-radius(50%);
+  @include size(2em);
+
+  background-color: $white-overlay;
+  padding: 20px;
+  color: $white;
+
+  svg {
+    font-size: 1.3em;
+  }
+
+  &:hover {
+    background-color: $white;
+    color: $primary-color;
+  }
+}
+
+.left-btn {
+  top: 50%;
+  left: 1rem;
+  opacity: 0;
+  background: white;
+}
+
+.right-btn {
+  top: 50%;
+  right: 1rem;
+  opacity: 0;
+  background: white;
+}
+
+.image-container:hover {
+  .left-btn, .right-btn {
+    opacity: 1;
+    transition: opacity .5s ease-in-out;
+    background: white;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1);
+  }
+}

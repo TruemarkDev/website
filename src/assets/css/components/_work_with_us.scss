@@ -1,0 +1,176 @@
+.half-ellipse {
+  right: 0%;
+  bottom: 0%;
+}
+
+.ellipse-group {
+  bottom: 8%;
+  left: 0%;
+
+  @include media-breakpoint-down(lg) {
+    bottom: 0%;
+  }
+}
+
+.hero-image {
+  img {
+    z-index: 10;
+  }
+  &::after {
+    content: '';
+    border-radius: 21.9375em;
+    background: linear-gradient(
+      180deg,
+      $primary-light 0%,
+      $opaque-red-color 100%
+    );
+    filter: blur(12.5em);
+    position: absolute;
+    transform: translateX(-105%);
+    width: 21.9375em;
+    height: 21.9375em;
+  }
+}
+
+.arrow-icon {
+  right: 32%;
+  top: 21%;
+
+  @include media-breakpoint-down(xl) {
+    right: 27%;
+  }
+
+  @include media-breakpoint-down(lg) {
+    right: 21%;
+  }
+
+  @include media-breakpoint-down(md) {
+    right: 8%;
+    top: 15%;
+  }
+}
+
+.sky-blue-star {
+  left: 94%;
+  top: 5%;
+
+  @include media-breakpoint-down(sm) {
+    left: 87%;
+  }
+}
+
+.orange-star {
+  left: 8%;
+  bottom: 33%;
+
+  @include media-breakpoint-down(lg) {
+    left: 0;
+  }
+
+  @include media-breakpoint-down(sm) {
+    left: 2%;
+    bottom: 38%;
+  }
+}
+
+.blue-circle {
+  left: 8%;
+  top: 24%;
+
+  @include media-breakpoint-down(lg) {
+    left: 0;
+  }
+}
+
+.pink-small-circle {
+  left: 25%;
+  top: 33%;
+
+  @include media-breakpoint-down(lg) {
+    left: 17%;
+  }
+}
+
+.purple-circle {
+  top: 47%;
+  left: 17.5%;
+
+  @include media-breakpoint-down(lg) {
+    top: 46%;
+    left: 9%;
+  }
+}
+
+.yellow-polygon {
+  left: 77%;
+  top: 25%;
+
+  @include media-breakpoint-down(xl) {
+    left: 83%;
+  }
+
+  @include media-breakpoint-down(lg) {
+    left: 89%;
+  }
+}
+
+.pink-big-circle {
+  left: 72%;
+  top: 33%;
+
+  @include media-breakpoint-down(xl) {
+    left: 78%;
+  }
+
+  @include media-breakpoint-down(lg) {
+    left: 84%;
+  }
+}
+
+.career-header-text {
+  z-index: 1;
+}
+
+[data-theme='dark'] {
+  .half-ellipse {
+    svg {
+      path {
+        fill: $software-darkicon1;
+      }
+    }
+  }
+
+  .arrow-icon {
+    svg {
+      path {
+        stroke: $light-sky-blue;
+      }
+    }
+  }
+
+  .pink-big-circle {
+    svg {
+      circle {
+        fill: $deep-sky-blue;
+      }
+    }
+  }
+
+  .pink-small-circle {
+    svg {
+      ellipse {
+        fill: $deep-sky-blue;
+      }
+    }
+  }
+
+  .hero-image {
+    &::after {
+      background: linear-gradient(
+        180deg,
+        $deep-sky-blue 0%,
+        $opaque-light-blue-color 100%
+      );
+    }
+  }
+}

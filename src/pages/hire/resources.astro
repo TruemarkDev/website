@@ -1,0 +1,15 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageBody from '../../components/PagesReact/hire/resources.jsx';
+import { getFeaturedBlogs } from '../../lib/blog-data';
+
+const featuredBlogs = await getFeaturedBlogs(3);
+---
+
+<BaseLayout
+  title="Truemark | Hire Resources"
+  description="Hire dedicated resources from Truemark."
+  path="hire/resources"
+>
+  <PageBody data={{ featuredBlogs }} client:only="react" />
+</BaseLayout>

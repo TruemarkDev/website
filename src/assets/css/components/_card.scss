@@ -1,0 +1,71 @@
+.card {
+  @include box-shadow(0, 0.03em, $dark-overlay, 0.15em);
+
+  border: none;
+
+  &:hover {
+    box-shadow:
+      0 0.1em 0.7em var(--primary-hover-color),
+      0 0.1em 0.1em var(--primary-hover-color);
+  }
+}
+
+.card-title {
+  a {
+    color: $gray-700;
+
+    &:hover {
+      color: $primary-color;
+    }
+  }
+}
+
+.info-card {
+  background: var(--secondary-color);
+  @include border-radius(0.6em);
+  @include box-shadow(0, 0.03em, $primary-box-shadow, 0.15em);
+  border: none;
+
+  &:hover {
+    box-shadow:
+      0 0.1em 0.7em var(--primary-hover-color),
+      0 0.1em 0.1em var(--primary-hover-color);
+    text-decoration: none;
+    transition:
+      ease-in box-shadow 0.2s,
+      ease filter 0.1s;
+    cursor: pointer;
+  }
+
+  .icon-holder {
+    @include border-radius(50%);
+    @include size(2.5em);
+
+    background-color: $bs-bg-light;
+
+    .fa,
+    svg {
+      font-size: 1.1em;
+    }
+  }
+}
+[data-theme='dark'] {
+  .card-title {
+    a {
+      color: $gray-300;
+
+      &:hover {
+        color: $primary-color;
+      }
+    }
+  }
+}
+
+[data-theme='light'] {
+  .info-card:hover,
+  .card:hover {
+    box-shadow:
+      0 0.1em 0.7em $gray-400,
+      0 0.1em 0.1em $gray-400;
+  }
+}

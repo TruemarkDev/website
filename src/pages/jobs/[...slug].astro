@@ -1,0 +1,31 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import JobPostBody from '../../components/Job/JobPostBody.jsx';
+
+export async function getStaticPaths() {
+  const all = await getCollection('jobs');
+  return all.map((entry) => ({
+    params: { slug: entry.data.customSlug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const data = entry.data;
+const featuredImageUrl = (data.featuredImage as string | undefined) ?? null;
+---
+
+<BaseLayout
+  title={`Truemark | ${data.title}`}
+  description={data.description}
+  keywords={data.keywords}
+  image={featuredImageUrl ?? undefined}
+  path={`jobs/${data.customSlug}`}
+>
+  <JobPostBody frontmatter={data} client:only="react" />
+  <div class="container">
+    <Content />
+  </div>
+</BaseLayout>

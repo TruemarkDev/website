@@ -1,0 +1,27 @@
+.tech-stack {
+  .icon {
+    &.xs {
+      @include size(1.6em);
+
+      padding: 0.1em;
+    }
+
+    &.sm {
+      @include size(2em);
+    }
+
+    &.md {
+      @include size(4em);
+    }
+
+    &.lg {
+      @include size(6em);
+    }
+  }
+
+  .white {
+    &.rounded-circle {
+      background: $white;
+    }
+  }
+}

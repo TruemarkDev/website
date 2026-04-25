@@ -1,0 +1,130 @@
+.why-use-ruby {
+  path {
+    fill: $primary-color;
+  }
+}
+.our-services-ruby {
+  .icon1 {
+    svg {
+      fill: $services-svgicon1;
+    }
+    path {
+      fill: $services-pathicon1;
+    }
+  }
+  .icon2 {
+    svg {
+      fill: $services-svgicon2;
+    }
+    path {
+      fill: $services-pathicon2;
+    }
+  }
+  .icon3 {
+    svg {
+      fill: $services-svgicon3;
+    }
+    path {
+      fill: $services-pathicon3;
+    }
+  }
+  .icon4 {
+    svg {
+      fill: $services-svgicon4;
+    }
+    path {
+      fill: $services-pathicon4;
+    }
+  }
+  .icon5 {
+    svg {
+      fill: $services-svgicon5;
+    }
+    path {
+      fill: $services-pathicon5;
+    }
+  }
+  .icon6 {
+    svg {
+      fill: $services-svgicon6;
+    }
+    path {
+      fill: $services-pathicon6;
+    }
+  }
+}
+
+// .my-image {
+//   background: url('../../images/ruby-on-rails/hero-image.png') no-repeat center
+//     0 / 100%;
+//   width: 100%;
+//   height: 25rem;
+// }
+.my-image {
+  .hero-dark {
+    display: none;
+  }
+  .hero-light {
+    display: block;
+  }
+}
+[data-theme='dark'] {
+  .my-image {
+    .hero-dark {
+      display: block;
+    }
+    .hero-light {
+      display: none;
+    }
+  }
+  .our-services-ruby {
+    .icon1 {
+      svg {
+        fill: $services-darksvgicon1;
+      }
+      path {
+        fill: $services-darkpathicon1;
+      }
+    }
+    .icon2 {
+      svg {
+        fill: $services-darksvgicon2;
+      }
+      path {
+        fill: $services-darkpathicon2;
+      }
+    }
+    .icon3 {
+      svg {
+        fill: $services-darksvgicon3;
+      }
+      path {
+        fill: $services-darkpathicon3;
+      }
+    }
+    .icon4 {
+      svg {
+        fill: $services-darksvgicon4;
+      }
+      path {
+        fill: $services-darkpathicon4;
+      }
+    }
+    .icon5 {
+      svg {
+        fill: $services-darksvgicon5;
+      }
+      path {
+        fill: $services-darkpathicon5;
+      }
+    }
+    .icon6 {
+      svg {
+        fill: $services-darksvgicon6;
+      }
+      path {
+        fill: $services-darkpathicon6;
+      }
+    }
+  }
+}

@@ -1,0 +1,23 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { BlogList, BlogIndexHeader } from '../../theme/index.js';
+import { getAllBlogsForSection } from '../../lib/blog-data';
+
+const blogs = await getAllBlogsForSection();
+---
+
+<BaseLayout
+  title="Software Development Insights for Product Owners | Truemark"
+  description="Discover software development approaches, best practices, and expert perspectives to empower effective decision-making and successful project outcomes."
+  keywords="software development, product owners, managers, insights, strategic approaches, best practices, decision-making, successful project outcomes, software management, product development"
+  path="blog"
+>
+  <BlogIndexHeader
+    sliderPosts={blogs}
+    blogIndexHeading="Software Development Insights for Product Owners"
+    blogIndexDescription="Discover software development approaches, best practices, and expert perspectives to empower effective decision-making and successful project outcomes."
+    blogIndexButtonText="Subscribe"
+    client:only="react"
+  />
+  <BlogList data={blogs} client:only="react" />
+</BaseLayout>

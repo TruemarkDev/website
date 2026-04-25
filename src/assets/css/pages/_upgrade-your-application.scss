@@ -1,0 +1,437 @@
+.bg-hero {
+  position: relative;
+  padding-bottom: 0;
+  @include media-breakpoint-up(sm) {
+    padding-bottom: 5em;
+  }
+
+  &:after {
+    content: '';
+    background: url('../../assets/images/hero-section/bg-line.png') repeat 0 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 41%;
+  }
+}
+
+.work-together {
+  .icon1 {
+    svg {
+      fill: $services-svgicon1;
+    }
+    path {
+      fill: $services-pathicon1;
+    }
+  }
+  .icon2 {
+    svg {
+      fill: $services-svgicon2;
+    }
+    path {
+      fill: $services-pathicon2;
+    }
+  }
+  .icon3 {
+    svg {
+      fill: $services-svgicon3;
+    }
+    path {
+      fill: $services-pathicon3;
+    }
+  }
+  .icon4 {
+    svg {
+      fill: $services-svgicon4;
+    }
+    path {
+      fill: $services-pathicon4;
+    }
+  }
+  .icon5 {
+    svg {
+      fill: $services-svgicon5;
+    }
+    path {
+      fill: $services-pathicon5;
+    }
+  }
+  .icon6 {
+    svg {
+      fill: $services-svgicon6;
+    }
+    path {
+      fill: $services-pathicon6;
+    }
+  }
+
+  .icon7 {
+    svg {
+      fill: $services-svgicon7;
+    }
+    path {
+      fill: $services-pathicon7;
+    }
+  }
+
+  .process-consulation {
+    background: $minitest;
+    &::before {
+      @include media-breakpoint-up(lg) {
+        background: url('../../assets/images/ui-ux/arrow-right.png') no-repeat 0
+          0;
+      }
+
+      @include media-breakpoint-up(xl) {
+        left: 93%;
+      }
+
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 91%;
+      width: 5em;
+      height: 1em;
+      z-index: 1;
+    }
+  }
+
+  .process-application {
+    background: $rspec;
+
+    &::before {
+      @include media-breakpoint-up(lg) {
+        background: url('../../assets/images/ui-ux/arrow-right-1.png') no-repeat
+          0 0;
+      }
+
+      @include media-breakpoint-up(xl) {
+        left: 93%;
+      }
+
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 91%;
+      width: 5em;
+      height: 1em;
+      z-index: 1;
+    }
+  }
+
+  .process-roadmap {
+    background: $task-process;
+    &::before {
+      @include media-breakpoint-up(lg) {
+        background: url('../../assets/images/ui-ux/arrow-down.png') no-repeat 0
+          0;
+      }
+
+      content: '';
+      position: absolute;
+      bottom: -8em;
+      left: 80%;
+      width: 5em;
+      height: 9em;
+    }
+  }
+
+  .process-testing {
+    background: $welcome-process;
+    &::before {
+      @include media-breakpoint-up(lg) {
+        background: url('../../assets/images/ui-ux/arrow-right-2.png') no-repeat
+          0 0;
+      }
+
+      @include media-breakpoint-up(xl) {
+        left: 93%;
+      }
+
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 91%;
+      width: 5em;
+      height: 1em;
+      z-index: 1;
+    }
+  }
+
+  .process-upgrading-codebase {
+    background: $cucumber;
+    &::before {
+      @include media-breakpoint-up(lg) {
+        background: url('../../assets/images/ui-ux/arrow-right-3.png') no-repeat
+          0 0;
+      }
+
+      @include media-breakpoint-up(xl) {
+        left: 95%;
+      }
+
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 91%;
+      width: 5em;
+      height: 1em;
+    }
+  }
+
+  .process-wireframes {
+    background: $welcome-process;
+  }
+
+  .process-environment {
+    background: $rubyprof;
+  }
+
+  .process-upgrade-application {
+    background: $prototype-background;
+  }
+
+  .small-rounded-arrow {
+    margin-top: -4.875em;
+    margin-left: 1.625em;
+  }
+
+  .process {
+    color: $black-200;
+
+    .icon {
+      width: 5em;
+      height: 5em;
+      background: $white;
+    }
+
+    h4 {
+      color: $black-500;
+    }
+  }
+}
+
+[data-theme='dark'] {
+  .work-together {
+    .icon1 {
+      svg {
+        fill: $services-darksvgicon1;
+      }
+      path {
+        fill: $services-darkpathicon1;
+      }
+    }
+    .icon2 {
+      svg {
+        fill: $services-darksvgicon2;
+      }
+      path {
+        fill: $services-darkpathicon2;
+      }
+    }
+    .icon3 {
+      svg {
+        fill: $services-darksvgicon3;
+      }
+      path {
+        fill: $services-darkpathicon3;
+      }
+    }
+    .icon4 {
+      svg {
+        fill: $services-darksvgicon4;
+      }
+      path {
+        fill: $services-darkpathicon4;
+      }
+    }
+    .icon5 {
+      svg {
+        fill: $services-darksvgicon5;
+      }
+      path {
+        fill: $services-darkpathicon5;
+      }
+    }
+    .icon6 {
+      svg {
+        fill: $services-darksvgicon6;
+      }
+      path {
+        fill: $services-darkpathicon6;
+      }
+    }
+    .icon7 {
+      svg {
+        fill: $services-darksvgicon7;
+      }
+      path {
+        fill: $services-darkpathicon7;
+      }
+    }
+  }
+}
+
+.flexonet {
+  background: radial-gradient(
+    28.47% 153.1% at 81.32% 49.92%,
+    #609f9b 0%,
+    #436f6c 100%
+  );
+
+  .badge {
+    border-color: $white;
+    color: $white;
+  }
+
+  .flexonetui {
+    bottom: 0;
+  }
+}
+
+.flexonet h4 {
+  color: $white;
+}
+.flexonet h5 {
+  color: $white;
+}
+.flexonet p {
+  color: $white;
+}
+
+.soono {
+  background: radial-gradient(
+    26.94% 158.35% at 23.06% 44.02%,
+    #4173c8 0%,
+    #3362b2 100%
+  );
+
+  .badge {
+    border-color: $white;
+    color: $white;
+  }
+
+  .flexonetui {
+    bottom: 0;
+  }
+}
+
+.invoiceWork {
+  background: #0474e0;
+
+  .badge {
+    border-color: $white;
+    color: $white;
+  }
+
+  .flexonetui {
+    bottom: 0;
+  }
+}
+
+.gangstabet {
+  background: $gangstabet;
+
+  .badge {
+    border-color: $white;
+    color: $white;
+  }
+
+  .flexonetui {
+    bottom: 0;
+  }
+}
+
+.reduct-video {
+  background: $reduct-video;
+
+  .badge {
+    border-color: $white;
+    color: $white;
+  }
+
+  .flexonetui {
+    bottom: 0;
+  }
+}
+
+.soono h4 {
+  color: $white;
+}
+.soono h5 {
+  color: $white;
+}
+.soono p {
+  color: $white;
+}
+
+.faq {
+  .card {
+    .faq-background {
+      background: url('../../assets/images/upgrade-your-application/faq-card-bg-light.png')
+        no-repeat 0 0/100%;
+      width: 25.375rem;
+      height: 15rem;
+      top: 0;
+      left: 0;
+
+      @include media-breakpoint-down(xxl) {
+        width: 21.375rem;
+      }
+
+      @include media-breakpoint-down(xl) {
+        width: 17.375rem;
+      }
+
+      @include media-breakpoint-down(lg) {
+        width: 16.375rem;
+      }
+
+      @include media-breakpoint-down(md) {
+        width: 25rem;
+      }
+
+      @include media-breakpoint-down(sm) {
+        width: 22rem;
+      }
+    }
+  }
+}
+
+[data-theme='dark'] {
+  .faq {
+    .card {
+      .faq-background {
+        background: url('../../assets/images/upgrade-your-application/faq-card-bg-dark.png')
+          no-repeat 0 0/100%;
+        opacity: 25%;
+      }
+    }
+  }
+}
+
+.faq .card h4 {
+  z-index: 1;
+}
+
+.faq .card p {
+  z-index: 1;
+}
+
+.upgrade-rails {
+  span {
+    color: $ecllipse-black;
+  }
+  svg {
+    fill: $primary-color;
+  }
+}
+
+[data-theme='dark'] {
+  .upgrade-rails {
+    span {
+      color: $white;
+    }
+  }
+}

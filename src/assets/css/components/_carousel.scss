@@ -1,0 +1,59 @@
+.carousel-inner {
+  border-radius: 0.3em;
+  min-height: em-calc(648);
+}
+
+.carousel-indicators {
+  bottom: 1.5em;
+
+  @include min-break-point(tablet) {
+    bottom: 3em;
+  }
+
+  li {
+    background-color: $primary-color;
+    border-radius: 0.1em;
+    height: 0.25em;
+    margin-right: 0.5em;
+    width: 1.5em;
+  }
+}
+
+.carousel-control-prev {
+  justify-content: flex-start;
+}
+
+.carousel-control-next {
+  justify-content: flex-end;
+}
+
+.arrow-indicator {
+  @include size(4em);
+  @include border-radius(50%);
+  background-color: $bs-bg-light;
+  color: $text-secondary;
+  font-size: $h5-font-size;
+
+  @include max-break-point(mobile-phone) {
+    @include size(3em);
+    justify-content: space-evenly;
+    background-color: $primary-color;
+    color: $white;
+  }
+
+  &:hover {
+    background-color: $primary-color-hover;
+    color: $white;
+    cursor: pointer;
+  }
+}
+
+.slider-control {
+  .btn {
+    @include size(2em);
+
+    &:focus {
+      box-shadow: none;
+    }
+  }
+}

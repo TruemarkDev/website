@@ -1,0 +1,89 @@
+.company-stats {
+  background-color: $bs-bg-light;
+  background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.09' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
+
+  padding: 4em 0 9em;
+}
+
+.stat-box {
+  justify-content: space-evenly;
+  padding: 0.5em 0.5em 1em;
+}
+
+.stat text-center {
+  @include flex(1);
+  @include border-radius(0.3em);
+  // background-color: $white;
+  color: $text-secondary;
+  margin: 0.5em;
+  margin-bottom: 1em;
+  padding: 1.5em;
+
+  @include min-break-point(tablet) {
+    margin-right: 1em;
+    padding: 1em;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    small {
+      font-size: 0.9em;
+    }
+  }
+
+  @include min-break-point(large-desktop) {
+    @include border-radius(0);
+    background-color: transparent;
+    margin-bottom: 0;
+    padding: 0;
+    small {
+      font-size: 1em;
+    }
+  }
+}
+
+// TODO: move to seperate component
+.clients {
+  @include flex(1);
+  margin-right: 1em;
+  padding: 0 1.5em;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  img {
+    filter: brightness(0) invert(0.9);
+    transition: 0.3s;
+
+    &:hover {
+      filter: grayscale(0);
+      transition: 0.3s;
+    }
+
+    &.gray-filter {
+      filter: saturate(0);
+
+      &:hover {
+        filter: saturate(1);
+      }
+    }
+  }
+}
+
+// TODO: move to seperate component if icon-holder is reusueable
+.icon-holder {
+  font-size: 2.5em;
+  margin-bottom: 0.1em;
+  margin-right: 0;
+
+  @include min-break-point(large-desktop) {
+    margin-bottom: 0;
+    margin-right: 0.5em;
+  }
+
+  .fa {
+    font-size: 1em;
+  }
+}

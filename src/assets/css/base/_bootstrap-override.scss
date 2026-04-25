@@ -1,0 +1,26 @@
+@import 'bootstrap/scss/bootstrap.scss';
+
+// Option A: Include all of Bootstrap
+// Include any default variable overrides here (though functions won't be available)
+// Then add additional custom code here
+
+.text-primary {
+  color: $primary-color !important;
+}
+
+.text-secondary {
+  color: $text-secondary !important;
+}
+
+.bg-primary {
+  background-color: var(--primary-color) !important;
+}
+
+.bg-white {
+  background-color: $secondary-color !important;
+}
+
+.bg-light {
+  background-color: $bs-bg-light !important;
+}
+

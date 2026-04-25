@@ -1,0 +1,218 @@
+.text-secondary {
+  color: $text-secondary !important;
+}
+
+.text-primary {
+  color: $primary-color !important;
+}
+
+.blog-header {
+  .heading {
+    color: $gray-1100;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 100%;
+
+    @include min-break-point(mobile-phone) {
+      font-size: 3em;
+    }
+  }
+
+  .description {
+    color: $gray-1050;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+  }
+
+  .social-icon-box {
+    .share {
+      color: $white;
+    }
+
+    .social-icon {
+      color: $white;
+    }
+  }
+}
+
+[data-theme='dark'] {
+  .blog-header {
+    .heading, .description {
+      color: $white;
+    }
+  }
+}
+
+.author {
+  font-weight: $font-weight-bold;
+
+  .author-avatar {
+    @include size(4em);
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+  }
+}
+
+.related-posts-section {
+  .card_image {
+    img {
+      @include border-radius(0.6em);
+    }
+  }
+}
+
+.blog-title-text {
+  font-weight: 500;
+}
+
+.blog-content {
+  li {
+    list-style: unset;
+  }
+
+  pre {
+    code {
+      background: none;
+    }
+  }
+
+  table {
+    display: block;
+    overflow-x: auto;
+    width: 100%;
+  }
+
+  table > tbody > tr {
+    &:last-child {
+      border-bottom: 0;
+      color: gray;
+      text-align: center;
+
+      td {
+        border-bottom: 0;
+      }
+    }
+  }
+
+  th {
+    background-color: gray;
+  }
+
+  td,
+  th {
+    text-align: center;
+    padding: 0.5rem;
+  }
+
+  a {
+    color: blue;
+  }
+
+  .gatsby-code-button {
+    &::after {
+      &:active {
+        content: 'copied';
+      }
+    }
+  }
+}
+
+.author-cta {
+  @include border-radius(0.6em);
+
+  .author-avatar {
+    @include size(7em);
+    @include border-radius(50%);
+
+    img {
+      @include size(7em);
+      @include border-radius(50%);
+      margin-bottom: 1.5em;
+      object-fit: cover;
+    }
+  }
+
+  .author-detail {
+    @include flex(2);
+    padding-left: 0;
+
+    @include min-break-point(tablet) {
+      padding-left: 1.5em;
+    }
+
+    h4 {
+      font-weight: 600;
+    }
+
+    .designation {
+      font-weight: $font-weight-normal;
+    }
+
+    .detail {
+      color: $body-secondary-color;
+    }
+  }
+}
+
+.wrapper {
+  &.bg-logo {
+    @include border-radius(0.6em);
+    @include position(relative);
+    // background-image: url('../images/layout/logo-cta.jpg');
+    background-position: center center;
+    background-size: cover;
+    height: 22em;
+
+    .overlay {
+      @include position(absolute, 0, 0, 0);
+      @include border-radius(0.6em);
+      background-color: $secondary-overlay;
+      width: 100%;
+    }
+  }
+
+  &.bg-web {
+    @include border-radius(0.6em);
+    @include position(relative);
+    // background-image: url('../images/layout/cta-web.jpg');
+    background-position: center center;
+    background-size: cover;
+    height: 22em;
+
+    .overlay {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      @include position(absolute, 0, 0, 0);
+      @include border-radius(0.6em);
+      background-color: $secondary-overlay;
+      width: 100%;
+    }
+  }
+
+  &.bg {
+    @include border-radius(0.6em);
+    @include position(relative);
+    // background-image: url('../images/layout/cta-bg.jpg');
+    background-position: center center;
+    background-size: cover;
+    height: 22em;
+
+    .overlay {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      @include position(absolute, 0, 0, 0);
+      @include border-radius(0.6em);
+      background-color: $secondary-overlay;
+      width: 100%;
+    }
+  }
+}
+
+.sticky-cta {
+  @include position(sticky, 11em);
+}

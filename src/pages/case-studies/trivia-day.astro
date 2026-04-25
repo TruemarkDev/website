@@ -1,0 +1,8 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageBody from '../../components/PagesReact/case-studies/trivia-day.jsx';
+---
+
+<BaseLayout title="Truemark | Case Study: Trivia Day" path="case-studies/trivia-day" forCaseStudy={true}>
+  <PageBody client:only="react" />
+</BaseLayout>

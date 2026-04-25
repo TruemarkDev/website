@@ -1,0 +1,13 @@
+.case-study {
+  &.cta {
+    height: auto;
+
+    @include min-break-point(tablet) {
+      height: 25em;
+    }
+  }
+
+  .form-control {
+    height: 3.438em;
+  }
+}

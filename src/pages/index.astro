@@ -1,0 +1,37 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import HomeHeroSection from '../components/HeroSection/HomeHeroSection.jsx';
+import TechStackSection from '../components/Company/Section/TechStackSection.jsx';
+import TestimonialSection from '../components/Testimonial/Section/TestimonialSection.jsx';
+import EngagementModelBannerSection from '../components/Banner/EngagementModelBannerSection.jsx';
+import SingleCaseStudySection from '../components/CaseStudy/Section/SingleCaseStudySection.jsx';
+import { BlogSection } from '../theme/index.js';
+import softwareTestimonials from '../constants/testimonials/software';
+import { getFeaturedBlogs } from '../lib/blog-data';
+
+const featuredBlogs = await getFeaturedBlogs(3);
+---
+
+<BaseLayout
+  title="Truemark | Outsource your project without compromising on code quality"
+  path=""
+>
+  <HomeHeroSection client:only="react" />
+  <TechStackSection client:only="react" />
+  <TestimonialSection
+    items={softwareTestimonials}
+    sectionTitle="ABOUT OUR SERVICES"
+    sectionSubheading="From Our Customers"
+    client:only="react"
+  />
+  <EngagementModelBannerSection client:only="react" />
+  <BlogSection
+    blogs={featuredBlogs}
+    headerTag="Expert Opinions"
+    heading="From Our Blog"
+    buttonText="View All Blogs"
+    blogRedirectRoute="/blog"
+    client:only="react"
+  />
+  <SingleCaseStudySection client:only="react" />
+</BaseLayout>

@@ -1,0 +1,23 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SingleCaseStudySection from '../components/CaseStudy/Section/SingleCaseStudySection.jsx';
+import OurMissionSection from '../components/Company/Section/OurMissionSection.jsx';
+import OurVisionSection from '../components/Company/Section/OurVisionSection.jsx';
+import ProcessSection from '../components/Company/Section/ProcessSection.jsx';
+import AboutHeroSection from '../components/HeroSection/AboutHeroSection.jsx';
+import AboutHeroStatsSection from '../components/HeroSection/AboutHeroStatsSection.jsx';
+---
+
+<BaseLayout
+  title="Truemark | About Us"
+  description="Truemark | Software Development Team | Nepal | Remote"
+  keywords="About Truemark, Truemark Technology, Remote Software Development Team"
+  path="about"
+>
+  <AboutHeroSection client:only="react" />
+  <AboutHeroStatsSection client:only="react" />
+  <OurVisionSection client:only="react" />
+  <OurMissionSection client:only="react" />
+  <ProcessSection client:only="react" />
+  <SingleCaseStudySection client:only="react" />
+</BaseLayout>

@@ -1,0 +1,16 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageBody from '../../components/PagesReact/services/digital-marketing.jsx';
+import { getFeaturedBlogs } from '../../lib/blog-data';
+
+const featuredBlogs = await getFeaturedBlogs(3);
+---
+
+<BaseLayout
+  title="Truemark | Digital Marketing"
+  description="Digital Marketing services from Truemark"
+  keywords="digital marketing, seo, truemark"
+  path="services/digital-marketing"
+>
+  <PageBody data={{ featuredBlogs }} client:only="react" />
+</BaseLayout>

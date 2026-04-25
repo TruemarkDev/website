@@ -1,0 +1,66 @@
+.blog-content {
+  // Inline body images must never overflow the article column
+  // (otherwise they paint over the right-hand related-posts sidebar).
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  // gatsby-remark-images output preserved on legacy posts
+  .gatsby-resp-image-wrapper,
+  figure {
+    max-width: 100%;
+  }
+
+  li {
+    list-style: unset;
+  }
+
+  pre {
+    code {
+      background: none;
+    }
+  }
+
+  table {
+    display: block;
+    overflow-x: auto;
+    width: 100%;
+  }
+
+  table > tbody > tr {
+    &:last-child {
+      border-bottom: 0;
+      color: $placeholder-color;
+      text-align: center;
+
+      td {
+        border-bottom: 0;
+      }
+    }
+  }
+
+  th {
+    background-color: $bs-bg-light;
+  }
+
+  td,
+  th {
+    text-align: center;
+    padding: 0.5rem;
+  }
+
+  a {
+    color: $link-color;
+    // TODO: @prakash set hover color
+  }
+
+  .gatsby-code-button {
+    &::after {
+      &:active {
+        content: 'copied';
+      }
+    }
+  }
+}

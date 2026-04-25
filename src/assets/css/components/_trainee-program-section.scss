@@ -1,0 +1,59 @@
+.trainee-program {
+  h3 {
+    font-size: 1.375em;
+  }
+
+  h4 {
+    margin-bottom: 1.5em;
+    margin-top: 0.5em;
+  }
+
+  p {
+    margin-bottom: 0;
+    font-size: 1.125em;
+  }
+
+  .trainee-title {
+    margin-bottom: 1em;
+  }
+
+  .trainee-sub-heading {
+    color: $body-secondary-color;
+    font-size: 1em;
+  }
+
+  .apply-button {
+    background-color: transparent !important;
+  }
+
+  .view-trainee-page {
+    margin-top: 2.5em;
+
+    @include media-breakpoint-down(md) {
+      margin-top: 0.5em;
+    }
+  }
+
+  .text-closed {
+    color: $light-gray;
+  }
+
+  .text-open {
+    color: $light-green;
+  }
+}
+
+[data-theme='dark'] {
+  .trainee-program {
+    svg {
+      rect {
+        fill: $blue-700;
+      }
+    }
+
+    .card1 {
+      background-color: $blue-800;
+      border: none;
+    }
+  }
+}

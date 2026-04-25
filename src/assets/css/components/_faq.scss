@@ -1,0 +1,35 @@
+.faq {
+    .accordion-button {
+        font-size: 1.25rem;
+    }
+    .accordion-item {
+        border-bottom: 1px solid var(--border-color);
+        
+    }
+
+    .faq-developed {
+        h2 {
+            font-size: 1.375rem;
+        }
+
+        .faq-developed-item  {
+            font-size: 1.25rem;
+        }
+    }
+    .faq-developed-item svg path {
+        fill: var(--primary-color);
+    }
+}
+
+[data-theme='light'] {
+  .faq-developed-item {
+    background: $gray-200;
+  }
+}
+
+
+[data-theme='dark'] {
+    .faq-developed-item  {
+        background: var(--secondary-color);
+    }
+}

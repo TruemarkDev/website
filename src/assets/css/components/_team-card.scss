@@ -1,0 +1,51 @@
+/* team member card */
+.team-card {
+  // refactor hardcoded color @amnish
+  @include box-shadow(0, 0.03em, $primary-box-shadow, 0.15em);
+
+  border-radius: 0.3em;
+  margin-bottom: 1em;
+  border: 0.0215em solid $primary-box-shadow;
+  background-color: $secondary-color;
+  background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%230f3041' fill-opacity='0.03' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
+
+  @include min-break-point(large-desktop) {
+    margin-bottom: 0;
+  }
+
+  &:hover {
+    box-shadow:
+      0 0.1em 0.7em var(--primary-hover-color),
+      0 0.1em 0.1em var(--primary-hover-color);
+    transition: 0.3s;
+  }
+
+  .user-img {
+    @include size(5em);
+    @include border-radius(50%);
+    border-color: $primary-color;
+    clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+  }
+
+  .stacks {
+    li {
+      font-size: 0.9em;
+      margin-right: 1em;
+      margin-top: 0.5em;
+    }
+
+    .fa {
+      margin-right: 0.25em;
+    }
+  }
+}
+
+[data-theme='light'] {
+  .team-card {
+    &:hover {
+      box-shadow:
+        0 0.1em 0.7em $gray-400,
+        0 0.1em 0.1em $gray-400;
+    }
+  }
+}

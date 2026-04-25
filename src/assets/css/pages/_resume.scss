@@ -1,0 +1,267 @@
+.cv-header {
+  background-image: url('../images/layout/page-header-bg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  .overlay-primary {
+    background-color: $secondary-overlay;
+    width: 100%;
+  }
+
+  .user-image,
+  img {
+    @include border-radius(50%);
+    height: 10em;
+    object-fit: cover;
+    width: 10em;
+  }
+}
+
+.user-info {
+  .list-group-item {
+    font-weight: 500;
+
+    &.active {
+      background-color: $primary-color;
+      border-color: $primary-color;
+    }
+  }
+
+  .list-group-item:first-child {
+    border-top-left-radius: 0;
+  }
+
+  .list-group-item:last-child {
+    border-top-right-radius: 0;
+  }
+}
+
+// @amnish merge this above
+.user-info {
+  position: relative;
+
+  .social-icons-list {
+    margin-left: 0;
+  }
+}
+
+// @amnish, this is used in most places as secondary menu, we need to rename it to more generic class, harccoded color below
+.cv-menu {
+  @include box-shadow(0, 0.03em, rgba(0, 0, 0, 0.075), 0.15em);
+  background-color: $bs-bg-light;
+  border: none;
+  top: 3.8em;
+  z-index: 102;
+
+  .navbar-toggler {
+    &:focus {
+      border: none;
+      box-shadow: none;
+    }
+  }
+
+  .nav-item {
+    // @amnish, replace with bs class
+    @include padding-left-right(1em);
+    @include padding-top-bottom(0.75em);
+    @include border-radius(0);
+    font-weight: 500;
+    margin-bottom: 0;
+
+    @include min-break-point(tablet-landscape) {
+      border-right: 1px solid $border-color;
+    }
+
+    &:first-child {
+      @include min-break-point(tablet-landscape) {
+        border-left: 1px solid $border-color;
+      }
+    }
+
+    a {
+      color: $body-secondary-color;
+
+      &.active {
+        color: $primary-color;
+      }
+
+      &:hover {
+        color: $primary-color;
+      }
+    }
+  }
+}
+
+.hire-btn {
+  z-index: 111;
+}
+
+.skills {
+  .badge-primary {
+    background-color: transparent;
+    border: 1px solid $text-secondary;
+    color: $text-secondary;
+    font-size: 0.8em;
+    font-weight: 500;
+    margin-bottom: 0.5em;
+    margin-right: 0.75em;
+    padding: 0.25em 0.75em;
+  }
+}
+
+.education {
+  h5 {
+    color: $primary-color;
+    font-size: 1em;
+    font-weight: 500;
+  }
+}
+
+.week {
+  .weekday {
+    @include border-radius(0.6em);
+    @include size(2.5em);
+    background-color: $primary-color;
+    color: $white;
+    font-size: 1em;
+    font-weight: bold;
+
+    &.disabled {
+      background-color: $placeholder-color;
+    }
+  }
+}
+
+.cv-portfolio {
+  .card-img-top {
+    height: 15em;
+    object-fit: cover;
+  }
+
+  .overlay {
+    @include position(absolute, 0, 0, 0, 0);
+    @include opacity(0);
+    background-color: $primary-overlay;
+
+    &:hover {
+      @include opacity(1);
+      transition: ease-in-out;
+    }
+  }
+}
+
+.employment {
+  .card-title {
+    font-size: 1.2em;
+    font-weight: 600;
+  }
+
+  .card-subtitle {
+    font-size: 1.1em;
+  }
+
+  .tools {
+    color: $text-secondary;
+  }
+}
+
+.employment-detail {
+  &::after {
+    @include position(absolute, 2em, null, 0, 0.85em);
+    border-left: 1px dashed $text-secondary;
+    content: '';
+  }
+
+  &::before {
+    @include size(0.6em);
+    @include position(absolute, 0.25em, null, null, 0.75em);
+    @include border-radius(50%);
+    background: $text-secondary;
+    content: '';
+  }
+}
+
+.disc-list {
+  li {
+    line-height: 1.6em;
+    // @amnish isn't this default property?
+    list-style: disc;
+    margin-bottom: 1em;
+  }
+}
+
+.testimonial {
+  .client {
+    @include size(5em);
+    @include flex(1);
+
+    & img {
+      @include border-radius(50%);
+      border: 1px solid $primary-color;
+      object-fit: cover;
+    }
+  }
+
+  .card {
+    box-shadow: none;
+    padding: 0;
+    background-color: $bs-bg-light;
+
+    @include min-break-point(large-desktop) {
+      @include box-shadow(0, 0.03em, rgba(0, 0, 0, 0.075), 0.15em);
+      padding: 1.5em;
+    }
+  }
+
+  .media {
+    flex-direction: column;
+    text-align: center;
+
+    @include min-break-point(tablet) {
+      flex-direction: row;
+      text-align: left;
+    }
+  }
+
+  .media-detail {
+    @include flex(8);
+  }
+
+  .media-body {
+    font-style: italic;
+    text-align: center;
+
+    @include min-break-point(tablet) {
+      text-align: left;
+    }
+  }
+
+  .media-heading {
+    font-size: 1em;
+    font-style: normal;
+    font-weight: 500;
+  }
+}
+
+.other-experience {
+  img {
+    @include border-radius(0.6em);
+    height: 7em;
+    object-fit: cover;
+    width: 100%;
+  }
+}
+
+.hire-developer-cta {
+  .card-img-top {
+    @include border-radius(0.6em);
+    height: 14em;
+    object-fit: cover;
+  }
+
+  .overlay {
+    @include position(absolute, 0, 0, 0, 0);
+    @include border-radius(0.6em);
+    background-color: $primary-overlay;
+  }
+}

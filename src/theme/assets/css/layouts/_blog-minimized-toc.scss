@@ -1,0 +1,33 @@
+.toc-list {
+    a {
+      color: $gray-500;
+    }
+  }
+  .minimized-toc-container,
+  .toc-container {
+    .title {
+      color: $primary-color;
+    }
+  
+    .collapse-btn {
+      cursor: pointer;
+    }
+  }
+  
+  .minimized-toc-container {
+    @include box-shadow(0, 0.03em, $dark-overlay, 0.15em);
+  
+    background-color: $bs-bg-light;
+    top: 4.15em;
+    z-index: 101;
+  
+    li {
+      &.selected-on-view {
+        border-left: 4px solid $primary-color;
+  
+        a {
+          color: $primary-color;
+        }
+      }
+    }
+  }

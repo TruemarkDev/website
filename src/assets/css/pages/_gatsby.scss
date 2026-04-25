@@ -1,0 +1,112 @@
+.bg-hero-gatsby {
+  position: relative;
+  padding-bottom: 0;
+  @include media-breakpoint-up(sm) {
+    padding-bottom: 5em;
+  }
+  .bg-hero-gatsby-container {
+    &::before {
+      content: '';
+      background: linear-gradient(
+        180deg,
+        rgba(136, 98, 173, 0.22) 0%,
+        rgba(99, 49, 148, 0.33) 100%
+      );
+      filter: blur(9.375rem);
+      border-radius: 11.885rem;
+      position: absolute;
+      right: -20rem;
+      top: 0rem;
+      bottom: 0;
+      width: 35em;
+    }
+  }
+}
+
+.gatsby-services {
+  .icon1 {
+    svg {
+      fill: rgba(131, 164, 251, 0.25);
+    }
+    path {
+      stroke: #042781;
+    }
+  }
+  .icon2 {
+    svg {
+      fill: rgba(134, 237, 248, 0.25);
+    }
+    path {
+      fill: #065860;
+    }
+  }
+  .icon3 {
+    svg {
+      fill: rgba(241, 142, 183, 0.25);
+    }
+    path {
+      fill: #760f3a;
+    }
+  }
+  .icon4 {
+    svg {
+      fill: rgba(160, 154, 228, 0.25);
+    }
+    path {
+      fill: #221c69;
+    }
+  }
+  .icon5 {
+    svg {
+      fill: rgba(181, 223, 114, 0.25);
+    }
+    path {
+      fill: #52741a;
+    }
+  }
+}
+
+[data-theme='dark'] {
+  .gatsby-services {
+    .icon1 {
+      svg {
+        fill: rgba(68, 94, 163, 0.1);
+      }
+      path {
+        stroke: #83a5fc;
+      }
+    }
+    .icon2 {
+      svg {
+        fill: rgba(166, 246, 255, 0.1);
+      }
+      path {
+        fill: #17dcf2;
+      }
+    }
+    .icon3 {
+      svg {
+        fill: rgba(183, 133, 154, 0.1);
+      }
+      path {
+        fill: #ee77a8;
+      }
+    }
+    .icon4 {
+      svg {
+        fill: rgba(119, 109, 242, 0.1);
+      }
+      path {
+        fill: #aba6e7;
+      }
+    }
+    .icon5 {
+      svg {
+        fill: rgba(232, 245, 211, 0.1);
+      }
+      path {
+        fill: #e8f5d3;
+      }
+    }
+  }
+}

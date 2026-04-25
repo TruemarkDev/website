@@ -1,0 +1,51 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+import HeroSection from '../../components/CaseStudy/Section/HeroSection.jsx';
+import SingleTestimonialSection from '../../components/CaseStudy/SingleTestimonial/index.jsx';
+import BackStory from '../../components/CaseStudy/BackStory/index.jsx';
+import ProjectPlanning from '../../components/CaseStudy/ProjectPlanning/index.jsx';
+import ProjectChallenge from '../../components/CaseStudy/ProjectChallenge/Index.jsx';
+import ProjectFeatures from '../../components/CaseStudy/ProjectFeatures/index.jsx';
+import ResultSection from '../../components/CaseStudy/ResultSection/Index.jsx';
+import TechnologyUsedSection from '../../components/CaseStudy/TechnologyUsedSection/Index.jsx';
+import CaseStudyCTA from '../../components/CaseStudy/CaseStudyCTA/index.jsx';
+import TestimonialSection from '../../components/Testimonial/Section/TestimonialSection.jsx';
+
+export async function getStaticPaths() {
+  const all = await getCollection('case-studies');
+  return all.map((entry) => {
+    const slug = entry.data.customSlug.replace(/^case-studies\//, '');
+    return {
+      params: { slug },
+      props: { entry },
+    };
+  });
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+
+const components = {
+  HeroSection,
+  SingleTestimonialSection,
+  BackStory,
+  ProjectPlanning,
+  ProjectChallenge,
+  ProjectFeatures,
+  ResultSection,
+  TechnologyUsedSection,
+  CaseStudyCTA,
+  TestimonialSection,
+};
+---
+
+<BaseLayout
+  title={`Truemark | ${entry.data.title}`}
+  description={entry.data.description}
+  path={entry.data.customSlug}
+  forCaseStudy={true}
+>
+  <Content components={components} />
+</BaseLayout>

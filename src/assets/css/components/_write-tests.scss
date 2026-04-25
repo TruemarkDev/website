@@ -1,0 +1,224 @@
+.card {
+  box-shadow: 0 0.625rem 1.25rem $dark-overlay;
+  border-radius: 0.5rem;
+}
+
+.card1 {
+  border: 0.06rem solid $ghost-white;
+}
+
+[data-theme='dark'] {
+  .card1 {
+    border: 0.06rem solid $gray-900;
+  }
+}
+
+.software-testing {
+  .icon1 {
+    svg {
+      fill: $software-icon1;
+    }
+  }
+  .icon2 {
+    svg {
+      fill: $software-icon2;
+    }
+  }
+  .icon3 {
+    svg {
+      fill: $software-icon3;
+    }
+  }
+  .icon4 {
+    svg {
+      fill: $software-icon4;
+    }
+  }
+  .icon5 {
+    svg {
+      fill: $software-icon5;
+    }
+  }
+}
+
+[data-theme='dark'] {
+  .software-testing {
+    .icon1 {
+      svg {
+        fill: $software-darkicon1;
+      }
+      path {
+        stroke: $software-darkpath1;
+      }
+    }
+    .icon2 {
+      svg {
+        fill: $software-darkicon2;
+      }
+      path {
+        stroke: $software-darkpath2;
+      }
+    }
+    .icon3 {
+      svg {
+        fill: $software-darkicon3;
+      }
+      path {
+        fill: $software-darkpath3;
+      }
+    }
+    .icon4 {
+      svg {
+        fill: $software-darkicon4;
+      }
+      path {
+        fill: $software-darkpath4;
+      }
+    }
+    .icon5 {
+      svg {
+        fill: $software-darkicon5;
+      }
+      path {
+        fill: $software-darkpath5;
+      }
+    }
+  }
+}
+
+.background-text {
+  top: calc(50% - 4.625rem / 2);
+  font-weight: $headings-font-weight;
+  font-size: 4rem;
+  line-height: 4.625rem;
+  color: $dark;
+  opacity: 0.05;
+}
+
+.background-text1 {
+  top: calc(50% - 4.625rem / 2);
+  font-weight: $headings-font-weight;
+  font-size: 3rem;
+  line-height: 4.625rem;
+  color: $dark;
+  opacity: 0.05;
+}
+
+.background-description {
+  height: 6.25rem;
+  border-radius: 0.625rem;
+}
+.rspec {
+  background-color: $rspec;
+}
+
+.minitest {
+  background-color: $minitest;
+}
+
+.capybara {
+  background-color: $capybara;
+}
+
+.rubyprof {
+  background-color: $rubyprof;
+}
+
+.cucumber {
+  background-color: $cucumber;
+}
+
+.bg-hero1 {
+  padding-bottom: 0;
+  @include media-breakpoint-up(sm) {
+    padding-bottom: 5em;
+  }
+  .pink {
+    width: 7.623rem;
+    height: 28.75rem;
+    left: 53.426rem;
+    filter: blur(8.344rem);
+    border-radius: 6.625rem;
+    transform: rotate(40.19deg);
+    z-index: -1;
+
+    @include media-breakpoint-down(sm) {
+      left: 9.676rem;
+      bottom: 7rem;
+    }
+    @include media-breakpoint-down(md) {
+      left: 6.676rem;
+      bottom: 9rem;
+    }
+    @include media-breakpoint-down(lg) {
+      left: 14.426rem;
+      bottom: 2rem;
+    }
+    @include media-breakpoint-up(lg) {
+      left: 38.426rem;
+    }
+
+    @include media-breakpoint-up(xl) {
+      left: 53.426rem;
+     }
+  }
+  .blue {
+    width: 7.623rem;
+    height: 28.75rem;
+    left: 77.239rem;
+    filter: blur(8.344rem);
+    border-radius: 6.625rem;
+    transform: rotate(40.19deg);
+    z-index: -1;
+
+    @include media-breakpoint-down(sm) {
+      left: 9.676rem;
+      bottom: -13rem;
+    }
+    @include media-breakpoint-down(md) {
+      left: 16.676rem;
+      bottom: -8rem;
+    }
+    @include media-breakpoint-down(lg) {
+      left: 35.239rem;
+      bottom: 2rem;
+    }
+    @include media-breakpoint-up(lg) {
+      left: 57.239rem;
+    }
+    @include media-breakpoint-up(xl) {
+     left: 77.239rem;
+    }
+  }
+
+  .banner-img {
+    position: relative;
+    bottom: 0;
+
+    @include media-breakpoint-up(xl) {
+      bottom: -5em;
+    }
+  }
+}
+
+[data-theme='light'] {
+  .bg-hero1 {
+    .pink {
+      background-color: $light-corol;
+    }
+    .blue {
+      background-color: $light-blue;
+    }
+  }
+}
+
+[data-theme='dark'] {
+  .bg-hero1 {
+    .pink {
+      background-color: $blur-pink;
+    }
+    .blue {
+      background-color: $blur-blue;
+    }
+  }
+}

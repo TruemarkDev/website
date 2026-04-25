@@ -1,0 +1,12 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import PageBody from '../../../components/PagesReact/services/maintenance/upgrade.jsx';
+---
+
+<BaseLayout
+  title="Truemark | Upgrade your Application"
+  description="Upgrade your existing application to the latest stable versions."
+  path="services/maintenance/upgrade"
+>
+  <PageBody client:only="react" />
+</BaseLayout>

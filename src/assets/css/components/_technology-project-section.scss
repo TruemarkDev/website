@@ -1,0 +1,31 @@
+// @amnish too nested code
+.technology {
+  .project-section {
+    .company-logo-container {
+      @include size(2em, 12em);
+    }
+
+    .logo-alternative-text {
+      color: $secondary-color;
+      font-size: 1.5em;
+    }
+
+    .project-screenshot {
+      height: 14em;
+    }
+
+    .owner-image {
+      @include size(4em);
+    }
+
+    .project-related-links {
+      .link-item {
+        border-bottom: 1px dashed $gray-300;
+      }
+
+      div:last-child {
+        border-bottom: 0;
+      }
+    }
+  }
+}

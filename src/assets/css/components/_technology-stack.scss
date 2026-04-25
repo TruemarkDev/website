@@ -1,0 +1,89 @@
+// @amnish, @prakash we might redo this section so don't waste much time here
+.technology-stack {
+  color: $text-secondary;
+
+  .wrapper {
+    flex: 1;
+    flex-basis: 10em;
+    font-size: 1em;
+    font-weight: 500;
+    margin-bottom: 2em;
+    text-align: center;
+
+    @include min-break-point(tablet) {
+      @include flex-basis(12em);
+
+      margin-bottom: 3em;
+    }
+
+    @include min-break-point(large-desktop) {
+      @include flex-basis(auto);
+
+      margin-bottom: 0;
+    }
+  }
+
+  .img-holder {
+    @include size(7em);
+    @include border-radius(50%);
+    @include box-shadow(0, 0.03em, rgba(0, 0, 0, 0.075), 0.15em);
+
+    background-color: $secondary-color;
+    padding: 1.6em;
+    transition: 0.3s;
+
+    @include min-break-point(tablet) {
+      @include size(8em);
+    }
+
+    @include min-break-point(large-desktop) {
+      @include size(6em);
+    }
+
+    &:hover {
+      @include box-shadow(0, 1em, rgba(0, 0, 0, 0.075), 3em);
+
+      transition: 0.3s;
+    }
+  }
+}
+
+.tech-list {
+  .icon {
+    @include size(2em);
+    @include border-radius(50%);
+
+    &.react-native {
+      background-color: $react-native;
+    }
+
+    &.node-js {
+      background-color: $node-js;
+    }
+
+    &.postgres {
+      background-color: $postgres;
+    }
+
+    &.redis {
+      background-color: $redis;
+    }
+
+    &.appstore {
+      background-color: $appstore;
+    }
+
+    &.google-play {
+      background-color: $google-play;
+    }
+
+    svg {
+      color: $white;
+      font-size: 1em;
+    }
+  }
+
+  li {
+    margin-bottom: 0.725rem;
+  }
+}

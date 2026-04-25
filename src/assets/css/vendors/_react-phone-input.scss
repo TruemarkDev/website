@@ -1,0 +1,86 @@
+// over rides react-phone-input
+@import 'react-phone-input-2/lib/plain.css';
+
+.react-tel-input {
+  .form-control {
+    display: block;
+    width: 100%;
+    height: auto;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.7;
+    color: $body-secondary-color;
+    background-color: var(--secondary-color);
+    background-clip: padding-box;
+    border: 1px solid var(--border-color);
+    -webkit-appearance: none;
+    appearance: none;
+    border-radius: 0.25rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  }
+
+  .flag-dropdown {
+    top: 2.19rem;
+    bottom: 0;
+    background-color: var(--secondary-color);
+    border: 1px solid var(--border-color);
+    border-radius: 0.25rem;
+
+    &.open {
+      background: var(--secondary-color);
+      .selected-flag {
+        background: var(--secondary-color);
+      }
+    }
+  }
+  input[disabled] {
+    & + .flag-dropdown {
+      &:hover {
+        cursor: default;
+
+        .selected-flag {
+          background-color: var(--secondary-color);
+        }
+      }
+    }
+  }
+
+  .selected-flag {
+    &:hover,
+    &:focus,
+    &.open {
+      background-color: var(--secondary-color);
+    }
+  }
+
+  .country-list {
+    background-color: var(--secondary-color);
+    border: 1px solid var(--border-color);
+    max-height: 11.375rem;
+
+    .country {
+      &:hover {
+        background-color: var(--secondary-color);
+      }
+
+      &.highlight {
+        background-color: var(--secondary-color);
+      }
+    }
+
+    .search {
+      background-color: var(--secondary-color);
+    }
+  }
+
+  .special-label {
+    display: block;
+    position: relative;
+    font-size: var(--bs-body-font-size);
+    left: 0;
+    top: 0;
+    background: none;
+    padding: 0 0;
+    margin-bottom: 0.5rem;
+  }
+}

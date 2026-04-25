@@ -1,0 +1,65 @@
+// noui slider
+@import 'nouislider/dist/nouislider.css';
+
+.noUi-base {
+  z-index: 0;
+}
+
+.noUi-origin {
+  z-index: 0;
+}
+
+.noUi-target {
+  background-color: $body-background;
+  border: 1px solid $border-color;
+  box-shadow: none;
+}
+
+.noUi-connects {
+  border: none;
+}
+
+.noUi-connect {
+  background-color: $primary-slide;
+}
+
+.noUi-touch-area {
+  display: none;
+}
+
+.noUi-horizontal {
+  height: 0.75em;
+  margin: 0 auto;
+  margin-top: 2em;
+  width: 99%;
+
+  @include min-break-point(large-desktop) {
+    margin: 0 auto;
+    margin-top: -1.55em;
+    width: 75%;
+  }
+
+  .noUi-handle {
+    @include size(1.75em);
+    @include border-radius(50%);
+    @include box-shadow(0, 0.03em, rgba(0, 0, 0, 0.075), 0.15em);
+    background-color: $primary-color;
+    border: none;
+    margin-top: -0.3em;
+
+    &::before,
+    &::after {
+      display: none;
+    }
+  }
+}
+
+.example-val {
+  background-color: $secondary-color;
+  border: 1px solid $border-color;
+  border-radius: 0.3em;
+  color: $primary-color-hover;
+  font-weight: 600;
+  height: 2.5em;
+  width: 5em;
+}

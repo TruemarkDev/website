@@ -1,0 +1,177 @@
+.form-group {
+  .form-file-label {
+    background-color: transparent;
+    border: none;
+    color: $text-secondary;
+
+    .form-file-text,
+    .form-file-button {
+      font-size: 0.8em;
+      line-height: 1.6;
+    }
+
+    .form-file-text {
+      border: 1px solid $bs-bg-light;
+    }
+
+    .form-file-button {
+      border: 1px solid $primary-color;
+    }
+  }
+
+  .form-file-button {
+    background-color: $primary-color;
+    color: $white;
+  }
+
+  .checklist {
+    height: auto;
+
+    @include min-break-point(tablet-landscape) {
+      height: 3.5em;
+    }
+  }
+}
+
+.form-control-lg {
+  font-size: 1em;
+  padding: 0.6em;
+}
+
+.form-control {
+  color: $gray-900;
+  &:focus {
+    color: $gray-900;
+  }
+  &::input-placeholder {
+    color: $placeholder-color;
+  }
+}
+
+[data-theme='dark'] {
+  .form-control {
+    color: $white;
+    &:focus {
+      color: $white;
+    }
+  }
+}
+
+/*
+* File
+*/
+
+.file {
+  cursor: pointer;
+  display: inline-block;
+  height: 3rem;
+  position: relative;
+  width: 100%;
+}
+
+.file input {
+  filter: alpha(opacity=0);
+  margin: 0;
+  min-width: 100%;
+  opacity: 0;
+}
+
+.file-custom {
+  background-color: $secondary-color;
+  border: 0.075rem solid $border-color;
+  border-radius: 0.25rem;
+  color: $input-placeholder-color;
+  height: 3rem;
+  left: 0;
+  line-height: 1.5;
+  padding: 0.5rem 1rem;
+  position: absolute;
+  right: 0;
+  top: 0;
+  user-select: none;
+  z-index: 5;
+}
+
+.file-custom::after {
+  align-items: center;
+  color: $input-placeholder-color;
+  content: 'Choose file...';
+  display: flex;
+  margin-top: 0.25rem;
+}
+
+.file-custom::before {
+  align-items: center;
+  background-color: $primary-color;
+  border: 0.075rem solid $bs-bg-light;
+  border-radius: 0 0.25rem 0.25rem 0;
+  bottom: -0.075rem;
+  color: $white;
+  content: 'Browse';
+  display: block;
+  display: flex;
+  height: 3.05rem;
+  justify-content: center;
+  line-height: 1.5;
+  padding: 0.5rem 1rem;
+  position: absolute;
+  right: -0.075rem;
+  top: -0.1rem;
+  z-index: 6;
+}
+.newsletter-subscribe-form .btn-inline {
+  line-height: 1;
+}
+// input::placeholder {
+//   /* Chrome, Firefox, Opera, Safari 10.1+ */
+//   color: $input-placeholder-color;
+//   opacity: 1; /* Firefox */
+// }
+
+// input:input-placeholder {
+//   /* Internet Explorer 10-11, Microsoft Edge */
+//   color: $input-placeholder-color;
+// }
+
+input.checkbox[type='checkbox'] {
+  display: none;
+}
+input.checkbox[type='checkbox'] + label {
+  @include position(relative);
+
+  cursor: pointer;
+  display: inline-block;
+  padding-left: 34px;
+  // position: relative;
+  vertical-align: middle;
+}
+
+input.checkbox[type='checkbox'] + label:before {
+  @include size(0.4em, 0.9em);
+
+  position: absolute;
+  border: 0.2em solid $primary-color;
+  border-right: none;
+  border-top: none;
+  content: '';
+  left: 0.3em;
+  opacity: 0;
+  top: 0.5em;
+  transform: rotate(-45deg);
+  z-index: 100;
+}
+input.checkbox[type='checkbox'] + label:after {
+  @include size(1.5em);
+
+  position: absolute;
+  border: 0.1em solid $primary-color;
+  background-color: $body-background;
+  border-radius: 0.2em;
+  content: '';
+  left: 0;
+  top: 0.06em;
+}
+
+input.checkbox[type='checkbox']:checked + label:before {
+  opacity: 1;
+}

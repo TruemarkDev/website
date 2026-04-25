@@ -1,0 +1,55 @@
+.engagement-model {
+  @include border-radius(0.6em);
+  @include box-shadow(0, 0.03em, $dark-overlay, 0.15em);
+
+  background-color: $secondary-color;
+  background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%230f3041' fill-opacity='0.03' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
+
+  text-align: center;
+  transition: 0.3s;
+
+  @include min-break-point(tablet) {
+    align-items: center;
+    text-align: left;
+  }
+
+  @include min-break-point(large-desktop) {
+    align-items: baseline;
+  }
+
+  &:hover {
+    box-shadow: 0 0.1em 0.7em var(--primary-hover-color), 0 0.1em 0.1em var(--primary-hover-color);
+    text-decoration: none;
+    transition: ease-in box-shadow 0.2s, ease filter 0.1s;
+  }
+
+  .label {
+    @include transform(rotate(45deg));
+
+    width: 10em;
+    top: 1em;
+    right: -2.34em;
+    background: $primary-color;
+  }
+
+  .icon-holder {
+    border-bottom: 1px solid $primary-color-hover;
+    padding-bottom: 0.5em;
+    text-align: center;
+    width: 2em;
+
+    @include min-break-point(large-desktop) {
+      text-align: left;
+    }
+  }
+
+  .stacks {
+    line-height: 2em;
+  }
+}
+
+[data-theme='light'] {
+  .engagement-model:hover {
+    box-shadow: 0 0.1em 0.7em $gray-400, 0 0.1em 0.1em $gray-400;
+  }
+}

@@ -1,0 +1,30 @@
+.feature-section {
+  min-height: 40em;
+}
+
+.right-edge-box {
+  background-position: 1px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  min-height: 20em;
+
+  @include min-break-point(tablet) {
+    @include position(absolute, 0, 0, null, null);
+    @include border-radius(0);
+  }
+
+  &.primary-bg {
+    background-color: $primary-color-hover;
+  }
+
+  &.secondary-bg {
+    background-color: $blue-600;
+  }
+}
+
+.feature-detail-list {
+  li {
+    list-style: square;
+  }
+}

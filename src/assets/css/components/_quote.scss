@@ -1,0 +1,77 @@
+.container-footer {
+  &:after {
+    content: '';
+    position: absolute;
+    width: 60em;
+    height: 50em;
+    left: -33em;
+    top: 15em;
+    background: linear-gradient(
+  180deg,
+  rgba(26, 188, 254, 0.27) 0%,
+  rgba(84, 84, 212, 0.1134) 100%
+);
+    filter: blur(5em);
+    border-radius: 10em;
+    transform: rotate(-54.37deg);
+  }
+
+  .footer-contact-img {
+    background: url('../../assets/images/layout/contact-us-dark.svg') no-repeat 0 0;
+    width: 33em;
+    height: 27em;
+    position: relative;
+    left: -5em;
+    z-index: 1;
+    text-indent: -9999em;
+  }
+  .quote-form {
+    z-index: 2;
+  }
+}
+[data-theme='light'] {
+  .container-footer:after {
+    background: rgba(255, 153, 0, 0.1);
+  }
+
+  .footer-contact-img {
+    background: url('../../assets/images/layout/contact-us.svg') no-repeat 0 0;
+  }
+}
+
+
+
+.quoted-text {
+  font-size: 1.375em;
+  text-align: center;
+
+  @include min-break-point(large-desktop) {
+    text-align: left;
+  }
+
+  .quote {
+    height: 0;
+    margin-top: 1em;
+
+    &::before {
+      color: $primary-color-hover;
+      content: '\201C';
+      font-family: serif;
+      font-size: 4em;
+      line-height: 0;
+    }
+  }
+
+  .quote-home {
+    height: 0;
+    margin-top: 1em;
+
+    &::before {
+      color: $primary-color-hover;
+      content: '\201C';
+      font-family: serif;
+      font-size: 5em;
+      line-height: 0;
+    }
+  }
+}

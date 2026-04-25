@@ -1,0 +1,284 @@
+//media-query
+@mixin max-break-point($point) {
+  $mobile-phone: '(max-width: 576px)';
+
+  $tablet: '(max-width: 768px)';
+
+  $tablet-landscape: '(max-width: 991px)';
+
+  $large-desktop: '(max-width: 1200px)';
+
+  @if $point == mobile-phone {
+    @media #{$mobile-phone} {
+      @content;
+    }
+  }
+
+  @if $point == tablet {
+    @media #{$tablet} {
+      @content;
+    }
+  }
+
+  @if $point == tablet-landscape {
+    @media #{$tablet-landscape} {
+      @content;
+    }
+  }
+
+  @if $point == large-desktop {
+    @media #{$large-desktop} {
+      @content;
+    }
+  }
+}
+
+@mixin min-break-point($point) {
+  $mobile-phone: '(min-width: 576px)';
+
+  $tablet: '(min-width: 768px)';
+
+  $tablet-landscape: '(min-width: 991px)';
+
+  $large-desktop: '(min-width: 1200px)';
+
+  @if $point == mobile-phone {
+    @media #{$mobile-phone} {
+      @content;
+    }
+  }
+
+  @if $point == tablet {
+    @media #{$tablet} {
+      @content;
+    }
+  }
+
+  @if $point == tablet-landscape {
+    @media #{$tablet-landscape} {
+      @content;
+    }
+  }
+
+  @if $point == large-desktop {
+    @media #{$large-desktop} {
+      @content;
+    }
+  }
+}
+
+// TODO: why not call these padding vertical and horizontal? also we have bootstrap, do we still need these?
+//same top bottom padding
+@mixin padding-top-bottom($top, $bottom: $top) {
+  padding-top: $top;
+  padding-bottom: $bottom;
+}
+
+//same left right padding
+@mixin padding-left-right($left, $right: $left) {
+  padding-left: $left;
+  padding-right: $right;
+}
+
+//set height and width of element
+@mixin size($height, $width: $height) {
+  height: $height;
+  width: $width;
+}
+
+//transform
+@mixin transform($action) {
+  -webkit-transform: $action;
+  -moz-transform: $action;
+  -o-transform: $action;
+  transform: $action;
+  -ms-transform: $action;
+}
+
+//transform origin
+@mixin transform-origin($x-axis, $y-axis) {
+  transform-origin: $x-axis $y-axis;
+  -webkit-transform-origin: $x-axis $y-axis;
+  -moz-transform-origin: $x-axis $y-axis;
+  -ms-transform-origin: $x-axis $y-axis;
+  -o-transform-origin: $x-axis $y-axis;
+}
+
+//transition animation
+@mixin transition-all($speed, $motion) {
+  transition: all $speed $motion;
+  -webkit-transition: all $speed $motion;
+  -moz-transition: all $speed $motion;
+  -ms-transition: all $speed $motion;
+  -o-transition: all $speed $motion;
+}
+
+@mixin translate-Y($y-axis) {
+  -webkit-transform: translateY($y-axis);
+  -moz-transform: translateY($y-axis);
+  -o-transform: translateY($y-axis);
+  transform: translateY($y-axis);
+  -ms-transform: translateY($y-axis);
+}
+
+//transition delay
+@mixin transition-delay($time) {
+  transition-delay: $time;
+  -webkit-transition-delay: $time;
+}
+
+//animation duration
+@mixin animation-duration($time) {
+  animation-duration: $time;
+  -webkit-animation-duration: $time;
+}
+
+//opacity
+@mixin opacity($value) {
+  $ms-value: $value * 100; //for microsoft browser value
+  opacity: $value;
+  -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=#{$ms-value})';
+  filter: alpha(opacity=$ms-value);
+}
+
+//box-shadow
+@mixin box-shadow(
+  $horizontal,
+  $vertical: null,
+  $color: null,
+  $blur: 0,
+  $spread: 0,
+  $inset: false,
+  $short-value: 0
+) {
+  @if $inset {
+    -webkit-box-shadow: $horizontal $vertical $blur $spread $color inset;
+    -moz-box-shadow: $horizontal $vertical $blur $spread $color inset;
+    box-shadow: $horizontal $vertical $blur $spread $color inset;
+  } @else if $short-value {
+    -webkit-box-shadow: $short-value;
+    -moz-box-shadow: $short-value;
+    box-shadow: $short-value;
+  } @else {
+    -webkit-box-shadow: $horizontal $vertical $blur $spread $color;
+    -moz-box-shadow: $horizontal $vertical $blur $spread $color;
+    box-shadow: $horizontal $vertical $blur $spread $color;
+  }
+}
+
+//drop-shadow
+@mixin drop-shadow($horizontal, $vertical, $color, $blur: 0) {
+  -webkit-filter: drop-shadow($horizontal $vertical $blur $color);
+  -moz-filter: drop-shadow($horizontal $vertical $blur $color);
+  filter: drop-shadow($horizontal $vertical $blur $color);
+}
+
+// The 'flex' shorthand
+// - applies to: flex items
+// <positive-number>, initial, auto, or none
+@mixin flex($values) {
+  -webkit-box-flex: $values;
+  -moz-box-flex: $values;
+  -webkit-flex: $values;
+  -ms-flex: $values;
+  flex: $values;
+}
+
+// Flex basis
+// - the initial main size of the flex item
+// - applies to: flex itemsnitial main size of the flex item
+// <width>
+@mixin flex-basis($width) {
+  -webkit-flex-basis: $width;
+  -moz-flex-basis: $width;
+  -ms-flex-basis: $width;
+  flex-basis: $width;
+}
+
+// user-select
+@mixin user-select($value) {
+  user-select: $value;
+  -webkit-user-select: $value;
+  -moz-user-select: $value;
+}
+
+@mixin position(
+  $type: null,
+  $top: null,
+  $right: null,
+  $bottom: null,
+  $left: null,
+  $zindex: null
+) {
+  @if $type {
+    position: $type;
+  }
+  @if $top {
+    top: $top;
+  }
+  @if $right {
+    right: $right;
+  }
+  @if $bottom {
+    bottom: $bottom;
+  }
+  @if $left {
+    left: $left;
+  }
+  @if $zindex {
+    z-index: $zindex;
+  }
+}
+
+// text
+@mixin text-stroke($width, $color) {
+  -webkit-text-stroke-width: $width;
+  -webkit-text-stroke-color: $color;
+}
+
+//circle image
+@mixin border-radius($value) {
+  -webkit-border-radius: $value;
+  -moz-border-radius: $value;
+  border-radius: $value;
+}
+
+//same top border radius
+@mixin border-radius-top($topLeft, $topRight: $topLeft) {
+  -webkit-border-top-left-radius: $topLeft;
+  -moz-border-top-left-radius: $topLeft;
+  border-top-left-radius: $topLeft;
+  -webkit-border-top-right-radius: $topRight;
+  -moz-border-top-right-radius: $topRight;
+  border-top-right-radius: $topRight;
+}
+
+//same right border radius
+@mixin border-radius-right($topRight, $bottomRight: $topRight) {
+  -webkit-border-top-left-radius: $topRight;
+  -moz-border-top-left-radius: $topRight;
+  border-top-left-radius: $topRight;
+  -webkit-border-top-left-radius: $bottomRight;
+  -moz-border-top-left-radius: $bottomRight;
+  border-top-left-radius: $bottomRight;
+}
+
+//same bottom border radius
+@mixin border-radius-bottom($bottomLeft, $bottomRight: $bottomLeft) {
+  -webkit-border-bottom-left-radius: $bottomLeft;
+  -moz-border-bottom-left-radius: $bottomLeft;
+  border-bottom-left-radius: $bottomLeft;
+  -webkit-border-bottom-left-radius: $bottomRight;
+  -moz-border-bottom-left-radius: $bottomRight;
+  border-bottom-left-radius: $bottomRight;
+}
+
+//same left border radius
+@mixin border-radius-left($topLeft, $bottomLeft: $topLeft) {
+  -webkit-border-top-left-radius: $topLeft;
+  -moz-border-top-left-radius: $topLeft;
+  border-top-left-radius: $topLeft;
+  -webkit-border-bottom-left-radius: $bottomLeft;
+  -moz-border-bottom-left-radius: $bottomLeft;
+  border-bottom-left-radius: $bottomLeft;
+}

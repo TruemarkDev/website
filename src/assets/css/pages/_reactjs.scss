@@ -1,0 +1,133 @@
+.why-use-react {
+  path {
+    fill: $primary-color;
+  }
+}
+
+.open-project {
+  width: fit-content;
+  padding-left: 0.625rem;
+  padding-right: 0.625rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  background: $light-background;
+  border: 0.0625rem solid $light-border;
+  gap: 0.625rem;
+
+  .request-a-quote {
+    text-transform: none;
+    padding: 0;
+    background: transparent;
+    color: $primary-color;
+    font-weight: $font-weight-normal;
+
+    &:hover,
+    &:active,
+    &:focus {
+      background: transparent !important;
+      color: $primary-color-hover !important;
+    }
+  }
+
+  :hover {
+    svg {
+      stroke: $primary-color-hover;
+    }
+  }
+
+  svg {
+    stroke: $primary-color;
+  }
+}
+.our-services {
+  .icon1 {
+    svg {
+      fill: rgba(160, 154, 228, 0.25);
+    }
+    path {
+      fill: #221c69;
+    }
+  }
+  .icon2 {
+    svg {
+      fill: rgba(241, 142, 183, 0.25);
+    }
+    path {
+      fill: #760f3a;
+    }
+  }
+  .icon3 {
+    svg {
+      fill: rgba(131, 164, 251, 0.25);
+    }
+    path {
+      fill: #042781;
+    }
+  }
+  .icon4 {
+    svg {
+      fill: rgba(181, 223, 114, 0.25);
+    }
+    path {
+      fill: #52741a;
+    }
+  }
+  .icon5 {
+    svg {
+      fill: rgba(134, 237, 248, 0.25);
+    }
+    path {
+      fill: #065860;
+    }
+  }
+}
+
+[data-theme='dark'] {
+  .open-project {
+    background: rgba(26, 188, 254, 0.25);
+    border: 0.0625rem solid $primary-dark;
+    gap: 0.625rem;
+  }
+  .our-services {
+    .icon1 {
+      svg {
+        fill: rgba(119, 109, 242, 0.1);
+      }
+      path {
+        fill: #aba6e7;
+      }
+    }
+    .icon2 {
+      svg {
+        fill: rgba(183, 133, 154, 0.1);
+      }
+      path {
+        fill: #ee77a8;
+      }
+    }
+    .icon3 {
+      svg {
+        fill: rgba(68, 94, 163, 0.1);
+      }
+      path {
+        fill: #83a5fc;
+      }
+    }
+    .icon4 {
+      svg {
+        fill: rgba(232, 245, 211, 0.1);
+      }
+      path {
+        fill: #e8f5d3;
+      }
+    }
+    .icon5 {
+      svg {
+        fill: rgba(166, 246, 255, 0.1);
+      }
+      path {
+        fill: #17dcf2;
+      }
+    }
+  }
+}

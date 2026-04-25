@@ -1,0 +1,34 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CareerFAQ from '../components/Career/CareerFAQ.jsx';
+import CurrentOpenings from '../components/Career/CurrentOpenings.jsx';
+import HandBook from '../components/Career/HandBook.jsx';
+import OurTraineeProgramSection from '../components/Career/OurTraineeProgramSection.jsx';
+import ValueSection from '../components/Company/Section/ValueSection.jsx';
+import CareerHeroSection from '../components/HeroSection/CareerHeroSection.jsx';
+import HowToApply from '../components/Trainee/HowToApply.jsx';
+import { getCollection } from 'astro:content';
+
+const jobs = await getCollection('jobs', ({ data }) => data.positionOpen);
+const openings = jobs.map((j) => ({
+  node: {
+    fields: { slug: `/jobs/${j.data.customSlug}` },
+    frontmatter: { ...j.data },
+  },
+}));
+---
+
+<BaseLayout
+  title="Truemark | Current Openings | Apply Now | Remote Job"
+  description="Truemark | We are looking for talented and motivated people to attain our goal together"
+  keywords="Jobs in Kathmandu, Ruby, Rails, React Native, truemark"
+  path="careers"
+>
+  <CareerHeroSection client:only="react" />
+  <ValueSection client:only="react" />
+  <HandBook client:only="react" />
+  <CurrentOpenings openings={openings} client:only="react" />
+  <OurTraineeProgramSection client:only="react" />
+  <HowToApply client:only="react" />
+  <CareerFAQ client:only="react" />
+</BaseLayout>

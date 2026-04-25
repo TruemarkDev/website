@@ -1,0 +1,537 @@
+.main-timeline{
+    h4{
+      color: $gray-800;
+    }
+    p{
+      color: $gray-700;
+    }
+    &:after{
+      content: "";
+      display: block;
+      width: 2px;
+      height: 95%;
+      margin: 0 auto;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      background-image: linear-gradient($gray-800 33%, rgba(255,255,255,0) 0%);
+      background-position: right;
+      background-size: 0.125rem 0.5rem;
+      background-repeat: repeat-y;
+    }
+
+    .lets-brainstorm-before{
+      &:before{
+        content: "";
+        width: 10.5%;
+        height: 2px;
+        background: $gray-700;
+        margin: auto 0;
+        position: absolute;
+        align-self: center;
+        left: 2rem;
+      }
+      .lets-brainstorm {
+        background: $brainstorm-background;
+        z-index: 1;
+        box-shadow: $about-shadow;
+
+        @include media-breakpoint-down(md){
+          text-align: center;
+        }
+
+        &:before{
+          content: "";
+          display: block;
+          width: 2px;
+          height: 150%;
+          margin: 0 auto;
+          position: absolute;
+          top: 9rem;
+          right: 1.7rem;
+          background-image: linear-gradient($gray-800 33%, rgba(255,255,255,0) 0%);
+          background-position: right;
+          background-size: 0.125rem 0.5rem;
+          background-repeat: repeat-y;
+        
+          @include media-breakpoint-down(xl){
+            top: 11rem;
+          }
+        
+          @include media-breakpoint-down(lg){
+            display: none;
+          }
+        }
+
+        &:after{
+          content: "";
+          position: absolute;
+          width: 1.5rem;
+          height: 1.5rem;
+          background: $brainstorm-background;
+          border-radius: 50%;
+          bottom: -1.8rem;
+          right: 1rem;
+          z-index: 1;
+
+          @include media-breakpoint-down(lg){
+            display: none;
+          }
+        }
+    
+        p{
+          margin-bottom: 0;
+        }
+
+        .future-enhancement{
+          bottom: -19.5rem;
+          rotate: 270deg;
+          right: -3rem;
+
+          @include media-breakpoint-down(xl){
+            bottom: -23.5rem;
+          }
+
+          @include media-breakpoint-down(lg){
+            display: none;
+          }
+        }
+        .circle{
+          width: 3rem;
+          height: 3rem;
+          background: $brainstorm-background;
+          border-radius: 50%;
+          left: -1.5rem;
+        
+          h4{
+            margin-bottom: 0;
+            color: $brainstorm-text;
+          }
+        }
+      }
+    }
+
+    .staging-release-before{
+      &:before{
+        content: "";
+        width: 10.5%;
+        height: 2px;
+        background: $gray-700;
+        margin: auto 0;
+        position: absolute;
+        align-self: center;
+        left: 2rem;
+      }
+
+      &:after{
+        content: "";
+        position: absolute;
+        width: 1.5rem;
+        height: 1.5rem;
+        background: $staging-background;
+        border-radius: 50%;
+        bottom: -1.8rem;
+        right: 15rem;
+        z-index: 2;
+
+        @include media-breakpoint-down(lg){
+          display: none;
+        }
+      }
+    
+      .staging-release{
+        background: $staging-background;
+        z-index: 1;
+        box-shadow: $about-shadow;
+
+        @include media-breakpoint-down(md){
+          text-align: center;
+        }
+
+        p{
+          margin-bottom: 0;
+        }
+
+        &:before{
+          content: "";
+          display: block;
+          width: 2px;
+          height: 150%;
+          margin: 0 auto;
+          position: absolute;
+          bottom: 9rem;
+          right: 1.7rem;
+          background-image: linear-gradient($gray-800 33%, rgba(255,255,255,0) 0%);
+          background-position: right;
+          background-size: 0.125rem 0.5rem;
+          background-repeat: repeat-y;
+
+          @include media-breakpoint-down(xl){
+            bottom: 11rem;
+          }
+
+          @include media-breakpoint-down(lg){
+            display: none;
+          }
+        }
+
+        &:after{
+          content: "";
+          position: absolute;
+          width: 1.5rem;
+          height: 1.5rem;
+          background: $staging-background;
+          border-radius: 50%;
+          top: -1.8rem;
+          right: 1rem;
+          z-index: 1;
+
+          @include media-breakpoint-down(lg){
+            display: none;
+          }
+        }
+      
+        .circle{
+          width: 3rem;
+          height: 3rem;
+          background: $staging-background;
+          border-radius: 50%;
+          left: -1.5rem;
+        
+          h4{
+            margin-bottom: 0;
+            color: $staging-text;
+          }
+        }
+      }
+    } 
+
+    .design-prototype-before{
+      &:before{
+        content: "";
+        width: 10.5%;
+        height: 2px;
+        background: $gray-700;
+        margin: auto 0;
+        position: absolute;
+        align-self: center;
+        right: 2rem;
+      }
+      .design-prototype{
+        background: $prototype-background;
+        text-align: right;
+        z-index: 1;
+        box-shadow: $about-shadow;
+
+        @include media-breakpoint-down(md){
+          text-align: center;
+        }
+
+        p{
+          margin-bottom: 0;
+        }
+      
+        .circle{
+          width: 3rem;
+          height: 3rem;
+          background: $prototype-background;
+          border-radius: 50%;
+          right: -1.5rem;
+        
+          h4{
+            margin-bottom: 0;
+            color: $prototype-text;
+          }
+        }
+      }
+      .development{
+        background: $development-background;
+        text-align: right;
+        z-index: 1;
+        box-shadow: $about-shadow;
+
+        @include media-breakpoint-down(md){
+          text-align: center;
+        }
+        p{
+          margin-bottom: 0;
+        }
+      
+        .circle{
+          width: 3rem;
+          height: 3rem;
+          background: $development-background;
+          border-radius: 50%;
+          right: -1.5rem;
+        
+          h4{
+            margin-bottom: 0;
+            color: $development-text;
+          }
+        }
+      }
+    } 
+    
+    .launch-before{
+      &:before{
+        content: "";
+        width: 10.5%;
+        height: 2px;
+        background: $gray-700;
+        margin: auto 0;
+        position: absolute;
+        align-self: center;
+        right: 2rem;
+      }
+    
+      &:after{
+        content: "";
+        position: absolute;
+        width: 1.5rem;
+        height: 1.5rem;
+        background: $launch-background;
+        border-radius: 50%;
+        right: -4rem;
+        z-index: 2;
+        align-self: center;
+      
+        @include media-breakpoint-down(lg){
+          display: none;
+        }
+      }
+
+      .launch{
+        background: $launch-background;
+        text-align: right;
+        z-index: 1;
+        box-shadow: $about-shadow;
+      
+        @include media-breakpoint-down(md){
+          text-align: center;
+        }
+      
+        p{
+          margin-bottom: 0;
+        }
+      
+        &:before{
+          content: "";
+          display: block;
+          width: 2px;
+          height: 210%;
+          margin: 0 auto;
+          position: absolute;
+          right: -11.8rem;
+          background-image: linear-gradient($gray-800 33%, rgba(255,255,255,0) 0%);
+          background-position: right;
+          background-size: 0.125rem 0.5rem;
+          background-repeat: repeat-y;
+          rotate: 90deg;
+        
+          @include media-breakpoint-down(xxl){
+            height: 132%;
+            right: -9rem;
+          }
+        
+          @include media-breakpoint-down(xl){
+            height: 79%;
+            right: -6rem;
+          }
+        
+          @include media-breakpoint-down(lg){
+            display: none;
+          }
+        }
+      
+        &:after{
+          content: "";
+          display: block;
+          width: 2px;
+          height: 65%;
+          margin: 0 auto;
+          position: absolute;
+          top: -2rem;
+          right: -25.55rem;
+          background-image: linear-gradient($gray-800 33%, rgba(255,255,255,0) 0%);
+          background-position: right;
+          background-size: 0.125rem 0.5rem;
+          background-repeat: repeat-y;
+        
+          @include media-breakpoint-down(xxl){
+            right: -19.9rem;
+          }
+        
+          @include media-breakpoint-down(xl){
+            right: -14.3rem;
+          }
+          @include media-breakpoint-down(lg){
+            display: none;
+          }
+        }
+      
+        .approved{
+          right: -25.5rem;
+        
+          @include media-breakpoint-down(xxl){
+            right: -19.8rem;
+          }
+        
+          @include media-breakpoint-down(xl){
+            right: -14rem;
+          }
+        
+          @include media-breakpoint-down(lg){
+            display: none;
+          }
+        }
+      
+        .circle{
+          width: 3rem;
+          height: 3rem;
+          background: $launch-background;
+          border-radius: 50%;
+          right: -1.5rem;
+        
+          h4{
+            margin-bottom: 0;
+            color: $launch-text;
+          }
+        }
+      }   
+    }
+      
+    .ui-design-before{
+      &:before{
+        content: "";
+        width: 10.5%;
+        height: 2px;
+        background: $gray-700;
+        margin: auto 0;
+        position: absolute;
+        align-self: center;
+        left: -1rem;
+    
+        @include media-breakpoint-down(md){
+          display: none;
+        }
+      }
+
+      .ui-design{
+        background: $ui-design-background;
+        z-index: 1;
+        box-shadow: $about-shadow;
+      
+        @include media-breakpoint-down(md){
+          text-align: center;
+        }
+      
+        p{
+          margin-bottom: 0;
+        }
+      
+        .circle{
+          width: 3rem;
+          height: 3rem;
+          background: $ui-design-background;
+          border-radius: 50%;
+          left: -4.5rem;
+        
+          h4{
+            margin-bottom: 0;
+            color: $ui-design-text;
+          }
+        }
+      }
+    }
+      
+    .app-idea{
+      background: $youridea-background;
+      z-index: 1;
+      box-shadow: $about-shadow;
+      p{
+        margin-bottom: 0;
+      }
+      .circle{
+        width: 3rem;
+        height: 3rem;
+        background: $youridea-background;
+        border-radius: 50%;
+        bottom: -3rem;
+    
+        h4{
+          margin-bottom: 0;
+          color: $youridea-text;
+        }
+      }
+    }
+}
+
+
+[data-theme='dark']{
+  .main-timeline{
+    &:after{
+      background-image: linear-gradient($white 33%, rgba(255,255,255,0) 0%);
+    }
+
+    .lets-brainstorm-before{
+      &:before{
+        background: $white;
+      }
+
+      .lets-brainstorm{
+        &:before{
+          background-image: linear-gradient($white 33%, rgba(255,255,255,0) 0%);
+        }
+
+        .future-enhancement{
+          color: $white;
+        }
+      }
+    }
+
+    .design-prototype-before{
+      &::before{
+        background: $white;
+      }
+    }
+
+    .ui-design-before{
+      &::before{
+        background: $white;
+      }
+    }
+
+    .staging-release-before{
+      &:before{
+        background: $white;
+      }
+
+      .staging-release{
+        &:before{
+          background-image: linear-gradient($white 33%, rgba(255,255,255,0) 0%);
+        }
+      }
+    }
+
+    .launch-before{
+      &:before{
+        background: $white;
+      }
+
+      .launch{
+        &:after{
+          background-image: linear-gradient($white 33%, rgba(255,255,255,0) 0%);
+        }
+
+        &:before{
+          background-image: linear-gradient($white 33%, rgba(255,255,255,0) 0%);
+        }
+
+        .approved{
+          color: $white;
+        }
+      }
+    }
+  }
+}
