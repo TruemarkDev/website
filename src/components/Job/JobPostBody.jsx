@@ -10,7 +10,7 @@ import {
 
 const cvIcon = '/images/career/cv.svg';
 import SocialShare from 'components/SocialShare';
-import { ButtonWithModal } from '../../theme/index.js';
+import ButtonWithModal from '../../theme/components/Button/ButtonWithModal';
 
 const JobPostBody = ({ frontmatter }) => {
   const {

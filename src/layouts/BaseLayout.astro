@@ -2,12 +2,13 @@
 import 'assets/css/main.scss';
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import 'nprogress/nprogress.css';
+import { ClientRouter } from 'astro:transitions';
 import { siteMetadata } from '../lib/site-metadata';
 import { organizationJsonLd, websiteJsonLd, breadcrumbJsonLd } from '../lib/jsonld';
 
-import TopMenu from '../components/Menu/Header/TopMenu.jsx';
+import TopMenu from '../components/Menu/Header/TopMenu.astro';
 import FormCTASection from '../components/Footer/CTA/FormCTASection.jsx';
-import BlueFooter from '../components/Footer/Footer.jsx';
+import Footer from '../components/Footer/Footer.astro';
 import { getMegaMenuBlogPosts, getBlogCategories } from '../lib/blog-data';
 
 interface Props {
@@ -80,14 +81,21 @@ const [megaBlogs, megaCategories] = await Promise.all([
       <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)}></script>
     )}
 
+    <ClientRouter />
+
     <script is:inline>
-      (function () {
+      // Theme attribute must apply on every navigation, not just initial load,
+      // because ClientRouter swaps the <html data-theme> attribute between pages.
+      // Listen for astro:after-swap so the persisted theme survives transitions.
+      function applyTheme() {
         try {
           const theme = window.localStorage.getItem('theme') || 'light';
           document.documentElement.setAttribute('data-theme', theme);
-          document.body && document.body.setAttribute('data-theme', theme);
+          if (document.body) document.body.setAttribute('data-theme', theme);
         } catch (_) {}
-      })();
+      }
+      applyTheme();
+      document.addEventListener('astro:after-swap', applyTheme);
     </script>
     <style is:global>
       #nprogress .bar { background: #ff5757; height: 3px; }
@@ -96,43 +104,35 @@ const [megaBlogs, megaCategories] = await Promise.all([
     </style>
   </head>
   <body class={bodyClass} data-theme={siteMetadata.defaultTheme}>
-    <TopMenu blogPosts={megaBlogs} blogCategories={megaCategories} client:only="react" />
-    <slot />
-    {!hideFormCTA && <FormCTASection client:only="react" />}
-    <BlueFooter forCaseStudy={forCaseStudy} client:only="react" />
+    <TopMenu
+      blogPosts={megaBlogs}
+      blogCategories={megaCategories}
+      transition:persist
+      transition:name="site-header"
+    />
+    <main transition:animate="fade">
+      <slot />
+    </main>
+    {!hideFormCTA && (
+      <FormCTASection client:only="react" transition:persist transition:name="form-cta" />
+    )}
+    <Footer
+      forCaseStudy={forCaseStudy}
+      transition:persist
+      transition:name="site-footer"
+    />
     <script>
-      // Top-of-page progress bar for full-page navigation. Listens for
-      // same-origin link clicks (start) and the next paint (done). View
-      // transitions are intentionally disabled site-wide because every page
-      // body is a `client:only="react"` island and Astro's SPA swap can leave
-      // those islands unhydrated on the destination page.
+      // Top-of-page progress bar. With ClientRouter active we drive NProgress
+      // off Astro's transition events instead of beforeunload/pageshow, which
+      // do not fire during a SPA swap.
       import NProgress from 'nprogress';
       NProgress.configure({ showSpinner: false, trickleSpeed: 120 });
 
-      const isNavigating = (a: HTMLAnchorElement, e: MouseEvent) => {
-        if (e.defaultPrevented) return false;
-        if (e.button !== 0) return false;
-        if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return false;
-        if (a.target && a.target !== '_self') return false;
-        if (a.hasAttribute('download')) return false;
-        const href = a.getAttribute('href');
-        if (!href || href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:')) return false;
-        try {
-          const url = new URL(a.href, location.href);
-          if (url.origin !== location.origin) return false;
-          if (url.pathname === location.pathname && url.search === location.search) return false;
-          return true;
-        } catch { return false; }
-      };
-
-      document.addEventListener('click', (e) => {
-        const a = (e.target as HTMLElement)?.closest?.('a');
-        if (a && isNavigating(a as HTMLAnchorElement, e as MouseEvent)) NProgress.start();
-      }, true);
-
+      document.addEventListener('astro:before-preparation', () => NProgress.start());
+      document.addEventListener('astro:after-swap', () => NProgress.done());
+      // Hard-navigation fallbacks (covers external links and reloads).
       window.addEventListener('beforeunload', () => NProgress.start());
       window.addEventListener('pageshow', () => NProgress.done());
-      // Initial paint
       NProgress.done();
     </script>
   </body>

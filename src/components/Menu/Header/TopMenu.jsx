@@ -34,7 +34,7 @@ const QualityAssurance = '/images/icons/quality-assurance.svg';
 const WriteTest = '/images/icons/write-test.svg';
 const truemarkWhiteLogo = '/images/company-logo/logo_white.svg';
 const companyLogoNew = '/images/company-logo/logo_red.svg';
-import { BlogMegaMenu } from '@truemark/gatsby-theme-effortless-blog';
+import BlogMegaMenu from '../../../theme/components/BlogMegaMenu/BlogMegaMenu';
 
 const TopMenu = ({ siteTitle, blogPosts, blogCategories }) => {
   const [isOpen, setIsOpen] = useState(false);

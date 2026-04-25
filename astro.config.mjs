@@ -21,6 +21,7 @@ const redirects = Object.fromEntries(
 
 export default defineConfig({
   site: 'https://www.truemark.com.np',
+  prefetch: { defaultStrategy: 'hover' },
   integrations: [react(), mdx(), sitemap()],
   redirects,
   markdown: {
@@ -39,13 +40,7 @@ export default defineConfig({
     resolve: {
       alias: {
         gatsby: path.join(__dirname, 'src/lib/gatsby-shim.tsx'),
-        '@truemark/gatsby-theme-effortless-blog': path.join(
-          __dirname,
-          'src/theme/index.js'
-        ),
-        '@truemark/gatsby-theme-effortless-blog/src/components/layout':
-          path.join(__dirname, 'src/theme/components/layout.tsx'),
-        // theme-internal aliases
+        // theme-internal aliases (referenced by remaining components inside src/theme/)
         '@components': path.join(__dirname, 'src/theme/components'),
         '@assets': path.join(__dirname, 'src/theme/assets'),
         '@constants': path.join(__dirname, 'src/theme/constants'),

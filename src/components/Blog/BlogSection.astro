@@ -1,0 +1,76 @@
+---
+import BlogCard from './BlogCard.astro';
+
+interface Edge {
+  node: {
+    frontmatter: {
+      slug: string;
+      title: string;
+      date: string;
+      category?: string;
+      description?: string;
+      featuredImage?: { childImageSharp: { resize: { src: string } } } | null;
+      author?: { name?: string };
+    };
+  };
+}
+
+interface Props {
+  blogs: { edges: Edge[] };
+  headerTag?: string;
+  heading?: string;
+  buttonText?: string;
+  blogRedirectRoute?: string;
+}
+
+const FALLBACK_IMG = '/images/startup.jpg';
+
+const {
+  blogs,
+  headerTag,
+  heading,
+  buttonText = 'View All',
+  blogRedirectRoute = '/blog',
+} = Astro.props;
+---
+
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="header text-center mb-5">
+          {headerTag && <div class="header-tag">{headerTag}</div>}
+          {heading && <h2>{heading}</h2>}
+        </div>
+      </div>
+      <div class="col-md-12">
+        <ul class="row row-eq-height blogs">
+          {blogs.edges.map((edge) => {
+            const { slug, title, date, category, description, featuredImage, author } =
+              edge.node.frontmatter;
+            const url = `${blogRedirectRoute}/${slug}/#`;
+            const imgSrc = featuredImage?.childImageSharp?.resize?.src ?? FALLBACK_IMG;
+            return (
+              <BlogCard
+                url={url}
+                title={title}
+                date={date}
+                category={category}
+                description={description}
+                authorName={author?.name}
+                imgSrc={imgSrc}
+              />
+            );
+          })}
+        </ul>
+        <a
+          href={blogRedirectRoute}
+          class="btn btn-primary d-block mx-auto mt-md-5 mt-sm-2"
+          style="width: fit-content;"
+        >
+          {buttonText}
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

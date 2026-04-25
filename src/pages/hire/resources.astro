@@ -9,7 +9,7 @@ import ResourceHeroSection from '../../components/HeroSection/ResourceHeroSectio
 import EngagementModelBannerSection from '../../components/Banner/EngagementModelBannerSection';
 import ProcessSection from '../../components/Company/Section/ProcessSection';
 import EstimateForm from '../../components/Estimate/EstimateForm';
-import { BlogSection } from '../../theme/index.js';
+import BlogSection from '../../components/Blog/BlogSection.astro';
 import { getFeaturedBlogs, getBlogsByTag } from '../../lib/blog-data';
 
 const featuredBlogs = await getFeaturedBlogs(3);
@@ -35,7 +35,6 @@ const teamBuildingBlogs = await getBlogsByTag('build-team', 3);
     heading="Building Right Development Team"
     buttonText="View All "
     blogRedirectRoute="/blog"
-    client:only="react"
   />
   <TeamBuildingBlogs blogs={teamBuildingBlogs} client:only="react" />
   <SoftwareTeamSection client:only="react" />

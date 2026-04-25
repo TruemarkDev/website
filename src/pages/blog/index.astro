@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { BlogList, BlogIndexHeader } from '../../theme/index.js';
+import BlogList from '../../components/Blog/BlogList.astro';
+import BlogIndexHeader from '../../components/Blog/BlogIndexHeader.astro';
 import { getAllBlogsForSection } from '../../lib/blog-data';
 
 const blogs = await getAllBlogsForSection();
@@ -17,7 +18,6 @@ const blogs = await getAllBlogsForSection();
     blogIndexHeading="Software Development Insights for Product Owners"
     blogIndexDescription="Discover software development approaches, best practices, and expert perspectives to empower effective decision-making and successful project outcomes."
     blogIndexButtonText="Subscribe"
-    client:only="react"
   />
-  <BlogList data={blogs} client:only="react" />
+  <BlogList data={blogs} />
 </BaseLayout>

@@ -5,7 +5,7 @@ import TechStackSection from '../components/Company/Section/TechStackSection.jsx
 import TestimonialSection from '../components/Testimonial/Section/TestimonialSection.jsx';
 import EngagementModelBannerSection from '../components/Banner/EngagementModelBannerSection.jsx';
 import SingleCaseStudySection from '../components/CaseStudy/Section/SingleCaseStudySection.jsx';
-import { BlogSection } from '../theme/index.js';
+import BlogSection from '../components/Blog/BlogSection.astro';
 import softwareTestimonials from '../constants/testimonials/software';
 import { getFeaturedBlogs } from '../lib/blog-data';
 
@@ -31,7 +31,6 @@ const featuredBlogs = await getFeaturedBlogs(3);
     heading="From Our Blog"
     buttonText="View All Blogs"
     blogRedirectRoute="/blog"
-    client:only="react"
   />
   <SingleCaseStudySection client:only="react" />
 </BaseLayout>

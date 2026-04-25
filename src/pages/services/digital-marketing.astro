@@ -6,7 +6,7 @@ import CompanyStatsSection from '../../components/Stats/Section/CompanyStatsSect
 import DMHeroSection from '../../components/HeroSection/DMHeroSection';
 import DmServiceSection from '../../components/Service/Section/DmServiceSection';
 import DMBannerSection from '../../components/Banner/DMBannerSection';
-import { BlogSection } from '../../theme/index.js';
+import BlogSection from '../../components/Blog/BlogSection.astro';
 import digitalMarketingTestimonials from '../../constants/testimonials/digitalMarketing';
 import { getBlogsByTag } from '../../lib/blog-data';
 
@@ -30,7 +30,6 @@ const dmBlogs = await getBlogsByTag('digital marketing', 3);
     headerTag="Seo Blog"
     buttonText="View All Blogs"
     blogRedirectRoute="/blog"
-    client:only="react"
   />
   <DMTeamSection client:only="react" />
 </BaseLayout>

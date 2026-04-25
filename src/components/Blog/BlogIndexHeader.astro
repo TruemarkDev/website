@@ -1,0 +1,58 @@
+---
+import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import BlogIndexSubscribe from '../../theme/components/BlogIndexHeader/BlogIndexSubscribe';
+import BlogIndexSliderSection from '../../theme/components/BlogIndexHeader/BlogIndexSliderSection';
+
+interface Edge {
+  node: {
+    excerpt?: string;
+    frontmatter: any;
+  };
+}
+
+interface Props {
+  sliderPosts: { edges: Edge[] };
+  blogIndexHeading: string;
+  blogIndexDescription: string;
+  blogIndexButtonText: string;
+}
+
+const { sliderPosts, blogIndexHeading, blogIndexDescription, blogIndexButtonText } = Astro.props;
+
+const fa = (icon: typeof faArrowLeft) => {
+  const [w, h, , , pathData] = icon.icon;
+  return { w, h, d: Array.isArray(pathData) ? pathData.join('') : pathData };
+};
+const left = fa(faArrowLeft);
+const right = fa(faArrowRight);
+---
+
+<div class="blog-index-header overflow-hidden">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-5 col-sm-12 d-flex justify-content-center align-items-center">
+        <BlogIndexSubscribe
+          blogIndexHeading={blogIndexHeading}
+          blogIndexDescription={blogIndexDescription}
+          blogIndexButtonText={blogIndexButtonText}
+          client:visible
+        />
+      </div>
+      <div class="col-xl-7 col-sm-12 blog-index-slider mt-xl-0 mt-2 p-2">
+        <BlogIndexSliderSection sliderBlogPosts={sliderPosts.edges} client:only="react" />
+      </div>
+      <div class="my-xl-4 d-flex position-relative justify-content-end slider-arrow">
+        <div class="swiper-prev d-flex align-items-center justify-content-center">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox={`0 0 ${left.w} ${left.h}`} fill="currentColor" aria-hidden="true">
+            <path d={left.d} />
+          </svg>
+        </div>
+        <div class="swiper-next d-flex align-items-center justify-content-center">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox={`0 0 ${right.w} ${right.h}`} fill="currentColor" aria-hidden="true">
+            <path d={right.d} />
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

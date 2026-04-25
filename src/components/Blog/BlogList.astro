@@ -1,0 +1,53 @@
+---
+import BlogCard from './BlogCard.astro';
+
+interface Edge {
+  node: {
+    frontmatter: {
+      slug: string;
+      title: string;
+      date: string;
+      category?: string;
+      description?: string;
+      featuredImage?: { childImageSharp: { resize: { src: string } } } | null;
+      author?: { name?: string };
+    };
+  };
+}
+
+interface Props {
+  data: { edges: Edge[] };
+  categoryFilter?: string;
+}
+
+const FALLBACK_IMG = '/images/startup.jpg';
+
+const { data, categoryFilter } = Astro.props;
+
+const visible = categoryFilter
+  ? data.edges.filter((edge) => edge.node.frontmatter.category === categoryFilter)
+  : data.edges;
+---
+
+<section class="container mt-4 mb-4">
+  <ul class="row row-eq-height blogs mb-0 p-0">
+    {visible.map((edge) => {
+      const { slug, title, date, category, description, featuredImage, author } =
+        edge.node.frontmatter;
+      const url = `/blog/${slug}/#`;
+      const imgSrc = featuredImage?.childImageSharp?.resize?.src ?? FALLBACK_IMG;
+      return (
+        <BlogCard
+          url={url}
+          title={title}
+          date={date}
+          category={category}
+          description={description}
+          authorName={author?.name}
+          imgSrc={imgSrc}
+          className="col-lg-4 col-md-12 rm-sm-3 mb-3"
+        />
+      );
+    })}
+  </ul>
+</section>

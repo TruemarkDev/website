@@ -11,13 +11,14 @@ The overall direction: incremental migration, not a wholesale rewrite. Chrome mo
 | 5 — Image pipeline | Started: `src/lib/image-resolver.ts` exists, `RelatedPosts.astro` and `404.astro` migrated. Rest pending. |
 | 1 — `PagesReact/*` audit | Done — see `01-audit-results.md` |
 | 2 — Static page conversion | Done — 16 of 17 PagesReact converted; only `resume/prakash` remains (interactive) |
-| 3 — Move chrome out of `src/theme/` | Pending |
-| 4 — Delete `gatsby-shim` | Blocked on 3 |
+| 3 — Move chrome out of `src/theme/` | **Done.** 3.4 (blog components) + 3.1/3.2 (TopMenu.astro + Footer.astro) complete. FormCTASection stays React (interactive form). |
+| 4 — Delete `gatsby-shim` | Unblocked. ~15 `from 'gatsby'` imports remain (Link → `<a>`, navigate → `window.location.assign`). |
 | 6 — Port `getSchemaOrgJSONLD` | Done |
 | 7 — Sitemap + `robots.txt` | Done |
 | 8 — Auth0 routes | Pending decision (likely drop) |
 | 9 — Misc follow-ups | Pending |
-| 10 — Remove Gatsby GraphQL usage | Mostly done; remainder blocked on 3.4 |
+| 10 — Remove Gatsby GraphQL usage | **Done.** Zero `graphql` tag usage; only the shim itself still defines `useStaticQuery`/`StaticQuery`. |
+| 11 — View Transitions | **Done.** `<ClientRouter>` in BaseLayout; `transition:persist` on chrome; `fade` on `<main>`; hover prefetch; NProgress + theme wired to transition events. |
 
 Backlog files:
 
@@ -44,6 +45,18 @@ Backlog files:
 - Domain renamed `truemark.dev` → `truemark.com.np` across config, site metadata, content links, social-share URLs, robots.txt, JSON-LD. (`handbook.truemark.dev` left intact — separate subdomain.)
 - Phase 1 audit done: `01-audit-results.md` classifies all 17 `PagesReact` files. 16/17 are static-safe; only `resume/prakash` has runtime state (fetch + loader).
 - Phase 2 done: 16 page shells converted from `client:only="react"` to `.astro`. Resume profile data moved into `src/data/resume/*.js`. Children mount as per-section React islands inside each `.astro` page (still `client:only="react"` — see follow-up below). `src/components/PagesReact/` now contains only `resume/prakash/index.jsx`. `pnpm build` green, 130 pages.
+
+- Phase 3.4 done: `BlogSection`, `BlogList`, `BlogIndexHeader` rewritten as `.astro` consuming page-frontmatter data via `BlogCard.astro`. Used by `index.astro`, `services/digital-marketing.astro`, `hire/resources.astro`, `blog/index.astro`. Index page slider/subscribe pieces stay as React islands inside the `.astro` shell.
+- Theme prune: `@truemark/gatsby-theme-effortless-blog` Vite alias deleted from `astro.config.mjs`. `src/theme/index.js` removed. Dead theme files deleted (`BlogList`, `BlogToc`, `Section/BlogSection`, `Section/Blogs`, `BlogIndexHeader/BlogIndexHeader`, `Blog/BlogSearchList`, `layout`, `utils/pluginData`, `utils/blogMetaData`). Theme tree down from 72 → 60 files.
+- React-side dead code purge: `src/components/Blog/Section/BlogSection.jsx`, `Blog/Section/FeaturedDMBlogs.jsx`, `Blog/SearchList/`, `Menu/Blog/`, `Menu/Header/BlogMegaMenu.jsx` all deleted (zero callers after Phase 3.4 + shim-import switchover).
+- Theme imports unified to direct paths: `BlogToc.jsx`, `JobPostBody.jsx`, `TopMenu.jsx` now import `ButtonWithModal`/`BlogMegaMenu` from `src/theme/components/...` directly instead of the package alias.
+
+## View Transitions — maximising benefit
+
+`<ClientRouter>` is live and hover prefetch is enabled. The transitions are smooth for the static `.astro` pages. To get the most out of them:
+
+1. **Phase 3.1–3.3 (chrome rewrite) first** — `TopMenu.jsx`, `Footer.jsx`, `FormCTASection.jsx` are currently `client:only="react"` islands. During a transition the browser swaps the `<main>` content while the persisted chrome holds steady — but the chrome itself is still rendered entirely client-side, so there's a blank flash on first paint. Rewriting them as `.astro` (with small interactive sub-islands for the mobile menu toggle, theme switcher, form submit) eliminates that flash and lets the `transition:name` animations work properly.
+2. **SSR-promote section islands** — each marketing-page section (HeroSection, Faq, TestimonialSection, etc.) is `client:only="react"`. Promoting to `client:visible` or no directive gives Astro HTML to paint during the swap instead of an empty slot. See bisect instructions below.
 
 ## Known follow-up: SSR-promote per-island components
 
