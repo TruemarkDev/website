@@ -1,9 +1,13 @@
 import { getCollection, getEntry, type CollectionEntry } from "astro:content";
 import readingTime from "reading-time";
+import { resolveImage } from "./image-resolver";
 
 type BlogEntry = CollectionEntry<"blog">;
 
 const slugFromAuthorName = (name?: string) => (name ?? "").toLowerCase().trim();
+
+const resolveUrl = async (p?: string | null) =>
+  (await resolveImage(p))?.src ?? p ?? undefined;
 
 async function resolveAuthor(name?: string) {
   if (!name) return null;
@@ -20,7 +24,7 @@ async function resolveAuthor(name?: string) {
       organization: data.organization,
       bio: data.bio,
       resume: data.resume,
-      avatar: data.avatar,
+      avatar: await resolveUrl(data.avatar),
     };
   } catch {
     return null;
@@ -49,7 +53,7 @@ export async function toBlogNode(
   const author = await resolveAuthor(entry.data.author);
   const text = entry.body || "";
   const minutes = readingTime(text);
-  const featured = (entry.data.featuredImage as string | undefined) ?? null;
+  const featured = await resolveUrl(entry.data.featuredImage as string | undefined);
   return {
     node: {
       excerpt: text.replace(/[#>*_`]/g, "").slice(0, 200),
@@ -95,18 +99,20 @@ export async function getFeaturedBlogs(limit = 3) {
 // the minimum frontmatter the menu reads: title/category/slug/featuredImage).
 export async function getMegaMenuBlogPosts() {
   const all = await getBlogPosts();
-  return all.map((entry) => ({
-    node: {
-      excerpt: "",
-      frontmatter: {
-        title: entry.data.title,
-        description: entry.data.description ?? "",
-        category: entry.data.category ?? "",
-        slug: entry.data.customSlug,
-        featuredImage: (entry.data.featuredImage as string | undefined) ?? null,
+  return await Promise.all(
+    all.map(async (entry) => ({
+      node: {
+        excerpt: "",
+        frontmatter: {
+          title: entry.data.title,
+          description: entry.data.description ?? "",
+          category: entry.data.category ?? "",
+          slug: entry.data.customSlug,
+          featuredImage: await resolveUrl(entry.data.featuredImage as string | undefined),
+        },
       },
-    },
-  }));
+    })),
+  );
 }
 
 export async function getBlogCategories() {

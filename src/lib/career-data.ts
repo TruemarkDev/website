@@ -43,6 +43,7 @@ export async function getFeaturedProjectEdges() {
               featuredImage: await resolveUrl(data.featuredImage),
               companyLogo: await resolveUrl(data.companyLogo),
               ownerImage: await resolveUrl(data.ownerImage),
+              bgImage: await resolveUrl(data.bgImage),
             },
           },
         };

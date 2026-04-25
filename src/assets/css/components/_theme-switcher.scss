@@ -1,7 +1,7 @@
 // @amnish this code is confused whether it is for toggle button or dark mode toggle, refactor for better composition
 .theme-switcher-container {
-  $dark-mode: url('/images/layout/dark-mode.svg');
-  $light-mode: url('/images/layout/light-mode.svg');
+  $dark-mode: url('../../images/layout/dark-mode.svg');
+  $light-mode: url('../../images/layout/light-mode.svg');
 
   margin-top: 0;
 
