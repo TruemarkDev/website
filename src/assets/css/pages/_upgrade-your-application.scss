@@ -7,7 +7,7 @@
 
   &:after {
     content: '';
-    background: url('../../assets/images/hero-section/bg-line.png') repeat 0 0;
+    background: url('/images/hero-section/bg-line.png') repeat 0 0;
     position: absolute;
     right: 0;
     top: 0;
@@ -79,7 +79,7 @@
     background: $minitest;
     &::before {
       @include media-breakpoint-up(lg) {
-        background: url('../../assets/images/ui-ux/arrow-right.png') no-repeat 0
+        background: url('/images/ui-ux/arrow-right.png') no-repeat 0
           0;
       }
 
@@ -102,7 +102,7 @@
 
     &::before {
       @include media-breakpoint-up(lg) {
-        background: url('../../assets/images/ui-ux/arrow-right-1.png') no-repeat
+        background: url('/images/ui-ux/arrow-right-1.png') no-repeat
           0 0;
       }
 
@@ -124,7 +124,7 @@
     background: $task-process;
     &::before {
       @include media-breakpoint-up(lg) {
-        background: url('../../assets/images/ui-ux/arrow-down.png') no-repeat 0
+        background: url('/images/ui-ux/arrow-down.png') no-repeat 0
           0;
       }
 
@@ -141,7 +141,7 @@
     background: $welcome-process;
     &::before {
       @include media-breakpoint-up(lg) {
-        background: url('../../assets/images/ui-ux/arrow-right-2.png') no-repeat
+        background: url('/images/ui-ux/arrow-right-2.png') no-repeat
           0 0;
       }
 
@@ -163,7 +163,7 @@
     background: $cucumber;
     &::before {
       @include media-breakpoint-up(lg) {
-        background: url('../../assets/images/ui-ux/arrow-right-3.png') no-repeat
+        background: url('/images/ui-ux/arrow-right-3.png') no-repeat
           0 0;
       }
 
@@ -369,7 +369,7 @@
 .faq {
   .card {
     .faq-background {
-      background: url('../../assets/images/upgrade-your-application/faq-card-bg-light.png')
+      background: url('/images/upgrade-your-application/faq-card-bg-light.png')
         no-repeat 0 0/100%;
       width: 25.375rem;
       height: 15rem;
@@ -403,7 +403,7 @@
   .faq {
     .card {
       .faq-background {
-        background: url('../../assets/images/upgrade-your-application/faq-card-bg-dark.png')
+        background: url('/images/upgrade-your-application/faq-card-bg-dark.png')
           no-repeat 0 0/100%;
         opacity: 25%;
       }

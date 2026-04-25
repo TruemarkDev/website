@@ -27,11 +27,19 @@
   }
 }
 
-// The related-posts rail and Apply-Now CTA both live in the col-lg-4 sidebar.
-// Add breathing room above the first card so it doesn't kiss the article
-// body when the sticky CTA scrolls into view.
+// Related-posts rail in the col-lg-4 sidebar — keep it flush with the top
+// of the row so its heading lines up with the first paragraph of the article.
 .related-posts-section {
-  margin-top: 1rem;
+  margin-top: 0;
+
+  // Bootstrap's reboot leaves headings with a top margin of 0 already, but
+  // some component-level resets re-introduce it; force it off here.
+  h3 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+  }
 
   ul {
     padding-left: 0;

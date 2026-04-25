@@ -1,7 +1,8 @@
 import { defineCollection, z } from 'astro:content';
+import { glob } from 'astro/loaders';
 
 const blog = defineCollection({
-  type: 'content',
+  loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/blog' }),
   schema: z
     .object({
       uid: z.string().optional(),
@@ -9,6 +10,7 @@ const blog = defineCollection({
       description: z.string().optional(),
       keywords: z.string().optional(),
       featuredImage: z.string().optional(),
+      customSlug: z.string().optional(),
       category: z.string().optional(),
       tags: z.array(z.string()).default([]),
       author: z.string().optional(),
@@ -24,7 +26,7 @@ const blog = defineCollection({
 });
 
 const caseStudies = defineCollection({
-  type: 'content',
+  loader: glob({ pattern: '**/*.mdx', base: './src/content/case-studies' }),
   schema: z
     .object({
       uid: z.string().optional(),
@@ -32,6 +34,7 @@ const caseStudies = defineCollection({
       description: z.string().optional(),
       featuredImage: z.string().optional(),
       bgImage: z.string().optional(),
+      customSlug: z.string().optional(),
       platforms: z.array(z.string()).default([]),
       industries: z.array(z.string()).default([]),
       androidUrl: z.string().optional(),
@@ -44,7 +47,7 @@ const caseStudies = defineCollection({
 });
 
 const jobs = defineCollection({
-  type: 'content',
+  loader: glob({ pattern: '**/*.md', base: './src/content/jobs' }),
   schema: z
     .object({
       uid: z.string().optional(),
@@ -64,6 +67,7 @@ const jobs = defineCollection({
       perks: z.array(z.string()).optional(),
       tags: z.array(z.string()).optional(),
       featuredImage: z.string().optional(),
+      customSlug: z.string().optional(),
       remoteEligible: z.boolean().optional(),
       remoteOnly: z.boolean().optional(),
       positionOpen: z.boolean().optional(),
@@ -73,7 +77,7 @@ const jobs = defineCollection({
 });
 
 const projects = defineCollection({
-  type: 'content',
+  loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/projects' }),
   schema: z
     .object({
       uid: z.string().optional(),
@@ -83,26 +87,28 @@ const projects = defineCollection({
       bgImage: z.string().optional(),
       ownerImage: z.string().optional(),
       companyLogo: z.string().optional(),
+      customSlug: z.string().optional(),
       type: z.string().default('project'),
     })
     .passthrough(),
 });
 
 const traineePrograms = defineCollection({
-  type: 'content',
+  loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/trainee-programs' }),
   schema: z
     .object({
       uid: z.string().optional(),
       title: z.string().optional(),
       description: z.string().optional(),
       featuredImage: z.string().optional(),
+      customSlug: z.string().optional(),
       type: z.string().default('trainee-programs'),
     })
     .passthrough(),
 });
 
 const authors = defineCollection({
-  type: 'data',
+  loader: glob({ pattern: '**/*.{yml,yaml}', base: './src/content/authors' }),
   schema: z.object({
     author_id: z.string(),
     name: z.string(),

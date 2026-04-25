@@ -161,7 +161,7 @@
   &.bg-logo {
     @include border-radius(0.6em);
     @include position(relative);
-    // background-image: url('../images/layout/logo-cta.jpg');
+    // background-image: url('/images/layout/logo-cta.jpg');
     background-position: center center;
     background-size: cover;
     height: 22em;
@@ -177,7 +177,7 @@
   &.bg-web {
     @include border-radius(0.6em);
     @include position(relative);
-    // background-image: url('../images/layout/cta-web.jpg');
+    // background-image: url('/images/layout/cta-web.jpg');
     background-position: center center;
     background-size: cover;
     height: 22em;
@@ -196,7 +196,7 @@
   &.bg {
     @include border-radius(0.6em);
     @include position(relative);
-    // background-image: url('../images/layout/cta-bg.jpg');
+    // background-image: url('/images/layout/cta-bg.jpg');
     background-position: center center;
     background-size: cover;
     height: 22em;

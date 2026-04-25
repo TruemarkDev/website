@@ -98,7 +98,7 @@ body.modal-open {
 }
 
 .top-modal-banner {
-  background-image: url('../images/layout/modal_bg.png');
+  background-image: url('/images/layout/modal_bg.png');
   background-repeat: no-repeat;
   background-size: cover;
   height: 8em;
@@ -110,7 +110,7 @@ body.modal-open {
 
 .left-modal-banner {
   @include border-radius-top(0.6em);
-  background-image: url('../images/layout/side-banner.jpg');
+  background-image: url('/images/layout/side-banner.jpg');
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -123,7 +123,7 @@ body.modal-open {
 }
 
 .left-modal-contact-banner {
-  background-image: url('../images//layout/modal_contact_icon.svg');
+  background-image: url('/images//layout/modal_contact_icon.svg');
   background-repeat: no-repeat;
   background-size: contain;
   height: 18em;

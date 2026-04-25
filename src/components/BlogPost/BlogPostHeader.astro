@@ -1,5 +1,10 @@
 ---
 import SocialShare from './SocialShare.astro';
+import {
+  faClock,
+  faTag,
+  faBookOpen,
+} from '@fortawesome/free-solid-svg-icons';
 
 interface Props {
   title: string;
@@ -26,29 +31,68 @@ const formatted = Number.isNaN(dateObj.getTime())
       month: 'long',
       day: 'numeric',
     });
+
+// Inline FontAwesome icons so the badge row matches the original Gatsby site
+// (faClock on the date) and to give category + reading-time their own glyphs.
+const fa = (icon: typeof faClock) => {
+  const [w, h, , , pathData] = icon.icon;
+  return { w, h, d: Array.isArray(pathData) ? pathData.join('') : pathData };
+};
+const clockIcon = fa(faClock);
+const tagIcon = fa(faTag);
+const bookIcon = fa(faBookOpen);
 ---
 
 <div class="blog-post-header d-flex justify-content-center align-items-center">
   <div class="overlay">
     <div class="container py-5 position-relative">
       <div class="blog-title mt-4">
-        {category && <span class="badge badge-primary me-3">{category}</span>}
+        {category && (
+          <span class="badge badge-primary me-3">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="12"
+              height="12"
+              viewBox={`0 0 ${tagIcon.w} ${tagIcon.h}`}
+              fill="currentColor"
+              class="me-1"
+              style="vertical-align: -1px;"
+              aria-hidden="true"
+            >
+              <path d={tagIcon.d} />
+            </svg>
+            {category}
+          </span>
+        )}
         {readingTimeText && (
-          <span class="badge text-white me-3">{readingTimeText.toUpperCase()}</span>
+          <span class="badge text-white me-3">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="12"
+              height="12"
+              viewBox={`0 0 ${bookIcon.w} ${bookIcon.h}`}
+              fill="currentColor"
+              class="me-1"
+              style="vertical-align: -1px;"
+              aria-hidden="true"
+            >
+              <path d={bookIcon.d} />
+            </svg>
+            {readingTimeText.toUpperCase()}
+          </span>
         )}
         <span class="badge text-white">
           <svg
-            width="14"
-            height="14"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
+            xmlns="http://www.w3.org/2000/svg"
+            width="12"
+            height="12"
+            viewBox={`0 0 ${clockIcon.w} ${clockIcon.h}`}
+            fill="currentColor"
             class="me-1"
-            style="vertical-align: -2px; color: var(--primary-color);"
+            style="vertical-align: -1px;"
+            aria-hidden="true"
           >
-            <circle cx="12" cy="12" r="10" />
-            <path stroke-linecap="round" stroke-linejoin="round" d="M12 7v5l3 2" />
+            <path d={clockIcon.d} />
           </svg>
           {formatted}
         </span>

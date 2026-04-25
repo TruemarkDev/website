@@ -8,6 +8,7 @@ import BlogToc from '../../components/BlogPost/BlogToc.astro';
 import RelatedPosts from '../../components/BlogPost/RelatedPosts.astro';
 import AuthorCTA from '../../components/BlogPost/AuthorCTA.astro';
 import SidebarCTA from '../../components/BlogPost/SidebarCTA.astro';
+import SubscribeBanner from '../../components/BlogPost/SubscribeBanner.astro';
 
 export async function getStaticPaths() {
   const all = await getCollection('blog', ({ data }) => data.type === 'blog-post');
@@ -94,7 +95,10 @@ const articleSchema = {
   },
 };
 
-const disqusShortname = import.meta.env.PUBLIC_DISQUS_SHORTNAME;
+// Default to the original Gatsby site's production Disqus shortname so the
+// thread renders out of the box; override via PUBLIC_DISQUS_SHORTNAME in .env.
+const disqusShortname =
+  import.meta.env.PUBLIC_DISQUS_SHORTNAME ?? 'truemark-com-np';
 ---
 
 <BaseLayout
@@ -131,6 +135,8 @@ const disqusShortname = import.meta.env.PUBLIC_DISQUS_SHORTNAME;
             avatar={author.avatar}
           />
         )}
+
+        <SubscribeBanner />
       </div>
 
       <aside class="col-lg-4 col-md-12 ps-lg-5 ps-sm-0 position-relative">

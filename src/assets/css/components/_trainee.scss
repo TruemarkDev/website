@@ -61,17 +61,17 @@
 
 [data-theme='light'] {
   .web-design {
-    background: url('../../assets/images/ui-ux/web-design-light.svg') no-repeat
+    background: url('/images/ui-ux/web-design-light.svg') no-repeat
       0 0;
   }
 
   .mobile-design {
-    background: url('../../assets/images/ui-ux/mobile-design-light.svg')
+    background: url('/images/ui-ux/mobile-design-light.svg')
       no-repeat 0 0;
   }
 
   .product-design {
-    background: url('../../assets/images/ui-ux/product-design-light.svg')
+    background: url('/images/ui-ux/product-design-light.svg')
       no-repeat 0 0;
   }
 
@@ -84,15 +84,15 @@
 
 [data-theme='dark'] {
   .web-design {
-    background: url('../../assets/images/ui-ux/web-design.svg') no-repeat 0 0;
+    background: url('/images/ui-ux/web-design.svg') no-repeat 0 0;
   }
 
   .mobile-design {
-    background: url('../../assets/images/ui-ux/mobile-design.svg') no-repeat 0 0;
+    background: url('/images/ui-ux/mobile-design.svg') no-repeat 0 0;
   }
 
   .product-design {
-    background: url('../../assets/images/ui-ux/product-design.svg') no-repeat 0
+    background: url('/images/ui-ux/product-design.svg') no-repeat 0
       0;
   }
 }
@@ -131,7 +131,7 @@
     background: $apply-process;
     &::before {
       @include media-breakpoint-up(md) {
-        background: url('../../assets/images/ui-ux/arrow-right.png') no-repeat 0
+        background: url('/images/ui-ux/arrow-right.png') no-repeat 0
           0;
       }
       content: '';
@@ -148,7 +148,7 @@
 
     &::before {
       @include media-breakpoint-up(md) {
-        background: url('../../assets/images/ui-ux/arrow-right-1.png') no-repeat
+        background: url('/images/ui-ux/arrow-right-1.png') no-repeat
           0 0;
       }
 
@@ -166,12 +166,12 @@
     background: $task-process;
     &::before {
       @include media-breakpoint-up(md) {
-        background: url('../../assets/images/ui-ux/arrow-down.png') no-repeat 0
+        background: url('/images/ui-ux/arrow-down.png') no-repeat 0
           0;
       }
 
       @include media-breakpoint-up(lg) {
-        background: url('../../assets/images/ui-ux/arrow-right-1.png') no-repeat
+        background: url('/images/ui-ux/arrow-right-1.png') no-repeat
           0 0;
 
         top: 50%;
