@@ -1,11 +1,40 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import PageBody from '../../components/PagesReact/resume/prakash/index.jsx';
+import FetchedDataTemplete from '../../components/CV/FetchedDataTemplete';
+import { profile as staticProfile } from '../../data/resume/prakash';
+import mergeProfile from '../../utils/mergeFetchedProfile';
 import { getAllBlogsForSection } from '../../lib/blog-data';
+
+// Fetch live data from gitconnected at build time and merge with the static
+// fallback. Network errors fall through to the static profile so the build
+// stays green if the upstream API is down.
+async function fetchUpstream() {
+  try {
+    const res = await fetch(
+      'https://gitconnected.com/v1/portfolio/poudelprakash',
+      { signal: AbortSignal.timeout(5000) },
+    );
+    if (!res.ok) return null;
+    const json = await res.json();
+    return json?.data ?? json ?? null;
+  } catch {
+    return null;
+  }
+}
+
+const fetched = await fetchUpstream();
+const profile = fetched
+  ? mergeProfile({ fetchedObject: fetched, exisitingObject: staticProfile })
+  : staticProfile;
 
 const blogs = await getAllBlogsForSection();
 ---
 
-<BaseLayout title="Truemark | prakash" path="resume/prakash">
-  <PageBody blogs={blogs} client:only="react" />
+<BaseLayout
+  title="Prakash Poudel Sharma | Senior Ruby Developer From Kathmandu"
+  description="Truemark | Software Development Team | Nepal | Remote"
+  keywords="About Truemark, Truemark Technology, Remote Software Development Team"
+  path="resume/prakash"
+>
+  <FetchedDataTemplete profile={profile} blogs={blogs} client:only="react" />
 </BaseLayout>

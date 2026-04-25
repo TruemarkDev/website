@@ -1,37 +1,17 @@
-import React, { useState, useEffect } from 'react';
-
-import PortfolioApi from 'services/api/PortfolioApi';
-
-import Layout from 'components/Layout/Layout';
-import FetchedDataTemplete from 'components/CV/FetchedDataTemplete';
-
 import {
   TECH_CONSTANTS,
   EXP_CONSTANTS,
-  DM_STACK_CONSTANTS,
-} from 'src/constants/formConstants';
-
-import mergeProfile from 'utils/mergeFetchedProfile';
+} from '../../constants/formConstants';
 import userImg from 'images/author/prakash.jpeg?url';
 import reneldyAvatar from 'images/clients/reneldy/reneldy.jpeg?url';
 import projectSoono from 'images/clients/mack/projects/mysoono-com.png?url';
 import projectTravelBook from 'images/clients/dean/projects/travelbook-com.png?url';
-import logo from 'images/company-logo/true-icon.svg?url';
 
-const pageMetaData = {
-  title: 'Prakash Poudel Sharma | Senior Ruby Developer From Kathmandu',
-  description: 'Truemark | Software Development Team | Nepal | Remote',
-  keywords:
-    'About Truemark, Truemark Technology, Remote Software Development Team',
-  slug: 'resume/prakash',
-  // featuredImage: { src: onlineMarketing },
-};
-
-const profile = {
+export const profile = {
   basics: {
     name: 'Prakash Poudel Sharma',
-    firstName: 'Prakash', // this is added : doesnot contain in api
-    authorId: 'Prakash', // this is added : doesnot contain in api
+    firstName: 'Prakash',
+    authorId: 'Prakash',
     label: 'CTO @ Truemark Technology',
     image: userImg,
     summary:
@@ -42,13 +22,12 @@ const profile = {
       region: '',
       city: 'Kathmandu',
       countryCode: 'NP',
-      country: 'Nepal', // this is added : doesnot contain in api
-      timeZone: 'ASIA/KATHMANDU', // this is added : doesnot contain in api
+      country: 'Nepal',
+      timeZone: 'ASIA/KATHMANDU',
     },
-    platform: ['mobile', 'web'], // this is added : doesnot contain in api
-    teamExperience: EXP_CONSTANTS.SENIOR, // this is added : doesnot contain in api
+    platform: ['mobile', 'web'],
+    teamExperience: EXP_CONSTANTS.SENIOR,
     technologyUsed: [
-      // this is added : doesnot contain in api
       TECH_CONSTANTS.REACTJS,
       TECH_CONSTANTS.GATSBYJS,
       TECH_CONSTANTS.SOFTWARE_ARCHITECTURE,
@@ -57,14 +36,12 @@ const profile = {
       TECH_CONSTANTS.REACT_NATIVE,
     ],
     defaultRate: {
-      // this is added : doesnot contain in api
       lowerValue: 20,
       upperValue: 50,
     },
     profiles: [],
   },
   clientFeedbacks: [
-    // this is added : doesnot contain in api
     {
       name: 'Reneldy Senat',
       image: reneldyAvatar,
@@ -75,39 +52,14 @@ const profile = {
         'Prakash and his team have proven to be invaluable in the planning and development of over half a dozen of our projects.',
     },
   ],
-  otherExperiences: [], // should be in format of skills
+  otherExperiences: [],
   volunteer: [],
   skills: [
-    {
-      name: 'Ruby on Rails',
-      level: 'Expert',
-      keywords: [],
-      rating: 5,
-      yearsOfExperience: 7,
-    },
-    {
-      name: 'React JS4',
-      level: 'Expert',
-      keywords: [],
-      rating: 5,
-      yearsOfExperience: 4,
-    },
-    {
-      name: 'React Native',
-      level: 'Intermediate',
-      keywords: [],
-      rating: 3,
-      yearsOfExperience: 4,
-    },
-    {
-      name: 'Project Management',
-      level: 'Advanced',
-      keywords: [],
-      rating: 4,
-      yearsOfExperience: 4,
-    },
+    { name: 'Ruby on Rails', level: 'Expert', keywords: [], rating: 5, yearsOfExperience: 7 },
+    { name: 'React JS4', level: 'Expert', keywords: [], rating: 5, yearsOfExperience: 4 },
+    { name: 'React Native', level: 'Intermediate', keywords: [], rating: 3, yearsOfExperience: 4 },
+    { name: 'Project Management', level: 'Advanced', keywords: [], rating: 4, yearsOfExperience: 4 },
   ],
-
   work: [
     {
       company: 'Truemark Technology',
@@ -148,7 +100,6 @@ const profile = {
       ],
     },
   ],
-
   projects: [
     {
       name: 'Travelbook',
@@ -158,16 +109,10 @@ const profile = {
       endDate: '',
       highlights: [],
       images: [projectTravelBook],
-      caseStudyLink: undefined, // this is added : doesnot contain in api
-      showcase: [
-        {
-          images: [projectTravelBook],
-          title: '',
-          description: '',
-        },
-      ],
+      caseStudyLink: undefined,
+      showcase: [{ images: [projectTravelBook], title: '', description: '' }],
       keywords: ['Ruby on Rails', 'Postgres', 'React JS'],
-      isFeatured: true, // this is added : doesnot contain in api
+      isFeatured: true,
       roles: [],
       entity: '',
       type: '',
@@ -179,73 +124,24 @@ const profile = {
       startDate: '',
       endDate: '',
       highlights: [],
-      caseStudyLink: undefined, // this is added : doesnot contain in api
+      caseStudyLink: undefined,
       images: [projectSoono],
-      showcase: [
-        {
-          images: [projectSoono],
-          title: '',
-          description: '',
-        },
-      ],
+      showcase: [{ images: [projectSoono], title: '', description: '' }],
       keywords: ['Ruby on Rails', 'Postgres', 'React JS'],
-      isFeatured: true, // this is added : doesnot contain in api
+      isFeatured: true,
       roles: [],
       entity: '',
       type: '',
     },
   ],
   tools: [
-    // this is added : doesnot contain in api
-    {
-      name: 'Amazon Web Services',
-      yearsOfExperience: 4,
-      level: 'Expert',
-      keywords: [],
-      rating: 5,
-    },
-    {
-      name: 'Digital Ocean',
-      yearsOfExperience: 4,
-      level: 'Expert',
-      keywords: [],
-      rating: 5,
-    },
-    {
-      name: 'Heroku',
-      yearsOfExperience: 4,
-      level: 'Expert',
-      keywords: [],
-      rating: 5,
-    },
-    {
-      name: 'Docker',
-      yearsOfExperience: 4,
-      level: 'Expert',
-      keywords: [],
-      rating: 5,
-    },
-    {
-      name: 'Asana',
-      yearsOfExperience: 4,
-      level: 'Expert',
-      keywords: [],
-      rating: 5,
-    },
-    {
-      name: 'Trello',
-      yearsOfExperience: 4,
-      level: 'Expert',
-      keywords: [],
-      rating: 5,
-    },
-    {
-      name: 'Jira',
-      yearsOfExperience: 4,
-      level: 'Expert',
-      keywords: [],
-      rating: 5,
-    },
+    { name: 'Amazon Web Services', yearsOfExperience: 4, level: 'Expert', keywords: [], rating: 5 },
+    { name: 'Digital Ocean', yearsOfExperience: 4, level: 'Expert', keywords: [], rating: 5 },
+    { name: 'Heroku', yearsOfExperience: 4, level: 'Expert', keywords: [], rating: 5 },
+    { name: 'Docker', yearsOfExperience: 4, level: 'Expert', keywords: [], rating: 5 },
+    { name: 'Asana', yearsOfExperience: 4, level: 'Expert', keywords: [], rating: 5 },
+    { name: 'Trello', yearsOfExperience: 4, level: 'Expert', keywords: [], rating: 5 },
+    { name: 'Jira', yearsOfExperience: 4, level: 'Expert', keywords: [], rating: 5 },
   ],
   education: [
     {
@@ -273,40 +169,3 @@ const profile = {
   references: [],
   meta: {},
 };
-
-const AboutPage = ({ blogs }) => {
-  const [resumeData, setResumeData] = useState(null);
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    PortfolioApi.fetchOne('poudelprakash')
-      .then((result) => {
-        setIsLoading(false);
-        setResumeData(result.data);
-      })
-      .catch(() => {
-        setIsLoading(false);
-      });
-  }, []);
-
-  if (isLoading) {
-    return (
-      <div id="___loader">
-        <img src={logo} alt="logo" />
-      </div>
-    );
-  }
-
-  const mergedObject = mergeProfile({
-    fetchedObject: resumeData,
-    exisitingObject: profile,
-  });
-
-  return (
-    <Layout pageMetaData={pageMetaData} path={pageMetaData.slug}>
-      <FetchedDataTemplete profile={mergedObject} blogs={blogs} />
-    </Layout>
-  );
-};
-
-export default AboutPage;
