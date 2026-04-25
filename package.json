@@ -24,7 +24,7 @@
     "@mdx-js/react": "^3.0.1",
     "astro": "^6.1.9",
     "axios": "^1.7.9",
-    "bootstrap": "5.2.3",
+    "bootstrap": "5.3.8",
     "classnames": "^2.5.1",
     "disqus-react": "^1.1.2",
     "final-form": "^4.20.10",
