@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from 'gatsby';
+import React, { useState, useEffect } from "react";
 import {
   Collapse,
   Navbar,
@@ -13,28 +12,28 @@ import {
   DropdownMenu,
   DropdownItem,
   NavbarText,
-} from 'reactstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+} from "reactstrap";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faFacebookF,
   faTwitter,
   faLinkedinIn,
-} from '@fortawesome/free-brands-svg-icons';
+} from "@fortawesome/free-brands-svg-icons";
 
-const Developer = '/images/icons/developer.svg';
-const Ruby = '/images/icons/ruby.svg';
-const react = '/images/icons/react.svg';
-const Ecommerce = '/images/icons/ecommerce.svg';
-const StaticSite = '/images/icons/static-site.svg';
-const Designer = '/images/icons/designer.svg';
-const Gatsby = '/images/icons/gatsby.svg';
-const DigitalMarketer = '/images/icons/digital-marketer.svg';
-const UpgradeApplication = '/images/icons/upgrade-application.svg';
-const QualityAssurance = '/images/icons/quality-assurance.svg';
-const WriteTest = '/images/icons/write-test.svg';
-const truemarkWhiteLogo = '/images/company-logo/logo_white.svg';
-const companyLogoNew = '/images/company-logo/logo_red.svg';
-import BlogMegaMenu from '../../../theme/components/BlogMegaMenu/BlogMegaMenu';
+const Developer = "/images/icons/developer.svg";
+const Ruby = "/images/icons/ruby.svg";
+const react = "/images/icons/react.svg";
+const Ecommerce = "/images/icons/ecommerce.svg";
+const StaticSite = "/images/icons/static-site.svg";
+const Designer = "/images/icons/designer.svg";
+const Gatsby = "/images/icons/gatsby.svg";
+const DigitalMarketer = "/images/icons/digital-marketer.svg";
+const UpgradeApplication = "/images/icons/upgrade-application.svg";
+const QualityAssurance = "/images/icons/quality-assurance.svg";
+const WriteTest = "/images/icons/write-test.svg";
+const truemarkWhiteLogo = "/images/company-logo/logo_white.svg";
+const companyLogoNew = "/images/company-logo/logo_red.svg";
+import BlogMegaMenu from "../../../theme/components/BlogMegaMenu/BlogMegaMenu";
 
 const TopMenu = ({ siteTitle, blogPosts, blogCategories }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -50,9 +49,9 @@ const TopMenu = ({ siteTitle, blogPosts, blogCategories }) => {
 
   useEffect(() => {
     if (isMobileMenuOpen) {
-      document.body.classList.add('no-scroll');
+      document.body.classList.add("no-scroll");
     } else {
-      document.body.classList.remove('no-scroll');
+      document.body.classList.remove("no-scroll");
     }
   }, [isMobileMenuOpen]);
 
@@ -61,8 +60,8 @@ const TopMenu = ({ siteTitle, blogPosts, blogCategories }) => {
   return (
     <div className="sticky-top nav-bg">
       <Navbar expand="lg" className="container desktop-nav h-100">
-        <Link
-          to="/"
+        <a
+          href="/"
           className="navbar-brand flex align-items-center justify-content-center p-0"
         >
           <img
@@ -71,14 +70,14 @@ const TopMenu = ({ siteTitle, blogPosts, blogCategories }) => {
             alt="truemark-logo"
             width="160"
           />
-        </Link>
+        </a>
 
         <Collapse isOpen={isOpen} navbar>
           <Nav className="ms-auto py-2 align-items-center" navbar>
             <NavItem className="mb-0 ">
-              <Link to="/" activeClassName="active" className="nav-link">
+              <a href="/" className="nav-link">
                 Home
-              </Link>
+              </a>
             </NavItem>
             <UncontrolledDropdown className="mb-0" nav inNavbar>
               <DropdownToggle nav caret>
@@ -92,10 +91,9 @@ const TopMenu = ({ siteTitle, blogPosts, blogCategories }) => {
                         <span className="text-uppercase d-block h5">
                           Hire team / Individual
                         </span>
-                        <Link
-                          to="/hire/resources/"
+                        <a
+                          href="/hire/resources/"
                           className="nav-dropdown-item d-block mb-1 py-2 px-2"
-                          activeClassName="active"
                         >
                           <span className="d-flex align-items-center mb-0">
                             <span className="d-flex justify-content-center align-items-center nav-holder service-1">
@@ -110,13 +108,12 @@ const TopMenu = ({ siteTitle, blogPosts, blogCategories }) => {
                               </span>
                             </span>
                           </span>
-                        </Link>
+                        </a>
                       </li>
                       <li className="m-0">
-                        <Link
-                          to="/services/design"
+                        <a
+                          href="/services/design"
                           className="nav-dropdown-item d-block mb-1 py-2 px-2"
-                          activeClassName="active"
                         >
                           <span className="d-flex align-items-center mb-0">
                             <span className="d-flex justify-content-center align-items-center nav-holder service-5">
@@ -131,13 +128,12 @@ const TopMenu = ({ siteTitle, blogPosts, blogCategories }) => {
                               </span>
                             </span>
                           </span>
-                        </Link>
+                        </a>
                       </li>
                       <li className="m-0">
-                        <Link
-                          to="/services/maintenance/tests"
+                        <a
+                          href="/services/maintenance/tests"
                           className="nav-dropdown-item d-block mb-1 py-2 px-2"
-                          activeClassName="active"
                         >
                           <span className="d-flex align-items-center mb-0">
                             <span className="d-flex justify-content-center align-items-center nav-holder service-4">
@@ -156,13 +152,12 @@ const TopMenu = ({ siteTitle, blogPosts, blogCategories }) => {
                               </span>
                             </span>
                           </span>
-                        </Link>
+                        </a>
                       </li>
                       <li className="m-0">
-                        <Link
-                          to="/services/digital-marketing"
+                        <a
+                          href="/services/digital-marketing"
                           className="nav-dropdown-item d-block mb-1 py-2 px-2"
-                          activeClassName="active"
                         >
                           <span className="d-flex align-items-center mb-0">
                             <span className="d-flex justify-content-center align-items-center nav-holder service-3">
@@ -180,7 +175,7 @@ const TopMenu = ({ siteTitle, blogPosts, blogCategories }) => {
                               </span>
                             </span>
                           </span>
-                        </Link>
+                        </a>
                       </li>
                     </ul>
                     <ul className="col-6">
@@ -188,10 +183,9 @@ const TopMenu = ({ siteTitle, blogPosts, blogCategories }) => {
                         <span className="text-uppercase d-block h5">
                           Framework
                         </span>
-                        <Link
-                          to="/technologies/react-js"
+                        <a
+                          href="/technologies/react-js"
                           className="nav-dropdown-item d-block mb-1 py-2 px-2"
-                          activeClassName="active"
                         >
                           <span className="d-flex align-items-center mb-0">
                             <span className="d-flex justify-content-center align-items-center nav-holder service-3">
@@ -206,13 +200,12 @@ const TopMenu = ({ siteTitle, blogPosts, blogCategories }) => {
                               </span>
                             </span>
                           </span>
-                        </Link>
+                        </a>
                       </li>
                       <li className="m-0">
-                        <Link
-                          to="/technologies/ruby-on-rails"
+                        <a
+                          href="/technologies/ruby-on-rails"
                           className="nav-dropdown-item d-block mb-1 py-2 px-2"
-                          activeClassName="active"
                         >
                           <span className="d-flex align-items-center mb-0">
                             <span className="d-flex justify-content-center align-items-center nav-holder service-2">
@@ -228,13 +221,12 @@ const TopMenu = ({ siteTitle, blogPosts, blogCategories }) => {
                               </span>
                             </span>
                           </span>
-                        </Link>
+                        </a>
                       </li>
                       <li className="m-0">
-                        <Link
-                          to="/technologies/gatsby-js"
+                        <a
+                          href="/technologies/gatsby-js"
                           className="nav-dropdown-item d-block mb-1 py-2 px-2"
-                          activeClassName="active"
                         >
                           <span className="d-flex align-items-center mb-0">
                             <span className="d-flex justify-content-center align-items-center nav-holder service-1">
@@ -249,7 +241,7 @@ const TopMenu = ({ siteTitle, blogPosts, blogCategories }) => {
                               </span>
                             </span>
                           </span>
-                        </Link>
+                        </a>
                       </li>
                     </ul>
                   </li>
@@ -258,10 +250,9 @@ const TopMenu = ({ siteTitle, blogPosts, blogCategories }) => {
                     <ul className="col-6">
                       <li className="m-0">
                         <span className="text-uppercase d-block h5">Build</span>
-                        <Link
-                          to="/technologies/spree"
+                        <a
+                          href="/technologies/spree"
                           className="nav-dropdown-item d-block mb-1 py-2 px-2"
-                          activeClassName="active"
                         >
                           <span className="d-flex align-items-center mb-0">
                             <span className="d-flex justify-content-center align-items-center nav-holder service-4">
@@ -277,13 +268,12 @@ const TopMenu = ({ siteTitle, blogPosts, blogCategories }) => {
                               </span>
                             </span>
                           </span>
-                        </Link>
+                        </a>
                       </li>
                       <li className="m-0">
-                        <Link
-                          to="/technologies/gatsby-js"
+                        <a
+                          href="/technologies/gatsby-js"
                           className="nav-dropdown-item d-block mb-1 py-2 px-2"
-                          activeClassName="active"
                         >
                           <span className="d-flex align-items-center mb-0">
                             <span className="d-flex justify-content-center align-items-center nav-holder service-5">
@@ -298,7 +288,7 @@ const TopMenu = ({ siteTitle, blogPosts, blogCategories }) => {
                               </span>
                             </span>
                           </span>
-                        </Link>
+                        </a>
                       </li>
                     </ul>
 
@@ -307,10 +297,9 @@ const TopMenu = ({ siteTitle, blogPosts, blogCategories }) => {
                         <span className="text-uppercase d-block h5">
                           Maintain
                         </span>
-                        <Link
-                          to="/services/maintenance/tests"
+                        <a
+                          href="/services/maintenance/tests"
                           className="nav-dropdown-item d-block mb-1 py-2 px-2"
-                          activeClassName="active"
                         >
                           <span className="d-flex align-items-center mb-0">
                             <span className="d-flex justify-content-center align-items-center nav-holder service-4">
@@ -325,13 +314,12 @@ const TopMenu = ({ siteTitle, blogPosts, blogCategories }) => {
                               </span>
                             </span>
                           </span>
-                        </Link>
+                        </a>
                       </li>
                       <li className="m-0">
-                        <Link
-                          to="/technologies/upgrade-your-application"
+                        <a
+                          href="/technologies/upgrade-your-application"
                           className="nav-dropdown-item d-block mb-1 py-2 px-2"
-                          activeClassName="active"
                         >
                           <span className="d-flex align-items-center mb-0">
                             <span className="d-flex justify-content-center align-items-center nav-holder service-3">
@@ -349,7 +337,7 @@ const TopMenu = ({ siteTitle, blogPosts, blogCategories }) => {
                               </span>
                             </span>
                           </span>
-                        </Link>
+                        </a>
                       </li>
                     </ul>
                   </li>
@@ -357,18 +345,14 @@ const TopMenu = ({ siteTitle, blogPosts, blogCategories }) => {
               </DropdownMenu>
             </UncontrolledDropdown>
             <NavItem className="mb-0">
-              <Link to="/about/" activeClassName="active" className="nav-link">
+              <a href="/about/" className="nav-link">
                 About Us
-              </Link>
+              </a>
             </NavItem>
             <NavItem className="mb-0">
-              <Link
-                to="/portfolio/"
-                activeClassName="active"
-                className="nav-link"
-              >
+              <a href="/portfolio/" className="nav-link">
                 Portfolio
-              </Link>
+              </a>
             </NavItem>
 
             <UncontrolledDropdown className="mb-0" nav inNavbar>
@@ -384,22 +368,14 @@ const TopMenu = ({ siteTitle, blogPosts, blogCategories }) => {
             </UncontrolledDropdown>
 
             <NavItem className="mb-0">
-              <Link
-                to="/careers/"
-                activeClassName="active"
-                className="nav-link"
-              >
+              <a href="/careers/" className="nav-link">
                 Careers
-              </Link>
+              </a>
             </NavItem>
             <NavItem className="mb-0">
-              <Link
-                to="/contact/"
-                activeClassName="active"
-                className="nav-link"
-              >
+              <a href="/contact/" className="nav-link">
                 Contact Us
-              </Link>
+              </a>
             </NavItem>
           </Nav>
         </Collapse>
@@ -408,7 +384,7 @@ const TopMenu = ({ siteTitle, blogPosts, blogCategories }) => {
 
       <nav
         className={`navbar navbar-expand-lg navbar-light mobile-nav ${
-          isOpen ? 'mobile-nav-bg' : null
+          isOpen ? "mobile-nav-bg" : null
         }`}
       >
         <div className="container mobile-navbar d-flex justify-content-between align-items-center">
@@ -448,50 +424,38 @@ const TopMenu = ({ siteTitle, blogPosts, blogCategories }) => {
             )}
           </a>
         </div>
-        <div className={`collapse navbar-collapse ${isOpen ? 'show' : null}`}>
+        <div className={`collapse navbar-collapse ${isOpen ? "show" : null}`}>
           <div className="nav-content d-flex justify-content-between align-items-center  mt-4">
             <ul className="navbar-nav nav-links ms-3">
               <NavItem>
-                <Link to="/" activeClassName="active" className="nav-link">
+                <a href="/" className="nav-link">
                   Home
-                </Link>
+                </a>
               </NavItem>
               <NavItem>
-                <Link to="/about" activeClassName="active" className="nav-link">
+                <a href="/about" className="nav-link">
                   About Us
-                </Link>
+                </a>
               </NavItem>
               <NavItem>
-                <Link to="/blog" activeClassName="active" className="nav-link">
+                <a href="/blog" className="nav-link">
                   Blog
-                </Link>
+                </a>
               </NavItem>
               <NavItem>
-                <Link
-                  to="/portfolio"
-                  activeClassName="active"
-                  className="nav-link"
-                >
+                <a href="/portfolio" className="nav-link">
                   Portfolio
-                </Link>
+                </a>
               </NavItem>
               <NavItem>
-                <Link
-                  to="/careers"
-                  activeClassName="active"
-                  className="nav-link"
-                >
+                <a href="/careers" className="nav-link">
                   Careers
-                </Link>
+                </a>
               </NavItem>
               <NavItem>
-                <Link
-                  to="/contact"
-                  activeClassName="active"
-                  className="nav-link"
-                >
+                <a href="/contact" className="nav-link">
                   Contact Us
-                </Link>
+                </a>
               </NavItem>
               <UncontrolledDropdown nav inNavbar className="sub-menu-parent">
                 <DropdownToggle
@@ -502,92 +466,71 @@ const TopMenu = ({ siteTitle, blogPosts, blogCategories }) => {
                   Services
                 </DropdownToggle>
                 <div
-                  className={`${dropdownOpen ? 'show' : 'collapse'}`}
+                  className={`${dropdownOpen ? "show" : "collapse"}`}
                   id="navbarToggleExternalContent"
                 >
                   <div className="ps-4">
                     <ul className="navbar-nav  ms-auto mt-0 mt-lg-0">
                       <li className="nav-item">
-                        <Link
-                          to="/hire/resources/"
-                          activeClassName="active"
+                        <a
+                          href="/hire/resources/"
                           className="nav-link text-start"
                         >
                           Hire Software Developers
-                        </Link>
+                        </a>
                       </li>
 
                       <li className="nav-item">
-                        <Link
-                          to="technologies/spree"
-                          activeClassName="active"
-                          className="nav-link"
-                        >
+                        <a href="/technologies/spree" className="nav-link">
                           Build E-commerce Apps
-                        </Link>
+                        </a>
                       </li>
                       <li className="nav-item">
-                        <Link
-                          to="/technologies/gatsby-js"
-                          activeClassName="active"
-                          className="nav-link"
-                        >
+                        <a href="/technologies/gatsby-js" className="nav-link">
                           Build Static Site
-                        </Link>
+                        </a>
                       </li>
                       <li className="nav-item">
-                        <Link
-                          to="/technologies/react-js"
-                          activeClassName="active"
-                          className="nav-link"
-                        >
+                        <a href="/technologies/react-js" className="nav-link">
                           React Js
-                        </Link>
+                        </a>
                       </li>
                       <li className="nav-item">
-                        <Link
-                          to="/technologies/ruby-on-rails"
-                          activeClassName="active"
+                        <a
+                          href="/technologies/ruby-on-rails"
                           className="nav-link"
                         >
                           Ruby on Rails
-                        </Link>
+                        </a>
                       </li>
                       <li className="nav-item">
-                        <Link
-                          to="/services/design"
-                          activeClassName="active"
-                          className="nav-link"
-                        >
+                        <a href="/services/design" className="nav-link">
                           UI/UX Design services
-                        </Link>
+                        </a>
                       </li>
                       <li className="nav-item">
-                        <Link
-                          to="/services/digital-marketing"
-                          activeClassName="active"
+                        <a
+                          href="/services/digital-marketing"
                           className="nav-link"
                         >
                           Digital Markerts
-                        </Link>
+                        </a>
                       </li>
                       <li className="nav-item">
-                        <Link
-                          to="/services/maintenance/tests"
-                          activeClassName="active"
+                        <a
+                          href="/services/maintenance/tests"
                           className="nav-link"
                         >
                           Maintain Write Tests
-                        </Link>
+                        </a>
                       </li>
                       <li className="nav-item">
-                        <Link
-                          to="/technologies/upgrade-your-application"
-                          activeClassName="active"
+                        <a
+                          href="/technologies/upgrade-your-application"
                           className="nav-link"
                         >
                           Maintain Upgrade Application
-                        </Link>
+                        </a>
                       </li>
                     </ul>
                   </div>

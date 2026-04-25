@@ -1,24 +1,15 @@
-import React from 'react';
-import { Link } from 'gatsby';
+import React from "react";
 
-import { ESTIMATION } from '@constants/constants';
+import { ESTIMATION } from "@constants/constants";
 
-import EstimationBlog from '@components/BlogMegaMenu/EstimationBlogMenu';
+import EstimationBlog from "@components/BlogMegaMenu/EstimationBlogMenu";
 
 interface Frontmatter {
   title: string;
   category: String;
   description: String;
   slug: String;
-  featuredImage: {
-    childImageSharp: {
-      resize: {
-        src: string;
-        width: number;
-        height: number;
-      };
-    };
-  };
+  featuredImage: string | null;
 }
 
 interface Edge {
@@ -40,7 +31,7 @@ const BlogMegaMenu: React.FC<BlogMegaMenuProps> = ({
   categories = [],
 }) => {
   const [categoryValue, setCategoryValue] = React.useState<String | null>(
-    ESTIMATION
+    ESTIMATION,
   );
   const [megaMenuBlogs, setMegaMenuBlogs] = React.useState<any>([]);
 
@@ -69,20 +60,18 @@ const BlogMegaMenu: React.FC<BlogMegaMenuProps> = ({
         <ul className="col-2 border-end border-primary pe-0">
           <h6>Blog categories</h6>
           {blogCategory.map(({ category }: any) => (
-            <Link
+            <a
               key={category}
-              to={`/blog/${category.toLowerCase().replace(' ', '-')}`}
+              href={`/blog/${category.toLowerCase().replace(" ", "-")}`}
               className={`nav-text`}
               onMouseOver={(e: any) => {
                 setCategoryValue(e.target.textContent);
               }}
             >
-              <li
-                className={`position-relative blog-category-hover`}
-              >
+              <li className={`position-relative blog-category-hover`}>
                 {category}
               </li>
-            </Link>
+            </a>
           ))}
         </ul>
         {categoryValue == ESTIMATION ? (
@@ -95,15 +84,14 @@ const BlogMegaMenu: React.FC<BlogMegaMenuProps> = ({
               return (
                 <span key={slug} className="col-6 align-items-center">
                   <li className="m-0 col-12">
-                    <Link
-                      to={`/blog/${slug}/`}
+                    <a
+                      href={`/blog/${slug}/`}
                       className="nav-dropdown-item d-block mb-1 py-2 px-2"
-                      activeClassName="active"
                     >
                       <span className="d-flex align-items-center mb-0">
                         <span className="col-4 blog-img-holder">
                           <img
-                            src={featuredImage.childImageSharp.resize.src}
+                            src={featuredImage}
                             alt={title}
                             className="img-fluid rounded"
                           />
@@ -112,14 +100,14 @@ const BlogMegaMenu: React.FC<BlogMegaMenuProps> = ({
                           <span className="fw-bold nav-heading">{title}</span>
                         </span>
                       </span>
-                    </Link>
+                    </a>
                   </li>
                 </span>
               );
             })}
-            <Link
+            <a
               className="m-0 ms-3 col-5 view-all container d-flex justify-content-between px-4 py-2 rounded align-items-center"
-              to={`/blog/${categoryValue?.toLowerCase().replace(' ', '-')}`}
+              href={`/blog/${categoryValue?.toLowerCase().replace(" ", "-")}`}
             >
               <span className="nav-item ps-0">
                 <span className="fw-bold nav-heading">View all</span>
@@ -153,7 +141,7 @@ const BlogMegaMenu: React.FC<BlogMegaMenuProps> = ({
                   </defs>
                 </svg>
               </span>
-            </Link>
+            </a>
           </ul>
         )}
       </li>

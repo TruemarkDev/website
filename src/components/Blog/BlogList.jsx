@@ -1,7 +1,7 @@
-import React from 'react';
+import React from "react";
 
-const startup = '/images/blogs/categories/startup.jpg';
-import BlogCard from './Card';
+const startup = "/images/blogs/categories/startup.jpg";
+import BlogCard from "./Card";
 
 export const BlogList = ({ categoryFilter, data }) => (
   <section className="container">
@@ -24,9 +24,7 @@ export const BlogList = ({ categoryFilter, data }) => (
           }
         }
 
-        const imgSrc = featuredImage
-          ? featuredImage.childImageSharp.resize.src
-          : startup;
+        const imgSrc = featuredImage ? featuredImage : startup;
 
         return (
           <BlogCard

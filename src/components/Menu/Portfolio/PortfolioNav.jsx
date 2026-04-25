@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import { Link } from 'gatsby';
+import React, { useState } from "react";
 import {
   Collapse,
   Navbar,
@@ -10,35 +9,33 @@ import {
   NavLink,
   Container,
   Button,
-} from 'reactstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+} from "reactstrap";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faArrowDown,
   faAngleDown,
   faAngleDoubleDown,
   faGlobe,
   faListUl,
-} from '@fortawesome/free-solid-svg-icons';
+} from "@fortawesome/free-solid-svg-icons";
 
-import ButtonWithModal from 'components/Button/ButtonWithModal';
-import { faApple, faAndroid } from '@fortawesome/free-brands-svg-icons';
+import ButtonWithModal from "components/Button/ButtonWithModal";
+import { faApple, faAndroid } from "@fortawesome/free-brands-svg-icons";
 
-const PortfolioNavItem = ({
-  to, title, icon, filter,
-}) => {
+const PortfolioNavItem = ({ to, title, icon, filter }) => {
   const isActive = title?.toLowerCase?.() === filter?.toLowerCase?.();
 
-  const classNames = ['nav-link'];
+  const classNames = ["nav-link"];
   if (isActive) {
-    classNames.push('active');
+    classNames.push("active");
   }
 
   return (
     <NavItem>
-      <Link to={to} className={classNames.join(' ')}>
+      <a href={to} className={classNames.join(" ")}>
         <FontAwesomeIcon icon={icon} className="me-2" />
         {title}
-      </Link>
+      </a>
     </NavItem>
   );
 };
@@ -66,32 +63,30 @@ const PortfolioNav = ({ filter }) => {
             navbar
           >
             <PortfolioNavItem
-              to="/portfolio/?platform=ios"
+              href="/portfolio/?platform=ios"
               icon={faApple}
               title="iOS"
               filter={filter}
             />
             <PortfolioNavItem
-              to="/portfolio/?platform=android"
+              href="/portfolio/?platform=android"
               icon={faAndroid}
               title="Android"
               filter={filter}
             />
             <PortfolioNavItem
-              to="/portfolio/?platform=web"
+              href="/portfolio/?platform=web"
               icon={faGlobe}
               title="Web"
               filter={filter}
             />
             <NavItem>
-              <Link
-                to="/portfolio/"
-                className={`nav-link ${!filter ? 'active' : ''}`}
+              <a
+                href="/portfolio/"
+                className={`nav-link ${!filter ? "active" : ""}`}
               >
-                <FontAwesomeIcon icon={faListUl} className="me-2" />
-                {' '}
-                All
-              </Link>
+                <FontAwesomeIcon icon={faListUl} className="me-2" /> All
+              </a>
             </NavItem>
           </Nav>
         </Collapse>

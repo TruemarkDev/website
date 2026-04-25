@@ -1,38 +1,39 @@
-import React, { useState } from 'react';
-import { Link } from 'gatsby';
-import { Container, Col, Row } from 'reactstrap';
+import React, { useState } from "react";
+import { Container, Col, Row } from "reactstrap";
 // gatsby-plugin-image removed in Astro migration; raw <img> below uses src.
 const getImage = (img) => img;
 
-import ButtonWithModal from 'components/Button/ButtonWithModal';
-const triviaDay = '/images/portfolio/trivia-day.png';
-const triviaDayBg = '/images/portfolio/trivia-day-bg.jpg';
-const travelbook = '/images/portfolio/travelbook.png';
-const travelbookBg = '/images/portfolio/travelbook-bg.jpg';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import ButtonWithModal from "components/Button/ButtonWithModal";
+const triviaDay = "/images/portfolio/trivia-day.png";
+const triviaDayBg = "/images/portfolio/trivia-day-bg.jpg";
+const travelbook = "/images/portfolio/travelbook.png";
+const travelbookBg = "/images/portfolio/travelbook-bg.jpg";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import { faAppStore, faGooglePlay } from '@fortawesome/free-brands-svg-icons';
-import PortfolioItemModal from 'components/Modal/PortfolioItemModal';
-import Projects from 'constants/portfolioItems/data';
+import { faAppStore, faGooglePlay } from "@fortawesome/free-brands-svg-icons";
+import PortfolioItemModal from "components/Modal/PortfolioItemModal";
+import Projects from "constants/portfolioItems/data";
 
 const PlatformLabels = ({ platforms, platformLabelClassName }) => {
-  const classNames = ['badge', 'outline', 'me-2'];
+  const classNames = ["badge", "outline", "me-2"];
   classNames.push(platformLabelClassName);
 
   return platforms.map((platform) => (
-    <span key={platform} className={classNames.join(' ')}>{platform}</span>
+    <span key={platform} className={classNames.join(" ")}>
+      {platform}
+    </span>
   ));
 };
 
 const VisitButton = ({ caseStudyUrl, webUrl }) => {
   if (caseStudyUrl) {
     return (
-      <Link
-        to={caseStudyUrl}
+      <a
+        href={caseStudyUrl}
         className="btn btn-lg white outlined px-md-4 mt-4 me-2 btn-text-hover"
       >
         VIEW CASE STUDY
-      </Link>
+      </a>
     );
   }
 
@@ -58,12 +59,17 @@ const DetailsButton = ({ showModal, title }) => {
   if (!areDetailsAvailable) return null;
 
   return (
-    <button type="button" className="btn btn-lg white outlined px-1 px-md-4 mt-4 me-2 btn-text-hover" data-bs-toggle="modal" data-bs-target="#exampleModal" onClick={showModal}>
+    <button
+      type="button"
+      className="btn btn-lg white outlined px-1 px-md-4 mt-4 me-2 btn-text-hover"
+      data-bs-toggle="modal"
+      data-bs-target="#exampleModal"
+      onClick={showModal}
+    >
       VIEW DETAILS
     </button>
   );
 };
-
 
 const AvailableOn = ({ iosUrl, androidUrl }) => {
   if (!iosUrl && !androidUrl) return null;
@@ -97,7 +103,7 @@ const AvailableOn = ({ iosUrl, androidUrl }) => {
 };
 
 const PortfolioItem = ({
-  className = 'that-visa',
+  className = "that-visa",
   platforms,
   platformLabelClassName,
   headingClassName,
@@ -110,7 +116,7 @@ const PortfolioItem = ({
   webUrl,
   bgImage,
 }) => {
-  const classNames = ['portfolio', 'py-0'];
+  const classNames = ["portfolio", "py-0"];
   classNames.push(className);
   const featuredImageSrc = getImage(featuredImage);
 
@@ -122,7 +128,6 @@ const PortfolioItem = ({
 
   return (
     <div>
-
       {modalIsOpen && (
         <PortfolioItemModal
           title={title}
@@ -132,10 +137,10 @@ const PortfolioItem = ({
       )}
 
       <section
-        className={classNames.join(' ')}
+        className={classNames.join(" ")}
         style={
           bgImage && {
-            backgroundImage: `url(${bgImage.childImageSharp.resize.src})`,
+            backgroundImage: `url(${bgImage})`,
           }
         }
       >
@@ -166,20 +171,13 @@ const PortfolioItem = ({
                   className="mb-0 img-fluid showcase-img"
                 /> */}
                 {featuredImage && (
-                  <img className='img-fluid'
-                    src={
-                      featuredImage.childImageSharp?.gatsbyImageData?.src ||
-                      featuredImage.childImageSharp?.resize?.src ||
-                      featuredImage.src
-                    }
-                  />
+                  <img className="img-fluid" src={featuredImage} />
                 )}
               </Col>
             </Row>
           </Container>
         </div>
       </section>
-
     </div>
   );
 };

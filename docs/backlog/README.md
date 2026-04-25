@@ -2,7 +2,7 @@
 
 Tasks for continuing the Gatsby → Astro migration. Pick any item; they're scoped to be independently shippable. Read `CLAUDE.md` first for repo context.
 
-The overall direction: incremental migration, not a wholesale rewrite. Chrome moves to `.astro`, interactive bits stay as React islands, the `gatsby-shim` layer eventually gets deleted.
+The overall direction: incremental migration, not a wholesale rewrite. Chrome moves to `.astro`, interactive bits stay as React islands, and Gatsby compatibility shims stay deleted.
 
 ## Status snapshot
 
@@ -12,12 +12,12 @@ The overall direction: incremental migration, not a wholesale rewrite. Chrome mo
 | 1 — `PagesReact/*` audit | Done — see `01-audit-results.md` |
 | 2 — Static page conversion | Done — 16 of 17 PagesReact converted; only `resume/prakash` remains (interactive) |
 | 3 — Move chrome out of `src/theme/` | **Done.** 3.4 (blog components) + 3.1/3.2 (TopMenu.astro + Footer.astro) complete. FormCTASection stays React (interactive form). |
-| 4 — Delete `gatsby-shim` | Unblocked. ~15 `from 'gatsby'` imports remain (Link → `<a>`, navigate → `window.location.assign`). |
+| 4 — Delete `gatsby-shim` | **Done.** `gatsby` imports, Vite alias, shim file, and `imageToShape` are removed. |
 | 6 — Port `getSchemaOrgJSONLD` | Done |
 | 7 — Sitemap + `robots.txt` | Done |
 | 8 — Auth0 routes | Pending decision (likely drop) |
 | 9 — Misc follow-ups | Pending |
-| 10 — Remove Gatsby GraphQL usage | **Done.** Zero `graphql` tag usage; only the shim itself still defines `useStaticQuery`/`StaticQuery`. |
+| 10 — Remove Gatsby GraphQL usage | **Done.** Zero `graphql`, `useStaticQuery`, or `StaticQuery` usage. |
 | 11 — View Transitions | **Done.** `<ClientRouter>` in BaseLayout; `transition:persist` on chrome; `fade` on `<main>`; hover prefetch; NProgress + theme wired to transition events. |
 
 Backlog files:

@@ -1,13 +1,12 @@
-import React from 'react';
-import { Link } from 'gatsby';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faClock,
   faUserCircle,
   faLayerGroup,
   faBriefcase,
   faBlog,
-} from '@fortawesome/free-solid-svg-icons';
+} from "@fortawesome/free-solid-svg-icons";
 import {
   Row,
   Col,
@@ -26,7 +25,7 @@ import {
   Nav,
   NavLink,
   Container,
-} from 'reactstrap';
+} from "reactstrap";
 
 const CVEmploymentSection = ({ employments }) => (
   <div className="employment mt-5" id="employment">
@@ -36,15 +35,13 @@ const CVEmploymentSection = ({ employments }) => (
     </h3>
     <Row>
       {employments.map((employment) => {
-        const {
-          position,
-          address,
-        } = employment;
+        const { position, address } = employment;
 
         const achievements = employment.achievements || employment.highlights;
         const institution = employment.institution || employment.name;
         const joinDate = employment.joinDate || employment.start.year;
-        const departureDate = employment.departureDate || (employment.end.year || 'Present');
+        const departureDate =
+          employment.departureDate || employment.end.year || "Present";
 
         const companyAndDuration = `${institution} ( ${joinDate} - ${departureDate})`;
 

@@ -1,14 +1,13 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
-import { UncontrolledCollapse } from 'reactstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCaretRight } from '@fortawesome/free-solid-svg-icons';
-import ScrollSpy from 'react-scrollspy';
-import { Link } from 'gatsby';
+import React, { useState } from "react";
+import PropTypes from "prop-types";
+import { UncontrolledCollapse } from "reactstrap";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCaretRight } from "@fortawesome/free-solid-svg-icons";
+import ScrollSpy from "react-scrollspy";
 
-import ButtonWithModal from '../../theme/components/Button/ButtonWithModal';
+import ButtonWithModal from "../../theme/components/Button/ButtonWithModal";
 
-const BlogToc = ({ headings = [], title: defaultTitle = '' }) => {
+const BlogToc = ({ headings = [], title: defaultTitle = "" }) => {
   const [title, setTitle] = useState(defaultTitle);
   const onUpdate = (el) => {
     if (el) {
@@ -25,10 +24,10 @@ const BlogToc = ({ headings = [], title: defaultTitle = '' }) => {
     return (
       <li
         key={id}
-        className={`${title === value ? 'selected-on-view' : ''}`}
+        className={`${title === value ? "selected-on-view" : ""}`}
         style={{ paddingLeft }}
       >
-        <Link to={`#${id}`}>{value}</Link>
+        <a href={`#${id}`}>{value}</a>
       </li>
     );
   });
@@ -70,7 +69,7 @@ BlogToc.propTypes = {
       id: PropTypes.string,
       value: PropTypes.string,
       depth: PropTypes.number,
-    })
+    }),
   ),
   title: PropTypes.string,
 };

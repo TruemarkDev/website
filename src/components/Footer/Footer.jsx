@@ -1,21 +1,22 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Link } from 'gatsby';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowRight, faMobile } from '@fortawesome/free-solid-svg-icons';
+import React from "react";
+import PropTypes from "prop-types";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRight, faMobile } from "@fortawesome/free-solid-svg-icons";
 import {
   faFacebookF,
   faTwitter,
   faLinkedin,
-} from '@fortawesome/free-brands-svg-icons';
+} from "@fortawesome/free-brands-svg-icons";
 
-import ButtonWithModal from 'components/Button/ButtonWithModal';
-import CopyRight from 'components/Footer/CopyRight';
+import ButtonWithModal from "components/Button/ButtonWithModal";
+import CopyRight from "components/Footer/CopyRight";
 
-const truemarkWhiteLogo = '/images/company-logo/logo_white.svg';
-const IconNepal = '/images/footer/nepal.svg';
-const IconUSA = '/images/footer/dover.svg';
-const Footer = ({ ctaTitle = 'Need help turning your dream idea into profitable software?' }) => (
+const truemarkWhiteLogo = "/images/company-logo/logo_white.svg";
+const IconNepal = "/images/footer/nepal.svg";
+const IconUSA = "/images/footer/dover.svg";
+const Footer = ({
+  ctaTitle = "Need help turning your dream idea into profitable software?",
+}) => (
   <footer className="pb-4">
     <div className="container">
       <div className="row">
@@ -88,16 +89,16 @@ const Footer = ({ ctaTitle = 'Need help turning your dream idea into profitable 
           >
             <li className="nav-item ms-0 my-2">Technologies :</li>
             <li className="nav-item ms-0 my-2">
-              <Link to="/technologies/spree/">Spree</Link>
+              <a href="/technologies/spree/">Spree</a>
             </li>
             <li className="nav-item ms-0 my-2">
-              <Link to="/technologies/react-js/">ReactJS</Link>
+              <a href="/technologies/react-js/">ReactJS</a>
             </li>
             <li className="nav-item ms-0 my-2">
-              <Link to="/technologies/gatsby-js/">Gatsby Js</Link>
+              <a href="/technologies/gatsby-js/">Gatsby Js</a>
             </li>
             <li className="nav-item ms-0 my-2">
-              <Link to="/technologies/ruby-on-rails/">Ruby on Rails</Link>
+              <a href="/technologies/ruby-on-rails/">Ruby on Rails</a>
             </li>
           </ul>
         </div>
@@ -109,27 +110,27 @@ const Footer = ({ ctaTitle = 'Need help turning your dream idea into profitable 
           >
             <li className="nav-item ms-0 my-2">Services :</li>
             <li className="nav-item ms-0 my-2">
-              <Link to="/hire/resources/">On Demand Software Developers</Link>
+              <a href="/hire/resources/">On Demand Software Developers</a>
             </li>
             <li className="nav-item ms-0 my-2">
-              <Link to="/technologies/spree/">E-commerce Development</Link>
+              <a href="/technologies/spree/">E-commerce Development</a>
             </li>
             <li className="nav-item ms-0 my-2">
-              <Link to="/technologies/gatsby-js/">Static Site Development</Link>
+              <a href="/technologies/gatsby-js/">Static Site Development</a>
             </li>
             <li className="nav-item ms-0 my-2">
-              <Link to="/services/design/">On Demand Designers</Link>
+              <a href="/services/design/">On Demand Designers</a>
             </li>
             {/* <li className="nav-item ms-0 my-2">
-              <Link to="/services/digital-marketing">Digital Marketing</Link>
+              <a href="/services/digital-marketing">Digital Marketing</a>
             </li> */}
             <li className="nav-item ms-0 my-2">
-              <Link to="/services/maintenance/tests/">Write Tests</Link>
+              <a href="/services/maintenance/tests/">Write Tests</a>
             </li>
             <li className="nav-item ms-0 my-2">
-              <Link to="/services/maintenance/upgrade/">
+              <a href="/services/maintenance/upgrade/">
                 Upgrade Your Application
-              </Link>
+              </a>
             </li>
           </ul>
         </div>
@@ -141,22 +142,22 @@ const Footer = ({ ctaTitle = 'Need help turning your dream idea into profitable 
           >
             <li className="nav-item ms-0 my-2">Company :</li>
             <li className="nav-item ms-0 my-2">
-              <Link to="/about/">About Us</Link>
+              <a href="/about/">About Us</a>
             </li>
             <li className="nav-item ms-0 my-2">
-              <Link to="/portfolio/">Portfolio</Link>
+              <a href="/portfolio/">Portfolio</a>
             </li>
             <li className="nav-item ms-0 my-2">
-              <Link to="/blog/">Blog</Link>
+              <a href="/blog/">Blog</a>
             </li>
             <li className="nav-item ms-0 my-2">
-              <Link to="/careers/">Careers</Link>
+              <a href="/careers/">Careers</a>
             </li>
             <li className="nav-item ms-0 my-2">
-              <Link to="/contact/">Contact Us</Link>
+              <a href="/contact/">Contact Us</a>
             </li>
             <li className="nav-item ms-0 my-2">
-              <Link to="/trainee/">Fresh Engineers Enrollment Program</Link>
+              <a href="/trainee/">Fresh Engineers Enrollment Program</a>
             </li>
           </ul>
         </div>

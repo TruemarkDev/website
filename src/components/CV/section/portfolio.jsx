@@ -1,18 +1,15 @@
-import React, { useRef } from 'react';
-import { Link } from 'gatsby';
-import {
-  Row, Col, Badge, Card, CardImg, CardBody,
-} from 'reactstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React, { useRef } from "react";
+import { Row, Col, Badge, Card, CardImg, CardBody } from "reactstrap";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faClock,
   faUserCircle,
   faLayerGroup,
   faAngleLeft,
   faAngleRight,
-} from '@fortawesome/free-solid-svg-icons';
+} from "@fortawesome/free-solid-svg-icons";
 
-import Slider, { SlideControls } from 'components/Slider/Slider';
+import Slider, { SlideControls } from "components/Slider/Slider";
 
 const PortfolioItem = ({ project, md }) => {
   const title = project.title || project.name;
@@ -22,9 +19,9 @@ const PortfolioItem = ({ project, md }) => {
   const { caseStudyLink } = project;
 
   const projectLink = caseStudyLink ? (
-    <Link to={caseStudyLink} className="btn btn-outline-light">
+    <a href={caseStudyLink} className="btn btn-outline-light">
       View Details
-    </Link>
+    </a>
   ) : (
     <a
       target="_blank"
@@ -53,7 +50,7 @@ const PortfolioItem = ({ project, md }) => {
         <CardBody className="p-2">
           <div className="skills">
             {tools.map((tool) => (
-              <Badge key={tool} color="primary" className='mx-2'>
+              <Badge key={tool} color="primary" className="mx-2">
                 {tool}
               </Badge>
             ))}

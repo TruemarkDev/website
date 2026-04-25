@@ -1,11 +1,9 @@
-import React from 'react';
+import React from "react";
 
-import { Link } from 'gatsby';
+import { faClock, faUserCircle } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import { faClock, faUserCircle } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
-import { RECENT } from '@constants/constants';
+import { RECENT } from "@constants/constants";
 
 interface Author {
   name: string;
@@ -38,7 +36,7 @@ const BlogCard: React.FC<BlogCardProps> = ({
 
   return (
     <li className={`col-sm-12 ${className}`}>
-      <Link to={url} className="card blog-card h-100">
+      <a href={url} className="card blog-card h-100">
         <img className="card-img-top mb-0" src={imgSrc} alt={title} />
         <div className="card-body">
           <div className="header-tag-blog">{category}</div>
@@ -58,7 +56,7 @@ const BlogCard: React.FC<BlogCardProps> = ({
             READ MORE
           </button>
         </div>
-      </Link>
+      </a>
     </li>
   );
 };

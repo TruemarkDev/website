@@ -3,7 +3,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import PortfolioNav from '../components/Menu/Portfolio/PortfolioNav.jsx';
 import PortfolioList from '../components/Portfolio/PortfolioList.jsx';
 import { getCollection } from 'astro:content';
-import { imageToShape } from '../lib/blog-data';
 
 const projectEntries = await getCollection('projects');
 
@@ -21,10 +20,10 @@ const projects = projectEntries
       excerpt: '',
       frontmatter: {
         ...p.data,
-        bgImage: imageToShape(p.data.bgImage as string | undefined),
-        featuredImage: imageToShape(p.data.featuredImage as string | undefined),
-        ownerImage: imageToShape(p.data.ownerImage as string | undefined),
-        companyLogo: imageToShape(p.data.companyLogo as string | undefined),
+        bgImage: p.data.bgImage,
+        featuredImage: p.data.featuredImage,
+        ownerImage: p.data.ownerImage,
+        companyLogo: p.data.companyLogo,
       },
     },
   }));

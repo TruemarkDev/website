@@ -1,23 +1,24 @@
-import React from 'react';
-import { Link } from 'gatsby';
-import ButtonWithModal from 'components/Button/ButtonWithModal';
+import React from "react";
+import ButtonWithModal from "components/Button/ButtonWithModal";
 
-const bannerImageWhite = '/images/layout/banner-white.svg';
-const bannerImageBlack = '/images/layout/banner-black.svg';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+const bannerImageWhite = "/images/layout/banner-white.svg";
+const bannerImageBlack = "/images/layout/banner-black.svg";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
-const bannerImageLady = '/images/hero-section/img-lady.png';
-const iconTime = '/images/hero-section/icon-time.svg';
-const iconCoading = '/images/hero-section/icon-coading.svg';
-const iconRemote = '/images/hero-section/icon-remote.svg';
+const bannerImageLady = "/images/hero-section/img-lady.png";
+const iconTime = "/images/hero-section/icon-time.svg";
+const iconCoading = "/images/hero-section/icon-coading.svg";
+const iconRemote = "/images/hero-section/icon-remote.svg";
 const HomeHeroSection = () => (
   <section className="bg-hero overflow-hidden pt-4 pt-lg-0 pb-sm-0 pb-lg-5">
     <div className="container hero-section-container position-relative ">
       <div className="hero-section position-relative">
         <div className="row align-items-center">
           <div className="col-lg-6 position-relative mb-4 mb-md-0">
-            <p className="header mb-0">For founders & businesses who care for</p>
+            <p className="header mb-0">
+              For founders & businesses who care for
+            </p>
             <h1 className="mb-4">
               Quality Focused
               <span className="d-block">
@@ -27,11 +28,15 @@ const HomeHeroSection = () => (
             <p className="text mx-auto mb-4">
               Industry standard best coding practices, Consistent communication,
               On time <br className="d-none d-md-block" /> delivery are the core
-              competencies of Truemark that makes us perfect remote{' '}
+              competencies of Truemark that makes us perfect remote{" "}
               <br className="d-none d-md-block" /> extension for any
               team/business.
             </p>
-            <ButtonWithModal className="outlined" modalType="estimate" title="Schedule Free Consultation">
+            <ButtonWithModal
+              className="outlined"
+              modalType="estimate"
+              title="Schedule Free Consultation"
+            >
               Schedule a call
               <FontAwesomeIcon icon={faArrowRight} className="ms-3" />
             </ButtonWithModal>

@@ -1,7 +1,6 @@
-import React from 'react';
-import { Link } from 'gatsby';
+import React from "react";
 
-import ThemeSwitcher from 'components/ThemeSwitcher/ThemeSwitcher';
+import ThemeSwitcher from "components/ThemeSwitcher/ThemeSwitcher";
 
 const allRightReservedText = `2017 - ${new Date().getFullYear()} Truemark - Custom Software Development & Engineering Services. All Rights Reserved.`;
 
@@ -15,7 +14,7 @@ const CopyRight = ({ changeTheme, theme }) => (
         &#169; {allRightReservedText}
       </li>
       <li className="nav-item">
-        <Link to="/terms/">Terms</Link>
+        <a href="/terms/">Terms</a>
       </li>
       <li className="nav-item d-block ms-0 ms-md-auto mt-2 mt-md-0">
         <ThemeSwitcher />

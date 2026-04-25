@@ -1,12 +1,11 @@
-import React from 'react';
+import React from "react";
 
-const reneldy = '/images/clients/reneldy/reneldy.jpeg';
-const triviaDayLogo = '/images/case-study/trivia-day/logo.png';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCircle, faArrowRight } from '@fortawesome/free-solid-svg-icons';
-import { faNode } from '@fortawesome/free-brands-svg-icons';
-import { Link } from 'gatsby';
-import TechStack from 'components/TechStack/TechStack';
+const reneldy = "/images/clients/reneldy/reneldy.jpeg";
+const triviaDayLogo = "/images/case-study/trivia-day/logo.png";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCircle, faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { faNode } from "@fortawesome/free-brands-svg-icons";
+import TechStack from "components/TechStack/TechStack";
 
 const SingleCaseStudySection = () => (
   <section>
@@ -26,7 +25,7 @@ const SingleCaseStudySection = () => (
             <li className="nav-item me-3 bold-text">Technology Stack:</li>
             <li className="nav-item me-3">
               <TechStack
-                icon={['truemark', 'react-icon']}
+                icon={["truemark", "react-icon"]}
                 name="React Native"
                 bgColor="bg-danger"
                 iconClass="text-white"
@@ -64,13 +63,13 @@ const SingleCaseStudySection = () => (
                 <p className="text-secondary m-0">Owner, Trivia Day</p>
               </div>
             </div>
-            <Link
-              to="/case-studies/trivia-day/"
+            <a
+              href="/case-studies/trivia-day/"
               className="btn btn-primary outlined text-bold"
             >
               Read the case study
               <FontAwesomeIcon icon={faArrowRight} className="ms-3" />
-            </Link>
+            </a>
           </div>
         </div>
       </div>

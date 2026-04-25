@@ -1,9 +1,9 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Col } from 'reactstrap';
+import React from "react";
+import PropTypes from "prop-types";
+import { Col } from "reactstrap";
 
-import ButtonWithModal from 'components/Button/ButtonWithModal';
-import { ALL_MEMBERS } from 'constants/members';
+import ButtonWithModal from "components/Button/ButtonWithModal";
+import { ALL_MEMBERS } from "constants/members";
 
 const AuthorCTA = ({
   authorName,
@@ -13,8 +13,8 @@ const AuthorCTA = ({
   hireButton,
   moreButton,
 }) => {
-  const classNames = ['row blog-post-cta'];
-  const firstName = authorName?.split(' ')[0];
+  const classNames = ["row blog-post-cta"];
+  const firstName = authorName?.split(" ")[0];
   const memberAttributes = ALL_MEMBERS[firstName]?.attributes ?? {};
 
   return (
@@ -24,11 +24,7 @@ const AuthorCTA = ({
       flex-column justify-content-center align-items-center text-center flex-md-row justify-content-md-start align-items-md-start text-md-start p-4 my-3"
       >
         <div className="author-avatar">
-          <img
-            className="author-avatar"
-            src={authorAvatar.childImageSharp.resize.src}
-            alt={authorName}
-          />
+          <img className="author-avatar" src={authorAvatar} alt={authorName} />
         </div>
         <div className="author-detail pt-1">
           <div className="d-flex flex-column flex-md-row justify-content-md-between  mb-2">
@@ -55,12 +51,12 @@ const AuthorCTA = ({
 };
 
 AuthorCTA.defaultProps = {
-  authorName: 'John Doe',
-  authorDesignation: 'Creative Writer',
+  authorName: "John Doe",
+  authorDesignation: "Creative Writer",
   authorDetail:
-    'Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio.',
-  hireButton: 'Hire',
-  moreButton: 'More from',
+    "Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio.",
+  hireButton: "Hire",
+  moreButton: "More from",
 };
 
 AuthorCTA.propTypes = {

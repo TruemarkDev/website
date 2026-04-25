@@ -1,7 +1,6 @@
-import React from 'react';
-import { Link } from 'gatsby';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faClock, faUserCircle } from '@fortawesome/free-solid-svg-icons';
+import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faClock, faUserCircle } from "@fortawesome/free-solid-svg-icons";
 
 const BlogCard = ({
   url,
@@ -14,14 +13,14 @@ const BlogCard = ({
   imgSrc,
   className,
 }) => {
-  const classNames = ['col-sm-12'];
+  const classNames = ["col-sm-12"];
   classNames.push(className);
 
   const { name: authorName } = author;
 
   return (
-    <li className={classNames.join(' ')}>
-      <Link to={url} className="card blog-card h-100">
+    <li className={classNames.join(" ")}>
+      <a href={url} className="card blog-card h-100">
         <img
           src={imgSrc}
           alt={title}
@@ -33,7 +32,7 @@ const BlogCard = ({
           <div className="blog-info d-flex justify-content-between align-items-center  mb-3">
             <div className="author d-flex align-items-center me-4">
               <FontAwesomeIcon icon={faClock} className="secondary me-1" />
-              {new Date(date) > new Date() ? 'Recent' : date}
+              {new Date(date) > new Date() ? "Recent" : date}
             </div>
             <div className="date">
               <FontAwesomeIcon icon={faUserCircle} className="secondary me-1" />
@@ -46,7 +45,7 @@ const BlogCard = ({
             READ MORE
           </button>
         </div>
-      </Link>
+      </a>
     </li>
   );
 };

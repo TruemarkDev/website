@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import {
   Collapse,
   Navbar,
@@ -9,15 +9,14 @@ import {
   NavLink,
   Container,
   Button,
-} from 'reactstrap';
-import ButtonWithModal from 'components/Button/ButtonWithModal';
-import { Link } from 'gatsby';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+} from "reactstrap";
+import ButtonWithModal from "components/Button/ButtonWithModal";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faArrowDown,
   faAngleDown,
   faAngleDoubleDown,
-} from '@fortawesome/free-solid-svg-icons';
+} from "@fortawesome/free-solid-svg-icons";
 
 const CVMenu = ({ firstName, attributes }) => {
   const [collapsed, setCollapsed] = useState(true);

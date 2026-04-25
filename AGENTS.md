@@ -26,8 +26,7 @@ Core direction:
 - Do not add new code to `src/theme/`; it is legacy migration surface.
 - Prefer moving chrome, SEO, and layout work into `BaseLayout.astro` and Astro
   partials.
-- The Gatsby shim in `src/lib/gatsby-shim.tsx` exists only as migration tax and
-  should shrink over time.
+- Gatsby compatibility shims have been removed. Do not import from `gatsby`.
 - For new images, prefer `astro:assets` with `src/lib/image-resolver.ts`.
 
 ## Commands
@@ -46,11 +45,9 @@ There is no configured test runner or lint script.
 
 - Content lives under `src/content/`; schemas are in `src/content.config.ts`.
 - Frontmatter uses `customSlug`, not `slug`.
-- Legacy React consumers may still expect Gatsby-shaped image data. Use
-  `imageToShape(url)` from `src/lib/blog-data.ts` when needed.
+- Blog and portfolio image data is passed as plain `/images/...` strings.
 - Many older pages are now `.astro` shells with per-section React islands.
-- `useStaticQuery` in the shim returns empty data; pass real data from Astro
-  pages instead of relying on Gatsby GraphQL behavior.
+- Pass real data from Astro pages instead of relying on Gatsby GraphQL behavior.
 - SCSS deprecation warnings are intentionally silenced. Do not spend time
   changing Bootstrap/SCSS import patterns unless asked.
 
@@ -61,4 +58,3 @@ created, completed work included static page conversion, blog list/section
 conversion, sitemap/robots, JSON-LD, GraphQL usage removal, and view
 transitions. Remaining high-value work included moving header/footer/SEO chrome
 out of React/theme code and continuing the image pipeline migration.
-

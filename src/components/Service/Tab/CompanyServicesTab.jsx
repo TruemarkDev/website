@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import { navigate } from 'gatsby';
+import React, { useState } from "react";
 import {
   TabContent,
   TabPane,
@@ -12,10 +11,10 @@ import {
   CardText,
   Row,
   Col,
-} from 'reactstrap';
-import classnames from 'classnames';
+} from "reactstrap";
+import classnames from "classnames";
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faBars,
   faUsers,
@@ -34,13 +33,14 @@ import {
   faMobileAlt,
   faLaptopCode,
   faCircle,
-} from '@fortawesome/free-solid-svg-icons';
+} from "@fortawesome/free-solid-svg-icons";
 
-const onlineMarketing = '/images/services/digital-marketing/online-marketing.svg';
-const programmingService = '/images/services/software/programming.svg';
-const mobileAppService = '/images/services/software/mobile-development.svg';
+const onlineMarketing =
+  "/images/services/digital-marketing/online-marketing.svg";
+const programmingService = "/images/services/software/programming.svg";
+const mobileAppService = "/images/services/software/mobile-development.svg";
 const CompanyServicesTab = (props) => {
-  const [activeTab, setActiveTab] = useState('1');
+  const [activeTab, setActiveTab] = useState("1");
 
   const toggle = (tab) => {
     if (activeTab !== tab) setActiveTab(tab);
@@ -51,9 +51,9 @@ const CompanyServicesTab = (props) => {
       <Nav pills className="mb-3 ms-0 text-center">
         <NavItem className="red">
           <NavLink
-            className={classnames({ active: activeTab === '1' })}
+            className={classnames({ active: activeTab === "1" })}
             onClick={() => {
-              toggle('1');
+              toggle("1");
             }}
           >
             <FontAwesomeIcon icon={faLaptopCode} className="mb-2" size="2x" />
@@ -62,9 +62,9 @@ const CompanyServicesTab = (props) => {
         </NavItem>
         <NavItem className="red">
           <NavLink
-            className={classnames({ active: activeTab === '2' })}
+            className={classnames({ active: activeTab === "2" })}
             onClick={() => {
-              toggle('2');
+              toggle("2");
             }}
           >
             <FontAwesomeIcon icon={faMobileAlt} className="mb-2" size="2x" />
@@ -73,9 +73,9 @@ const CompanyServicesTab = (props) => {
         </NavItem>
         <NavItem className="red">
           <NavLink
-            className={classnames({ active: activeTab === '3' })}
+            className={classnames({ active: activeTab === "3" })}
             onClick={() => {
-              toggle('3');
+              toggle("3");
             }}
           >
             <FontAwesomeIcon icon={faBullhorn} className="mb-2" size="2x" />
@@ -120,7 +120,9 @@ const CompanyServicesTab = (props) => {
               </ul>
               <button
                 className="btn btn-lg btn-primary outlined mt-4"
-                onClick={() => navigate('/hire/resources/?opt=web')}
+                onClick={() =>
+                  window.location.assign("/hire/resources/?opt=web")
+                }
               >
                 Check Details
               </button>
@@ -162,7 +164,9 @@ const CompanyServicesTab = (props) => {
               </ul>
               <button
                 className="btn btn-lg btn-primary outlined mt-4"
-                onClick={() => navigate('/hire/resources/?opt=mobile')}
+                onClick={() =>
+                  window.location.assign("/hire/resources/?opt=mobile")
+                }
               >
                 Check Details
               </button>
@@ -191,20 +195,22 @@ const CompanyServicesTab = (props) => {
                   <FontAwesomeIcon
                     icon={faCheckCircle}
                     className="me-2 text-success"
-                  />{' '}
+                  />{" "}
                   Brand Awareness
                 </li>
                 <li>
                   <FontAwesomeIcon
                     icon={faCheckCircle}
                     className="me-2 text-warning"
-                  />{' '}
+                  />{" "}
                   Content Distribution
                 </li>
               </ul>
               <button
                 className="btn btn-lg btn-primary outlined mt-4"
-                onClick={() => navigate('/services/digital-marketing')}
+                onClick={() =>
+                  window.location.assign("/services/digital-marketing")
+                }
               >
                 Check Details
               </button>

@@ -9,7 +9,7 @@ interface Edge {
       date: string;
       category?: string;
       description?: string;
-      featuredImage?: { childImageSharp: { resize: { src: string } } } | null;
+      featuredImage?: string | null;
       author?: { name?: string };
     };
   };
@@ -35,7 +35,7 @@ const visible = categoryFilter
       const { slug, title, date, category, description, featuredImage, author } =
         edge.node.frontmatter;
       const url = `/blog/${slug}/#`;
-      const imgSrc = featuredImage?.childImageSharp?.resize?.src ?? FALLBACK_IMG;
+      const imgSrc = featuredImage ?? FALLBACK_IMG;
       return (
         <BlogCard
           url={url}

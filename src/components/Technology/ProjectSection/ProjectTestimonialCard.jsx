@@ -1,12 +1,12 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Col } from 'reactstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React from "react";
+import PropTypes from "prop-types";
+import { Col } from "reactstrap";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faBookOpen,
   faCommentAlt,
   faLink,
-} from '@fortawesome/free-solid-svg-icons';
+} from "@fortawesome/free-solid-svg-icons";
 
 const ProjectTestimonialCard = ({
   project: {
@@ -26,22 +26,22 @@ const ProjectTestimonialCard = ({
     {
       url: webUrl,
       icon: faLink,
-      linkContent: 'Visit the website',
+      linkContent: "Visit the website",
     },
     {
       url: caseStudyUrl,
       icon: faBookOpen,
-      linkContent: 'View Case Study',
+      linkContent: "View Case Study",
     },
     {
       url: clutchUrl,
       icon: faCommentAlt,
-      linkContent: 'Read Clutch Review',
+      linkContent: "Read Clutch Review",
     },
   ];
 
   const filteredProjectRelatedLinks = projectRelatedLinks.filter(
-    ({ url }) => url && url.length > 0
+    ({ url }) => url && url.length > 0,
   );
 
   const projectRelatedLinksContent = filteredProjectRelatedLinks.map(
@@ -52,15 +52,11 @@ const ProjectTestimonialCard = ({
           {linkContent}
         </a>
       </div>
-    )
+    ),
   );
 
   const logo = companyLogo ? (
-    <img
-      src={companyLogo.childImageSharp.resize.src}
-      alt="company-logo"
-      className="company-logo h-100"
-    />
+    <img src={companyLogo} alt="company-logo" className="company-logo h-100" />
   ) : (
     <span className="logo-alternative-text text-uppercase fw-bold">
       {companyName}
@@ -74,11 +70,7 @@ const ProjectTestimonialCard = ({
 
         <div className="project-screenshot mb-3">
           <picture className="h-100">
-            <img
-              src={featuredImage.childImageSharp.resize.src}
-              alt="featured"
-              className="h-100"
-            />
+            <img src={featuredImage} alt="featured" className="h-100" />
           </picture>
         </div>
 
@@ -88,7 +80,7 @@ const ProjectTestimonialCard = ({
 
         <div className="testimonial-owner mb-3 d-flex">
           <img
-            src={ownerImage.childImageSharp.resize.src}
+            src={ownerImage}
             alt="client"
             className="owner-image m-0 rounded-circle"
           />
@@ -98,8 +90,7 @@ const ProjectTestimonialCard = ({
 
             <div className="owner-position">
               <span className="position-in-company text-secondary">
-                {`${position},`}
-                {' '}
+                {`${position},`}{" "}
               </span>
 
               <span className="company-name">{companyName}</span>

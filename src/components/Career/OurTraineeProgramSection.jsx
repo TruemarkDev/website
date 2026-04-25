@@ -1,30 +1,28 @@
-import React from 'react';
+import React from "react";
 
-import { Link } from 'gatsby';
+import ButtonWithModal from "components/Button/ButtonWithModal";
 
-import ButtonWithModal from 'components/Button/ButtonWithModal';
-
-import ROUTES from 'constants/routes';
+import ROUTES from "constants/routes";
 import {
   TRAINEE_PROGRAM_TITLES,
   TRAINEE_PROGRAM_ICONS,
-} from 'constants/traineeProgramConstants';
+} from "constants/traineeProgramConstants";
 
 const OurTraineeProgramSection = ({ programs = { edges: [] } }) => {
   const traineeProgramData = programs;
 
   const formatLastApplyDate = (date) => {
-    const options = { day: 'numeric', month: 'long', year: 'numeric' };
-    const formattedDate = new Date(date).toLocaleDateString('en-US', options);
+    const options = { day: "numeric", month: "long", year: "numeric" };
+    const formattedDate = new Date(date).toLocaleDateString("en-US", options);
     const [month, day, year] = formattedDate
-      .split(' ')
-      .map((comma) => comma.replace(',', ''));
+      .split(" ")
+      .map((comma) => comma.replace(",", ""));
     return `${day} ${month} ${year}`;
   };
 
   const formatNextIntakeDate = (date) => {
-    const options = { month: 'long', year: 'numeric' };
-    return new Date(date).toLocaleDateString('en-US', options);
+    const options = { month: "long", year: "numeric" };
+    return new Date(date).toLocaleDateString("en-US", options);
   };
 
   const handleTraineeProgramInformation = (traineeDetailData) => {
@@ -43,7 +41,7 @@ const OurTraineeProgramSection = ({ programs = { edges: [] } }) => {
 
         const lastDateToApply = new Date(traineeJobPostedDate);
         lastDateToApply.setDate(
-          traineeJobPostedDate.getDate() + validityInDays
+          traineeJobPostedDate.getDate() + validityInDays,
         );
 
         return `Last date to apply - ${formatLastApplyDate(lastDateToApply)}`;
@@ -52,17 +50,17 @@ const OurTraineeProgramSection = ({ programs = { edges: [] } }) => {
       }
     };
 
-    const traineeProgramStatus = positionOpen ? 'Open Now' : 'Closed Now';
+    const traineeProgramStatus = positionOpen ? "Open Now" : "Closed Now";
 
     const traineeProgramIcon = TRAINEE_PROGRAM_ICONS[traineeProgramCategory];
 
     const traineeStackTitle = `${traineeProgramCategory} ${
-      positionOpen ? `(${vacancyCount})` : ''
+      positionOpen ? `(${vacancyCount})` : ""
     }`;
 
     const traineeProgramStatusClassName = positionOpen
-      ? 'text-open'
-      : 'text-closed';
+      ? "text-open"
+      : "text-closed";
 
     return (
       <div className="col-sm-12 col-md-6 col-lg-4 col-xl-4 mb-3 pb-3">
@@ -98,7 +96,7 @@ const OurTraineeProgramSection = ({ programs = { edges: [] } }) => {
         <div className="row our-services mt-5">
           {TRAINEE_PROGRAM_TITLES.map((traineeTitle) => {
             const traineeDetail = traineeProgramData.edges.find(
-              (title) => title.node.frontmatter.category === traineeTitle
+              (title) => title.node.frontmatter.category === traineeTitle,
             );
 
             const isTraineeDetailPresent =
@@ -109,11 +107,11 @@ const OurTraineeProgramSection = ({ programs = { edges: [] } }) => {
           })}
         </div>
         <div className="view-trainee-page text-center">
-          <Link to={ROUTES.TRAINEE}>
+          <a href={ROUTES.TRAINEE}>
             <button type="button" className="btn btn-lg btn-primary button">
               View Trainee Page
             </button>
-          </Link>
+          </a>
         </div>
       </div>
     </section>

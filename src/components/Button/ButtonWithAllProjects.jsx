@@ -1,12 +1,13 @@
-import { Link } from 'gatsby'
-import React from 'react'
+import React from "react";
 
 function ButtonWithAllProjects() {
   return (
     <div>
-        <Link className='btn btn-primary projects-btn' to="/portfolio/">VIEW ALL PROJECTS</Link>
+      <a className="btn btn-primary projects-btn" href="/portfolio/">
+        VIEW ALL PROJECTS
+      </a>
     </div>
-  )
+  );
 }
 
-export default ButtonWithAllProjects
+export default ButtonWithAllProjects;

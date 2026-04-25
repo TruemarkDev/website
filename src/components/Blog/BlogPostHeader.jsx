@@ -1,7 +1,7 @@
-import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faClock } from '@fortawesome/free-solid-svg-icons';
-import SocialShare from 'components/SocialShare';
+import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faClock } from "@fortawesome/free-solid-svg-icons";
+import SocialShare from "components/SocialShare";
 
 const BlogPostHeader = ({ author, category, title, post, date, slug }) => {
   const { position, name, avatar, resume } = author || {};
@@ -26,9 +26,9 @@ const BlogPostHeader = ({ author, category, title, post, date, slug }) => {
               <div className="d-flex flex-column flex-md-row">
                 {author && (
                   <a className="author d-flex align-items-center" href={resume}>
-                    {avatar?.childImageSharp?.resize?.src && (
+                    {avatar && (
                       <img
-                        src={avatar.childImageSharp.resize.src}
+                        src={avatar}
                         alt={name}
                         className="author-avatar m-0"
                       />

@@ -1,20 +1,21 @@
-import React from 'react';
+import React from "react";
 
-import 'swiper/css';
-import 'swiper/css/navigation';
+import "swiper/css";
+import "swiper/css/navigation";
 
-import { Autoplay, Navigation } from 'swiper/modules';
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, Navigation } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
 
-const startup = '/images/startup.jpg';
-import BlogCard from '@components/BlogCard';
+const startup = "/images/startup.jpg";
+import BlogCard from "@components/BlogCard";
 
 interface BlogIndexSliderSectionProps {
-  sliderBlogPosts: any[]
+  sliderBlogPosts: any[];
 }
 
-const BlogIndexSliderSection: React.FC<BlogIndexSliderSectionProps> = ({ sliderBlogPosts}) => {
-
+const BlogIndexSliderSection: React.FC<BlogIndexSliderSectionProps> = ({
+  sliderBlogPosts,
+}) => {
   return (
     <div className="swiper-holder">
       <Swiper
@@ -26,8 +27,8 @@ const BlogIndexSliderSection: React.FC<BlogIndexSliderSectionProps> = ({ sliderB
         }}
         loop={true}
         navigation={{
-          nextEl: '.swiper-next',
-          prevEl: '.swiper-prev',
+          nextEl: ".swiper-next",
+          prevEl: ".swiper-prev",
         }}
         centerInsufficientSlides={true}
         breakpoints={{
@@ -45,7 +46,7 @@ const BlogIndexSliderSection: React.FC<BlogIndexSliderSectionProps> = ({ sliderB
           },
           1300: {
             slidesPerView: 1.8,
-          }
+          },
         }}
       >
         {sliderBlogPosts.map((edge, index) => {
@@ -60,9 +61,7 @@ const BlogIndexSliderSection: React.FC<BlogIndexSliderSectionProps> = ({ sliderB
           } = edge.node.frontmatter;
 
           const blogLink = `/blog/${slug}/#`;
-          const imgSrc = featuredImage
-            ? featuredImage.childImageSharp.resize.src
-            : startup;
+          const imgSrc = featuredImage ? featuredImage : startup;
 
           return (
             <SwiperSlide key={index}>

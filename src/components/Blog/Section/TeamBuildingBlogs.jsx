@@ -1,8 +1,7 @@
-import React from 'react';
-import { navigate } from 'gatsby';
+import React from "react";
 
-const startup = '/images/blogs/categories/startup.jpg';
-import BlogCard from '../Card';
+const startup = "/images/blogs/categories/startup.jpg";
+import BlogCard from "../Card";
 
 const TeamBuildingBlogs = ({ blogs = { edges: [] } }) => (
   <section>
@@ -27,9 +26,7 @@ const TeamBuildingBlogs = ({ blogs = { edges: [] } }) => (
                 author,
               } = edge.node.frontmatter;
               const blogLink = `/blog/${slug}/#`;
-              const imgSrc = featuredImage
-                ? featuredImage.childImageSharp.resize.src
-                : startup;
+              const imgSrc = featuredImage ? featuredImage : startup;
 
               return (
                 <BlogCard
@@ -48,7 +45,7 @@ const TeamBuildingBlogs = ({ blogs = { edges: [] } }) => (
             })}
           </ul>
           <button
-            onClick={() => navigate('/blog')}
+            onClick={() => window.location.assign("/blog")}
             type="submit"
             className="btn btn-primary d-block mx-auto mt-md-5 mt-sm-2"
           >

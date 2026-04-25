@@ -39,7 +39,6 @@ export default defineConfig({
     },
     resolve: {
       alias: {
-        gatsby: path.join(__dirname, 'src/lib/gatsby-shim.tsx'),
         // theme-internal aliases (referenced by remaining components inside src/theme/)
         '@components': path.join(__dirname, 'src/theme/components'),
         '@assets': path.join(__dirname, 'src/theme/assets'),
