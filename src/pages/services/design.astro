@@ -2,8 +2,8 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import HeroSectionTemplate from '../../components/HeroSection/UIUXHeroSection';
 import UXBannerSection from '../../components/Banner/UXBannerSection';
-import UIUXDesignApproach from '../../components/UiUx/UIUXDesignApproach';
-import UIUXDesignProcess from '../../components/UiUx/UIUXDesignProcess';
+import UIUXDesignApproach from '../../components/UiUx/UIUXDesignApproach.astro';
+import UIUXDesignProcess from '../../components/UiUx/UIUXDesignProcess.astro';
 import OurTools from '../../components/UiUx/OurTools';
 import SoftwareTeamSection from '../../components/Team/Section/SoftwareTeamSection';
 import Faq from '../../components/UiUx/Faq';
@@ -17,8 +17,8 @@ import Faq from '../../components/UiUx/Faq';
 >
   <HeroSectionTemplate client:visible />
   <UXBannerSection client:visible />
-  <UIUXDesignApproach client:visible />
-  <UIUXDesignProcess client:visible />
+  <UIUXDesignApproach />
+  <UIUXDesignProcess />
   <OurTools client:visible />
   <SoftwareTeamSection client:visible />
   <Faq client:visible />

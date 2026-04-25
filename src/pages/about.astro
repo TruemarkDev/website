@@ -1,8 +1,8 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import SingleCaseStudySection from '../components/CaseStudy/Section/SingleCaseStudySection.jsx';
-import OurMissionSection from '../components/Company/Section/OurMissionSection.jsx';
-import OurVisionSection from '../components/Company/Section/OurVisionSection.jsx';
+import OurMissionSection from '../components/Company/Section/OurMissionSection.astro';
+import OurVisionSection from '../components/Company/Section/OurVisionSection.astro';
 import ProcessSection from '../components/Company/Section/ProcessSection.jsx';
 import AboutHeroSection from '../components/HeroSection/AboutHeroSection.jsx';
 import AboutHeroStatsSection from '../components/HeroSection/AboutHeroStatsSection.jsx';
@@ -16,8 +16,8 @@ import AboutHeroStatsSection from '../components/HeroSection/AboutHeroStatsSecti
 >
   <AboutHeroSection client:visible />
   <AboutHeroStatsSection client:visible />
-  <OurVisionSection client:visible />
-  <OurMissionSection client:visible />
+  <OurVisionSection />
+  <OurMissionSection />
   <ProcessSection client:visible />
   <SingleCaseStudySection client:visible />
 </BaseLayout>

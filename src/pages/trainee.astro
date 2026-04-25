@@ -2,8 +2,8 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import CurrentOpenings from '../components/Career/CurrentOpenings.jsx';
 import TraineeHeroSection from '../components/HeroSection/TraineeHeroSection.jsx';
-import HowToApply from '../components/Trainee/HowToApply.jsx';
-import OurProgram from '../components/Trainee/OurProgram.jsx';
+import HowToApply from '../components/Trainee/HowToApply.astro';
+import OurProgram from '../components/Trainee/OurProgram.astro';
 import StepUp from '../components/Trainee/StepUp.astro';
 import TraineeFAQ from '../components/Trainee/TraineeFAQ.jsx';
 import TraineeTestimonialSection from '../components/Trainee/TraineeTestimonialSection.jsx';
@@ -41,14 +41,14 @@ const openings = await Promise.all(
   <TraineeHeroSection client:visible />
   <StepUp />
   <TruemarkOpportunities client:visible />
-  <OurProgram client:visible />
+  <OurProgram />
   <TraineeTestimonialSection
     items={traineeTestimonial}
     sectionTitle="Don't take our word for it. trust our trainee"
     sectionSubheading="Our Trainee Feedback"
     client:visible
   />
-  <HowToApply client:visible />
+  <HowToApply />
   <CurrentOpenings openings={openings} client:visible />
   <TraineeFAQ client:visible />
 </BaseLayout>

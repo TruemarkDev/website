@@ -4,9 +4,9 @@ import CareerFAQ from '../components/Career/CareerFAQ.jsx';
 import CurrentOpenings from '../components/Career/CurrentOpenings.jsx';
 import HandBook from '../components/Career/HandBook.astro';
 import OurTraineeProgramSection from '../components/Career/OurTraineeProgramSection.jsx';
-import ValueSection from '../components/Company/Section/ValueSection.jsx';
+import ValueSection from '../components/Company/Section/ValueSection.astro';
 import CareerHeroSection from '../components/HeroSection/CareerHeroSection.jsx';
-import HowToApply from '../components/Trainee/HowToApply.jsx';
+import HowToApply from '../components/Trainee/HowToApply.astro';
 import { getCollection } from 'astro:content';
 import { getTraineeProgramEdges } from '../lib/career-data';
 import { resolveUrl } from '../lib/image-resolver';
@@ -39,10 +39,10 @@ const traineePrograms = await getTraineeProgramEdges();
   path="careers"
 >
   <CareerHeroSection client:visible />
-  <ValueSection client:visible />
+  <ValueSection />
   <HandBook />
   <CurrentOpenings openings={openings} client:visible />
   <OurTraineeProgramSection programs={traineePrograms} client:visible />
-  <HowToApply client:visible />
+  <HowToApply />
   <CareerFAQ client:visible />
 </BaseLayout>

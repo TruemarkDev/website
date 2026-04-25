@@ -1,9 +1,9 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import WriteTestsHeroSection from '../../../components/HeroSection/WriteTestsHeroSection';
-import QualityAssuranceSection from '../../../components/WriteTests/Sections/QualityAssuranceSection';
-import AboutSection from '../../../components/WriteTests/Sections/AboutSection';
-import ToolsSection from '../../../components/WriteTests/Sections/ToolsSection';
+import QualityAssuranceSection from '../../../components/WriteTests/Sections/QualityAssuranceSection.astro';
+import AboutSection from '../../../components/WriteTests/Sections/AboutSection.astro';
+import ToolsSection from '../../../components/WriteTests/Sections/ToolsSection.astro';
 import WhyChooseUsSection from '../../../components/WriteTests/Sections/WhyChooseUsSection';
 ---
 
@@ -14,8 +14,8 @@ import WhyChooseUsSection from '../../../components/WriteTests/Sections/WhyChoos
   path="services/maintenance/tests"
 >
   <WriteTestsHeroSection client:visible />
-  <QualityAssuranceSection client:visible />
-  <AboutSection client:visible />
-  <ToolsSection client:visible />
+  <QualityAssuranceSection />
+  <AboutSection />
+  <ToolsSection />
   <WhyChooseUsSection client:visible />
 </BaseLayout>
