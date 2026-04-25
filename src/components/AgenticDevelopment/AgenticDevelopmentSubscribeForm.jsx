@@ -23,8 +23,6 @@ const AgenticDevelopmentSubscribeForm = () => {
     const result = await ToastService.processPromise(
       CrmApi.submitContactForm(formData),
       {
-        loadingMessage:
-          "Please wait ..... <br /> Your subscription request is being processed.",
         successMessage:
           "Thank you! We have received your agentic development request.",
         errorMessage: "There seems to be some error. Please try again!",
