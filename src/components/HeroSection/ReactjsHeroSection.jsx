@@ -1,9 +1,9 @@
 import React from 'react';
 
 import ButtonWithModal from 'components/Button/ButtonWithModal';
+import heroImage from 'images/reactjs/hero-image.png?url';
+import bell from 'images/gatsby/bell.svg?url';
 
-const heroImage = '/images/reactjs/hero-image.png';
-const bell = '/images/gatsby/bell.svg';
 const ReactjsHeroSection = () => {
   return (
     <section className="bg-hero1 position-relative overflow-hidden pt-5 pb-0">

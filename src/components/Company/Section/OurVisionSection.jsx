@@ -1,6 +1,6 @@
 import React from 'react';
+import bannerImage from 'images/about-us/our-vision-banner.webp?url';
 
-const bannerImage = '/images/about-us/our-vision-banner.webp';
 const OurVisionSection = () => (
   <section className="pt-0 pt-md-5">
     <div className="container about-us our-vision position-relative">

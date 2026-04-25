@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import ButtonWithModal from 'components/Button/ButtonWithModal';
-const bannerImage = '/images/company/stand_out.svg';
+import bannerImage from 'images/company/stand_out.svg?url';
 const technologySvg = (technology) => {
   switch (technology) {
     case 'gatsbyjs':

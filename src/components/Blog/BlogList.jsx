@@ -1,7 +1,7 @@
 import React from "react";
 
-const startup = "/images/blogs/categories/startup.jpg";
 import BlogCard from "./Card";
+import startup from 'images/blogs/categories/startup.jpg?url';
 
 export const BlogList = ({ categoryFilter, data }) => (
   <section className="container">

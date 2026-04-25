@@ -2,14 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Slider from 'react-slick';
 import { Container, Col } from 'reactstrap';
+import androidButton from 'images/case-study/playstore.png?url';
+import iosButton from 'images/case-study/appstore.png?url';
+import bannerBackgroundImage from 'images/case-study/trivia-day/banner-background-screenshot.png?url';
+import bannerImage from 'images/case-study/trivia-day/banner-screenshot.png?url';
 
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
-const androidButton = '/images/case-study/playstore.png';
-const iosButton = '/images/case-study/appstore.png';
-const bannerBackgroundImage = '/images/case-study/trivia-day/banner-background-screenshot.png';
-const bannerImage = '/images/case-study/trivia-day/banner-screenshot.png';
 const AppLinks = ({ appUrls: { ios, android, web } }) => (
   <Container>
     <Col className="d-flex flex-column justify-content-center align-items-center mt-5">

@@ -28,12 +28,6 @@ If editorial wants control:
 
 Tiny change; only worth doing if someone actually asks.
 
-## 9.3 Stale legacy templates
+## 9.3 Stale legacy templates — DONE
 
-`src/templates/blog-post.jsx` and `src/components/.../RelatedPostsSection.jsx` are no longer referenced by any live route — the blog post route uses `src/pages/blog/[...slug].astro` and `src/components/BlogPost/RelatedPosts.astro`. Verify with `git grep` and delete.
-
-```bash
-git grep "templates/blog-post\|RelatedPostsSection"
-```
-
-If zero hits in `src/`, delete the files. Bundles slightly slimmer, fewer red herrings for future contributors.
+`src/templates/blog-post.jsx` and `RelatedPostsSection.jsx` are gone. `git grep "templates/blog-post\|RelatedPostsSection"` returns hits only in `docs/backlog/`, never in `src/`. The live blog post route is `src/pages/blog/[...slug].astro` + `src/components/BlogPost/RelatedPosts.astro`.

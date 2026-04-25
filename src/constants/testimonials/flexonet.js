@@ -1,5 +1,6 @@
-const reneldyProject = '/images/clients/reneldy/projects/triviaday-net.png';
-const ronni = '/images/clients/ronni/ronni.webp';
+import reneldyProject from 'images/clients/reneldy/projects/triviaday-net.png?url';
+import ronni from 'images/clients/ronni/ronni.webp?url';
+
 const triviaDayTestimonials = [
   {
     key: 'TS01',

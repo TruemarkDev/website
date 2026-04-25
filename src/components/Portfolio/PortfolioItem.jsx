@@ -4,15 +4,15 @@ import { Container, Col, Row } from "reactstrap";
 const getImage = (img) => img;
 
 import ButtonWithModal from "components/Button/ButtonWithModal";
-const triviaDay = "/images/portfolio/trivia-day.png";
-const triviaDayBg = "/images/portfolio/trivia-day-bg.jpg";
-const travelbook = "/images/portfolio/travelbook.png";
-const travelbookBg = "/images/portfolio/travelbook-bg.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import { faAppStore, faGooglePlay } from "@fortawesome/free-brands-svg-icons";
 import PortfolioItemModal from "components/Modal/PortfolioItemModal";
 import Projects from "constants/portfolioItems/data";
+import triviaDay from 'images/portfolio/trivia-day.png?url';
+import triviaDayBg from 'images/portfolio/trivia-day-bg.jpg?url';
+import travelbook from 'images/portfolio/travelbook.png?url';
+import travelbookBg from 'images/portfolio/travelbook-bg.jpg?url';
 
 const PlatformLabels = ({ platforms, platformLabelClassName }) => {
   const classNames = ["badge", "outline", "me-2"];

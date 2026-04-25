@@ -1,13 +1,13 @@
 import { TECH_CONSTANTS, EXP_CONSTANTS } from '../../constants/formConstants';
+import userImg from 'images/author/prabin.jpg?url';
+import reneldyAvatar from 'images/clients/reneldy/reneldy.jpeg?url';
+import antonAvatar from 'images/clients/anton/anton.jpg?url';
+import edwardAvatar from 'images/clients/edward/edward.webp?url';
+import ronniAvatar from 'images/clients/ronni/ronni.webp?url';
+import projectSoono from 'images/clients/mack/projects/mysoono-com.png?url';
+import projectFlexonet from 'images/clients/ronni/projects/flexonet.png?url';
+import projectTriviaDay from 'images/clients/reneldy/projects/triviaday-net.png?url';
 
-const userImg = '/images/author/prabin.jpg';
-const reneldyAvatar = '/images/clients/reneldy/reneldy.jpeg';
-const antonAvatar = '/images/clients/anton/anton.jpg';
-const edwardAvatar = '/images/clients/edward/edward.webp';
-const ronniAvatar = '/images/clients/ronni/ronni.webp';
-const projectSoono = '/images/clients/mack/projects/mysoono-com.png';
-const projectFlexonet = '/images/clients/ronni/projects/flexonet.png';
-const projectTriviaDay = '/images/clients/reneldy/projects/triviaday-net.png';
 
 export const profile = {
   basics: {

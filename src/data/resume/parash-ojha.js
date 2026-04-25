@@ -1,9 +1,9 @@
 import { TECH_CONSTANTS, EXP_CONSTANTS } from '../../constants/formConstants';
+import truemark from 'images/company-logo/truemark-vertical-logo.png?url';
+import projectSoono from 'images/clients/mack/projects/mysoono-com.png?url';
+import projectTriviaDay from 'images/clients/reneldy/projects/triviaday-net.png?url';
+import projectFlexonet from 'images/clients/ronni/projects/flexonet.png?url';
 
-const truemark = '/images/company-logo/truemark-vertical-logo.png';
-const projectSoono = '/images/clients/mack/projects/mysoono-com.png';
-const projectTriviaDay = '/images/clients/reneldy/projects/triviaday-net.png';
-const projectFlexonet = '/images/clients/ronni/projects/flexonet.png';
 
 export const profile = {
   basics: {

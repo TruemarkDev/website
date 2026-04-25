@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Col, Container } from 'reactstrap';
+import bgImage from 'images/case-study/trivia-day/backstory.jpg?url';
 
-const bgImage = '/images/case-study/trivia-day/backstory.jpg';
 const BackStory = ({ title, description }) => (
   <section className="py-5 py-md-0">
     <div className="position-relative backstory-section d-flex flex-column justify-content-center">

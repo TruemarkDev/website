@@ -10,7 +10,6 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { Row, Col, Badge, Card, CardImg, CardBody, Media } from 'reactstrap';
 
-const startup = '/images/blogs/categories/startup.jpg';
 import BlogCard from 'components/Blog/Card';
 import SocialShare from 'components/SocialShare';
 import ButtonWithModal from 'components/Button/ButtonWithModal';
@@ -22,6 +21,7 @@ import CVEmploymentSection from './section/employment';
 import Feedback from './section/feedback';
 import OtherExp from './section/otherExp';
 import BlogSection from './section/blog';
+import startup from 'images/blogs/categories/startup.jpg?url';
 
 const CVTemplate = ({ profile, blogs }) => {
   const {

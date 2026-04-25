@@ -1,7 +1,7 @@
 import { TECH_CONSTANTS, EXP_CONSTANTS, DM_STACK_CONSTANTS } from '../../constants/formConstants';
+import userImg from 'images/author/mausam.jpg?url';
+import projectSoono from 'images/clients/mack/projects/mysoono-com.png?url';
 
-const userImg = '/images/author/mausam.jpg';
-const projectSoono = '/images/clients/mack/projects/mysoono-com.png';
 
 export const profile = {
   attributes: {

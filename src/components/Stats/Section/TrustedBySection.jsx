@@ -1,13 +1,13 @@
 import React from 'react';
+import artlordsLogo from 'images/client-logo/art-lords.png?url';
+import freedomHillLogo from 'images/client-logo/freedom-hill-church.png?url';
+import flexonetLogo from 'images/client-logo/flexonet.png?url';
+import givesuranceLogo from 'images/client-logo/givesurance.png?url';
+import lwfLogo from 'images/client-logo/love-with-food.png?url';
+import snacknationLogo from 'images/client-logo/snack-nation.png?url';
+import soonoLogo from 'images/client-logo/soono.png?url';
+import travelbookLogo from 'images/client-logo/travel-book.png?url';
 
-const artlordsLogo = '/images/client-logo/art-lords.png';
-const freedomHillLogo = '/images/client-logo/freedom-hill-church.png';
-const flexonetLogo = '/images/client-logo/flexonet.png';
-const givesuranceLogo = '/images/client-logo/givesurance.png';
-const lwfLogo = '/images/client-logo/love-with-food.png';
-const snacknationLogo = '/images/client-logo/snack-nation.png';
-const soonoLogo = '/images/client-logo/soono.png';
-const travelbookLogo = '/images/client-logo/travel-book.png';
 const TrustedBySection = () => (
   <aside className="company-stats">
     <div className="container">

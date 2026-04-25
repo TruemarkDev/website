@@ -1,4 +1,5 @@
-const logo = '/images/company-logo/logo_red.svg';
+import logo from 'images/company-logo/logo_red.svg?url';
+
 const CONTEXT = 'https://schema.org';
 const COMPANY_NAME = 'Truemark Technology';
 

@@ -1,7 +1,7 @@
 import React from 'react';
 
-const bannerImage = '/images/company/beginnings.jpg';
 import CompanyStatsOnlySection from 'components/Stats/Section/CompanyStatsOnlySection';
+import bannerImage from 'images/company/beginnings.jpg?url';
 
 const AboutHeroStatsSection = () => (
   <section>

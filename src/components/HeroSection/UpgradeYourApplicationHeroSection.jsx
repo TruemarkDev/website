@@ -1,8 +1,8 @@
 import React from 'react';
 
 import ButtonWithModal from 'components/Button/ButtonWithModal';
+import heroImage from 'images/upgrade-your-application/hero-banner-image.png?url';
 
-const heroImage = '/images/upgrade-your-application/hero-banner-image.png';
 const UpgradeYourApplicationHeroSection = () => {
   return (
     <section className="bg-hero overflow-hidden pt-5 pt-lg-0 pb-sm-0 pb-md-0">

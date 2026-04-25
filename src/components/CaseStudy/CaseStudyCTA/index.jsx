@@ -6,9 +6,9 @@ import ContactApi from 'services/api/ContactApi';
 import { FormError } from 'components/Form/FormField';
 import { required, composeValidators, isEmail } from 'utils/formValidators';
 
-const triviaDay = '/images/portfolio/trivia-day.png';
-const triviaDayBg = '/images/case-study/trivia-day/trivia-bg.jpg';
 import ToastService from 'services/toastService';
+import triviaDay from 'images/portfolio/trivia-day.png?url';
+import triviaDayBg from 'images/case-study/trivia-day/trivia-bg.jpg?url';
 
 const CaseStudyCTA = ({ project, cta, description, projectImage }) => {
   const onSubmit = (values) => {

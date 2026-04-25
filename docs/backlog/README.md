@@ -8,15 +8,15 @@ The overall direction: incremental migration, not a wholesale rewrite. Chrome mo
 
 | Phase | Status |
 |---|---|
-| 5 — Image pipeline | Started: `src/lib/image-resolver.ts` exists, `RelatedPosts.astro` and `404.astro` migrated. Rest pending. |
+| 5 — Image pipeline | 5.1 + 5.2 done (all React/JS islands and live `.astro` chrome use ESM imports w/ `?url`; portfolio + featured-project consumers route frontmatter through `resolveImage()`). 5.3 blocked only by MDX-body images (out of phase scope). |
 | 1 — `PagesReact/*` audit | Done — see `01-audit-results.md` |
 | 2 — Static page conversion | Done — 16 of 17 PagesReact converted; only `resume/prakash` remains (interactive) |
 | 3 — Move chrome out of `src/theme/` | **Done.** 3.4 (blog components) + 3.1/3.2 (TopMenu.astro + Footer.astro) complete. FormCTASection stays React (interactive form). |
 | 4 — Delete `gatsby-shim` | **Done.** `gatsby` imports, Vite alias, shim file, and `imageToShape` are removed. |
 | 6 — Port `getSchemaOrgJSONLD` | Done |
 | 7 — Sitemap + `robots.txt` | Done |
-| 8 — Auth0 routes | Pending decision (likely drop) |
-| 9 — Misc follow-ups | Pending |
+| 8 — Auth0 routes | **Done (closed as dropped).** No Auth0 references in code, env, or `package.json`. Only docs mention it. |
+| 9 — Misc follow-ups | 9.3 done; 9.1 (browser regression walk) and 9.2 (frontmatter readingTime override) on demand. |
 | 10 — Remove Gatsby GraphQL usage | **Done.** Zero `graphql`, `useStaticQuery`, or `StaticQuery` usage. |
 | 11 — View Transitions | **Done.** `<ClientRouter>` in BaseLayout; `transition:persist` on chrome; `fade` on `<main>`; hover prefetch; NProgress + theme wired to transition events. |
 

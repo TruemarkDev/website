@@ -1,11 +1,11 @@
 import React from "react";
 
-const reneldy = "/images/clients/reneldy/reneldy.jpeg";
-const triviaDayLogo = "/images/case-study/trivia-day/logo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircle, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { faNode } from "@fortawesome/free-brands-svg-icons";
 import TechStack from "components/TechStack/TechStack";
+import reneldy from 'images/clients/reneldy/reneldy.jpeg?url';
+import triviaDayLogo from 'images/case-study/trivia-day/logo.png?url';
 
 const SingleCaseStudySection = () => (
   <section>

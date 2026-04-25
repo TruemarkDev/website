@@ -21,10 +21,10 @@ import ResultSection from '../../components/CaseStudy/ResultSection/Index';
 import TechnologyUsedSection from '../../components/CaseStudy/TechnologyUsedSection/Index';
 import CaseStudyCTA from '../../components/CaseStudy/CaseStudyCTA';
 import TestimonialSection from '../../components/Testimonial/Section/TestimonialSection';
-
-const ronni = '/images/clients/ronni/ronni.webp';
-const BannerImg = '/images/case-study/trivia-day/feature-image.png';
-const ctaProjectImage = '/images/portfolio/trivia-day.png';
+import ronni from 'images/clients/ronni/ronni.webp?url';
+import BannerImg from 'images/case-study/trivia-day/feature-image.png?url';
+import ctaProjectImage from 'images/portfolio/trivia-day.png?url';
+import featuredImg from 'images/case-study/trivia-day/featured.png?url';
 
 const HERO_SECTION_DATA = {
   title: 'Custom Telecom Solutions',
@@ -135,7 +135,7 @@ const CTA_DATA = {
   title="Truemark | Flexonet Case Study"
   description="Custom solutions for customer management and telecom billing | Truemark | Software Development Team | Nepal | Remote | Case Study"
   keywords="Flexonet, Truemark Technology, Case Study, odoo"
-  image="/images/case-study/trivia-day/featured.png"
+  image={featuredImg}
   path="case-studies/flexonet"
   forCaseStudy={true}
 >

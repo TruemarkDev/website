@@ -1,4 +1,11 @@
-# Phase 8 — Port Auth0 routes (only if needed)
+# Phase 8 — Auth0 routes — CLOSED (dropped)
+
+**Status:** dropped. No Auth0 references remain in `src/`, `package.json`, or `.env.sample`. Only this doc and `CLAUDE.md`'s replacement-map row mention it. If auth is later added, treat as a fresh spec rather than a "port".
+
+---
+
+(original doc preserved below for reference)
+
 
 ## Goal
 

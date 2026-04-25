@@ -1,10 +1,5 @@
 import React from 'react';
 
-const nodejsLogo = '/images/stacks/node-logo.png';
-const reactNativeLogo = '/images/stacks/react-logo.png';
-const postgresql = '/images/stacks/postgresql.png';
-const socketIO = '/images/stacks/socketio.png';
-const redis = '/images/stacks/redis.png';
 import { Col, Row, Card } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -18,6 +13,11 @@ import { faDatabase } from '@fortawesome/free-solid-svg-icons';
 import TechnologyItem from './TechnologyItem';
 import IconBlockWithText from '../IconBlockWithText/Index';
 import TechStack from 'components/TechStack/TechStack';
+import nodejsLogo from 'images/stacks/node-logo.png?url';
+import reactNativeLogo from 'images/stacks/react-logo.png?url';
+import postgresql from 'images/stacks/postgresql.png?url';
+import socketIO from 'images/stacks/socketio.png?url';
+import redis from 'images/stacks/redis.png?url';
 
 const TechnologyStack = ({ stack, technologyList }) => (
   <Col md={6} lg={3} className="mb-3 mb-md-4 mb-lg-0">

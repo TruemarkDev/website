@@ -1,12 +1,12 @@
 import React from 'react';
-const LogoFigma = '/images/ui-ux/logo-figma.svg';
-const LogoInvision = '/images/ui-ux/logo-invision.svg';
-const LogoSketch = '/images/ui-ux/logo-sketch.svg';
-const LogoAi = '/images/ui-ux/logo-ai.svg';
-const LogoPhotoshop = '/images/ui-ux/logo-photoshop.svg';
-const LogoTrello = '/images/ui-ux/logo-trello.svg';
-const LogoSlack = '/images/ui-ux/logo-slack.svg';
-const LogoTracker = '/images/ui-ux/logo-toptracker.svg';
+import LogoFigma from 'images/ui-ux/logo-figma.svg?url';
+import LogoInvision from 'images/ui-ux/logo-invision.svg?url';
+import LogoSketch from 'images/ui-ux/logo-sketch.svg?url';
+import LogoAi from 'images/ui-ux/logo-ai.svg?url';
+import LogoPhotoshop from 'images/ui-ux/logo-photoshop.svg?url';
+import LogoTrello from 'images/ui-ux/logo-trello.svg?url';
+import LogoSlack from 'images/ui-ux/logo-slack.svg?url';
+import LogoTracker from 'images/ui-ux/logo-toptracker.svg?url';
     const OurTools = () => (
         <section className="our-tools">
             <div className='Container'>

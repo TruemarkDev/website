@@ -1,7 +1,7 @@
 // TODO: @prakash this file does not contain html or react..move to constants or utils folder?
 
-const logo = '/images/company-logo/logo_red.svg';
 import getJobSchemaOrgJSONLD from 'components/SEO/getJobSchemaOrgJSONLD';
+import logo from 'images/company-logo/logo_red.svg?url';
 
 const context = 'https://schema.org';
 

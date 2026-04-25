@@ -1,8 +1,8 @@
 import React from 'react';
-const ApplyImage = '/images/trainee/Apply.png';
-const VideoInterviewImage = '/images/trainee/Video-Interview.png';
-const WelcomeImage = '/images/trainee/Welcome.png';
-const TaskImage = '/images/trainee/Task.png';
+import ApplyImage from 'images/trainee/Apply.png?url';
+import VideoInterviewImage from 'images/trainee/Video-Interview.png?url';
+import WelcomeImage from 'images/trainee/Welcome.png?url';
+import TaskImage from 'images/trainee/Task.png?url';
 function HowToApply() {
   return (
     <section className="how-to-apply position-relative overflow-hidden">

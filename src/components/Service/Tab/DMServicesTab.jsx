@@ -16,9 +16,9 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 
 import { faSearchengin } from '@fortawesome/free-brands-svg-icons';
-const DMserviceImage = '/images/ecommerce/DM-service-image.png';
-const DMcontentWriting = '/images/ecommerce/Tab-2-image.png';
-const DMSocialMediaMarketing = '/images/ecommerce/Tab-3-image.png';
+import DMserviceImage from 'images/ecommerce/DM-service-image.png?url';
+import DMcontentWriting from 'images/ecommerce/Tab-2-image.png?url';
+import DMSocialMediaMarketing from 'images/ecommerce/Tab-3-image.png?url';
 const DMServicesTab = (props) => {
   const [activeTab, setActiveTab] = useState('1');
 

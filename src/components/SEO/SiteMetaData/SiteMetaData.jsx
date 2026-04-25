@@ -2,10 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
 
-const defaultCoverImage = '/images/meta-images/truemark-cover.jpg';
 import getSchemaOrgJSONLD from 'components/SEO/getSchemaOrgJSONLD';
 import og from 'components/SEO/og';
 import twitterCard from 'components/SEO/twitterCard';
+import defaultCoverImage from 'images/meta-images/truemark-cover.jpg?url';
 
 const SiteMetaData = ({ siteMetadata, pageMetaData, path }) => {
   const {

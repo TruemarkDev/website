@@ -1,14 +1,14 @@
 import React from 'react';
+import Rspec from 'images/write-tests/rspec.svg?url';
+import Capybara from 'images/write-tests/capybara.svg?url';
+import Cucumber from 'images/write-tests/cucumber.svg?url';
+import Jest from 'images/write-tests/jest.svg?url';
+import Cypress from 'images/write-tests/cypress.svg?url';
+import ReactTestingLibrary from 'images/write-tests/react-testing-library.svg?url';
+import Enzyme from 'images/write-tests/enzyme.svg?url';
+import RubyProf from 'images/write-tests/rubyprof.svg?url';
+import Minitest from 'images/write-tests/minitest.svg?url';
 
-const Rspec = '/images/write-tests/rspec.svg';
-const Capybara = '/images/write-tests/capybara.svg';
-const Cucumber = '/images/write-tests/cucumber.svg';
-const Jest = '/images/write-tests/jest.svg';
-const Cypress = '/images/write-tests/cypress.svg';
-const ReactTestingLibrary = '/images/write-tests/react-testing-library.svg';
-const Enzyme = '/images/write-tests/enzyme.svg';
-const RubyProf = '/images/write-tests/rubyprof.svg';
-const Minitest = '/images/write-tests/minitest.svg';
 const ToolsSection = () => {
   return (
     <section>

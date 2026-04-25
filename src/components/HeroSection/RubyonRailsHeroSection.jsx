@@ -1,9 +1,9 @@
 import React from 'react';
 
 import ButtonWithModal from 'components/Button/ButtonWithModal';
+import heroImageLight from 'images/ruby-on-rails/hero-image.png?url';
+import heroImageDark from 'images/ruby-on-rails/hero-image-dark.png?url';
 
-const heroImageLight = '/images/ruby-on-rails/hero-image.png';
-const heroImageDark = '/images/ruby-on-rails/hero-image-dark.png';
 const RubyonRailsHeroSection = () => {
   return (
     <section className="bg-hero1 position-relative overflow-hidden pt-5 pb-sm-0 pb-lg-5">

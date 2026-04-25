@@ -1,8 +1,8 @@
 import React from 'react';
 
-const bannerImageDark = '/images/resources/developer-image-dark.png';
-const bannerImageLight = '/images/resources/developer-image-light.png';
 import ButtonWithModal from 'components/Button/ButtonWithModal';
+import bannerImageDark from 'images/resources/developer-image-dark.png?url';
+import bannerImageLight from 'images/resources/developer-image-light.png?url';
 
 const ResourceHeroSection = () => (
   <section className="position-relative overflow-hidden developer-page">

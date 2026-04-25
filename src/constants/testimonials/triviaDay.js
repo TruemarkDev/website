@@ -1,5 +1,6 @@
-const reneldyAvatar = '/images/clients/reneldy/reneldy.jpeg';
-const reneldyProject = '/images/clients/reneldy/projects/triviaday-net.png';
+import reneldyAvatar from 'images/clients/reneldy/reneldy.jpeg?url';
+import reneldyProject from 'images/clients/reneldy/projects/triviaday-net.png?url';
+
 const triviaDayTestimonials = [
   {
     key: 'TS01',

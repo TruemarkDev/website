@@ -1,15 +1,15 @@
 import React from "react";
 import ButtonWithModal from "components/Button/ButtonWithModal";
 
-const bannerImageWhite = "/images/layout/banner-white.svg";
-const bannerImageBlack = "/images/layout/banner-black.svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import bannerImageWhite from 'images/layout/banner-white.svg?url';
+import bannerImageBlack from 'images/layout/banner-black.svg?url';
+import bannerImageLady from 'images/hero-section/img-lady.png?url';
+import iconTime from 'images/hero-section/icon-time.svg?url';
+import iconCoading from 'images/hero-section/icon-coading.svg?url';
+import iconRemote from 'images/hero-section/icon-remote.svg?url';
 
-const bannerImageLady = "/images/hero-section/img-lady.png";
-const iconTime = "/images/hero-section/icon-time.svg";
-const iconCoading = "/images/hero-section/icon-coading.svg";
-const iconRemote = "/images/hero-section/icon-remote.svg";
 const HomeHeroSection = () => (
   <section className="bg-hero overflow-hidden pt-4 pt-lg-0 pb-sm-0 pb-lg-5">
     <div className="container hero-section-container position-relative ">

@@ -2,8 +2,8 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLightbulb, faUsers } from '@fortawesome/free-solid-svg-icons';
 import { Col } from 'reactstrap';
+import triviaDayLogo from 'images/case-study/trivia-day/logo.png?url';
 
-const triviaDayLogo = '/images/case-study/trivia-day/logo.png';
 const ProjectOverviewSection = () => (
   <section id="project-overview" className="project-overview-section">
     <div className="container">

@@ -6,8 +6,8 @@ import "swiper/css/navigation";
 import { Autoplay, Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-const startup = "/images/startup.jpg";
 import BlogCard from "@components/BlogCard";
+import startup from 'images/startup.jpg?url';
 
 interface BlogIndexSliderSectionProps {
   sliderBlogPosts: any[];

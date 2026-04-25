@@ -1,11 +1,11 @@
 import React from 'react';
+import IconUnderstanding from 'images/ui-ux/icon-understanding.svg?url';
+import IconResearch from 'images/ui-ux/icon-research.svg?url';
+import IconInformation from 'images/ui-ux/icon-information.svg?url';
+import IconDevelop from 'images/ui-ux/icon-develop.svg?url';
+import IconMockups from 'images/ui-ux/icon-mockups.svg?url';
+import IconWireframes from 'images/ui-ux/icon-wireframes.svg?url';
 
-const IconUnderstanding = '/images/ui-ux/icon-understanding.svg';
-const IconResearch = '/images/ui-ux/icon-research.svg';
-const IconInformation = '/images/ui-ux/icon-information.svg';
-const IconDevelop = '/images/ui-ux/icon-develop.svg';
-const IconMockups = '/images/ui-ux/icon-mockups.svg';
-const IconWireframes = '/images/ui-ux/icon-wireframes.svg';
 const UIUXDesignProcess = () => (
     <section className="ui-ux-process position-relative overflow-hidden">
         <div className="container">

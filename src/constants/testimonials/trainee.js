@@ -1,8 +1,9 @@
-const bhawanaAvatar = '/images/trainee/bhawana.jpg';
-const ajayaAvatar = '/images/trainee/ajaya.jpg';
-const anmolAvatar = '/images/trainee/anmol.png';
-const bipinAvatar = '/images/trainee/bipin.jpg';
-const kirtiAvatar = '/images/trainee/kirti.jpg';
+import bhawanaAvatar from 'images/trainee/bhawana.jpg?url';
+import ajayaAvatar from 'images/trainee/ajaya.jpg?url';
+import anmolAvatar from 'images/trainee/anmol.png?url';
+import bipinAvatar from 'images/trainee/bipin.jpg?url';
+import kirtiAvatar from 'images/trainee/kirti.jpg?url';
+
 const traineeTestimonials = [
   {
     key: 'TS01',

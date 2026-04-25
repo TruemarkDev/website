@@ -1,9 +1,10 @@
-const antonAvatar = '/images/clients/anton/anton.jpg';
-const antonProject = '/images/clients/anton/projects/price-insight.png';
-const natalieAvatar = '/images/clients/natalie/natalie.jpg';
-const natalieProject = '/images/clients/natalie/projects/natalieglebova-com.png';
-const reneldyAvatar = '/images/clients/reneldy/reneldy.jpeg';
-const reneldyProject = '/images/clients/reneldy/projects/artlords-com.png';
+import antonAvatar from 'images/clients/anton/anton.jpg?url';
+import antonProject from 'images/clients/anton/projects/price-insight.png?url';
+import natalieAvatar from 'images/clients/natalie/natalie.jpg?url';
+import natalieProject from 'images/clients/natalie/projects/natalieglebova-com.png?url';
+import reneldyAvatar from 'images/clients/reneldy/reneldy.jpeg?url';
+import reneldyProject from 'images/clients/reneldy/projects/artlords-com.png?url';
+
 const testimonials = [
   {
     key: 'TS01',

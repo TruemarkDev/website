@@ -1,8 +1,8 @@
 import React, { useRef, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
+import darkModeOff from 'images/layout/dark-mode-off.svg?url';
+import lightModeOff from 'images/layout/light-off.svg?url';
 
-const darkModeOff = '/images/layout/dark-mode-off.svg';
-const lightModeOff = '/images/layout/light-off.svg';
 const ThemeSwitcher = ({ theme, onChange = () => {} }) => {
   const isDarkMode = theme === 'dark';
 

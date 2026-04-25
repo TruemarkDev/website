@@ -1,14 +1,15 @@
-const memberAnil = '/images/team/anil.jpg';
-const memberPrabin = '/images/team/prabin.jpg';
-const memberPrakash = '/images/team/prakash.jpeg';
-const memberSunil = '/images/team/sunil.png';
-const memberKiran = '/images/team/kiran.jpg';
-const memberSushil = '/images/team/sushil.jpeg';
-const memberMausam = '/images/team/mausam.jpg';
-const memberSunita = '/images/team/sunita.jpeg';
-const memberAayush = '/images/team/aayush.jpeg';
-const memberArogya = '/images/team/arogya.jpg';
-const memberPrakashKotwal = '/images/team/prakash-kotwal.jpg';
+import memberAnil from 'images/team/anil.jpg?url';
+import memberPrabin from 'images/team/prabin.jpg?url';
+import memberPrakash from 'images/team/prakash.jpeg?url';
+import memberSunil from 'images/team/sunil.png?url';
+import memberKiran from 'images/team/kiran.jpg?url';
+import memberSushil from 'images/team/sushil.jpeg?url';
+import memberMausam from 'images/team/mausam.jpg?url';
+import memberSunita from 'images/team/sunita.jpeg?url';
+import memberAayush from 'images/team/aayush.jpeg?url';
+import memberArogya from 'images/team/arogya.jpg?url';
+import memberPrakashKotwal from 'images/team/prakash-kotwal.jpg?url';
+
 import {
   TECH_CONSTANTS,
   EXP_CONSTANTS,

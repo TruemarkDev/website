@@ -1,9 +1,9 @@
 import React from 'react';
 import ButtonWithModal from 'components/Button/ButtonWithModal';
-const Flexonet = '/images/upgrade-your-application/flexonet-ui.png';
-const Soono = '/images/upgrade-your-application/soono-ui.png';
-const ReductVideo = '/images/portfolio/reduct-video.png';
 import ButtonWithAllProjects from 'components/Button/ButtonWithAllProjects';
+import Flexonet from 'images/upgrade-your-application/flexonet-ui.png?url';
+import Soono from 'images/upgrade-your-application/soono-ui.png?url';
+import ReductVideo from 'images/portfolio/reduct-video.png?url';
 
 const ReactJSProjects = () => {
     return(

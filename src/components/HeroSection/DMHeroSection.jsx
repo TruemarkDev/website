@@ -2,11 +2,11 @@ import React from 'react';
 import ButtonWithModal from 'components/Button/ButtonWithModal';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import bannerImage from 'images/ecommerce/E-Commerce-hero-section-image.png?url';
+import SocialMediaMarkteing from 'images/ecommerce/social-media.png?url';
+import ContentWriting from 'images/ecommerce/content-writing.png?url';
+import Seo from 'images/ecommerce/seo.png?url';
 
-const bannerImage = '/images/ecommerce/E-Commerce-hero-section-image.png';
-const SocialMediaMarkteing = '/images/ecommerce/social-media.png';
-const ContentWriting = '/images/ecommerce/content-writing.png';
-const Seo = '/images/ecommerce/seo.png';
 const DMHeroSection = () => (
   <section className="bg-hero1 position-relative overflow-hidden pt-5 pb-5 mt-2">
     <div className="position-relative container DM-hero-section-container mt-3">

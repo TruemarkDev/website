@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 
-const nodejsLogo = '/images/stacks/node-logo.png';
-const reactjsLogo = '/images/stacks/react-logo.png';
-const railsLogo = '/images/stacks/rails-logo.png';
-const reactNativeLogo = '/images/stacks/react-logo.png';
-const gatsbyjsLogo = '/images/stacks/gatsby-logo.webp';
-const iosLogo = '/images/stacks/ios-logo.png';
 import TechStack from 'components/TechStack/TechStack';
 import { faNode } from '@fortawesome/free-brands-svg-icons';
+import nodejsLogo from 'images/stacks/node-logo.png?url';
+import reactjsLogo from 'images/stacks/react-logo.png?url';
+import railsLogo from 'images/stacks/rails-logo.png?url';
+import reactNativeLogo from 'images/stacks/react-logo.png?url';
+import gatsbyjsLogo from 'images/stacks/gatsby-logo.webp?url';
+import iosLogo from 'images/stacks/ios-logo.png?url';
 
 const TechStackSection = ({}) => (
   <section>

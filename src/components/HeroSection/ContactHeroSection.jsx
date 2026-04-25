@@ -1,8 +1,8 @@
 import React from 'react';
+import Man from 'images/contact-us/man.png?url';
+import Arrow from 'images/contact-us/arrow.png?url';
+import SmallElement from 'images/contact-us/small-element.svg?url';
 
-const Man = '/images/contact-us/man.png';
-const Arrow = '/images/contact-us/arrow.png';
-const SmallElement = '/images/contact-us/small-element.svg';
 const ContactHeroSection = () => (
   <section className="section hero-section-contact position-relative overflow-hidden">
     <div className="container position-relative h-100">

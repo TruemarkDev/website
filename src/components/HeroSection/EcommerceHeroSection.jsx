@@ -1,8 +1,8 @@
 import React from 'react';
 
 import ButtonWithModal from 'components/Button/ButtonWithModal';
+import ecommerceOwner from 'images/hero-section/banner-man.png?url';
 
-const ecommerceOwner = '/images/hero-section/banner-man.png';
 const EcommerceHeroSection = () => {
   return (
     <section className="bg-hero overflow-hidden pt-5 pt-lg-0 pb-sm-0 pb-md-0 pb-lg-5">

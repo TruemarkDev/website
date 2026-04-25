@@ -21,9 +21,10 @@ import TechnologyUsedSection from '../../components/CaseStudy/TechnologyUsedSect
 import CaseStudyCTA from '../../components/CaseStudy/CaseStudyCTA';
 import TestimonialSection from '../../components/Testimonial/Section/TestimonialSection';
 
-const reneldy = '/images/clients/reneldy/reneldy.jpeg';
-const BannerImg = '/images/case-study/trivia-day/feature-image.png';
-const ctaProjectImage = '/images/portfolio/trivia-day.png';
+import reneldy from 'images/clients/reneldy/reneldy.jpeg?url';
+import BannerImg from 'images/case-study/trivia-day/feature-image.png?url';
+import ctaProjectImage from 'images/portfolio/trivia-day.png?url';
+import featuredImg from 'images/case-study/trivia-day/featured.png?url';
 
 const APP_URLS = {
   web: 'https://www.triviaday.net/',
@@ -141,7 +142,7 @@ const CTA_DATA = {
   title="Truemark | Trivia Day Case Study"
   description="Trivia day is a fun Online Multiplayer Trivia Game | Truemark | Software Development Team | Nepal | Remote | Case Study"
   keywords="Trivia Day, Truemark Technology, Case Study, Trivia Game using socket.io"
-  image="/images/case-study/trivia-day/featured.png"
+  image={featuredImg}
   path="case-studies/trivia-day"
   forCaseStudy={true}
 >

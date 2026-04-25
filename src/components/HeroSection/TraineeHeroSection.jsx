@@ -1,10 +1,10 @@
 import React from 'react';
 import ButtonWithModal from 'components/Button/ButtonWithModal';
-const TraineeHeroSectionImage = '/images/trainee/TraineeHeroSection1.png';
-const KnowledgeImage = '/images/trainee/Knowledge.png';
-const JobOpportunityImage = '/images/trainee/JobOpportunity.png';
-const PersonalGrowthImage = '/images/trainee/PersonalGrowth.png';
-const ProDevelopmentImage = '/images/trainee/ProDevelp.png';
+import TraineeHeroSectionImage from 'images/trainee/TraineeHeroSection1.png?url';
+import KnowledgeImage from 'images/trainee/Knowledge.png?url';
+import JobOpportunityImage from 'images/trainee/JobOpportunity.png?url';
+import PersonalGrowthImage from 'images/trainee/PersonalGrowth.png?url';
+import ProDevelopmentImage from 'images/trainee/ProDevelp.png?url';
 function TraineeHeroSection() {
   return (
     <section className="bg-hero1 position-relative overflow-hidden py-5">

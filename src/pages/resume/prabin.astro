@@ -3,6 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import FetchedDataTemplete from '../../components/CV/FetchedDataTemplete';
 import { profile } from '../../data/resume/prabin';
 import { getAllBlogsForSection } from '../../lib/blog-data';
+import metaImage from 'images/meta-images/resume/prabin.webp?url';
 
 const blogs = await getAllBlogsForSection();
 ---
@@ -11,7 +12,7 @@ const blogs = await getAllBlogsForSection();
   title="Prabin Poudel | Senior Ruby Developer From Kathmandu"
   description="Truemark | Software Development Team | Nepal | Remote"
   keywords="About Truemark, Truemark Technology, Remote Software Development Team"
-  image="/images/meta-images/resume/prabin.webp"
+  image={metaImage}
   path="resume/prabin"
 >
   <FetchedDataTemplete profile={profile} blogs={blogs} client:only="react" />

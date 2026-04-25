@@ -1,5 +1,18 @@
 ---
 import BlogMegaMenu from "../../../theme/components/BlogMegaMenu/BlogMegaMenu";
+import logoRed from "images/company-logo/logo_red.svg?url";
+import logoWhite from "images/company-logo/logo_white.svg?url";
+import iconDeveloper from "images/icons/developer.svg?url";
+import iconDesigner from "images/icons/designer.svg?url";
+import iconQualityAssurance from "images/icons/quality-assurance.svg?url";
+import iconDigitalMarketer from "images/icons/digital-marketer.svg?url";
+import iconReact from "images/icons/react.svg?url";
+import iconRuby from "images/icons/ruby.svg?url";
+import iconGatsby from "images/icons/gatsby.svg?url";
+import iconEcommerce from "images/icons/ecommerce.svg?url";
+import iconStaticSite from "images/icons/static-site.svg?url";
+import iconWriteTest from "images/icons/write-test.svg?url";
+import iconUpgradeApplication from "images/icons/upgrade-application.svg?url";
 
 interface Props {
   siteTitle?: string;
@@ -18,7 +31,7 @@ const { blogPosts = [], blogCategories = [] } = Astro.props;
       class="navbar-brand flex align-items-center justify-content-center p-0"
     >
       <img
-        src="/images/company-logo/logo_red.svg"
+        src={logoRed}
         class="img-fluid m-0 company-logo pb-2"
         alt="Truemark logo"
         width="160"
@@ -58,7 +71,7 @@ const { blogPosts = [], blogCategories = [] } = Astro.props;
                           class="d-flex justify-content-center align-items-center nav-holder service-1"
                         >
                           <img
-                            src="/images/icons/developer.svg"
+                            src={iconDeveloper}
                             alt="Developers"
                           />
                         </span>
@@ -81,7 +94,7 @@ const { blogPosts = [], blogCategories = [] } = Astro.props;
                           class="d-flex justify-content-center align-items-center nav-holder service-3"
                         >
                           <img
-                            src="/images/icons/developer.svg"
+                            src={iconDeveloper}
                             alt="Agentic Development"
                           />
                         </span>
@@ -106,7 +119,7 @@ const { blogPosts = [], blogCategories = [] } = Astro.props;
                           class="d-flex justify-content-center align-items-center nav-holder service-5"
                         >
                           <img
-                            src="/images/icons/designer.svg"
+                            src={iconDesigner}
                             alt="Designer"
                           />
                         </span>
@@ -129,7 +142,7 @@ const { blogPosts = [], blogCategories = [] } = Astro.props;
                           class="d-flex justify-content-center align-items-center nav-holder service-4"
                         >
                           <img
-                            src="/images/icons/quality-assurance.svg"
+                            src={iconQualityAssurance}
                             alt="QualityAssurance"
                           />
                         </span>
@@ -155,7 +168,7 @@ const { blogPosts = [], blogCategories = [] } = Astro.props;
                           class="d-flex justify-content-center align-items-center nav-holder service-3"
                         >
                           <img
-                            src="/images/icons/digital-marketer.svg"
+                            src={iconDigitalMarketer}
                             alt="DigitalMarketer"
                           />
                         </span>
@@ -182,7 +195,7 @@ const { blogPosts = [], blogCategories = [] } = Astro.props;
                         <span
                           class="d-flex justify-content-center align-items-center nav-holder service-3"
                         >
-                          <img src="/images/icons/react.svg" alt="React" />
+                          <img src={iconReact} alt="React" />
                         </span>
                         <span class="nav-item ps-0">
                           <span class="fw-bold nav-heading">ReactJS</span>
@@ -203,7 +216,7 @@ const { blogPosts = [], blogCategories = [] } = Astro.props;
                           class="d-flex justify-content-center align-items-center nav-holder service-2"
                         >
                           <img
-                            src="/images/icons/ruby.svg"
+                            src={iconRuby}
                             alt="Ruby on Rails"
                           />
                         </span>
@@ -226,7 +239,7 @@ const { blogPosts = [], blogCategories = [] } = Astro.props;
                         <span
                           class="d-flex justify-content-center align-items-center nav-holder service-1"
                         >
-                          <img src="/images/icons/gatsby.svg" alt="Gatsby Js" />
+                          <img src={iconGatsby} alt="Gatsby Js" />
                         </span>
                         <span class="nav-item ps-0">
                           <span class="fw-bold nav-heading">Gatsby Js</span>
@@ -253,7 +266,7 @@ const { blogPosts = [], blogCategories = [] } = Astro.props;
                           class="d-flex justify-content-center align-items-center nav-holder service-4"
                         >
                           <img
-                            src="/images/icons/ecommerce.svg"
+                            src={iconEcommerce}
                             alt="E-commerce Apps"
                           />
                         </span>
@@ -279,7 +292,7 @@ const { blogPosts = [], blogCategories = [] } = Astro.props;
                           class="d-flex justify-content-center align-items-center nav-holder service-5"
                         >
                           <img
-                            src="/images/icons/static-site.svg"
+                            src={iconStaticSite}
                             alt="Static Site"
                           />
                         </span>
@@ -305,7 +318,7 @@ const { blogPosts = [], blogCategories = [] } = Astro.props;
                           class="d-flex justify-content-center align-items-center nav-holder service-4"
                         >
                           <img
-                            src="/images/icons/write-test.svg"
+                            src={iconWriteTest}
                             alt="Write Tests"
                           />
                         </span>
@@ -328,7 +341,7 @@ const { blogPosts = [], blogCategories = [] } = Astro.props;
                           class="d-flex justify-content-center align-items-center nav-holder service-3"
                         >
                           <img
-                            src="/images/icons/upgrade-application.svg"
+                            src={iconUpgradeApplication}
                             alt="Upgrade Application"
                           />
                         </span>
@@ -408,7 +421,7 @@ const { blogPosts = [], blogCategories = [] } = Astro.props;
       <a class="navbar-brand p-0 m-0" href="/">
         <img
           id="mobile-logo"
-          src="/images/company-logo/logo_red.svg"
+          src={logoRed}
           class="img-fluid mb-0 company-logo"
           alt="Truemark logo"
           width="150"
@@ -563,7 +576,7 @@ const { blogPosts = [], blogCategories = [] } = Astro.props;
   </nav>
 </div>
 
-<script>
+<script define:vars={{ logoRed, logoWhite }}>
   function initMobileNav() {
     const toggler = document.getElementById("mobile-toggler");
     const mobileNav = document.getElementById("mobile-nav");
@@ -582,9 +595,7 @@ const { blogPosts = [], blogCategories = [] } = Astro.props;
       mobileNav.classList.toggle("mobile-nav-bg", isOpen);
       navContent.classList.toggle("show", isOpen);
       if (logo) {
-        logo.src = isOpen
-          ? "/images/company-logo/logo_white.svg"
-          : "/images/company-logo/logo_red.svg";
+        logo.src = isOpen ? logoWhite : logoRed;
       }
     });
 
@@ -607,7 +618,7 @@ const { blogPosts = [], blogCategories = [] } = Astro.props;
           toggler.setAttribute("aria-expanded", "false");
           mobileNav.classList.remove("mobile-nav-bg");
           navContent.classList.remove("show");
-          if (logo) logo.src = "/images/company-logo/logo_red.svg";
+          if (logo) logo.src = logoRed;
         });
       });
   }

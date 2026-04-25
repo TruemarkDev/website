@@ -3,9 +3,9 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFileAlt, faChartBar } from '@fortawesome/free-solid-svg-icons';
 import { faSearchengin } from '@fortawesome/free-brands-svg-icons';
+import celebration from 'images/services/celebration.svg?url';
+import MoreTrafficImage from 'images/ecommerce/More-Traffic-image.png?url';
 
-const celebration = '/images/services/celebration.svg';
-const MoreTrafficImage = '/images/ecommerce/More-Traffic-image.png';
 const DMBannerSection = () => (
   <section>
     <div className="container">

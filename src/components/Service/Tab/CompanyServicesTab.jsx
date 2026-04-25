@@ -15,6 +15,8 @@ import {
 import classnames from "classnames";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import programmingService from 'images/services/software/programming.svg?url';
+import mobileAppService from 'images/services/software/mobile-development.svg?url';
 import {
   faBars,
   faUsers,
@@ -37,8 +39,6 @@ import {
 
 const onlineMarketing =
   "/images/services/digital-marketing/online-marketing.svg";
-const programmingService = "/images/services/software/programming.svg";
-const mobileAppService = "/images/services/software/mobile-development.svg";
 const CompanyServicesTab = (props) => {
   const [activeTab, setActiveTab] = useState("1");
 

@@ -20,20 +20,20 @@ import {
   faLinkedinIn,
 } from "@fortawesome/free-brands-svg-icons";
 
-const Developer = "/images/icons/developer.svg";
-const Ruby = "/images/icons/ruby.svg";
-const react = "/images/icons/react.svg";
-const Ecommerce = "/images/icons/ecommerce.svg";
-const StaticSite = "/images/icons/static-site.svg";
-const Designer = "/images/icons/designer.svg";
-const Gatsby = "/images/icons/gatsby.svg";
-const DigitalMarketer = "/images/icons/digital-marketer.svg";
-const UpgradeApplication = "/images/icons/upgrade-application.svg";
-const QualityAssurance = "/images/icons/quality-assurance.svg";
-const WriteTest = "/images/icons/write-test.svg";
-const truemarkWhiteLogo = "/images/company-logo/logo_white.svg";
-const companyLogoNew = "/images/company-logo/logo_red.svg";
 import BlogMegaMenu from "../../../theme/components/BlogMegaMenu/BlogMegaMenu";
+import Developer from 'images/icons/developer.svg?url';
+import Ruby from 'images/icons/ruby.svg?url';
+import react from 'images/icons/react.svg?url';
+import Ecommerce from 'images/icons/ecommerce.svg?url';
+import StaticSite from 'images/icons/static-site.svg?url';
+import Designer from 'images/icons/designer.svg?url';
+import Gatsby from 'images/icons/gatsby.svg?url';
+import DigitalMarketer from 'images/icons/digital-marketer.svg?url';
+import UpgradeApplication from 'images/icons/upgrade-application.svg?url';
+import QualityAssurance from 'images/icons/quality-assurance.svg?url';
+import WriteTest from 'images/icons/write-test.svg?url';
+import truemarkWhiteLogo from 'images/company-logo/logo_white.svg?url';
+import companyLogoNew from 'images/company-logo/logo_red.svg?url';
 
 const TopMenu = ({ siteTitle, blogPosts, blogCategories }) => {
   const [isOpen, setIsOpen] = useState(false);

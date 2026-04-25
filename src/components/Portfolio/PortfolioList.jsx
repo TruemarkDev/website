@@ -1,10 +1,10 @@
 import React from 'react';
 import { Container, Col, Row } from 'reactstrap';
 
-const bannerImage = '/images/case-study/trivia-day/trivia-day-screenshot.png';
-const thatVisa = '/images/clients/arbin/projects/that-visa.png';
-const travelBook = '/images/clients/dean/projects/travelbook-com.png';
 import PortfolioItem from './PortfolioItem';
+import bannerImage from 'images/case-study/trivia-day/trivia-day-screenshot.png?url';
+import thatVisa from 'images/clients/arbin/projects/that-visa.png?url';
+import travelBook from 'images/clients/dean/projects/travelbook-com.png?url';
 
 const PortfolioList = ({ projects }) => {
   const portfolios = projects.map((project) => {

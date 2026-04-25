@@ -2,7 +2,7 @@ import React from 'react';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faCheck} from '@fortawesome/free-solid-svg-icons';
-const HandBookImg = '/images/career/handbook.png';
+import HandBookImg from 'images/career/handbook.png?url';
 const HandBook = () => (
     <section className="">
         <div className='container'>

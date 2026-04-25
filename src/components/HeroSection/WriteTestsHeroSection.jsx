@@ -1,8 +1,8 @@
 import React from 'react';
 
 import ButtonWithModal from 'components/Button/ButtonWithModal';
+import writeTestGirl from 'images/write-tests/banner-girl.png?url';
 
-const writeTestGirl = '/images/write-tests/banner-girl.png';
 const WriteTestsHeroSection = () => {
   return (
     <section className="bg-hero1 position-relative overflow-hidden pt-4 pb-sm-0 pb-lg-5">

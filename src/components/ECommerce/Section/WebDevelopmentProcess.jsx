@@ -1,12 +1,12 @@
 import React from 'react';
 
-const IconPlanning = '/images/ecommerce/Frame1.svg';
-const IconWireframing = '/images/ecommerce/frame6.svg';
-const IconDesign = '/images/ecommerce/frame2.svg';
-const IconProjectRelease = '/images/ecommerce/frame4.svg';
-const IconQuality = '/images/ecommerce/frame5.svg';
-const IconImplementation = '/images/ecommerce/frame3.svg';
 import ButtonWithModal from 'components/Button/ButtonWithModal';
+import IconPlanning from 'images/ecommerce/Frame1.svg?url';
+import IconWireframing from 'images/ecommerce/frame6.svg?url';
+import IconDesign from 'images/ecommerce/frame2.svg?url';
+import IconProjectRelease from 'images/ecommerce/frame4.svg?url';
+import IconQuality from 'images/ecommerce/frame5.svg?url';
+import IconImplementation from 'images/ecommerce/frame3.svg?url';
 
 const WebDevelopmentProcess = () => (
   <section className="ui-ux-process position-relative overflow-hidden">

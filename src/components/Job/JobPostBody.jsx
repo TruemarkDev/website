@@ -8,9 +8,9 @@ import {
   faTimes,
 } from '@fortawesome/free-solid-svg-icons';
 
-const cvIcon = '/images/career/cv.svg';
 import SocialShare from 'components/SocialShare';
 import ButtonWithModal from '../../theme/components/Button/ButtonWithModal';
+import cvIcon from 'images/career/cv.svg?url';
 
 const JobPostBody = ({ frontmatter }) => {
   const {

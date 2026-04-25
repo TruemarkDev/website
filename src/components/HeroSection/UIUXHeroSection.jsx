@@ -1,7 +1,7 @@
 import React from 'react';
 
 import ButtonWithModal from 'components/Button/ButtonWithModal';
-const bannerImage = '/images/ui-ux/ui-ux.png';
+import bannerImage from 'images/ui-ux/ui-ux.png?url';
 const UIUXHeroSection = () => (
   <section className="ui-ux-services overflow-hidden">
     <div className="container container-ui-ux position-relative">

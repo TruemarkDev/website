@@ -1,8 +1,8 @@
 import React from 'react';
 
-const GatsbyFramework = '/images/reactjs/gatsby-framework.png';
-const NextjsFramework = '/images/reactjs/nextjs-framework.png';
 import ButtonWithModal from 'components/Button/ButtonWithModal';
+import GatsbyFramework from 'images/reactjs/gatsby-framework.png?url';
+import NextjsFramework from 'images/reactjs/nextjs-framework.png?url';
 
 const ChooseRightFramework = () => {
   return (

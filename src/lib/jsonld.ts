@@ -1,6 +1,6 @@
 import { siteMetadata } from './site-metadata';
+import LOGO_PATH from 'images/company-logo/logo_red.svg?url';
 
-const LOGO_PATH = '/images/company-logo/logo_red.svg';
 const ORG_NAME = 'Truemark Technology';
 
 export function organizationJsonLd() {

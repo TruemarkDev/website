@@ -4,9 +4,9 @@ import { Row, Col } from "reactstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBlog } from "@fortawesome/free-solid-svg-icons";
 
-const startup = "/images/blogs/categories/startup.jpg";
 import BlogCard from "components/Blog/Card";
 import Slider, { SlideControls } from "components/Slider/Slider";
+import startup from 'images/blogs/categories/startup.jpg?url';
 
 export default ({ authorId, blogs = { edges: [] } }) => {
   const sliderRef = useRef();

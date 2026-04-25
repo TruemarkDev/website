@@ -1,7 +1,7 @@
 import React from 'react';
+import bannerImageDark from 'images/about-us/our-mission-banner-image.jpeg?url';
+import bannerImageLight from 'images/about-us/our-mission-banner-image.jpeg?url';
 
-const bannerImageDark = '/images/about-us/our-mission-banner-image.jpeg';
-const bannerImageLight = '/images/about-us/our-mission-banner-image.jpeg';
 // import bannerImageDark from 'assets/images/about-us/our-mission-banner-image-dark.png';
 // import bannerImageLight from 'assets/images/about-us/our-mission-banner-image-light.png';
 

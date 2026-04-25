@@ -1,7 +1,7 @@
 import React from 'react';
 
-const arrowImage = '/images/ui-ux/arrow-small.png';
 import ButtonWithModal from 'components/Button/ButtonWithModal';
+import arrowImage from 'images/ui-ux/arrow-small.png?url';
 
 const WorkTogether = () => {
   return (

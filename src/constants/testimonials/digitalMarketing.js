@@ -1,7 +1,8 @@
-const natalieAvatar = '/images/clients/natalie/natalie.jpg';
-const natalieProject = '/images/clients/natalie/projects/natalieglebova-com.png';
-const sushilAvatar = '/images/clients/sushil/sushil.jpg';
-const sushilProject = '/images/clients/sushil/projects/sushilshrestha-com.png';
+import natalieAvatar from 'images/clients/natalie/natalie.jpg?url';
+import natalieProject from 'images/clients/natalie/projects/natalieglebova-com.png?url';
+import sushilAvatar from 'images/clients/sushil/sushil.jpg?url';
+import sushilProject from 'images/clients/sushil/projects/sushilshrestha-com.png?url';
+
 const digitalMarketingTestimonials = [
   {
     key: 'DS01',

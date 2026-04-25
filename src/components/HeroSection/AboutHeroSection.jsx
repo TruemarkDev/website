@@ -7,9 +7,9 @@ import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 // import bannerImageLight from 'assets/images/hero-section/about-us-banner.png';
 // import bannerImageDark from 'assets/images/hero-section/about-us-banner-dark.png';
 
-const bannerImageLight = '/images/upgrade-your-application/hero-banner-image.png';
-const bannerImageDark = '/images/upgrade-your-application/hero-banner-image.png';
 import ButtonWithModal from 'components/Button/ButtonWithModal';
+import bannerImageLight from 'images/upgrade-your-application/hero-banner-image.png?url';
+import bannerImageDark from 'images/upgrade-your-application/hero-banner-image.png?url';
 
 const AboutHeroSection = () => (
   <section className="bg-hero overflow-hidden pt-4 pt-lg-0 pb-sm-0 pb-lg-5 about-us-page">

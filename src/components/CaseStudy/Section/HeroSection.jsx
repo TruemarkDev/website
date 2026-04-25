@@ -4,8 +4,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAppStore, faGooglePlay } from '@fortawesome/free-brands-svg-icons';
 import { faGlobe } from '@fortawesome/free-solid-svg-icons';
 
-const BannerImg = '/images/case-study/trivia-day/trivia-bg.jpg';
 import ProjectInfo from 'components/CaseStudy/ProjectInfo';
+import BannerImg from 'images/case-study/trivia-day/trivia-bg.jpg?url';
 
 const AppLinks = ({ web, ios, android }) => (
   <div className="d-flex mt-3 justify-content-start align-items-center text-white">

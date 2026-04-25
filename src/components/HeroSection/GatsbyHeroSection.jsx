@@ -1,9 +1,9 @@
 import React from 'react';
 
 import ButtonWithModal from 'components/Button/ButtonWithModal';
+import heroImage from 'images/gatsby/hero-banner-image.png?url';
+import bell from 'images/gatsby/bell.svg?url';
 
-const heroImage = '/images/gatsby/hero-banner-image.png';
-const bell = '/images/gatsby/bell.svg';
 const GatsbyHeroSection = () => {
   return (
     <section className="bg-hero-gatsby overflow-hidden pt-0 pb-sm-0 pb-md-0">

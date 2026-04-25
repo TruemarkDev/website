@@ -16,8 +16,8 @@ import { createFormFieldsSubmissionData } from 'utils/formSubmission';
 import { FileInput } from 'components/Form/FileInput';
 import CrmApi from 'services/api/CrmApi';
 
-const contactUsImage = '/images/layout/contact-us.svg';
 import ToastService from 'services/toastService';
+import contactUsImage from 'images/layout/contact-us.svg?url';
 
 const acceptedFileInputs = [
   'application/msword',

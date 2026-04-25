@@ -5,11 +5,6 @@ import PortfolioApi from 'services/api/PortfolioApi';
 import Layout from 'components/Layout/Layout';
 import FetchedDataTemplete from 'components/CV/FetchedDataTemplete';
 
-const userImg = '/images/author/prakash.jpeg';
-const reneldyAvatar = '/images/clients/reneldy/reneldy.jpeg';
-const projectSoono = '/images/clients/mack/projects/mysoono-com.png';
-const projectTravelBook = '/images/clients/dean/projects/travelbook-com.png';
-const logo = '/images/company-logo/true-icon.svg';
 import {
   TECH_CONSTANTS,
   EXP_CONSTANTS,
@@ -17,6 +12,11 @@ import {
 } from 'src/constants/formConstants';
 
 import mergeProfile from 'utils/mergeFetchedProfile';
+import userImg from 'images/author/prakash.jpeg?url';
+import reneldyAvatar from 'images/clients/reneldy/reneldy.jpeg?url';
+import projectSoono from 'images/clients/mack/projects/mysoono-com.png?url';
+import projectTravelBook from 'images/clients/dean/projects/travelbook-com.png?url';
+import logo from 'images/company-logo/true-icon.svg?url';
 
 const pageMetaData = {
   title: 'Prakash Poudel Sharma | Senior Ruby Developer From Kathmandu',

@@ -1,9 +1,9 @@
 import React from 'react';
 import ButtonWithModal from 'components/Button/ButtonWithModal';
-const Soono = '/images/upgrade-your-application/soono-ui.png';
-const Gangstabet = '/images/portfolio/Gangstabet-image.png';
-const Invoicework = '/images/portfolio/Invoicework-image.png';
 import ButtonWithAllProjects from 'components/Button/ButtonWithAllProjects';
+import Soono from 'images/upgrade-your-application/soono-ui.png?url';
+import Gangstabet from 'images/portfolio/Gangstabet-image.png?url';
+import Invoicework from 'images/portfolio/Invoicework-image.png?url';
 
 
 const GatsbyJSProjects = () => {

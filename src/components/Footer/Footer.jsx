@@ -10,10 +10,10 @@ import {
 
 import ButtonWithModal from "components/Button/ButtonWithModal";
 import CopyRight from "components/Footer/CopyRight";
+import truemarkWhiteLogo from 'images/company-logo/logo_white.svg?url';
+import IconNepal from 'images/footer/nepal.svg?url';
+import IconUSA from 'images/footer/dover.svg?url';
 
-const truemarkWhiteLogo = "/images/company-logo/logo_white.svg";
-const IconNepal = "/images/footer/nepal.svg";
-const IconUSA = "/images/footer/dover.svg";
 const Footer = ({
   ctaTitle = "Need help turning your dream idea into profitable software?",
 }) => (

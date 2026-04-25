@@ -3,30 +3,36 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import PortfolioNav from '../components/Menu/Portfolio/PortfolioNav.jsx';
 import PortfolioList from '../components/Portfolio/PortfolioList.jsx';
 import { getCollection } from 'astro:content';
+import { resolveImage } from '../lib/image-resolver';
 
 const projectEntries = await getCollection('projects');
 
-const projects = projectEntries
-  .filter((p) => {
-    const list = (p.data as any).featuredIn;
-    return Array.isArray(list) ? list.includes('portfolio-index') : true;
-  })
-  .sort((a, b) =>
-    String(a.data.uid ?? '').localeCompare(String(b.data.uid ?? ''))
-  )
-  .map((p) => ({
-    node: {
-      id: p.id,
-      excerpt: '',
-      frontmatter: {
-        ...p.data,
-        bgImage: p.data.bgImage,
-        featuredImage: p.data.featuredImage,
-        ownerImage: p.data.ownerImage,
-        companyLogo: p.data.companyLogo,
+const resolveUrl = async (p: string | undefined | null) =>
+  (await resolveImage(p))?.src ?? p ?? undefined;
+
+const projects = await Promise.all(
+  projectEntries
+    .filter((p) => {
+      const list = (p.data as any).featuredIn;
+      return Array.isArray(list) ? list.includes('portfolio-index') : true;
+    })
+    .sort((a, b) =>
+      String(a.data.uid ?? '').localeCompare(String(b.data.uid ?? ''))
+    )
+    .map(async (p) => ({
+      node: {
+        id: p.id,
+        excerpt: '',
+        frontmatter: {
+          ...p.data,
+          bgImage: await resolveUrl(p.data.bgImage),
+          featuredImage: await resolveUrl(p.data.featuredImage),
+          ownerImage: await resolveUrl(p.data.ownerImage),
+          companyLogo: await resolveUrl(p.data.companyLogo),
+        },
       },
-    },
-  }));
+    }))
+);
 ---
 
 <BaseLayout

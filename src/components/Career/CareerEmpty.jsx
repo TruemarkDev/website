@@ -1,8 +1,8 @@
 import React from 'react';
 import { Col } from 'reactstrap';
 
-const heroImage = '/images/career/work-with-us-hero-image.png';
 import ButtonWithModal from 'components/Button/ButtonWithModal';
+import heroImage from 'images/career/work-with-us-hero-image.png?url';
 
 export default () => (
   <>
