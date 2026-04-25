@@ -29,7 +29,6 @@ async function resolveAuthor(name?: string) {
 }
 
 export interface BlogNode {
-  excerpt: string;
   frontmatter: any;
   fields: { slug: string; timeToRead: { text: string } };
 }
@@ -53,7 +52,6 @@ export async function toBlogNode(
   const featured = await resolveUrl(entry.data.featuredImage as string | undefined);
   return {
     node: {
-      excerpt: text.replace(/[#>*_`]/g, "").slice(0, 200),
       frontmatter: {
         uid: entry.data.uid,
         title: entry.data.title,
@@ -99,7 +97,6 @@ export async function getMegaMenuBlogPosts() {
   return await Promise.all(
     all.map(async (entry) => ({
       node: {
-        excerpt: "",
         frontmatter: {
           title: entry.data.title,
           description: entry.data.description ?? "",

@@ -37,8 +37,7 @@ import {
   faCircle,
 } from "@fortawesome/free-solid-svg-icons";
 
-const onlineMarketing =
-  "/images/services/digital-marketing/online-marketing.svg";
+import onlineMarketing from "images/services/digital-marketing/online-marketing.svg?url";
 const CompanyServicesTab = (props) => {
   const [activeTab, setActiveTab] = useState("1");
 

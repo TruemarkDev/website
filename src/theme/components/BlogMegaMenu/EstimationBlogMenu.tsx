@@ -1,15 +1,9 @@
 import React from "react";
-
-const Fiverr =
-  "/images/blogs/how-much-does-it-cost-to-build-an-app-like-fiverr/freelance-marketplace-development.png";
-const uber =
-  "/images/blogs/how-much-does-it-cost-to-build-an-app-like-uber/cost-to-build-uber-app.jpg";
-const netflix =
-  "/images/blogs/how-much-does-it-cost-to-build-an-app-like-netflix/cost-to-build-an-app-like-netflix.jpg";
-const uberEats =
-  "/images/blogs/how-much-does-it-cost-to-build-food-delivery-app/food-delivery-app-like-ubereats.jpg";
-const nftMarketplace =
-  "/images/blogs/how-much-does-it-cost-to-develop-an-nft-marketplace/nft-marketplace-development-cost.png";
+import Fiverr from "images/blogs/how-much-does-it-cost-to-build-an-app-like-fiverr/freelance-marketplace-development.png?url";
+import uber from "images/blogs/how-much-does-it-cost-to-build-an-app-like-uber/cost-to-build-uber-app.jpg?url";
+import netflix from "images/blogs/how-much-does-it-cost-to-build-an-app-like-netflix/cost-to-build-an-app-like-netflix.jpg?url";
+import uberEats from "images/blogs/how-much-does-it-cost-to-build-food-delivery-app/food-delivery-app-like-ubereats.jpg?url";
+import nftMarketplace from "images/blogs/how-much-does-it-cost-to-develop-an-nft-marketplace/nft-marketplace-development-cost.png?url";
 const EstimationBlog: React.FC = () => {
   return (
     <ul className="col-10">

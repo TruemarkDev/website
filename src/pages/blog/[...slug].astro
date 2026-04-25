@@ -3,6 +3,7 @@ import { getCollection, getEntry, render } from 'astro:content';
 import readingTime from 'reading-time';
 
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { resolveUrl } from '../../lib/image-resolver';
 import BlogPostHeader from '../../components/BlogPost/BlogPostHeader.astro';
 import BlogToc from '../../components/BlogPost/BlogToc.astro';
 import RelatedPosts from '../../components/BlogPost/RelatedPosts.astro';
@@ -61,16 +62,20 @@ const relatedPosts = allPosts
     (a, b) =>
       new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
   )
-  .slice(0, 3)
-  .map((p) => ({
+  .slice(0, 3);
+const relatedPostsResolved = await Promise.all(
+  relatedPosts.map(async (p) => ({
     slug: p.data.customSlug,
     title: p.data.title,
-    hero: (p.data.featuredImage as string | undefined) ?? null,
+    hero: await resolveUrl(p.data.featuredImage as string | undefined),
     category: p.data.category,
-  }));
+  })),
+);
 
 const minutes = readingTime(entry.body || '');
-const hero = (data.featuredImage as string | undefined) ?? null;
+const hero = await resolveUrl(data.featuredImage as string | undefined);
+const authorAvatar = await resolveUrl(author?.avatar);
+if (author) author.avatar = authorAvatar;
 const lastModified =
   data.last_modified_at instanceof Date
     ? data.last_modified_at.toISOString().slice(0, 10)
@@ -140,7 +145,7 @@ const disqusShortname =
       </div>
 
       <aside class="col-lg-4 col-md-12 ps-lg-5 ps-sm-0 position-relative">
-        <RelatedPosts posts={relatedPosts} />
+        <RelatedPosts posts={relatedPostsResolved} />
         <SidebarCTA />
       </aside>
     </div>

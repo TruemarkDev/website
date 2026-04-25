@@ -151,7 +151,7 @@ In other words, according to Fitts's law, "The size of the target and distance o
 
 For example, the size of a button on a website. The bigger it is and the lesser the distance is, the easier it is for users to click it. But when the same button is smaller and far, it takes time for a user to press it. So even though there is only a fraction of the time difference, there is still a delay in action. 
 
-![Fitts'sLaw](/images/blogs/ux-principles-every-designer-should-know/fitts-law.png 'Fitts's Law')
+![Fitts'sLaw](/images/blogs/ux-principles-every-designer-should-know/fitts-law.png "Fitts's Law")
 
 [Source](https://www.struto.co.uk/blog/5-laws-of-ux-that-will-help-you-to-create-a-better-user-experience)
 
